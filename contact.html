@@ -446,6 +446,9 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   const POPUP_KEY='maude_cercle_dismissed';
   function openPopup(){if(sessionStorage.getItem(POPUP_KEY))return;document.getElementById('cercle-popup').classList.add('open')}
   function closePopup(){document.getElementById('cercle-popup').classList.remove('open');sessionStorage.setItem(POPUP_KEY,'1')}
-  function handlePopupSubmit(e){
-    e.preventDefault();
-    cons
+  setTimeout(openPopup,6000);
+  document.getElementById('cercle-popup').addEventListener('click',function(e){if(e.target===this)closePopup()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup()});
+</script>
+</body>
+</html>
