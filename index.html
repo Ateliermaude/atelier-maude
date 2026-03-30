@@ -1,610 +1,564 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atelier MAUDÉ — Manteaux en Cachemire</title>
+<meta name="description" content="Manteaux en cachemire d'exception. Édition limitée — jusqu'à –30% sur nos pièces emblématiques.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root {
-–cream: #F5F0EA;
-–warm-white: #FAF8F5;
-–brown: #6B4F3A;
-–dark-brown: #3A2A1E;
-–terracotta: #8B4A3A;
-–gold: #C9A96E;
-–text: #2C2218;
-–muted: #8A7B6F;
-–border: rgba(107,79,58,0.15);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-font-family: ‘Jost’, sans-serif;
-background: var(–warm-white);
-color: var(–text);
-font-weight: 300;
-overflow-x: hidden;
-}
-
-/* ANNOUNCEMENT BAR */
-.announcement {
-background: var(–terracotta);
-color: #fff;
-text-align: center;
-padding: 10px 20px;
-font-size: 11px;
-letter-spacing: 0.15em;
-font-weight: 400;
-}
-
-/* HEADER */
-header {
-position: sticky;
-top: 0;
-z-index: 100;
-background: var(–warm-white);
-border-bottom: 1px solid var(–border);
-}
-
-.header-inner {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 18px 40px;
-max-width: 1400px;
-margin: 0 auto;
-}
-
-.header-left, .header-right {
-display: flex;
-gap: 22px;
-align-items: center;
-}
-
-.header-left button, .header-right button {
-background: none;
-border: none;
-cursor: pointer;
-color: var(–dark-brown);
-padding: 4px;
-}
-
-.logo {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 22px;
-font-weight: 400;
-letter-spacing: 0.12em;
-color: var(–dark-brown);
-text-decoration: none;
-text-transform: uppercase;
-}
-
-nav {
-display: flex;
-justify-content: center;
-gap: 40px;
-padding: 0 40px 14px;
-border-top: none;
-}
-
-nav a {
-font-size: 11px;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-color: var(–dark-brown);
-text-decoration: none;
-font-weight: 400;
-position: relative;
-padding-bottom: 2px;
-}
-
-nav a::after {
-content: ‘’;
-position: absolute;
-bottom: 0; left: 0;
-width: 0; height: 1px;
-background: var(–terracotta);
-transition: width 0.3s ease;
-}
-
-nav a:hover::after { width: 100%; }
-
-/* HERO */
-.hero {
-display: grid;
-grid-template-columns: 1fr 1fr;
-min-height: 88vh;
-overflow: hidden;
-}
-
-.hero-image {
-position: relative;
-overflow: hidden;
-background: var(–cream);
-}
-
-.hero-image img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: transform 8s ease;
-}
-
-.hero-image:hover img { transform: scale(1.04); }
-
-.hero-content {
-display: flex;
-flex-direction: column;
-justify-content: center;
-padding: 80px 70px;
-background: var(–cream);
-}
-
-.hero-eyebrow {
-font-size: 10px;
-letter-spacing: 0.25em;
-text-transform: uppercase;
-color: var(–terracotta);
-margin-bottom: 28px;
-font-weight: 400;
-}
-
-.hero-title {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(52px, 5vw, 82px);
-font-weight: 300;
-line-height: 1.05;
-color: var(–dark-brown);
-margin-bottom: 30px;
-}
-
-.hero-title em {
-font-style: italic;
-color: var(–brown);
-}
-
-.hero-text {
-font-size: 14px;
-line-height: 1.85;
-color: var(–muted);
-max-width: 380px;
-margin-bottom: 48px;
-font-weight: 300;
-}
-
-.btn-primary {
-display: inline-block;
-background: var(–dark-brown);
-color: #fff;
-padding: 15px 42px;
-font-size: 11px;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-text-decoration: none;
-font-family: ‘Jost’, sans-serif;
-font-weight: 400;
-transition: background 0.3s ease;
-border: none;
-cursor: pointer;
-width: fit-content;
-}
-
-.btn-primary:hover { background: var(–terracotta); }
-
-.btn-outline {
-display: inline-block;
-border: 1px solid var(–dark-brown);
-color: var(–dark-brown);
-padding: 14px 40px;
-font-size: 11px;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-text-decoration: none;
-font-family: ‘Jost’, sans-serif;
-font-weight: 400;
-transition: all 0.3s ease;
-cursor: pointer;
-background: none;
-}
-
-.btn-outline:hover {
-background: var(–dark-brown);
-color: #fff;
-}
-
-/* PROMO BANNER */
-.promo-banner {
-background: var(–dark-brown);
-color: var(–gold);
-text-align: center;
-padding: 28px 40px;
-}
-
-.promo-banner p {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 22px;
-font-weight: 300;
-letter-spacing: 0.06em;
-}
-
-.promo-banner span {
-font-size: 11px;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: rgba(201,169,110,0.7);
-display: block;
-margin-top: 6px;
-font-family: ‘Jost’, sans-serif;
-}
-
-/* SECTION STYLES */
-section { padding: 90px 40px; max-width: 1400px; margin: 0 auto; }
-
-.section-label {
-font-size: 10px;
-letter-spacing: 0.28em;
-text-transform: uppercase;
-color: var(–terracotta);
-margin-bottom: 16px;
-font-weight: 400;
-}
-
-.section-title {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(36px, 3.5vw, 56px);
-font-weight: 300;
-color: var(–dark-brown);
-line-height: 1.1;
-margin-bottom: 50px;
-}
-
-/* PRODUCTS GRID */
-.products-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 32px;
-}
-
-.product-card {
-position: relative;
-cursor: pointer;
-}
-
-.product-image {
-position: relative;
-overflow: hidden;
-background: var(–cream);
-aspect-ratio: 3/4;
-margin-bottom: 18px;
-}
-
-.product-image img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: transform 0.6s ease;
-}
-
-.product-card:hover .product-image img { transform: scale(1.06); }
-
-.promo-tag {
-position: absolute;
-top: 16px; left: 16px;
-background: var(–terracotta);
-color: #fff;
-font-size: 9px;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-padding: 6px 12px;
-font-family: ‘Jost’, sans-serif;
-font-weight: 400;
-z-index: 2;
-}
-
-.product-actions {
-position: absolute;
-bottom: 0; left: 0; right: 0;
-padding: 20px;
-background: linear-gradient(transparent, rgba(42,26,18,0.5));
-opacity: 0;
-transition: opacity 0.3s ease;
-display: flex;
-justify-content: center;
-}
-
-.product-card:hover .product-actions { opacity: 1; }
-
-.product-actions button {
-background: var(–warm-white);
-color: var(–dark-brown);
-border: none;
-padding: 12px 28px;
-font-size: 10px;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-cursor: pointer;
-font-family: ‘Jost’, sans-serif;
-font-weight: 400;
-transition: background 0.2s;
-}
-
-.product-actions button:hover { background: var(–dark-brown); color: #fff; }
-
-.product-name {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 18px;
-font-weight: 400;
-color: var(–dark-brown);
-margin-bottom: 8px;
-}
-
-.product-price {
-display: flex;
-gap: 12px;
-align-items: center;
-}
-
-.price-current {
-font-size: 15px;
-font-weight: 400;
-color: var(–dark-brown);
-}
-
-.price-old {
-font-size: 13px;
-color: var(–muted);
-text-decoration: line-through;
-}
-
-/* PHILOSOPHY STRIP */
-.philosophy {
-background: var(–cream);
-padding: 80px 40px;
-text-align: center;
-border-top: 1px solid var(–border);
-border-bottom: 1px solid var(–border);
-}
-
-.philosophy blockquote {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(26px, 3vw, 42px);
-font-weight: 300;
-font-style: italic;
-color: var(–dark-brown);
-max-width: 800px;
-margin: 0 auto 20px;
-line-height: 1.4;
-}
-
-.philosophy cite {
-font-size: 11px;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(–muted);
-font-style: normal;
-}
-
-/* FEATURES */
-.features {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 1px;
-background: var(–border);
-border: 1px solid var(–border);
-margin: 0 40px;
-}
-
-.feature-item {
-background: var(–warm-white);
-padding: 42px 32px;
-text-align: center;
-}
-
-.feature-icon {
-font-size: 28px;
-margin-bottom: 16px;
-display: block;
-}
-
-.feature-title {
-font-size: 11px;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-color: var(–dark-brown);
-margin-bottom: 10px;
-font-weight: 400;
-}
-
-.feature-text {
-font-size: 13px;
-color: var(–muted);
-line-height: 1.7;
-}
-
-/* NEWSLETTER */
-.newsletter {
-background: var(–dark-brown);
-padding: 80px 40px;
-text-align: center;
-}
-
-.newsletter .section-label { color: var(–gold); opacity: 0.8; }
-
-.newsletter .section-title {
-color: var(–cream);
-margin-bottom: 16px;
-}
-
-.newsletter p {
-color: rgba(245,240,234,0.6);
-font-size: 14px;
-margin-bottom: 40px;
-max-width: 400px;
-margin-left: auto;
-margin-right: auto;
-line-height: 1.8;
-}
-
-.newsletter-form {
-display: flex;
-max-width: 460px;
-margin: 0 auto;
-border: 1px solid rgba(201,169,110,0.3);
-}
-
-.newsletter-form input {
-flex: 1;
-background: transparent;
-border: none;
-padding: 16px 22px;
-color: var(–cream);
-font-family: ‘Jost’, sans-serif;
-font-size: 13px;
-font-weight: 300;
-outline: none;
-}
-
-.newsletter-form input::placeholder { color: rgba(245,240,234,0.35); }
-
-.newsletter-form button {
-background: var(–gold);
-color: var(–dark-brown);
-border: none;
-padding: 16px 28px;
-font-size: 10px;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-cursor: pointer;
-font-family: ‘Jost’, sans-serif;
-font-weight: 500;
-transition: background 0.3s;
-white-space: nowrap;
-}
-
-.newsletter-form button:hover { background: #e0bc82; }
-
-/* FOOTER */
-footer {
-background: var(–cream);
-border-top: 1px solid var(–border);
-padding: 60px 40px 30px;
-}
-
-.footer-grid {
-display: grid;
-grid-template-columns: 1.5fr 1fr 1fr 1fr;
-gap: 50px;
-max-width: 1400px;
-margin: 0 auto 50px;
-}
-
-.footer-brand .logo {
-display: block;
-margin-bottom: 18px;
-font-size: 20px;
-}
-
-.footer-brand p {
-font-size: 13px;
-color: var(–muted);
-line-height: 1.8;
-max-width: 260px;
-}
-
-.footer-col h4 {
-font-size: 10px;
-letter-spacing: 0.22em;
-text-transform: uppercase;
-color: var(–dark-brown);
-margin-bottom: 22px;
-font-weight: 400;
-}
-
-.footer-col ul { list-style: none; }
-
-.footer-col ul li {
-margin-bottom: 12px;
-}
-
-.footer-col ul li a {
-font-size: 13px;
-color: var(–muted);
-text-decoration: none;
-transition: color 0.2s;
-}
-
-.footer-col ul li a:hover { color: var(–dark-brown); }
-
-.footer-bottom {
-max-width: 1400px;
-margin: 0 auto;
-padding-top: 24px;
-border-top: 1px solid var(–border);
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.footer-bottom p {
-font-size: 12px;
-color: var(–muted);
-}
-
-/* SCROLL ANIMATIONS */
-.fade-in {
-opacity: 0;
-transform: translateY(24px);
-transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.fade-in.visible {
-opacity: 1;
-transform: translateY(0);
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-.hero { grid-template-columns: 1fr; min-height: auto; }
-.hero-image { height: 60vw; }
-.hero-content { padding: 50px 28px; }
-.products-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-.features { grid-template-columns: 1fr 1fr; margin: 0 20px; }
-.footer-grid { grid-template-columns: 1fr 1fr; }
-nav { gap: 22px; padding: 0 20px 12px; overflow-x: auto; white-space: nowrap; }
-.header-inner { padding: 16px 20px; }
-section { padding: 60px 20px; }
-.philosophy { padding: 60px 24px; }
-.newsletter { padding: 60px 24px; }
-footer { padding: 50px 20px 24px; }
-}
-
-@media (max-width: 600px) {
-.products-grid { grid-template-columns: 1fr; }
-.features { grid-template-columns: 1fr; }
-.footer-grid { grid-template-columns: 1fr; }
-.newsletter-form { flex-direction: column; }
-.footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-}
+  :root {
+    --cream: #F5F0EA;
+    --warm-white: #FAF8F5;
+    --brown: #6B4F3A;
+    --dark-brown: #3A2A1E;
+    --terracotta: #8B4A3A;
+    --gold: #C9A96E;
+    --text: #2C2218;
+    --muted: #8A7B6F;
+    --border: rgba(107,79,58,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── ANNOUNCEMENT ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    text-align: center;
+    padding: 11px 20px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  header.scrolled { box-shadow: 0 2px 20px rgba(58,42,30,0.08); }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .header-left, .header-right { display: flex; gap: 22px; align-items: center; }
+  .header-left button, .header-right button {
+    background: none; border: none; cursor: pointer;
+    color: var(--dark-brown); padding: 4px;
+    transition: color 0.2s;
+  }
+  .header-left button:hover, .header-right button:hover { color: var(--terracotta); }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    color: var(--dark-brown);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 40px 14px;
+  }
+  nav a {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dark-brown);
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 2px;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 1px;
+    background: var(--terracotta);
+    transition: width 0.3s ease;
+  }
+  nav a:hover::after { width: 100%; }
+
+  /* ── HERO ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 88vh;
+    overflow: hidden;
+  }
+  .hero-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .hero-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 8s ease;
+    display: block;
+  }
+  .hero-image:hover img { transform: scale(1.04); }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 70px;
+    background: var(--cream);
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 28px;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 5vw, 82px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--dark-brown);
+    margin-bottom: 30px;
+  }
+  .hero-title em { font-style: italic; color: var(--brown); }
+
+  .hero-text {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--muted);
+    max-width: 380px;
+    margin-bottom: 48px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--dark-brown);
+    color: #fff;
+    padding: 15px 42px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    transition: background 0.3s;
+  }
+  .btn-primary:hover { background: var(--terracotta); }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1px solid var(--dark-brown);
+    color: var(--dark-brown);
+    padding: 14px 40px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { background: var(--dark-brown); color: #fff; }
+
+  /* ── PROMO BANNER ── */
+  .promo-banner {
+    background: var(--dark-brown);
+    color: var(--gold);
+    text-align: center;
+    padding: 28px 40px;
+  }
+  .promo-banner p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+  }
+  .promo-banner span {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.65);
+    display: block;
+    margin-top: 6px;
+    font-family: 'Jost', sans-serif;
+  }
+
+  /* ── PRODUCTS SECTION ── */
+  .products-section {
+    padding: 90px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .section-header { margin-bottom: 50px; }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 3.5vw, 56px);
+    font-weight: 300;
+    color: var(--dark-brown);
+    line-height: 1.1;
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  /* ── PRODUCT CARD ── */
+  .product-card { cursor: pointer; }
+
+  .product-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    aspect-ratio: 3/4;
+    margin-bottom: 18px;
+  }
+  /* Single image cards */
+  .product-image > img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.7s ease;
+    display: block;
+  }
+  .product-card:hover .product-image > img { transform: scale(1.06); }
+
+  /* ── SLIDER ── */
+  .slider { position: relative; width: 100%; height: 100%; }
+  .slider img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    display: block;
+  }
+  .slider img.active { opacity: 1; }
+
+  .slider-dots {
+    position: absolute;
+    bottom: 12px; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 3;
+  }
+  .slider-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    border: none; cursor: pointer; padding: 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .slider-dot.active {
+    background: #fff;
+    transform: scale(1.2);
+  }
+
+  .promo-tag {
+    position: absolute;
+    top: 16px; left: 16px;
+    background: var(--terracotta);
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    z-index: 2;
+    font-family: 'Jost', sans-serif;
+  }
+
+  /* Discount badge */
+  .discount-badge {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: var(--dark-brown);
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 5px 10px;
+    z-index: 2;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+  }
+
+  .product-hover {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(42,26,18,0.5));
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+  }
+  .product-card:hover .product-hover { opacity: 1; }
+  .product-hover a {
+    background: var(--warm-white);
+    color: var(--dark-brown);
+    padding: 12px 28px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    transition: background 0.2s, color 0.2s;
+  }
+  .product-hover a:hover { background: var(--dark-brown); color: #fff; }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--dark-brown);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .product-price { display: flex; gap: 12px; align-items: center; }
+  .price-current { font-size: 15px; font-weight: 400; color: var(--dark-brown); }
+  .price-old { font-size: 13px; color: var(--muted); text-decoration: line-through; }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy {
+    background: var(--cream);
+    padding: 80px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .philosophy blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 3vw, 42px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--dark-brown);
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.45;
+  }
+  .philosophy cite {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  /* ── FEATURES ── */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 0 40px;
+  }
+  .feature-item {
+    background: var(--warm-white);
+    padding: 42px 32px;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  .feature-item:hover { background: var(--cream); }
+  .feature-icon {
+    font-size: 22px;
+    margin-bottom: 16px;
+    display: block;
+    color: var(--gold);
+  }
+  .feature-title {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dark-brown);
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  .feature-text { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: var(--dark-brown);
+    padding: 80px 40px;
+    text-align: center;
+  }
+  .newsletter .section-label { color: var(--gold); opacity: 0.8; }
+  .newsletter .section-title { color: var(--cream); margin-bottom: 16px; }
+  .newsletter p {
+    color: rgba(245,240,234,0.6);
+    font-size: 14px;
+    margin-bottom: 40px;
+    max-width: 400px;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.85;
+  }
+  .newsletter-form {
+    display: flex;
+    max-width: 460px;
+    margin: 0 auto;
+    border: 1px solid rgba(201,169,110,0.3);
+  }
+  .newsletter-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 16px 22px;
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    outline: none;
+  }
+  .newsletter-form input::placeholder { color: rgba(245,240,234,0.3); }
+  .newsletter-form button {
+    background: var(--gold);
+    color: var(--dark-brown);
+    border: none;
+    padding: 16px 28px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background 0.3s;
+  }
+  .newsletter-form button:hover { background: #d4b87a; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    padding: 60px 40px 30px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto 50px;
+  }
+  .footer-brand p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 260px;
+    margin-top: 18px;
+  }
+  .footer-col h4 {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dark-brown);
+    margin-bottom: 22px;
+    font-weight: 400;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--dark-brown); }
+
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom p { font-size: 12px; color: var(--muted); }
+
+  /* ── FADE IN ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-image { height: 72vw; }
+    .hero-content { padding: 50px 28px; }
+    .products-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .features { grid-template-columns: 1fr 1fr; margin: 0 20px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    nav { gap: 22px; padding: 0 20px 12px; overflow-x: auto; white-space: nowrap; }
+    .header-inner { padding: 16px 20px; }
+    .products-section { padding: 60px 20px; }
+  }
+  @media (max-width: 600px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .features { grid-template-columns: 1fr; margin: 0; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .newsletter-form { flex-direction: column; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .hero-content { padding: 40px 20px; }
+    .products-section { padding: 50px 20px; }
+    .philosophy { padding: 60px 24px; }
+    .features { margin: 0; }
+    .newsletter { padding: 60px 24px; }
+    footer { padding: 50px 24px 24px; }
+  }
 </style>
-
 </head>
 <body>
 
 <!-- ANNOUNCEMENT -->
-
 <div class="announcement">
-  SÉLECTION PREMIUM &nbsp;|&nbsp; -30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE
+  SÉLECTION PREMIUM &nbsp;·&nbsp; –30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE
 </div>
 
 <!-- HEADER -->
-
-<header>
+<header id="site-header">
   <div class="header-inner">
     <div class="header-left">
       <button aria-label="Menu">
@@ -623,13 +577,13 @@ footer { padding: 50px 20px 24px; }
     </div>
     <a href="#" class="logo">Atelier MAUDÉ</a>
     <div class="header-right">
-      <button aria-label="Compte">
+      <button aria-label="Mon compte">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
           <circle cx="12" cy="7" r="4"/>
         </svg>
       </button>
-      <button aria-label="Panier">
+      <button aria-label="Panier (0 article)">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
           <line x1="3" y1="6" x2="21" y2="6"/>
@@ -638,159 +592,171 @@ footer { padding: 50px 20px 24px; }
       </button>
     </div>
   </div>
-  <nav>
+  <nav aria-label="Navigation principale">
     <a href="#">Nouveautés</a>
-    <a href="#">Manteaux</a>
-    <a href="#">Vestes</a>
+    <a href="#collection">Manteaux</a>
     <a href="#">Accessoires</a>
-    <a href="#">Promotions</a>
-    <a href="#">Notre Histoire</a>
+    <a href="#collection">Promotions</a>
+    <a href="notre-histoire.html">Notre Histoire</a>
   </nav>
 </header>
 
 <!-- HERO -->
-
-<div class="hero">
+<section class="hero" aria-label="Collection vedette">
   <div class="hero-image">
-    <!-- Placeholder image using CSS gradient as fallback -->
-    <div style="width:100%;height:100%;background:linear-gradient(135deg,#C9B8A8 0%,#A8927E 50%,#8B7260 100%);display:flex;align-items:center;justify-content:center;">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:80px;color:rgba(255,255,255,0.15);font-style:italic;">M</span>
-    </div>
+    <img src="11B04F6B-279B-4048-85D2-934B8EF41A6E.png"
+         alt="Manteau en cachemire Atelier MAUDÉ — collection hiver"
+         loading="eager">
   </div>
   <div class="hero-content fade-in">
-    <p class="hero-eyebrow">Collection Hiver 2024 — 2025</p>
+    <p class="hero-eyebrow">Collection Atelier MAUDÉ</p>
     <h1 class="hero-title">L'art du<br><em>cachemire</em><br>pur.</h1>
     <p class="hero-text">Des manteaux taillés dans le cachemire le plus doux, conçus pour traverser les saisons avec grâce. La simplicité du luxe, sans compromis.</p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <div class="hero-actions">
       <a href="#collection" class="btn-primary">Découvrir la collection</a>
-      <a href="#" class="btn-outline">Promotions –30%</a>
+      <a href="#collection" class="btn-outline">Promotions –30%</a>
     </div>
   </div>
-</div>
+</section>
 
 <!-- PROMO BANNER -->
-
-<div class="promo-banner">
+<div class="promo-banner" role="banner">
   <p>Édition limitée — Jusqu'à –30% sur nos pièces emblématiques</p>
   <span>Offre valable jusqu'à épuisement des stocks</span>
 </div>
 
 <!-- COLLECTION -->
-
-<section id="collection">
-  <p class="section-label fade-in">Notre Sélection</p>
-  <h2 class="section-title fade-in">Manteaux en Cachemire</h2>
+<section class="products-section" id="collection" aria-labelledby="collection-title">
+  <div class="section-header">
+    <p class="section-label fade-in">Notre Sélection</p>
+    <h2 class="section-title fade-in" id="collection-title">Manteaux en Cachemire</h2>
+  </div>
 
   <div class="products-grid">
 
-```
-<div class="product-card fade-in">
-  <div class="product-image">
-    <div class="promo-tag">Promotion</div>
-    <div style="width:100%;height:100%;background:linear-gradient(160deg,#C9B8A8,#9E8272);display:flex;align-items:center;justify-content:center;">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:32px;color:rgba(255,255,255,0.4);font-style:italic;">Huā</span>
-    </div>
-    <div class="product-actions">
-      <button>Ajouter au panier</button>
-    </div>
-  </div>
-  <p class="product-name">Manteau Huā Long en Cachemire</p>
-  <div class="product-price">
-    <span class="price-current">€420,00</span>
-    <span class="price-old">€546,00</span>
-  </div>
-</div>
+    <!-- PRODUIT 1 : YŪN COURT -->
+    <article class="product-card fade-in">
+      <div class="product-image">
+        <div class="promo-tag">Promotion</div>
+        <div class="discount-badge">–23%</div>
+        <div class="slider" id="slider-1" role="region" aria-label="Photos Manteau Yūn Court">
+          <img src="att.u9QSQlnhqcKTbC3VlMDkY7H8fG....jpeg"
+               alt="Manteau Yūn Court Ceinturé en Cachemire — coloris noir"
+               class="active">
+          <img src="att.Y8DsXD7o4Xea5szRh9o1t6QjyczOjWBGGAFPUY9gMY8.jpeg"
+               alt="Manteau Yūn Court Ceinturé en Cachemire — coloris marine">
+          <div class="slider-dots" aria-hidden="true">
+            <button class="slider-dot active" onclick="goToSlide('slider-1',0)" aria-label="Photo 1"></button>
+            <button class="slider-dot" onclick="goToSlide('slider-1',1)" aria-label="Photo 2"></button>
+          </div>
+        </div>
+        <div class="product-hover">
+          <a href="yun-court.html">Voir le produit</a>
+        </div>
+      </div>
+      <a href="yun-court.html" style="text-decoration:none"><h3 class="product-name">Manteau Yūn Court Ceinturé en Cachemire</h3></a>
+      <div class="product-price">
+        <span class="price-current">350,00 €</span>
+        <span class="price-old" aria-label="Ancien prix : 455 euros">455,00 €</span>
+      </div>
+    </article>
 
-<div class="product-card fade-in" style="transition-delay:0.1s">
-  <div class="product-image">
-    <div class="promo-tag">Promotion</div>
-    <div style="width:100%;height:100%;background:linear-gradient(160deg,#3A3A3A,#1A1A1A);display:flex;align-items:center;justify-content:center;">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:32px;color:rgba(255,255,255,0.2);font-style:italic;">Yūn</span>
-    </div>
-    <div class="product-actions">
-      <button>Ajouter au panier</button>
-    </div>
-  </div>
-  <p class="product-name">Manteau Yūn Court Ceinturé en Cachemire</p>
-  <div class="product-price">
-    <span class="price-current">€350,00</span>
-    <span class="price-old">€455,00</span>
-  </div>
-</div>
+    <!-- PRODUIT 2 : HUĀ LONG -->
+    <article class="product-card fade-in" style="transition-delay:0.1s">
+      <div class="product-image">
+        <div class="promo-tag">Promotion</div>
+        <div class="discount-badge">–23%</div>
+        <div class="slider" id="slider-2" role="region" aria-label="Photos Manteau Huā Long">
+          <img src="att.ByWOyzhPopxNZZK7ZPl5m897bfxSf1jjtaUTJW86rLQ.jpeg"
+               alt="Manteau Huā Long en Cachemire — coloris camel, vue de face"
+               class="active">
+          <img src="att.1FyAbWZAmqrvEJdbUf4hv6KTZg....jpeg"
+               alt="Manteau Huā Long en Cachemire — coloris camel, détail">
+          <div class="slider-dots" aria-hidden="true">
+            <button class="slider-dot active" onclick="goToSlide('slider-2',0)" aria-label="Photo 1"></button>
+            <button class="slider-dot" onclick="goToSlide('slider-2',1)" aria-label="Photo 2"></button>
+          </div>
+        </div>
+        <div class="product-hover">
+          <a href="hua-long.html">Voir le produit</a>
+        </div>
+      </div>
+      <a href="hua-long.html" style="text-decoration:none"><h3 class="product-name">Manteau Huā Long en Cachemire</h3></a>
+      <div class="product-price">
+        <span class="price-current">420,00 €</span>
+        <span class="price-old" aria-label="Ancien prix : 545 euros">545,00 €</span>
+      </div>
+    </article>
 
-<div class="product-card fade-in" style="transition-delay:0.2s">
-  <div class="product-image">
-    <div class="promo-tag">Promotion</div>
-    <div style="width:100%;height:100%;background:linear-gradient(160deg,#2A2A2A,#111);display:flex;align-items:center;justify-content:center;">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:32px;color:rgba(255,255,255,0.2);font-style:italic;">Yūn</span>
-    </div>
-    <div class="product-actions">
-      <button>Ajouter au panier</button>
-    </div>
-  </div>
-  <p class="product-name">Manteau Yūn Long Ceinturé en Cachemire</p>
-  <div class="product-price">
-    <span class="price-current">€450,00</span>
-    <span class="price-old">€585,00</span>
-  </div>
-</div>
-```
+    <!-- PRODUIT 3 : YŪN LONG -->
+    <article class="product-card fade-in" style="transition-delay:0.2s">
+      <div class="product-image">
+        <div class="promo-tag">Promotion</div>
+        <div class="discount-badge">–23%</div>
+        <img src="1AD9BC38-06E5-43CA-812A-42E0465FA1CD.png"
+             alt="Manteau Yūn Long Ceinturé en Cachemire — coloris noir"
+             loading="lazy">
+        <div class="product-hover">
+          <a href="yun-long.html">Voir le produit</a>
+        </div>
+      </div>
+      <a href="yun-long.html" style="text-decoration:none"><h3 class="product-name">Manteau Yūn Long Ceinturé en Cachemire</h3></a>
+      <div class="product-price">
+        <span class="price-current">450,00 €</span>
+        <span class="price-old" aria-label="Ancien prix : 585 euros">585,00 €</span>
+      </div>
+    </article>
 
-  </div>
-
-  <div style="text-align:center;margin-top:52px;">
-    <a href="#" class="btn-outline">Voir toute la collection</a>
   </div>
 </section>
 
 <!-- PHILOSOPHY -->
-
 <div class="philosophy">
   <blockquote class="fade-in">
     « La simplicité du luxe, sans compromis sur la matière. »
   </blockquote>
-  <cite>Atelier MAUDÉ, Paris</cite>
+  <cite>Atelier MAUDÉ</cite>
 </div>
 
 <!-- FEATURES -->
-
-<div class="features" style="margin-top:0;margin-bottom:0;">
-  <div class="feature-item fade-in">
-    <span class="feature-icon">✦</span>
+<div class="features" role="list">
+  <div class="feature-item fade-in" role="listitem">
+    <span class="feature-icon" aria-hidden="true">✦</span>
     <p class="feature-title">Cachemire Grade A</p>
     <p class="feature-text">Sélection rigoureuse des fibres les plus fines, de grade A exclusivement.</p>
   </div>
-  <div class="feature-item fade-in" style="transition-delay:0.1s">
-    <span class="feature-icon">✦</span>
+  <div class="feature-item fade-in" style="transition-delay:0.1s" role="listitem">
+    <span class="feature-icon" aria-hidden="true">✦</span>
     <p class="feature-title">Livraison Offerte</p>
-    <p class="feature-text">Livraison gratuite en France et en Belgique dès 200€ d'achat.</p>
+    <p class="feature-text">Livraison gratuite en France et en Belgique dès 200 € d'achat.</p>
   </div>
-  <div class="feature-item fade-in" style="transition-delay:0.2s">
-    <span class="feature-icon">✦</span>
+  <div class="feature-item fade-in" style="transition-delay:0.2s" role="listitem">
+    <span class="feature-icon" aria-hidden="true">✦</span>
     <p class="feature-title">Retours 30 Jours</p>
     <p class="feature-text">Retours gratuits sous 30 jours, sans condition.</p>
   </div>
-  <div class="feature-item fade-in" style="transition-delay:0.3s">
-    <span class="feature-icon">✦</span>
+  <div class="feature-item fade-in" style="transition-delay:0.3s" role="listitem">
+    <span class="feature-icon" aria-hidden="true">✦</span>
     <p class="feature-title">Service Client</p>
     <p class="feature-text">Une équipe dédiée pour vous accompagner dans votre choix.</p>
   </div>
 </div>
 
 <!-- NEWSLETTER -->
-
 <div class="newsletter">
   <p class="section-label">Newsletter</p>
   <h2 class="section-title">Restez informée</h2>
   <p>Recevez en avant-première nos nouvelles collections et offres exclusives.</p>
-  <div class="newsletter-form">
-    <input type="email" placeholder="Votre adresse e-mail">
-    <button>S'abonner</button>
-  </div>
+  <form class="newsletter-form" onsubmit="handleNewsletter(event)" novalidate>
+    <label for="newsletter-email" class="sr-only">Votre adresse e-mail</label>
+    <input type="email" id="newsletter-email" name="email"
+           placeholder="Votre adresse e-mail"
+           autocomplete="email" required>
+    <button type="submit">S'abonner</button>
+  </form>
 </div>
 
 <!-- FOOTER -->
-
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -800,30 +766,25 @@ footer { padding: 50px 20px 24px; }
     <div class="footer-col">
       <h4>Boutique</h4>
       <ul>
-        <li><a href="#">Manteaux</a></li>
-        <li><a href="#">Vestes</a></li>
-        <li><a href="#">Accessoires</a></li>
-        <li><a href="#">Promotions</a></li>
+        <li><a href="#collection">Manteaux</a></li>
+        <li><a href="#collection">Promotions</a></li>
         <li><a href="#">Nouveautés</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Mon compte</h4>
-      <ul>
-        <li><a href="#">Se connecter</a></li>
-        <li><a href="#">Mes commandes</a></li>
-        <li><a href="#">Mes retours</a></li>
-        <li><a href="#">Liste de souhaits</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Informations</h4>
       <ul>
-        <li><a href="#">Notre histoire</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="notre-histoire.html">Notre histoire</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="#">CGV</a></li>
-        <li><a href="#">Politique de confidentialité</a></li>
         <li><a href="#">Mentions légales</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Nous rejoindre</h4>
+      <ul>
+        <li><a href="/cdn-cgi/l/email-protection#b8dbd7d6ccd9dbccf8d9ccddd4d1ddcad5d9cddcdd96dbd7d5"><span class="__cf_email__" data-cfemail="9dfef2f3e9fcfee9ddfce9f8f1f4f8eff0fce8f9f8b3fef2f0">[email&#160;protected]</span></a></li>
+        <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
     </div>
   </div>
@@ -833,8 +794,17 @@ footer { padding: 50px 20px 24px; }
   </div>
 </footer>
 
-<script>
-  // Scroll fade-in
+<!-- Visually hidden helper for accessibility -->
+<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ── Header shadow on scroll ──
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // ── Fade-in on scroll ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -846,11 +816,179 @@ footer { padding: 50px 20px 24px; }
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Hero immediate
+  // Hero animates immediately
   setTimeout(() => {
     document.querySelector('.hero-content.fade-in')?.classList.add('visible');
-  }, 200);
+  }, 150);
+
+  // ── Slider ──
+  function goToSlide(sliderId, index) {
+    const slider = document.getElementById(sliderId);
+    if (!slider) return;
+    const imgs = slider.querySelectorAll('img');
+    const dots = slider.querySelectorAll('.slider-dot');
+    imgs.forEach((img, i) => img.classList.toggle('active', i === index));
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  }
+
+  // Auto-slide with pause on hover
+  document.querySelectorAll('.slider').forEach(slider => {
+    const imgs = slider.querySelectorAll('img');
+    if (imgs.length < 2) return;
+    let current = 0;
+    let paused = false;
+
+    slider.addEventListener('mouseenter', () => paused = true);
+    slider.addEventListener('mouseleave', () => paused = false);
+
+    setInterval(() => {
+      if (paused) return;
+      current = (current + 1) % imgs.length;
+      goToSlide(slider.id, current);
+    }, 3500);
+  });
+
+  // ── Newsletter form ──
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const input = e.target.querySelector('input[type="email"]');
+    const btn = e.target.querySelector('button');
+    if (!input.value) return;
+    btn.textContent = 'Merci !';
+       btn.style.background = '#8B4A3A';
+    btn.style.color = '#fff';
+    input.value = '';
+    setTimeout(() => {
+      btn.textContent = "S'abonner";
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
+  }
+
+  // ── Cercle MAUDÉ popup ──
+  const POPUP_KEY = 'maude_cercle_dismissed';
+  function openPopup() {
+    if (sessionStorage.getItem(POPUP_KEY)) return;
+    document.getElementById('cercle-popup').classList.add('open');
+  }
+  function closePopup() {
+    document.getElementById('cercle-popup').classList.remove('open');
+    sessionStorage.setItem(POPUP_KEY, '1');
+  }
+  function handlePopupSubmit(e) {
+    e.preventDefault();
+    const input = e.target.querySelector('input[type="email"]');
+    if (!input.value) return;
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Bienvenue ✓';
+    btn.style.background = '#6B4F3A';
+    sessionStorage.setItem(POPUP_KEY, '1');
+    setTimeout(closePopup, 1800);
+  }
+  // Apparaît après 4 secondes
+  setTimeout(openPopup, 4000);
+  // Ferme au clic sur l'overlay
+  document.getElementById('cercle-popup').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
 </script>
 
+<!-- POP-UP CERCLE MAUDÉ -->
+<div id="cercle-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup-inner">
+    <button class="popup-close" onclick="closePopup()" aria-label="Fermer">✕</button>
+    <p class="popup-eyebrow">Bienvenue</p>
+    <h2 class="popup-title" id="popup-title">Le Cercle<br>MAUDÉ</h2>
+    <p class="popup-text">Recevez nos nouvelles pièces, inspirations matière et actualités de l'atelier.</p>
+    <form class="popup-form" onsubmit="handlePopupSubmit(event)" novalidate>
+      <label for="popup-email" class="sr-only">Votre adresse e-mail</label>
+      <input type="email" id="popup-email" name="email"
+             placeholder="Votre adresse e-mail"
+             autocomplete="email" required>
+      <button type="submit">S'inscrire</button>
+    </form>
+    <button class="popup-decline" onclick="closePopup()">Non, merci</button>
+  </div>
+</div>
+
+<style>
+/* ── POPUP ── */
+#cercle-popup {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(42,26,18,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(3px);
+}
+#cercle-popup.open { opacity: 1; pointer-events: auto; }
+
+.popup-inner {
+  background: var(--warm-white);
+  max-width: 420px; width: 90%;
+  padding: 52px 44px 40px;
+  position: relative; text-align: center;
+  transform: translateY(16px);
+  transition: transform 0.4s ease;
+}
+#cercle-popup.open .popup-inner { transform: translateY(0); }
+
+.popup-close {
+  position: absolute; top: 18px; right: 20px;
+  background: none; border: none; cursor: pointer;
+  color: var(--muted); font-size: 18px; line-height: 1;
+  transition: color 0.2s;
+}
+.popup-close:hover { color: var(--dark-brown); }
+
+.popup-eyebrow {
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--terracotta); margin-bottom: 14px;
+}
+.popup-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px; font-weight: 300; line-height: 1.1;
+  color: var(--dark-brown); margin-bottom: 18px;
+  letter-spacing: 0.04em;
+}
+.popup-text {
+  font-size: 13px; line-height: 1.85; color: var(--muted);
+  margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto;
+}
+
+.popup-form {
+  display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;
+}
+.popup-form input {
+  background: transparent;
+  border: none; border-bottom: 1px solid var(--border);
+  padding: 12px 4px; font-family: 'Jost', sans-serif;
+  font-size: 13px; color: var(--dark-brown); outline: none;
+  text-align: center; transition: border-color 0.2s;
+}
+.popup-form input:focus { border-bottom-color: var(--dark-brown); }
+.popup-form input::placeholder { color: var(--muted); letter-spacing: 0.06em; }
+.popup-form button[type="submit"] {
+  background: var(--dark-brown); color: #fff; border: none;
+  padding: 15px; font-family: 'Jost', sans-serif;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.3s; margin-top: 4px;
+}
+.popup-form button[type="submit"]:hover { background: var(--terracotta); }
+
+.popup-decline {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Jost', sans-serif; font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); transition: color 0.2s;
+}
+.popup-decline:hover { color: var(--dark-brown); }
+
+@media (max-width: 600px) {
+  .popup-inner { padding: 44px 28px 34px; }
+  .popup-title { font-size: 36px; }
+}
+</style>
 </body>
 </html>
