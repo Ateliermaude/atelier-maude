@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notre Histoire — Atelier MAUDÉ</title>
+<meta name="description" content="Aude et Mathilde, deux sœurs unies par l'amour du beau et du vrai. L'histoire d'Atelier MAUDÉ et de son cachemire de Suzhou.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0EA;
+    --warm-white: #FAF8F5;
+    --brown: #6B4F3A;
+    --dark-brown: #3A2A1E;
+    --terracotta: #8B4A3A;
+    --gold: #C9A96E;
+    --text: #2C2218;
+    --muted: #8A7B6F;
+    --border: rgba(107,79,58,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0 }
+
+  /* ── ANNOUNCEMENT ── */
+  .announcement {
+    background: var(--terracotta); color: #fff;
+    text-align: center; padding: 11px 20px;
+    font-size: 11px; letter-spacing: 0.15em; font-weight: 400;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  header.scrolled { box-shadow: 0 2px 20px rgba(58,42,30,0.08); }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 40px; max-width: 1400px; margin: 0 auto;
+  }
+  .header-left, .header-right { display: flex; gap: 22px; align-items: center; }
+  .header-left button, .header-right button {
+    background: none; border: none; cursor: pointer;
+    color: var(--dark-brown); padding: 4px; transition: color 0.2s;
+  }
+  .header-left button:hover, .header-right button:hover { color: var(--terracotta); }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; letter-spacing: 0.14em;
+    color: var(--dark-brown); text-decoration: none; text-transform: uppercase;
+  }
+  nav {
+    display: flex; justify-content: center; gap: 40px; padding: 0 40px 14px;
+  }
+  nav a {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--dark-brown); text-decoration: none; font-weight: 400;
+    position: relative; padding-bottom: 2px;
+  }
+  nav a::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 1px; background: var(--terracotta); transition: width 0.3s;
+  }
+  nav a:hover::after, nav a.active::after { width: 100%; }
+  nav a.active { color: var(--terracotta); }
+
+  /* ── HERO ── */
+  .page-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    overflow: hidden;
+  }
+  .page-hero-image {
+    position: relative; overflow: hidden; background: var(--cream);
+  }
+  .page-hero-image img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    transition: transform 8s ease; display: block;
+  }
+  .page-hero-image:hover img { transform: scale(1.03); }
+  .page-hero-content {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 70px; background: var(--cream);
+  }
+  .page-hero-eyebrow {
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 24px;
+  }
+  .page-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 5vw, 78px); font-weight: 300;
+    line-height: 1.05; color: var(--dark-brown); margin-bottom: 32px;
+  }
+  .page-hero-title em { font-style: italic; color: var(--brown); }
+  .page-hero-intro {
+    font-size: 15px; line-height: 1.95; color: var(--muted);
+    max-width: 400px; border-left: 2px solid var(--gold);
+    padding-left: 22px;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .section-wrap {
+    max-width: 780px; margin: 0 auto;
+    padding: 90px 40px;
+  }
+
+  /* ── DIVIDER ORNEMENT ── */
+  .ornement {
+    text-align: center; margin: 60px 0;
+    color: var(--gold); font-size: 13px; letter-spacing: 0.4em;
+  }
+
+  /* ── EYEBROW ── */
+  .eyebrow {
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 18px; display: block;
+  }
+
+  /* ── TITRE SECTION ── */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 3.5vw, 50px); font-weight: 300;
+    color: var(--dark-brown); line-height: 1.15; margin-bottom: 32px;
+  }
+  .section-title em { font-style: italic; color: var(--brown); }
+
+  /* ── BODY TEXT ── */
+  .body-text p {
+    font-size: 15px; line-height: 2; color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .body-text p:last-child { margin-bottom: 0; }
+  .body-text strong { color: var(--dark-brown); font-weight: 400; }
+
+  /* ── FULL-WIDTH IMAGE ── */
+  .full-image {
+    width: 100%; aspect-ratio: 21/9;
+    overflow: hidden; background: var(--cream);
+  }
+  .full-image img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block; transition: transform 8s ease;
+  }
+  .full-image:hover img { transform: scale(1.02); }
+
+  /* ── CITATION ── */
+  .citation-block {
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 70px 40px; text-align: center;
+  }
+  .citation-block blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 3vw, 40px); font-weight: 300; font-style: italic;
+    color: var(--dark-brown); max-width: 740px;
+    margin: 0 auto 20px; line-height: 1.45;
+  }
+  .citation-block cite {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--muted); font-style: normal;
+  }
+
+  /* ── NOMS ── */
+  .noms-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+    margin: 0 40px;
+  }
+  .nom-item {
+    background: var(--warm-white);
+    padding: 52px 44px; text-align: center;
+    transition: background 0.3s;
+  }
+  .nom-item:hover { background: var(--cream); }
+  .nom-character {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px; font-weight: 300; color: var(--dark-brown);
+    line-height: 1; margin-bottom: 10px; letter-spacing: 0.06em;
+  }
+  .nom-pinyin {
+    font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px; display: block;
+  }
+  .nom-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; color: var(--dark-brown);
+    margin-bottom: 14px;
+  }
+  .nom-text {
+    font-size: 13px; line-height: 1.85; color: var(--muted);
+    max-width: 280px; margin: 0 auto;
+  }
+
+  /* ── FONDATRICES ── */
+  .fondatrices {
+    background: var(--dark-brown);
+    padding: 80px 40px; text-align: center;
+  }
+  .fondatrices .eyebrow { color: var(--gold); opacity: 0.8; }
+  .fondatrices .section-title { color: var(--cream); margin-bottom: 16px; }
+  .fondatrices-text {
+    font-size: 14px; line-height: 1.95; color: rgba(245,240,234,0.65);
+    max-width: 560px; margin: 0 auto 50px;
+  }
+  .fondatrices-names {
+    display: flex; justify-content: center; gap: 80px; flex-wrap: wrap;
+  }
+  .fondatrice-item { text-align: center; }
+  .fondatrice-prenom {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px; font-weight: 300; font-style: italic;
+    color: var(--cream); display: block; margin-bottom: 6px;
+  }
+  .fondatrice-role {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); opacity: 0.75;
+  }
+
+  /* ── CTA ── */
+  .page-cta {
+    text-align: center; padding: 80px 40px;
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+  }
+  .page-cta .eyebrow { margin-bottom: 16px; }
+  .page-cta .section-title { margin-bottom: 40px; }
+  .btn-primary {
+    display: inline-block; background: var(--dark-brown); color: #fff;
+    padding: 15px 48px; font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; text-decoration: none;
+    font-family: 'Jost', sans-serif; font-weight: 400; transition: background 0.3s;
+  }
+  .btn-primary:hover { background: var(--terracotta); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--cream); border-top: 1px solid var(--border);
+    padding: 60px 40px 30px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 50px; max-width: 1400px; margin: 0 auto 50px;
+  }
+  .footer-brand p { font-size: 13px; color: var(--muted); line-height: 1.85; max-width: 260px; margin-top: 18px; }
+  .footer-col h4 { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dark-brown); margin-bottom: 22px; font-weight: 400; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--dark-brown); }
+  .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 12px; color: var(--muted); }
+
+  /* ── FADE IN ── */
+  .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .page-hero { grid-template-columns: 1fr; min-height: auto; }
+    .page-hero-image { height: 65vw; }
+    .page-hero-content { padding: 50px 28px; }
+    .noms-grid { grid-template-columns: 1fr; margin: 0 24px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    nav { gap: 22px; padding: 0 20px 12px; overflow-x: auto; white-space: nowrap; }
+    .header-inner { padding: 16px 20px; }
+    .full-image { aspect-ratio: 16/9; }
+    .fondatrices-names { gap: 50px; }
+  }
+  @media (max-width: 600px) {
+    .section-wrap { padding: 60px 24px; }
+    .noms-grid { margin: 0; }
+    .nom-item { padding: 40px 28px; }
+    .citation-block { padding: 50px 24px; }
+    .fondatrices { padding: 60px 24px; }
+    .fondatrices-names { gap: 36px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .page-cta { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+  SÉLECTION PREMIUM &nbsp;·&nbsp; –30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE
+</div>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button aria-label="Menu">
+        <svg width="22" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="0" y1="1" x2="22" y2="1"/>
+          <line x1="0" y1="7" x2="16" y2="7"/>
+          <line x1="0" y1="13" x2="22" y2="13"/>
+        </svg>
+      </button>
+    </div>
+    <a href="index.html" class="logo">Atelier MAUDÉ</a>
+    <div class="header-right">
+      <button aria-label="Mon compte">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+      <button aria-label="Panier">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <nav aria-label="Navigation principale">
+    <a href="index.html#collection">Manteaux</a>
+    <a href="index.html#collection">Promotions</a>
+    <a href="notre-histoire.html" class="active">Notre Histoire</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-image">
+    <img src="11B04F6B-279B-4048-85D2-934B8EF41A6E.png"
+         alt="Atelier MAUDÉ — cachemire de Suzhou"
+         loading="eager">
+  </div>
+  <div class="page-hero-content fade-in">
+    <p class="page-hero-eyebrow">Atelier MAUDÉ — Notre histoire</p>
+    <h1 class="page-hero-title">Deux sœurs,<br>une <em>vision</em><br>du beau.</h1>
+    <p class="page-hero-intro">Aude et Mathilde, fondatrices de l'Atelier MAUDÉ. Une maison née de l'amour du cachemire, du voyage, et de la conviction que le luxe véritable ne devrait jamais être inaccessible.</p>
+  </div>
+</section>
+
+<!-- NOTRE HISTOIRE -->
+<div class="section-wrap">
+  <span class="eyebrow fade-in">L'origine</span>
+  <h2 class="section-title fade-in">Tout a commencé<br>par <em>un voyage</em>.</h2>
+  <div class="body-text fade-in">
+    <p>Atelier MAUDÉ est né d'une évidence partagée entre deux sœurs : pourquoi les plus belles matières devraient-elles rester le privilège de quelques-unes ? Aude et Mathilde ont fondé leur atelier avec une ambition simple — <strong>créer des pièces d'exception, honnêtement</strong>.</p>
+    <p>Tout a commencé lors d'un voyage à Suzhou, en Chine, ville millénaire surnommée la « Venise de l'Orient » et berceau historique des arts textiles. C'est là qu'elles ont découvert des ateliers de tissage d'une précision rare, travaillant des fibres de laine et de cachemire d'une douceur qu'elles n'avaient encore jamais touchée.</p>
+    <p>De retour en France, la décision était prise : elles créeraient une collection de manteaux qui porterait l'âme de ces ateliers — des pièces pensées pour durer, pour traverser les saisons et les années avec la même élégance silencieuse.</p>
+  </div>
+</div>
+
+<!-- IMAGE PLEINE LARGEUR -->
+<div class="full-image fade-in">
+  <img src="att.ByWOyzhPopxNZZK7ZPl5m897bfxSf1jjtaUTJW86rLQ.jpeg"
+       alt="Cachemire Atelier MAUDÉ — détail matière"
+       loading="lazy">
+</div>
+
+<!-- SUZHOU -->
+<div class="section-wrap">
+  <span class="eyebrow fade-in">Le cachemire de Suzhou</span>
+  <h2 class="section-title fade-in">Pourquoi <em>Suzhou</em> ?</h2>
+  <div class="body-text fade-in">
+    <p>Suzhou n'est pas un choix anodin. Depuis plus de deux mille ans, cette ville est le cœur battant du textile chinois. Ses artisans maîtrisent l'art du tissage avec une précision transmise de génération en génération, dans le respect des techniques ancestrales.</p>
+    <p>Le mélange de <strong>70% laine et 30% cachemire</strong> que nous utilisons est le fruit d'un long travail de sélection. La laine apporte la tenue, la structure, la durabilité. Le cachemire — issu des régions de Mongolie-Intérieure — apporte cette douceur incomparable contre la peau, ce toucher soyeux qui transforme un vêtement ordinaire en une expérience.</p>
+    <p>Nous avons choisi la transparence sur la composition de nos pièces parce que nous croyons que nos clientes méritent de savoir exactement ce qu'elles portent. Pas de promesses excessives — juste une matière belle, honnête, et travaillée avec soin.</p>
+  </div>
+</div>
+
+<!-- CITATION -->
+<div class="citation-block">
+  <blockquote class="fade-in">
+    « Le luxe, pour nous, c'est le soin porté à chaque détail — pas le prix affiché sur l'étiquette. »
+  </blockquote>
+  <cite>Aude &amp; Mathilde, fondatrices</cite>
+</div>
+
+<!-- LES NOMS -->
+<div class="section-wrap" style="padding-bottom: 50px;">
+  <span class="eyebrow fade-in" style="text-align:center;display:block">Le sens des noms</span>
+  <h2 class="section-title fade-in" style="text-align:center">Des mots qui portent<br>une <em>intention</em>.</h2>
+  <p class="fade-in" style="font-size:14px;line-height:1.9;color:var(--muted);text-align:center;max-width:560px;margin:0 auto">Chaque nom de modèle est emprunté au mandarin. Pas par exotisme, mais par hommage sincère aux artisans et à la culture textile qui ont inspiré la naissance de l'atelier.</p>
+</div>
+
+<!-- NOMS GRID -->
+<div class="noms-grid">
+  <div class="nom-item fade-in">
+    <div class="nom-character">韻</div>
+    <span class="nom-pinyin">Yūn</span>
+    <h3 class="nom-title">Résonance, grâce intérieure</h3>
+    <p class="nom-text">En mandarin, Yūn désigne la résonance d'un son après qu'il s'est tu — cette élégance qui persiste, qui reste dans l'esprit. Un manteau Yūn, c'est une présence qui se remarque sans se crier.</p>
+  </div>
+  <div class="nom-item fade-in" style="transition-delay:0.15s">
+    <div class="nom-character">花</div>
+    <span class="nom-pinyin">Huā</span>
+    <h3 class="nom-title">Fleur, éclosion, beauté</h3>
+    <p class="nom-text">Huā évoque la fleur dans toute sa plénitude — l'épanouissement naturel, la beauté sans effort. Le manteau Huā Long incarne cette idée : une silhouette qui s'ouvre et enveloppe avec une fluidité naturelle.</p>
+  </div>
+</div>
+
+<!-- VISION / CE QU'ON TRANSMET -->
+<div class="section-wrap">
+  <span class="eyebrow fade-in">Notre vision</span>
+  <h2 class="section-title fade-in">Le luxe accessible,<br><em>sans compromis</em>.</h2>
+  <div class="body-text fade-in">
+    <p>Chez Atelier MAUDÉ, nous refusons l'idée que la qualité doit nécessairement être réservée à une élite. Nos manteaux sont conçus pour des femmes qui savent ce qu'elles veulent — des pièces belles, durables, qui traversent les modes et les saisons.</p>
+    <p>Nous travaillons en petites séries, avec soin. Chaque pièce est pensée dans ses moindres détails : la coupe, le tombé, la doublure, les finitions. Rien n'est laissé au hasard, et rien n'est gonflé artificiellement pour justifier un prix.</p>
+    <p>Ce que nous voulons transmettre à chaque cliente, c'est cette certitude — <strong>vous portez quelque chose de vrai</strong>. Une pièce choisie avec intention, fabriquée avec respect, et conçue pour vous accompagner longtemps.</p>
+  </div>
+</div>
+
+<!-- FONDATRICES -->
+<div class="fondatrices">
+  <p class="eyebrow fade-in">Les fondatrices</p>
+  <h2 class="section-title fade-in">Derrière l'atelier</h2>
+  <p class="fondatrices-text fade-in">Deux sœurs, une vision commune. MAUDÉ est d'ailleurs né de la contraction de leurs deux prénoms — un nom qui porte en lui l'histoire d'une complicité.</p>
+  <div class="fondatrices-names fade-in">
+    <div class="fondatrice-item">
+      <span class="fondatrice-prenom">Aude</span>
+      <span class="fondatrice-role">Co-fondatrice</span>
+    </div>
+    <div class="fondatrice-item">
+      <span class="fondatrice-prenom">Mathilde</span>
+      <span class="fondatrice-role">Co-fondatrice</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="page-cta">
+  <p class="eyebrow fade-in">La collection</p>
+  <h2 class="section-title fade-in">Découvrir nos manteaux</h2>
+  <a href="index.html#collection" class="btn-primary fade-in">Voir la collection</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Atelier MAUDÉ</a>
+      <p>Des manteaux en laine et cachemire d'exception, conçus pour celles qui choisissent l'élégance intemporelle.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="index.html#collection">Manteaux</a></li>
+        <li><a href="index.html#collection">Promotions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Informations</h4>
+      <ul>
+        <li><a href="notre-histoire.html">Notre histoire</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">CGV</a></li>
+        <li><a href="#">Mentions légales</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Nous rejoindre</h4>
+      <ul>
+        <li><a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a></li>
+        <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Atelier MAUDÉ. Tous droits réservés.</p>
+    <p style="letter-spacing:0.1em;">FR &nbsp;|&nbsp; BE &nbsp;|&nbsp; CH</p>
+  </div>
+</footer>
+
+<!-- POP-UP CERCLE MAUDÉ -->
+<div id="cercle-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup-inner">
+    <button class="popup-close" onclick="closePopup()" aria-label="Fermer">✕</button>
+    <p class="popup-eyebrow">Bienvenue</p>
+    <h2 class="popup-title" id="popup-title">Le Cercle<br>MAUDÉ</h2>
+    <p class="popup-text">Recevez nos nouvelles pièces, inspirations matière et actualités de l'atelier.</p>
+    <form class="popup-form" onsubmit="handlePopupSubmit(event)" novalidate>
+      <label for="popup-email" class="sr-only">Votre adresse e-mail</label>
+      <input type="email" id="popup-email" name="email"
+             placeholder="Votre adresse e-mail" autocomplete="email" required>
+      <button type="submit">S'inscrire</button>
+    </form>
+    <button class="popup-decline" onclick="closePopup()">Non, merci</button>
+  </div>
+</div>
+
+<style>
+#cercle-popup {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(42,26,18,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(3px);
+}
+#cercle-popup.open { opacity: 1; pointer-events: auto; }
+.popup-inner {
+  background: var(--warm-white); max-width: 420px; width: 90%;
+  padding: 52px 44px 40px; position: relative; text-align: center;
+  transform: translateY(16px); transition: transform 0.4s ease;
+}
+#cercle-popup.open .popup-inner { transform: translateY(0); }
+.popup-close { position: absolute; top: 18px; right: 20px; background: none; border: none; cursor: pointer; color: var(--muted); font-size: 18px; line-height: 1; transition: color 0.2s; }
+.popup-close:hover { color: var(--dark-brown); }
+.popup-eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 14px; }
+.popup-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; line-height: 1.1; color: var(--dark-brown); margin-bottom: 18px; letter-spacing: 0.04em; }
+.popup-text { font-size: 13px; line-height: 1.85; color: var(--muted); margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto; }
+.popup-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+.popup-form input { background: transparent; border: none; border-bottom: 1px solid var(--border); padding: 12px 4px; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--dark-brown); outline: none; text-align: center; transition: border-color 0.2s; }
+.popup-form input:focus { border-bottom-color: var(--dark-brown); }
+.popup-form input::placeholder { color: var(--muted); letter-spacing: 0.06em; }
+.popup-form button[type="submit"] { background: var(--dark-brown); color: #fff; border: none; padding: 15px; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; margin-top: 4px; }
+.popup-form button[type="submit"]:hover { background: var(--terracotta); }
+.popup-decline { background: none; border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+.popup-decline:hover { color: var(--dark-brown); }
+@media (max-width: 600px) { .popup-inner { padding: 44px 28px 34px; } .popup-title { font-size: 36px; } }
+</style>
+
+<script>
+  // ── Header shadow ──
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // ── Fade-in ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  setTimeout(() => document.querySelector('.page-hero-content.fade-in')?.classList.add('visible'), 150);
+
+  // ── Popup ──
+  const POPUP_KEY = 'maude_cercle_dismissed';
+  function openPopup() {
+    if (sessionStorage.getItem(POPUP_KEY)) return;
+    document.getElementById('cercle-popup').classList.add('open');
+  }
+  function closePopup() {
+    document.getElementById('cercle-popup').classList.remove('open');
+    sessionStorage.setItem(POPUP_KEY, '1');
+  }
+  function handlePopupSubmit(e) {
+    e.preventDefault();
+    const input = e.target.querySelector('input[type="email"]');
+    if (!input.value) return;
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Bienvenue ✓';
+    btn.style.background = '#6B4F3A';
+    sessionStorage.setItem(POPUP_KEY, '1');
+    setTimeout(closePopup, 1800);
+  }
+  setTimeout(openPopup, 6000);
+  document.getElementById('cercle-popup').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+</script>
+
+</body>
+</html>
