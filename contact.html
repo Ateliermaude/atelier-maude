@@ -4,7 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Atelier MAUDÉ</title>
-<meta name="description" content="Contactez Atelier MAUDÉ — une question sur nos manteaux, une commande, ou simplement envie d'échanger.">
+<meta name="description" content="Une question sur nos manteaux, une commande ou un retour ? Écrivez-nous à lateliermaude@gmail.com. Réponse sous 48h.">
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ateliermaude.github.io/contact.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier MAUDÉ">
+  <meta property="og:title" content="Contact — Atelier MAUDÉ">
+  <meta property="og:description" content="Une question sur nos manteaux, une commande ou un retour ? Écrivez-nous à lateliermaude@gmail.com. Réponse sous 48h.">
+  <meta property="og:url" content="https://ateliermaude.github.io/contact.html">
+  <meta property="og:image" content="https://ateliermaude.github.io/11B04F6B-279B-4048-85D2-934B8EF41A6E.png">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Atelier MAUDÉ">
+  <meta name="twitter:description" content="Une question sur nos manteaux, une commande ou un retour ? Écrivez-nous à lateliermaude@gmail.com. Réponse sous 48h.">
+  <meta name="twitter:image" content="https://ateliermaude.github.io/11B04F6B-279B-4048-85D2-934B8EF41A6E.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -115,6 +133,81 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
 }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu-overlay {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(42,26,18,0.5);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease;
+    backdrop-filter: blur(2px);
+  }
+  .mobile-menu-overlay.open { opacity: 1; pointer-events: auto; }
+
+  .mobile-menu {
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: min(320px, 85vw);
+    background: var(--warm-white);
+    z-index: 201;
+    transform: translateX(-100%);
+    transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+  }
+  .mobile-menu.open { transform: translateX(0); }
+
+  .mobile-menu-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-menu-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 400; letter-spacing: 0.14em;
+    color: var(--dark-brown); text-decoration: none; text-transform: uppercase;
+  }
+  .mobile-menu-close {
+    background: none; border: none; cursor: pointer;
+    color: var(--muted); font-size: 22px; line-height: 1;
+    padding: 4px; transition: color 0.2s;
+  }
+  .mobile-menu-close:hover { color: var(--dark-brown); }
+
+  .mobile-menu-nav {
+    padding: 32px 28px; flex: 1;
+  }
+  .mobile-menu-nav a {
+    display: block;
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--dark-brown); text-decoration: none; font-weight: 400;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .mobile-menu-nav a:first-child { border-top: 1px solid var(--border); }
+  .mobile-menu-nav a:hover { color: var(--terracotta); padding-left: 6px; }
+
+  .mobile-menu-footer {
+    padding: 28px;
+    border-top: 1px solid var(--border);
+  }
+  .mobile-menu-footer a {
+    display: block; font-size: 12px; color: var(--muted);
+    text-decoration: none; margin-bottom: 10px;
+    letter-spacing: 0.08em; transition: color 0.2s;
+  }
+  .mobile-menu-footer a:hover { color: var(--dark-brown); }
+  .mobile-menu-social {
+    margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .mobile-menu-social a { display: inline; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 0; }
+
+  /* Burger actif → X sur mobile */
+  .burger-btn { cursor: pointer; }
+  @media (min-width: 901px) {
+    .mobile-menu, .mobile-menu-overlay { display: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -150,7 +243,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   <div class="contact-infos fade-in">
     <div class="info-block">
       <span class="info-label">E-mail</span>
-      <a href="mailto:lateliermaude@gmail.com" class="info-value">lateliermaude@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#b1ddd0c5d4ddd8d4c3dcd0c4d5d4f1d6dcd0d8dd9fd2dedc" class="info-value"><span class="__cf_email__" data-cfemail="6e020f1a0b02070b1c030f1b0a0b2e09030f0702400d0103">[email&#160;protected]</span></a>
       <p class="info-note">Réponse sous 48h ouvrées</p>
     </div>
     <hr class="info-divider">
@@ -226,7 +319,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
     <div class="faq-item fade-in" style="transition-delay:0.05s">
       <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Comment fonctionnent les retours ?<span class="faq-icon" aria-hidden="true">+</span></button>
-      <div class="faq-body">Vous disposez de <strong>30 jours</strong> à compter de l'expédition. Articles non portés, état d'origine. Les frais de livraison initiaux ne sont pas remboursables. Écrivez-nous à <a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a>.</div>
+      <div class="faq-body">Vous disposez de <strong>30 jours</strong> à compter de l'expédition. Articles non portés, état d'origine. Les frais de livraison initiaux ne sont pas remboursables. Écrivez-nous à <a href="/cdn-cgi/l/email-protection#2549445140494c40574844504140654248444c490b464a48"><span class="__cf_email__" data-cfemail="d0bcb1a4b5bcb9b5a2bdb1a5b4b590b7bdb1b9bcfeb3bfbd">[email&#160;protected]</span></a>.</div>
     </div>
     <div class="faq-item fade-in" style="transition-delay:0.1s">
       <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Comment choisir ma taille ?<span class="faq-icon" aria-hidden="true">+</span></button>
@@ -255,11 +348,11 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
     <div class="footer-col">
       <h4>Informations</h4>
-      <ul><li><a href="notre-histoire.html">Notre histoire</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">CGV</a></li><li><a href="#">Mentions légales</a></li></ul>
+      <ul><li><a href="notre-histoire.html">Notre histoire</a></li><li><a href="contact.html">Contact</a></li><li><a href="cgv.html">CGV</a></li><li><a href="cgv.html#mentions">Mentions légales</a></li></ul>
     </div>
     <div class="footer-col">
       <h4>Nous rejoindre</h4>
-      <ul><li><a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a></li><li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li></ul>
+      <ul><li><a href="/cdn-cgi/l/email-protection#315d5045545d5854435c5044555471565c50585d1f525e5c"><span class="__cf_email__" data-cfemail="026e6376676e6b67706f6377666742656f636b6e2c616d6f">[email&#160;protected]</span></a></li><li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li></ul>
     </div>
   </div>
   <div class="footer-bottom">
@@ -305,7 +398,22 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
 @media(max-width:600px){.popup-inner{padding:44px 28px 34px}.popup-title{font-size:36px}}
 </style>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  // ── Menu mobile ──
+  function openMobileMenu() {
+    document.getElementById('mobile-menu').classList.add('open');
+    document.getElementById('mobile-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('mobile-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
+  // Relier le bouton burger
+  document.querySelector('button[aria-label="Menu"]')?.addEventListener('click', openMobileMenu);
+</script><script>
   window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',scrollY>10),{passive:true});
 
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
@@ -338,15 +446,4 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   function closePopup(){document.getElementById('cercle-popup').classList.remove('open');sessionStorage.setItem(POPUP_KEY,'1')}
   function handlePopupSubmit(e){
     e.preventDefault();
-    const input=e.target.querySelector('input[type="email"]');
-    if(!input.value)return;
-    const btn=e.target.querySelector('button[type="submit"]');
-    btn.textContent='Bienvenue ✓';btn.style.background='#6B4F3A';
-    sessionStorage.setItem(POPUP_KEY,'1');setTimeout(closePopup,1800);
-  }
-  setTimeout(openPopup,6000);
-  document.getElementById('cercle-popup').addEventListener('click',function(e){if(e.target===this)closePopup()});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup()});
-</script>
-</body>
-</html>
+    cons
