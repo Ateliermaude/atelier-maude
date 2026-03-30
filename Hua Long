@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manteau Huā Long en Cachemire — Atelier MAUDÉ</title>
+<meta name="description" content="Manteau Huā Long en Cachemire, 420 € au lieu de 545 €. Laine &amp; Cachemire, long manteau élégant en camel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0EA;
+    --warm-white: #FAF8F5;
+    --brown: #6B4F3A;
+    --dark-brown: #3A2A1E;
+    --terracotta: #8B4A3A;
+    --gold: #C9A96E;
+    --text: #2C2218;
+    --muted: #8A7B6F;
+    --border: rgba(107,79,58,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0 }
+
+  /* ── ANNOUNCEMENT ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    text-align: center;
+    padding: 11px 20px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  header.scrolled { box-shadow: 0 2px 20px rgba(58,42,30,0.08); }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 40px; max-width: 1400px; margin: 0 auto;
+  }
+  .header-left, .header-right { display: flex; gap: 22px; align-items: center; }
+  .header-left button, .header-right button {
+    background: none; border: none; cursor: pointer;
+    color: var(--dark-brown); padding: 4px; transition: color 0.2s;
+  }
+  .header-left button:hover, .header-right button:hover { color: var(--terracotta); }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; letter-spacing: 0.14em;
+    color: var(--dark-brown); text-decoration: none; text-transform: uppercase;
+  }
+  nav {
+    display: flex; justify-content: center; gap: 40px; padding: 0 40px 14px;
+  }
+  nav a {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--dark-brown); text-decoration: none; font-weight: 400;
+    position: relative; padding-bottom: 2px;
+  }
+  nav a::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 1px; background: var(--terracotta); transition: width 0.3s;
+  }
+  nav a:hover::after { width: 100%; }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    max-width: 1400px; margin: 0 auto;
+    padding: 18px 40px 0;
+    display: flex; gap: 10px; align-items: center;
+  }
+  .breadcrumb a, .breadcrumb span {
+    font-size: 11px; letter-spacing: 0.12em; color: var(--muted);
+    text-decoration: none; text-transform: uppercase;
+  }
+  .breadcrumb a:hover { color: var(--dark-brown); }
+  .breadcrumb .sep { opacity: 0.4; }
+
+  /* ── PRODUCT LAYOUT ── */
+  .product-layout {
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 40px 80px;
+    align-items: start;
+  }
+
+  /* ── GALLERY ── */
+  .gallery { display: grid; grid-template-columns: 72px 1fr; gap: 14px; }
+
+  .gallery-thumbs {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .gallery-thumb {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+    background: var(--cream);
+  }
+  .gallery-thumb.active { border-color: var(--dark-brown); }
+  .gallery-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+    transition: transform 0.4s;
+    display: block;
+  }
+  .gallery-thumb:hover img { transform: scale(1.05); }
+
+  .gallery-main {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .gallery-main img {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: block;
+  }
+  .gallery-main img.active { opacity: 1; }
+
+  .promo-tag {
+    position: absolute; top: 20px; left: 20px;
+    background: var(--terracotta); color: #fff;
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 6px 12px; z-index: 2; font-family: 'Jost', sans-serif;
+  }
+  .discount-badge {
+    position: absolute; top: 20px; right: 20px;
+    background: var(--dark-brown); color: var(--gold);
+    font-size: 10px; letter-spacing: 0.1em;
+    padding: 5px 10px; z-index: 2; font-family: 'Jost', sans-serif;
+  }
+
+  /* ── PRODUCT INFO ── */
+  .product-info { position: sticky; top: 100px; }
+
+  .product-eyebrow {
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 14px;
+  }
+  .product-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 2.5vw, 38px);
+    font-weight: 300; line-height: 1.2;
+    color: var(--dark-brown); margin-bottom: 20px;
+  }
+
+  /* Stars */
+  .product-rating {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 24px;
+  }
+  .stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
+  .rating-text {
+    font-size: 12px; color: var(--muted); letter-spacing: 0.05em;
+  }
+  .rating-link {
+    font-size: 11px; color: var(--muted); text-decoration: underline;
+    text-underline-offset: 3px; cursor: pointer;
+  }
+  .rating-link:hover { color: var(--dark-brown); }
+
+  .product-price-block { margin-bottom: 28px; }
+  .price-current {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 300; color: var(--dark-brown);
+  }
+  .price-old {
+    font-size: 16px; color: var(--muted); text-decoration: line-through; margin-left: 12px;
+  }
+  .price-saving {
+    display: block; margin-top: 4px;
+    font-size: 12px; color: var(--terracotta); letter-spacing: 0.08em;
+  }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+  /* Color selector */
+  .option-label {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--dark-brown); margin-bottom: 12px; display: block; font-weight: 400;
+  }
+  .color-options { display: flex; gap: 10px; margin-bottom: 24px; }
+  .color-swatch {
+    width: 36px; height: 36px; border-radius: 50%;
+    cursor: pointer; border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .color-swatch:hover { transform: scale(1.1); }
+  .color-swatch.active { border-color: var(--dark-brown); }
+  .color-swatch::after {
+    content: ''; position: absolute; inset: 3px;
+    border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.4);
+  }
+  .swatch-camel { background: #C19A6B; }
+  .swatch-caramel { background: #a0785a; }
+  .color-name {
+    font-size: 11px; color: var(--muted);
+    margin-left: 4px; letter-spacing: 0.06em;
+  }
+
+  /* Size selector */
+  .size-options { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .size-btn {
+    min-width: 52px; padding: 10px 14px;
+    border: 1px solid var(--border); background: none;
+    font-family: 'Jost', sans-serif; font-size: 12px;
+    color: var(--dark-brown); cursor: pointer; letter-spacing: 0.06em;
+    transition: all 0.2s;
+  }
+  .size-btn:hover { border-color: var(--dark-brown); }
+  .size-btn.active { background: var(--dark-brown); color: #fff; border-color: var(--dark-brown); }
+  .size-btn.unavailable { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
+  .size-guide-link {
+    font-size: 11px; color: var(--muted); text-decoration: underline;
+    text-underline-offset: 3px; cursor: pointer; display: inline-block; margin-bottom: 24px;
+    background: none; border: none; font-family: 'Jost', sans-serif;
+    letter-spacing: 0.06em; transition: color 0.2s;
+  }
+  .size-guide-link:hover { color: var(--dark-brown); }
+
+  /* CTA */
+  .btn-add-cart {
+    width: 100%; padding: 17px;
+    background: var(--dark-brown); color: #fff; border: none;
+    font-family: 'Jost', sans-serif; font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.3s;
+    margin-bottom: 12px;
+  }
+  .btn-add-cart:hover { background: var(--terracotta); }
+  .btn-wishlist {
+    width: 100%; padding: 15px;
+    background: none; border: 1px solid var(--border);
+    font-family: 'Jost', sans-serif; font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--dark-brown);
+    cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-wishlist:hover { border-color: var(--dark-brown); background: var(--cream); }
+
+  /* Reassurance */
+  .reassurance { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .reassurance-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 12px; color: var(--muted); line-height: 1.6;
+  }
+  .reassurance-item svg { flex-shrink: 0; margin-top: 1px; color: var(--gold); }
+
+  /* ── TABS ── */
+  .product-tabs { max-width: 1400px; margin: 0 auto; padding: 0 40px 80px; }
+
+  .tabs-nav {
+    display: flex; border-bottom: 1px solid var(--border);
+    margin-bottom: 48px; gap: 0;
+  }
+  .tab-btn {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Jost', sans-serif; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); padding: 14px 28px;
+    position: relative; transition: color 0.2s;
+  }
+  .tab-btn::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
+    height: 2px; background: var(--dark-brown);
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+  .tab-btn.active { color: var(--dark-brown); }
+  .tab-btn.active::after { transform: scaleX(1); }
+  .tab-btn:hover { color: var(--dark-brown); }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Description tab */
+  .tab-description {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+  }
+  .description-text p {
+    font-size: 14px; line-height: 1.95; color: var(--muted); margin-bottom: 16px;
+  }
+  .description-text p:last-child { margin-bottom: 0; }
+  .description-features { list-style: none; }
+  .description-features li {
+    display: flex; gap: 12px; align-items: flex-start;
+    font-size: 13px; color: var(--muted); line-height: 1.7;
+    padding: 12px 0; border-bottom: 1px solid var(--border);
+  }
+  .description-features li:first-child { border-top: 1px solid var(--border); }
+  .description-features li::before {
+    content: '✦'; color: var(--gold); font-size: 10px; flex-shrink: 0; margin-top: 4px;
+  }
+
+  /* Size guide tab */
+  .size-guide-intro {
+    font-size: 14px; line-height: 1.9; color: var(--muted); max-width: 640px; margin-bottom: 36px;
+  }
+  .size-table-wrap { overflow-x: auto; }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--dark-brown); font-weight: 400;
+    padding: 14px 20px; text-align: center;
+    border-bottom: 2px solid var(--border); background: var(--cream);
+  }
+  th:first-child { text-align: left; }
+  td {
+    padding: 13px 20px; text-align: center;
+    border-bottom: 1px solid var(--border); color: var(--muted);
+  }
+  td:first-child { text-align: left; color: var(--dark-brown); font-weight: 400; letter-spacing: 0.06em; }
+  tr:hover td { background: var(--cream); }
+  .size-tip {
+    margin-top: 20px; font-size: 12px; color: var(--muted);
+    padding: 16px 20px; border-left: 2px solid var(--gold);
+    background: var(--cream); line-height: 1.7;
+  }
+
+  /* Composition tab */
+  .composition-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .composition-block h3 {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--dark-brown); margin-bottom: 20px; font-weight: 400;
+  }
+  .composition-list { list-style: none; }
+  .composition-list li {
+    display: flex; justify-content: space-between;
+    padding: 11px 0; border-bottom: 1px solid var(--border);
+    font-size: 13px; color: var(--muted);
+  }
+  .composition-list li:first-child { border-top: 1px solid var(--border); }
+  .composition-list li span:last-child { color: var(--dark-brown); font-weight: 400; }
+  .care-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .care-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    font-size: 13px; color: var(--muted); line-height: 1.7;
+  }
+  .care-icon {
+    flex-shrink: 0; width: 32px; height: 32px;
+    border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+
+  /* Reviews tab */
+  .reviews-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 40px; flex-wrap: wrap; gap: 24px;
+  }
+  .reviews-summary { }
+  .reviews-score {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px; font-weight: 300; color: var(--dark-brown); line-height: 1;
+    margin-bottom: 8px;
+  }
+  .reviews-stars { color: var(--gold); font-size: 18px; letter-spacing: 3px; margin-bottom: 6px; }
+  .reviews-count { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; }
+
+  .reviews-bars { display: flex; flex-direction: column; gap: 8px; min-width: 200px; }
+  .bar-row { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--muted); }
+  .bar-track {
+    flex: 1; height: 4px; background: var(--border); overflow: hidden;
+  }
+  .bar-fill { height: 100%; background: var(--gold); }
+
+  .reviews-grid { display: flex; flex-direction: column; gap: 32px; }
+  .review-card {
+    padding: 28px 0; border-bottom: 1px solid var(--border);
+  }
+  .review-card:last-child { border-bottom: none; }
+  .review-meta {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 10px; flex-wrap: wrap; gap: 8px;
+  }
+  .reviewer-name {
+    font-size: 13px; font-weight: 400; color: var(--dark-brown); letter-spacing: 0.06em;
+  }
+  .review-date { font-size: 11px; color: var(--muted); }
+  .review-stars { color: var(--gold); font-size: 13px; margin-bottom: 10px; }
+  .review-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 400; color: var(--dark-brown); margin-bottom: 8px;
+  }
+  .review-body { font-size: 13px; color: var(--muted); line-height: 1.85; }
+  .review-verified {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-top: 12px;
+  }
+  .review-verified::before { content: '✓'; }
+
+  .reviews-cta {
+    margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--muted); line-height: 1.7;
+  }
+  .reviews-cta a {
+    color: var(--dark-brown); text-decoration: underline;
+    text-underline-offset: 3px; cursor: pointer;
+  }
+
+  /* ── SIZE GUIDE MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(42,26,18,0.5);
+    z-index: 200; display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: auto; }
+  .modal {
+    background: var(--warm-white); max-width: 640px; width: 90%;
+    max-height: 85vh; overflow-y: auto;
+    padding: 48px; position: relative;
+    transform: translateY(20px); transition: transform 0.3s;
+  }
+  .modal-overlay.open .modal { transform: translateY(0); }
+  .modal-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; cursor: pointer;
+    color: var(--muted); font-size: 22px; line-height: 1;
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: var(--dark-brown); }
+  .modal h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 300; color: var(--dark-brown); margin-bottom: 6px;
+  }
+  .modal p.modal-sub {
+    font-size: 12px; color: var(--muted); margin-bottom: 28px; letter-spacing: 0.06em;
+  }
+
+  /* ── RELATED PRODUCTS ── */
+  .related-section {
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    padding: 70px 40px;
+  }
+  .related-section .section-label {
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 14px;
+    max-width: 1400px; margin-left: auto; margin-right: auto;
+    display: block;
+  }
+  .related-section .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 3vw, 44px); font-weight: 300; color: var(--dark-brown); line-height: 1.1;
+    max-width: 1400px; margin: 0 auto 40px;
+  }
+  .related-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 28px; max-width: 1400px; margin: 0 auto;
+  }
+  .related-card { cursor: pointer; }
+  .related-image {
+    position: relative; overflow: hidden;
+    background: var(--warm-white); aspect-ratio: 3/4; margin-bottom: 16px;
+  }
+  .related-image img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+    transition: transform 0.6s ease; display: block;
+  }
+  .related-card:hover .related-image img { transform: scale(1.05); }
+  .related-hover {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 20px; background: linear-gradient(transparent, rgba(42,26,18,0.5));
+    opacity: 0; transition: opacity 0.3s; display: flex; justify-content: center; z-index: 2;
+  }
+  .related-card:hover .related-hover { opacity: 1; }
+  .related-hover a {
+    background: var(--warm-white); color: var(--dark-brown);
+    padding: 11px 26px; font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; text-decoration: none; font-family: 'Jost', sans-serif;
+    transition: background 0.2s, color 0.2s;
+  }
+  .related-hover a:hover { background: var(--dark-brown); color: #fff; }
+  .related-name {
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+    font-weight: 400; color: var(--dark-brown); margin-bottom: 6px;
+  }
+  .related-price { display: flex; gap: 10px; align-items: center; }
+  .related-price .price-current { font-size: 14px; font-weight: 400; color: var(--dark-brown); }
+  .related-price .price-old { font-size: 12px; color: var(--muted); text-decoration: line-through; }
+  .related-promo-tag {
+    position: absolute; top: 14px; left: 14px;
+    background: var(--terracotta); color: #fff;
+    font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 5px 10px; z-index: 2; font-family: 'Jost', sans-serif;
+  }
+
+  /* ── FADE IN ── */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .product-layout { grid-template-columns: 1fr 400px; gap: 40px; }
+  }
+  @media (max-width: 900px) {
+    .product-layout { grid-template-columns: 1fr; padding: 20px 24px 60px; }
+    .gallery { grid-template-columns: 56px 1fr; gap: 10px; }
+    .product-info { position: static; }
+    .tab-description { grid-template-columns: 1fr; gap: 36px; }
+    .composition-grid { grid-template-columns: 1fr; gap: 36px; }
+    .product-tabs { padding: 0 24px 60px; }
+    .related-section { padding: 50px 24px; }
+    .related-grid { grid-template-columns: 1fr 1fr; }
+    .header-inner { padding: 16px 20px; }
+    nav { gap: 22px; padding: 0 20px 12px; overflow-x: auto; white-space: nowrap; }
+    .breadcrumb { padding: 14px 24px 0; }
+    .tab-btn { padding: 12px 16px; font-size: 10px; }
+  }
+  @media (max-width: 600px) {
+    .gallery { grid-template-columns: 1fr; }
+    .gallery-thumbs { flex-direction: row; }
+    .gallery-thumb { width: 64px; height: auto; aspect-ratio: 3/4; flex-shrink: 0; }
+    .related-grid { grid-template-columns: 1fr; }
+    .reviews-header { flex-direction: column; }
+    .modal { padding: 32px 24px; }
+    .tab-btn { padding: 12px 12px; }
+  }
+
+  /* ── ACCORDION ── */
+  .accordion { margin-top: 24px; border-top: 1px solid var(--border); }
+  .accordion-item { border-bottom: 1px solid var(--border); }
+  .accordion-btn {
+    width: 100%; display: flex; justify-content: space-between; align-items: center;
+    background: none; border: none; cursor: pointer;
+    padding: 16px 0;
+    font-family: 'Jost', sans-serif; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--dark-brown); font-weight: 400; text-align: left;
+    transition: color 0.2s;
+  }
+  .accordion-btn:hover { color: var(--terracotta); }
+  .accordion-icon {
+    font-size: 18px; line-height: 1; flex-shrink: 0;
+    transition: transform 0.3s; color: var(--muted);
+  }
+  .accordion-btn.open .accordion-icon { transform: rotate(45deg); }
+  .accordion-body {
+    display: none; padding: 0 0 20px;
+    font-size: 13px; color: var(--muted); line-height: 1.85;
+  }
+  .accordion-body.open { display: block; }
+  .accordion-body p { margin-bottom: 12px; }
+  .accordion-body p:last-child { margin-bottom: 0; }
+  .accordion-body strong { color: var(--dark-brown); font-weight: 400; }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+  SÉLECTION PREMIUM &nbsp;·&nbsp; –30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE
+</div>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button aria-label="Menu">
+        <svg width="22" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="0" y1="1" x2="22" y2="1"/>
+          <line x1="0" y1="7" x2="16" y2="7"/>
+          <line x1="0" y1="13" x2="22" y2="13"/>
+        </svg>
+      </button>
+      <button aria-label="Recherche">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <circle cx="10.5" cy="10.5" r="7.5"/>
+          <line x1="16" y1="16" x2="22" y2="22"/>
+        </svg>
+      </button>
+    </div>
+    <a href="index.html" class="logo">Atelier MAUDÉ</a>
+    <div class="header-right">
+      <button aria-label="Mon compte">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+      <button aria-label="Panier">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <nav aria-label="Navigation principale">
+    <a href="#">Nouveautés</a>
+    <a href="index.html#collection">Manteaux</a>
+    <a href="#">Accessoires</a>
+    <a href="index.html#collection">Promotions</a>
+    <a href="notre-histoire.html">Notre Histoire</a>
+  </nav>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <a href="index.html">Accueil</a>
+  <span class="sep">/</span>
+  <a href="index.html#collection">Manteaux</a>
+  <span class="sep">/</span>
+  <span>Huā Long</span>
+</nav>
+
+<!-- PRODUCT LAYOUT -->
+<div class="product-layout">
+
+  <!-- GALLERY -->
+  <div class="gallery" id="product-gallery">
+    <div class="gallery-thumbs">
+      <div class="gallery-thumb active" onclick="switchImage(0)" role="button" aria-label="Vue 1 — Camel">
+        <img src="att.u9QSQlnhqcKTbC3VlMDkY7H8fG....jpeg" alt="Huā Long camel — miniature 1" loading="lazy">
+      </div>
+      <div class="gallery-thumb" onclick="switchImage(1)" role="button" aria-label="Vue 2 — Camel détail">
+        <img src="att.1FyAbWZAmqrvEJdbUf4hv6KTZg....jpeg" alt="Huā Long camel détail — miniature 2" loading="lazy">
+      </div>
+    </div>
+    <div class="gallery-main">
+      <div class="promo-tag">Promotion</div>
+      <div class="discount-badge">–23%</div>
+      <img src="att.u9QSQlnhqcKTbC3VlMDkY7H8fG....jpeg"
+           alt="Manteau Huā Long en Cachemire — coloris camel, vue principale"
+           class="active" loading="eager">
+      <img src="att.1FyAbWZAmqrvEJdbUf4hv6KTZg....jpeg"
+           alt="Manteau Huā Long en Cachemire — coloris camel, détail"
+           loading="lazy">
+    </div>
+  </div>
+
+  <!-- PRODUCT INFO -->
+  <div class="product-info fade-in">
+    <p class="product-eyebrow">Laine &amp; Cachemire · Atelier MAUDÉ</p>
+    <h1 class="product-title">Manteau Huā Long<br>en Cachemire</h1>
+
+    <div class="product-rating">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span class="rating-text">5,0</span>
+      <button class="rating-link" onclick="openTab('reviews')">3 avis</button>
+    </div>
+
+    <div class="product-price-block">
+      <span class="price-current">350,00 €</span>
+      <span class="price-old" aria-label="Ancien prix 545 euros">455,00 €</span>
+      <span class="price-saving">Vous économisez 125,00 €</span>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Color -->
+    <label class="option-label" id="color-label">Coloris — <span id="color-name-display" class="color-name">Camel</span></label>
+    <div class="color-options" role="group" aria-labelledby="color-label">
+      <div class="color-swatch swatch-camel active"
+           onclick="selectColor(this, 'Camel', 0)"
+           title="Camel" role="button" aria-label="Coloris Camel" tabindex="0"></div>
+      <div class="color-swatch swatch-caramel"
+           onclick="selectColor(this, 'Caramel', 1)"
+           title="Caramel" role="button" aria-label="Coloris Caramel" tabindex="0"></div>
+    </div>
+
+    <!-- Size -->
+    <label class="option-label" id="size-label">Taille</label>
+    <div class="size-options" role="group" aria-labelledby="size-label">
+      <button class="size-btn" onclick="selectSize(this)">XS</button>
+      <button class="size-btn active" onclick="selectSize(this)">S</button>
+      <button class="size-btn" onclick="selectSize(this)">M</button>
+      <button class="size-btn" onclick="selectSize(this)">L</button>
+      <button class="size-btn unavailable" disabled title="Rupture de stock">XL</button>
+    </div>
+    <button class="size-guide-link" onclick="openModal('size-modal')">Guide des tailles</button>
+
+    <!-- ACCORDION LIVRAISON & RETOUR -->
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+          Livraison
+          <span class="accordion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-body">
+          <p>Votre manteau est expédié directement depuis nos ateliers partenaires avec un <strong>suivi de commande inclus</strong>.</p>
+          <p>La livraison est <strong>gratuite</strong> et s'effectue sous <strong>8 à 15 jours ouvrés</strong> selon votre localisation.</p>
+          <p>Zones desservies : France, Belgique, Suisse.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+          Retours
+          <span class="accordion-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-body">
+          <p>Vous disposez de <strong>30 jours</strong> à compter de la date d'expédition pour retourner votre article contre remboursement.</p>
+          <p>Les articles doivent être <strong>non portés</strong>, dans leur état d'origine. Les frais de livraison initiaux ne sont pas remboursables.</p>
+          <p>Pour initier un retour, contactez-nous à <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3f3332283d3f281c3d28393035392e313d293839723f3331">[email&#160;protected]</a></strong>.</p>
+        </div>
+      </div>
+    </div>
+    <!-- CTAs -->
+    <button class="btn-add-cart" onclick="addToCart(this)">Ajouter au panier</button>
+    <button class="btn-wishlist">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      Ajouter aux favoris
+    </button>
+
+    <!-- Reassurance -->
+    <div class="reassurance">
+      <div class="reassurance-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+        <span>Livraison gratuite en France &amp; Belgique dès 200 €</span>
+      </div>
+      <div class="reassurance-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+        </svg>
+        <span>Retours gratuits sous 30 jours, sans condition</span>
+      </div>
+      <div class="reassurance-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span>Paiement sécurisé — Matières sélectionnées en Mongolie-Intérieure</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="product-tabs">
+  <div class="tabs-nav" role="tablist">
+    <button class="tab-btn active" role="tab" aria-selected="true"  onclick="openTab('description')">Description</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="openTab('tailles')">Guide des tailles</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="openTab('composition')">Composition &amp; Entretien</button>
+    <button class="tab-btn"        role="tab" aria-selected="false" onclick="openTab('reviews')">Avis clients (3)</button>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="tab-panel active" id="tab-description" role="tabpanel">
+    <div class="tab-description">
+      <div class="description-text">
+        <p>Le Manteau Huā Long est la pièce statement de notre collection hivernale. Sa longueur maxi et son tombé généreux enveloppent la silhouette dans une élégance naturelle et intemporelle, signature de l'Atelier MAUDÉ.</p>
+        <p>Confectionné dans un cachemire de Grade A soigneusement sélectionné, ce manteau camel long conjugue chaleur enveloppante et raffinement absolu. Sa teinte camel, douce et lumineuse, s'accorde à toutes les palettes de saison.</p>
+        <p>L'ampleur soigneusement dosée du Huā Long offre un confort de mouvement exceptionnel, tandis que la doublure en soie satinée garantit un tombé d'une fluidité remarquable.</p>
+      </div>
+      <ul class="description-features" aria-label="Caractéristiques du produit">
+        <li>Longueur maxi, tombé généreux</li>
+        <li>Mélange 70% Laine &amp; 30% Cachemire de Mongolie-Intérieure</li>
+        <li>Doublure intérieure en soie satinée</li>
+        <li>Fermeture boutonnée recouverte cachemire</li>
+        <li>Poches latérales plaquées discrètes</li>
+        <li>Disponible en Camel et Caramel</li>
+        <li>Confection artisanale, pièce numérotée</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TAILLES -->
+  <div class="tab-panel" id="tab-tailles" role="tabpanel">
+    <p class="size-guide-intro">Nos manteaux sont taillés dans un cachemire légèrement structuré. Nous recommandons de prendre votre taille habituelle. En cas de doute entre deux tailles, optez pour la taille supérieure pour un port décontracté, ou inférieure pour une silhouette plus cintrée.</p>
+    <div class="size-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Taille</th>
+            <th>Tour de poitrine</th>
+            <th>Tour de taille</th>
+            <th>Tour de hanches</th>
+            <th>Longueur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>XS</td><td>80 – 84 cm</td><td>62 – 66 cm</td><td>88 – 92 cm</td><td>88 cm</td></tr>
+          <tr><td>S</td> <td>84 – 88 cm</td><td>66 – 70 cm</td><td>92 – 96 cm</td><td>90 cm</td></tr>
+          <tr><td>M</td> <td>88 – 92 cm</td><td>70 – 74 cm</td><td>96 – 100 cm</td><td>92 cm</td></tr>
+          <tr><td>L</td> <td>92 – 96 cm</td><td>74 – 78 cm</td><td>100 – 104 cm</td><td>94 cm</td></tr>
+          <tr><td>XL</td><td>96 – 100 cm</td><td>78 – 82 cm</td><td>104 – 108 cm</td><td>96 cm</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="size-tip">💡 Le mannequin mesure 1m74 et porte une taille S. La longueur indiquée correspond à la mesure depuis la couture d'épaule jusqu'à l'ourlet.</p>
+  </div>
+
+  <!-- COMPOSITION -->
+  <div class="tab-panel" id="tab-composition" role="tabpanel">
+    <div class="composition-grid">
+      <div class="composition-block">
+        <h3>Composition</h3>
+        <ul class="composition-list">
+          <li><span>Matière principale</span><span>70% Laine, 30% Cachemire</span></li>
+          <li><span>Doublure</span><span>100% Polyester satiné</span></li>
+          <li><span>Boutons</span><span>Corne naturelle</span></li>
+          <li><span>Ceinture</span><span>100% Laine &amp; Cachemire</span></li>
+          <li><span>Origine matière</span><span>Mongolie-Intérieure</span></li>
+          <li><span>Fabrication</span><span>Chine</span></li>
+        </ul>
+      </div>
+      <div class="composition-block">
+        <h3>Conseils d'Entretien</h3>
+        <ul class="care-list">
+          <li class="care-item">
+            <div class="care-icon" aria-hidden="true">🧺</div>
+            <span>Lavage à la main à l'eau froide (max. 30°C) avec un détergent doux pour laine et cachemire.</span>
+          </li>
+          <li class="care-item">
+            <div class="care-icon" aria-hidden="true">✋</div>
+            <span>Ne pas essorer. Enrouler délicatement dans une serviette propre pour retirer l'excès d'eau.</span>
+          </li>
+          <li class="care-item">
+            <div class="care-icon" aria-hidden="true">👗</div>
+            <span>Sécher à plat, à l'abri de la lumière directe du soleil et des sources de chaleur.</span>
+          </li>
+          <li class="care-item">
+            <div class="care-icon" aria-hidden="true">♨️</div>
+            <span>Repassage à basse température (max. 110°C) à la vapeur, sur l'envers, avec un tissu protecteur.</span>
+          </li>
+          <li class="care-item">
+            <div class="care-icon" aria-hidden="true">🚫</div>
+            <span>Ne pas mettre au sèche-linge. Nettoyage à sec possible chez un professionnel spécialisé.</span>
+          </li>
+          <li class="care-item">
+            <div class="care-icon" aria-hidden="true">🌿</div>
+            <span>Ranger dans une housse en coton respirante, avec un bloc de cèdre pour éloigner les mites.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="tab-panel" id="tab-reviews" role="tabpanel">
+    <div class="reviews-header">
+      <div class="reviews-summary">
+        <div class="reviews-score" aria-label="Note moyenne : 5 sur 5">5,0</div>
+        <div class="reviews-stars" aria-hidden="true">★★★★★</div>
+        <div class="reviews-count">Basé sur 3 avis vérifiés</div>
+      </div>
+      <div class="reviews-bars" aria-label="Répartition des notes">
+        <div class="bar-row"><span>5 ★</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span>3</span></div>
+        <div class="bar-row"><span>4 ★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span>0</span></div>
+        <div class="bar-row"><span>3 ★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span>0</span></div>
+        <div class="bar-row"><span>2 ★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span>0</span></div>
+        <div class="bar-row"><span>1 ★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span>0</span></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-meta">
+          <span class="reviewer-name">Camille D.</span>
+          <span class="review-date">Février 2025</span>
+        </div>
+        <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+        <h3 class="review-title">Un investissement qui en vaut chaque centime</h3>
+        <p class="review-body">Je cherchais un manteau en cachemire depuis des années, hésitant toujours sur la qualité. Celui-ci a dépassé toutes mes attentes — la matière est d'une douceur incroyable, la coupe est parfaite et la ceinture le rend vraiment polyvalent. Porté avec un jean ou une robe, il élève instantanément la tenue.</p>
+        <span class="review-verified">Achat vérifié</span>
+      </div>
+      <div class="review-card">
+        <div class="review-meta">
+          <span class="reviewer-name">Élise M.</span>
+          <span class="review-date">Janvier 2025</span>
+        </div>
+        <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+        <h3 class="review-title">La couleur marine est sublime</h3>
+        <p class="review-body">J'ai commandé le coloris marine après avoir longtemps hésité avec le noir. Aucun regret — cette teinte profonde est vraiment singulière, très difficile à trouver ailleurs. Le tombé est impeccable et la doublure en soie rend l'enfilage très agréable. Je recommande sans la moindre réserve.</p>
+        <span class="review-verified">Achat vérifié</span>
+      </div>
+      <div class="review-card">
+        <div class="review-meta">
+          <span class="reviewer-name">Sophie L.</span>
+          <span class="review-date">Décembre 2024</span>
+        </div>
+        <div class="review-stars" aria-label="5 étoiles">★★★★★</div>
+        <h3 class="review-title">Cadeau parfait, réception impeccable</h3>
+        <p class="review-body">Offert à ma mère pour Noël. L'emballage à lui seul était déjà un moment — très soigné, discret et élégant. Le manteau a été un vrai coup de cœur. Ma mère, habituée aux grandes maisons, a été bluffée par la qualité du cachemire. La ceinture est amovible, ce qui est très pratique au quotidien.</p>
+        <span class="review-verified">Achat vérifié</span>
+      </div>
+    </div>
+
+    <div class="reviews-cta">
+      Vous avez acheté ce produit ? <a onclick="alert('Fonctionnalité disponible prochainement.')">Partagez votre expérience</a> et aidez d'autres clientes à faire leur choix.
+    </div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<section class="related-section" aria-labelledby="related-title">
+  <span class="section-label">Vous aimerez aussi</span>
+  <h2 class="section-title" id="related-title">Compléter votre garde-robe</h2>
+  <div class="related-grid">
+    <article class="related-card">
+      <div class="related-image">
+        <div class="related-promo-tag">Promotion</div>
+        <img src="att.u9QSQlnhqcKTbC3VlMDkY7H8fG....jpeg"
+             alt="Manteau Yūn Court Ceinturé en Cachemire noir" loading="lazy">
+        <div class="related-hover"><a href="yun-court.html">Voir le produit</a></div>
+      </div>
+      <h3 class="related-name">Manteau Yūn Court Ceinturé en Cachemire</h3>
+      <div class="related-price">
+        <span class="price-current">350,00 €</span>
+        <span class="price-old">455,00 €</span>
+      </div>
+    </article>
+    <article class="related-card">
+      <div class="related-image">
+        <div class="related-promo-tag">Promotion</div>
+        <img src="1AD9BC38-06E5-43CA-812A-42E0465FA1CD.png"
+             alt="Manteau Yūn Long Ceinturé en Cachemire noir" loading="lazy">
+        <div class="related-hover"><a href="yun-long.html">Voir le produit</a></div>
+      </div>
+      <h3 class="related-name">Manteau Yūn Long Ceinturé en Cachemire</h3>
+      <div class="related-price">
+        <span class="price-current">450,00 €</span>
+        <span class="price-old">585,00 €</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- SIZE GUIDE MODAL -->
+<div class="modal-overlay" id="size-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fermer">✕</button>
+    <h2 id="modal-title">Guide des tailles</h2>
+    <p class="modal-sub">Yūn Court Ceinturé — mesures en centimètres</p>
+    <div class="size-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Taille</th><th>Poitrine</th><th>Taille</th><th>Hanches</th><th>Longueur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>XS</td><td>80 – 84</td><td>62 – 66</td><td>88 – 92</td><td>88 cm</td></tr>
+          <tr><td>S</td> <td>84 – 88</td><td>66 – 70</td><td>92 – 96</td><td>90 cm</td></tr>
+          <tr><td>M</td> <td>88 – 92</td><td>70 – 74</td><td>96 – 100</td><td>92 cm</td></tr>
+          <tr><td>L</td> <td>92 – 96</td><td>74 – 78</td><td>100 – 104</td><td>94 cm</td></tr>
+          <tr><td>XL</td><td>96 – 100</td><td>78 – 82</td><td>104 – 108</td><td>96 cm</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="size-tip" style="margin-top:16px">Le mannequin mesure 1m74 et porte une taille S.</p>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ── Header shadow ──
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // ── Fade-in ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  setTimeout(() => document.querySelector('.product-info.fade-in')?.classList.add('visible'), 150);
+
+  // ── Gallery ──
+  function switchImage(index) {
+    const gallery = document.getElementById('product-gallery');
+    gallery.querySelectorAll('.gallery-thumb').forEach((t, i) => t.classList.toggle('active', i === index));
+    gallery.querySelectorAll('.gallery-main img').forEach((img, i) => img.classList.toggle('active', i === index));
+  }
+
+  // ── Color selector ──
+  function selectColor(el, name, imgIndex) {
+    document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('color-name-display').textContent = name;
+    switchImage(imgIndex);
+  }
+
+  // ── Size selector ──
+  function selectSize(el) {
+    document.querySelectorAll('.size-btn:not(.unavailable)').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // ── Add to cart ──
+  function addToCart(btn) {
+    const original = btn.textContent;
+    btn.textContent = '✓ Ajouté au panier';
+    btn.style.background = '#5a7a4a';
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.background = '';
+    }, 2500);
+  }
+
+  // ── Tabs ──
+  function openTab(name) {
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+      const panels = ['description','tailles','composition','reviews'];
+      const isActive = panels[i] === name;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive);
+    });
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    const panel = document.getElementById('tab-' + name);
+    if (panel) {
+      panel.classList.add('active');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // ── Modal ──
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(e) {
+    if (!e || e.target.classList.contains('modal-overlay') || e.target.classList.contains('modal-close')) {
+      document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal({ target: { classList: { contains: () => true } } }); });
+
+  // ── Accordion ──
+  function toggleAccordion(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // Ferme tous les autres
+    document.querySelectorAll('.accordion-btn.open').forEach(b => {
+      b.classList.remove('open');
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      body.classList.add('open');
+    }
+  }
+
+  // ── Cercle MAUDÉ popup ──
+  const POPUP_KEY = 'maude_cercle_dismissed';
+  function openPopup() {
+    if (sessionStorage.getItem(POPUP_KEY)) return;
+    document.getElementById('cercle-popup').classList.add('open');
+  }
+  function closePopup() {
+    document.getElementById('cercle-popup').classList.remove('open');
+    sessionStorage.setItem(POPUP_KEY, '1');
+  }
+  function handlePopupSubmit(e) {
+    e.preventDefault();
+    const input = e.target.querySelector('input[type="email"]');
+    if (!input.value) return;
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Bienvenue ✓';
+    btn.style.background = '#6B4F3A';
+    sessionStorage.setItem(POPUP_KEY, '1');
+    setTimeout(closePopup, 1800);
+  }
+  setTimeout(openPopup, 6000);
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('cercle-popup').addEventListener('click', function(e) {
+      if (e.target === this) closePopup();
+    });
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+</script>
+
+
+<!-- POP-UP CERCLE MAUDÉ -->
+<div id="cercle-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup-inner">
+    <button class="popup-close" onclick="closePopup()" aria-label="Fermer">✕</button>
+    <p class="popup-eyebrow">Bienvenue</p>
+    <h2 class="popup-title" id="popup-title">Le Cercle<br>MAUDÉ</h2>
+    <p class="popup-text">Recevez nos nouvelles pièces, inspirations matière et actualités de l'atelier.</p>
+    <form class="popup-form" onsubmit="handlePopupSubmit(event)" novalidate>
+      <label for="popup-email" class="sr-only">Votre adresse e-mail</label>
+      <input type="email" id="popup-email" name="email"
+             placeholder="Votre adresse e-mail"
+             autocomplete="email" required>
+      <button type="submit">S'inscrire</button>
+    </form>
+    <button class="popup-decline" onclick="closePopup()">Non, merci</button>
+  </div>
+</div>
+
+<style>
+#cercle-popup {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(42,26,18,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(3px);
+}
+#cercle-popup.open { opacity: 1; pointer-events: auto; }
+.popup-inner {
+  background: var(--warm-white);
+  max-width: 420px; width: 90%;
+  padding: 52px 44px 40px;
+  position: relative; text-align: center;
+  transform: translateY(16px);
+  transition: transform 0.4s ease;
+}
+#cercle-popup.open .popup-inner { transform: translateY(0); }
+.popup-close {
+  position: absolute; top: 18px; right: 20px;
+  background: none; border: none; cursor: pointer;
+  color: var(--muted); font-size: 18px; line-height: 1;
+  transition: color 0.2s;
+}
+.popup-close:hover { color: var(--dark-brown); }
+.popup-eyebrow {
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--terracotta); margin-bottom: 14px;
+}
+.popup-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px; font-weight: 300; line-height: 1.1;
+  color: var(--dark-brown); margin-bottom: 18px;
+  letter-spacing: 0.04em;
+}
+.popup-text {
+  font-size: 13px; line-height: 1.85; color: var(--muted);
+  margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto;
+}
+.popup-form {
+  display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;
+}
+.popup-form input {
+  background: transparent;
+  border: none; border-bottom: 1px solid var(--border);
+  padding: 12px 4px; font-family: 'Jost', sans-serif;
+  font-size: 13px; color: var(--dark-brown); outline: none;
+  text-align: center; transition: border-color 0.2s;
+}
+.popup-form input:focus { border-bottom-color: var(--dark-brown); }
+.popup-form input::placeholder { color: var(--muted); letter-spacing: 0.06em; }
+.popup-form button[type="submit"] {
+  background: var(--dark-brown); color: #fff; border: none;
+  padding: 15px; font-family: 'Jost', sans-serif;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.3s; margin-top: 4px;
+}
+.popup-form button[type="submit"]:hover { background: var(--terracotta); }
+.popup-decline {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Jost', sans-serif; font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
