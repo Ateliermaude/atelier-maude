@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Atelier MAUDÉ</title>
+<meta name="description" content="Contactez Atelier MAUDÉ — une question sur nos manteaux, une commande, ou simplement envie d'échanger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.announcement{background:var(--terracotta);color:#fff;text-align:center;padding:11px 20px;font-size:11px;letter-spacing:0.15em;font-weight:400}
+
+header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
+header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1400px;margin:0 auto}
+.header-left,.header-right{display:flex;gap:22px;align-items:center}
+.header-left button,.header-right button{background:none;border:none;cursor:pointer;color:var(--dark-brown);padding:4px;transition:color 0.2s}
+.header-left button:hover,.header-right button:hover{color:var(--terracotta)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.14em;color:var(--dark-brown);text-decoration:none;text-transform:uppercase}
+nav{display:flex;justify-content:center;gap:40px;padding:0 40px 14px}
+nav a{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--dark-brown);text-decoration:none;font-weight:400;position:relative;padding-bottom:2px}
+nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--terracotta);transition:width 0.3s}
+nav a:hover::after{width:100%}
+nav a.active{color:var(--terracotta)}
+nav a.active::after{width:100%}
+
+.page-hero{background:var(--cream);padding:80px 40px 70px;text-align:center;border-bottom:1px solid var(--border)}
+.page-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:20px;display:block}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,82px);font-weight:300;line-height:1.05;color:var(--dark-brown);margin-bottom:24px}
+.page-title em{font-style:italic;color:var(--brown)}
+.page-subtitle{font-size:15px;line-height:1.9;color:var(--muted);max-width:480px;margin:0 auto}
+
+.contact-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:0;max-width:1200px;margin:0 auto;padding:80px 40px;align-items:start}
+
+.contact-infos{padding-right:60px}
+.info-block{margin-bottom:48px}
+.info-label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:12px;display:block}
+.info-value{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--dark-brown);line-height:1.5;text-decoration:none;display:block;transition:color 0.2s}
+a.info-value:hover{color:var(--terracotta)}
+.info-note{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.7}
+.info-divider{border:none;border-top:1px solid var(--border);margin:0 0 48px}
+.response-time{background:var(--cream);padding:20px 24px;border-left:2px solid var(--gold)}
+.response-time p{font-size:13px;color:var(--muted);line-height:1.75}
+.response-time strong{color:var(--dark-brown);font-weight:400}
+
+.contact-form-wrap{border-left:1px solid var(--border);padding-left:60px}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--dark-brown);margin-bottom:36px;line-height:1.2}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group.full{grid-column:1/-1}
+label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dark-brown);font-weight:400}
+input[type="text"],input[type="email"],select,textarea{background:transparent;border:none;border-bottom:1px solid var(--border);padding:12px 0;font-family:'Jost',sans-serif;font-size:14px;color:var(--dark-brown);outline:none;transition:border-color 0.25s;width:100%;font-weight:300;border-radius:0;-webkit-appearance:none}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+input:focus,select:focus,textarea:focus{border-bottom-color:var(--dark-brown)}
+select{cursor:pointer;color:var(--muted);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A7B6F' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;padding-right:24px}
+select.has-value{color:var(--dark-brown)}
+textarea{resize:vertical;min-height:130px;line-height:1.7;padding-top:12px}
+.form-consent{grid-column:1/-1;display:flex;align-items:flex-start;gap:12px;margin-top:4px}
+.form-consent input[type="checkbox"]{width:16px;height:16px;flex-shrink:0;margin-top:2px;cursor:pointer;accent-color:var(--dark-brown);padding:0;border:1px solid var(--border);-webkit-appearance:auto}
+.form-consent label{font-size:11px;letter-spacing:0.04em;text-transform:none;color:var(--muted);line-height:1.7;cursor:pointer}
+.btn-submit{width:100%;padding:16px;background:var(--dark-brown);color:#fff;border:none;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;margin-top:28px;grid-column:1/-1}
+.btn-submit:hover{background:var(--terracotta)}
+.form-success{display:none;text-align:center;padding:48px 24px;border:1px solid var(--border)}
+.form-success.show{display:block}
+.form-success-icon{color:var(--gold);font-size:28px;margin-bottom:20px;display:block}
+.form-success h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--dark-brown);margin-bottom:12px}
+.form-success p{font-size:13px;color:var(--muted);line-height:1.85}
+
+.faq-section{background:var(--cream);border-top:1px solid var(--border);padding:80px 40px}
+.faq-inner{max-width:760px;margin:0 auto}
+.faq-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:16px;display:block}
+.faq-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3vw,44px);font-weight:300;color:var(--dark-brown);margin-bottom:48px;line-height:1.15}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-of-type{border-top:1px solid var(--border)}
+.faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;padding:18px 0;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:0.06em;color:var(--dark-brown);text-align:left;transition:color 0.2s}
+.faq-btn:hover{color:var(--terracotta)}
+.faq-icon{font-size:18px;color:var(--muted);transition:transform 0.3s;flex-shrink:0}
+.faq-btn.open .faq-icon{transform:rotate(45deg)}
+.faq-body{display:none;padding:0 0 20px;font-size:13px;color:var(--muted);line-height:1.85}
+.faq-body.open{display:block}
+.faq-body a{color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px}
+
+footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 40px 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;max-width:1400px;margin:0 auto 50px}
+.footer-brand p{font-size:13px;color:var(--muted);line-height:1.85;max-width:260px;margin-top:18px}
+.footer-col h4{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:22px;font-weight:400}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--dark-brown)}
+.footer-bottom{max-width:1400px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:12px;color:var(--muted)}
+
+.fade-in{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  .contact-layout{grid-template-columns:1fr;padding:50px 24px}
+  .contact-infos{padding-right:0;margin-bottom:50px}
+  .contact-form-wrap{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:50px}
+  .header-inner{padding:16px 20px}
+  nav{gap:22px;padding:0 20px 12px;overflow-x:auto;white-space:nowrap}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .page-hero{padding:60px 24px 50px}
+  .faq-section{padding:60px 24px}
+}
+@media(max-width:600px){
+  .form-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">SÉLECTION PREMIUM &nbsp;·&nbsp; –30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE</div>
+
+<header id="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button aria-label="Menu"><svg width="22" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="1" x2="22" y2="1"/><line x1="0" y1="7" x2="16" y2="7"/><line x1="0" y1="13" x2="22" y2="13"/></svg></button>
+    </div>
+    <a href="index.html" class="logo">Atelier MAUDÉ</a>
+    <div class="header-right">
+      <button aria-label="Mon compte"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button aria-label="Panier"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+    </div>
+  </div>
+  <nav>
+    <a href="index.html#collection">Manteaux</a>
+    <a href="index.html#collection">Promotions</a>
+    <a href="notre-histoire.html">Notre Histoire</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<div class="page-hero fade-in">
+  <span class="page-eyebrow">Atelier MAUDÉ</span>
+  <h1 class="page-title">Une question ?<br><em>Écrivez-nous.</em></h1>
+  <p class="page-subtitle">Nous lisons chaque message personnellement et nous vous répondons avec soin, sous 48h.</p>
+</div>
+
+<div class="contact-layout">
+  <div class="contact-infos fade-in">
+    <div class="info-block">
+      <span class="info-label">E-mail</span>
+      <a href="mailto:lateliermaude@gmail.com" class="info-value">lateliermaude@gmail.com</a>
+      <p class="info-note">Réponse sous 48h ouvrées</p>
+    </div>
+    <hr class="info-divider">
+    <div class="info-block">
+      <span class="info-label">Instagram</span>
+      <a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener" class="info-value">@ateliermaude</a>
+      <p class="info-note">Questions rapides, inspirations, coulisses de l'atelier</p>
+    </div>
+    <hr class="info-divider">
+    <div class="info-block">
+      <span class="info-label">Commandes &amp; Suivi</span>
+      <span class="info-value" style="font-size:16px;cursor:default">Livraison 8–15 jours ouvrés</span>
+      <p class="info-note">Pour toute question sur votre commande, mentionnez votre numéro de commande dans votre message.</p>
+    </div>
+    <div class="response-time">
+      <p><strong>Nous sommes Aude et Mathilde</strong>, les deux fondatrices. Chaque message est lu et traité par nous — pas par un service automatisé.</p>
+    </div>
+  </div>
+
+  <div class="contact-form-wrap fade-in" style="transition-delay:0.1s">
+    <h2 class="form-title">Envoyez-nous<br>un message</h2>
+    <div id="contact-form-container">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="contact-prenom">Prénom</label>
+          <input type="text" id="contact-prenom" name="prenom" placeholder="Votre prénom" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="contact-nom">Nom</label>
+          <input type="text" id="contact-nom" name="nom" placeholder="Votre nom" autocomplete="family-name">
+        </div>
+        <div class="form-group full">
+          <label for="contact-email">E-mail <span style="color:var(--terracotta)">*</span></label>
+          <input type="email" id="contact-email" name="email" placeholder="votre@email.com" autocomplete="email" required>
+        </div>
+        <div class="form-group full">
+          <label for="contact-sujet">Sujet</label>
+          <select id="contact-sujet" name="sujet" onchange="this.classList.add('has-value')">
+            <option value="" disabled selected>Sélectionnez un sujet</option>
+            <option value="commande">Question sur une commande</option>
+            <option value="produit">Question sur un produit</option>
+            <option value="retour">Retour ou échange</option>
+            <option value="taille">Conseil taille</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="contact-message">Message <span style="color:var(--terracotta)">*</span></label>
+          <textarea id="contact-message" name="message" placeholder="Dites-nous comment nous pouvons vous aider…" required></textarea>
+        </div>
+        <div class="form-consent full">
+          <input type="checkbox" id="contact-consent" name="consent" required>
+          <label for="contact-consent">J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la politique de confidentialité d'Atelier MAUDÉ.</label>
+        </div>
+        <button type="button" class="btn-submit full" onclick="submitForm()">Envoyer le message</button>
+      </div>
+    </div>
+    <div class="form-success" id="form-success">
+      <span class="form-success-icon">✦</span>
+      <h3>Message envoyé</h3>
+      <p>Merci de nous avoir écrit. Aude ou Mathilde vous répondra dans les 48 heures ouvrées.</p>
+    </div>
+  </div>
+</div>
+
+<div class="faq-section">
+  <div class="faq-inner">
+    <span class="faq-eyebrow fade-in">Questions fréquentes</span>
+    <h2 class="faq-title fade-in">Ce que nos clientes<br>demandent souvent</h2>
+    <div class="faq-item fade-in">
+      <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Quels sont les délais de livraison ?<span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-body">Vos manteaux sont expédiés depuis nos ateliers partenaires avec un suivi inclus. Livraison <strong>gratuite</strong> sous <strong>8 à 15 jours ouvrés</strong>. Nous livrons en France, Belgique et Suisse.</div>
+    </div>
+    <div class="faq-item fade-in" style="transition-delay:0.05s">
+      <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Comment fonctionnent les retours ?<span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-body">Vous disposez de <strong>30 jours</strong> à compter de l'expédition. Articles non portés, état d'origine. Les frais de livraison initiaux ne sont pas remboursables. Écrivez-nous à <a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a>.</div>
+    </div>
+    <div class="faq-item fade-in" style="transition-delay:0.1s">
+      <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Comment choisir ma taille ?<span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-body">Prenez votre taille habituelle. En cas de doute, optez pour la taille supérieure pour un port décontracté. Chaque page produit contient un guide des tailles complet.</div>
+    </div>
+    <div class="faq-item fade-in" style="transition-delay:0.15s">
+      <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Quelle est la composition des manteaux ?<span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-body"><strong>70% Laine, 30% Cachemire</strong> de Mongolie-Intérieure. Fabriqués à Suzhou, Chine, dans des ateliers spécialisés. Nous croyons en la transparence totale sur la composition.</div>
+    </div>
+    <div class="faq-item fade-in" style="transition-delay:0.2s">
+      <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Comment entretenir mon manteau ?<span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-body">Lavage à la main, eau froide max. 30°C. Ne pas essorer — sécher à plat. Repassage basse température sur l'envers. Nettoyage à sec possible.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Atelier MAUDÉ</a>
+      <p>Des manteaux en laine et cachemire d'exception, conçus pour celles qui choisissent l'élégance intemporelle.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Boutique</h4>
+      <ul><li><a href="index.html#collection">Manteaux</a></li><li><a href="index.html#collection">Promotions</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Informations</h4>
+      <ul><li><a href="notre-histoire.html">Notre histoire</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">CGV</a></li><li><a href="#">Mentions légales</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Nous rejoindre</h4>
+      <ul><li><a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a></li><li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Atelier MAUDÉ. Tous droits réservés.</p>
+    <p style="letter-spacing:0.1em">FR &nbsp;|&nbsp; BE &nbsp;|&nbsp; CH</p>
+  </div>
+</footer>
+
+<!-- POPUP -->
+<div id="cercle-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup-inner">
+    <button class="popup-close" onclick="closePopup()" aria-label="Fermer">✕</button>
+    <p class="popup-eyebrow">Bienvenue</p>
+    <h2 class="popup-title" id="popup-title">Le Cercle<br>MAUDÉ</h2>
+    <p class="popup-text">Recevez nos nouvelles pièces, inspirations matière et actualités de l'atelier.</p>
+    <form class="popup-form" onsubmit="handlePopupSubmit(event)" novalidate>
+      <label for="popup-email" class="sr-only">Votre adresse e-mail</label>
+      <input type="email" id="popup-email" placeholder="Votre adresse e-mail" autocomplete="email" required>
+      <button type="submit">S'inscrire</button>
+    </form>
+    <button class="popup-decline" onclick="closePopup()">Non, merci</button>
+  </div>
+</div>
+
+<style>
+#cercle-popup{position:fixed;inset:0;z-index:300;background:rgba(42,26,18,0.55);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(3px)}
+#cercle-popup.open{opacity:1;pointer-events:auto}
+.popup-inner{background:var(--warm-white);max-width:420px;width:90%;padding:52px 44px 40px;position:relative;text-align:center;transform:translateY(16px);transition:transform 0.4s ease}
+#cercle-popup.open .popup-inner{transform:translateY(0)}
+.popup-close{position:absolute;top:18px;right:20px;background:none;border:none;cursor:pointer;color:var(--muted);font-size:18px;line-height:1;transition:color 0.2s}
+.popup-close:hover{color:var(--dark-brown)}
+.popup-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px}
+.popup-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1.1;color:var(--dark-brown);margin-bottom:18px;letter-spacing:0.04em}
+.popup-text{font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:30px;max-width:300px;margin-left:auto;margin-right:auto}
+.popup-form{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.popup-form input{background:transparent;border:none;border-bottom:1px solid var(--border);padding:12px 4px;font-family:'Jost',sans-serif;font-size:13px;color:var(--dark-brown);outline:none;text-align:center;transition:border-color 0.2s}
+.popup-form input:focus{border-bottom-color:var(--dark-brown)}
+.popup-form input::placeholder{color:var(--muted);letter-spacing:0.06em}
+.popup-form button[type="submit"]{background:var(--dark-brown);color:#fff;border:none;padding:15px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;margin-top:4px}
+.popup-form button[type="submit"]:hover{background:var(--terracotta)}
+.popup-decline{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.popup-decline:hover{color:var(--dark-brown)}
+@media(max-width:600px){.popup-inner{padding:44px 28px 34px}.popup-title{font-size:36px}}
+</style>
+
+<script>
+  window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',scrollY>10),{passive:true});
+
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelector('.page-hero.fade-in')?.classList.add('visible'),150);
+
+  function submitForm(){
+    const email=document.getElementById('contact-email').value.trim();
+    const message=document.getElementById('contact-message').value.trim();
+    const consent=document.getElementById('contact-consent').checked;
+    if(!email||!message){alert('Merci de renseigner votre e-mail et votre message.');return}
+    if(!consent){alert("Merci d'accepter notre politique de confidentialité pour continuer.");return}
+    const prenom=document.getElementById('contact-prenom').value.trim();
+    const nom=document.getElementById('contact-nom').value.trim();
+    const sujet=document.getElementById('contact-sujet').value||'Contact site';
+    const nom_complet=[prenom,nom].filter(Boolean).join(' ');
+    const body=`${message}\n\n—\n${nom_complet?nom_complet+'\n':''}${email}`;
+    window.location.href=`mailto:lateliermaude@gmail.com?subject=${encodeURIComponent('Contact — '+sujet)}&body=${encodeURIComponent(body)}`;
+    setTimeout(()=>{document.getElementById('contact-form-container').style.display='none';document.getElementById('form-success').classList.add('show')},800);
+  }
+
+  function toggleFaq(btn){
+    const body=btn.nextElementSibling,isOpen=btn.classList.contains('open');
+    document.querySelectorAll('.faq-btn.open').forEach(b=>{b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open')});
+    if(!isOpen){btn.classList.add('open');btn.setAttribute('aria-expanded','true');body.classList.add('open')}
+  }
+
+  const POPUP_KEY='maude_cercle_dismissed';
+  function openPopup(){if(sessionStorage.getItem(POPUP_KEY))return;document.getElementById('cercle-popup').classList.add('open')}
+  function closePopup(){document.getElementById('cercle-popup').classList.remove('open');sessionStorage.setItem(POPUP_KEY,'1')}
+  function handlePopupSubmit(e){
+    e.preventDefault();
+    const input=e.target.querySelector('input[type="email"]');
+    if(!input.value)return;
+    const btn=e.target.querySelector('button[type="submit"]');
+    btn.textContent='Bienvenue ✓';btn.style.background='#6B4F3A';
+    sessionStorage.setItem(POPUP_KEY,'1');setTimeout(closePopup,1800);
+  }
+  setTimeout(openPopup,6000);
+  document.getElementById('cercle-popup').addEventListener('click',function(e){if(e.target===this)closePopup()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup()});
+</script>
+</body>
+</html>
