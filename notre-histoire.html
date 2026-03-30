@@ -631,22 +631,7 @@
 @media (max-width: 600px) { .popup-inner { padding: 44px 28px 34px; } .popup-title { font-size: 36px; } }
 </style>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
-  // ── Menu mobile ──
-  function openMobileMenu() {
-    document.getElementById('mobile-menu').classList.add('open');
-    document.getElementById('mobile-overlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobileMenu() {
-    document.getElementById('mobile-menu').classList.remove('open');
-    document.getElementById('mobile-overlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
-  // Relier le bouton burger
-  document.querySelector('button[aria-label="Menu"]')?.addEventListener('click', openMobileMenu);
-</script><script>
+<script>
   // ── Header shadow ──
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
