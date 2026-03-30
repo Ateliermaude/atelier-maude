@@ -23,7 +23,9 @@
   <meta name="twitter:title" content="Atelier MAUDÉ — Manteaux en Laine & Cachemire">
   <meta name="twitter:description" content="Manteaux en laine et cachemire d'exception, conçus par deux sœurs. Jusqu'à –30% sur notre sélection. Livraison gratuite en France et Belgique.">
   <meta name="twitter:image" content="https://ateliermaude.github.io/hero.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -641,6 +643,183 @@
   @media (min-width: 901px) {
     .mobile-menu, .mobile-menu-overlay { display: none !important; }
   }
+
+  /* ── SAVOIR-FAIRE ── */
+  .savoir-faire {
+    background: var(--dark-brown);
+    padding: 90px 40px;
+  }
+  .sf-inner { max-width: 1400px; margin: 0 auto; }
+
+  .sf-intro { text-align: center; margin-bottom: 64px; }
+  .sf-eyebrow {
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold); opacity: 0.85; margin-bottom: 20px; display: block;
+  }
+  .sf-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 58px); font-weight: 300; line-height: 1.1;
+    color: var(--cream);
+  }
+  .sf-title em { font-style: italic; color: var(--gold); }
+
+  .sf-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(201,169,110,0.15);
+    border: 1px solid rgba(201,169,110,0.15);
+    margin-bottom: 56px;
+  }
+  .sf-item {
+    background: var(--dark-brown);
+    padding: 44px 36px;
+    transition: background 0.3s;
+  }
+  .sf-item:hover { background: #2a1e14; }
+
+  .sf-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; font-weight: 300;
+    color: rgba(201,169,110,0.25); line-height: 1;
+    margin-bottom: 20px;
+  }
+  .sf-item-title {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream); font-weight: 400; margin-bottom: 16px;
+  }
+  .sf-item-text {
+    font-size: 13px; color: rgba(245,240,234,0.55); line-height: 1.85;
+  }
+
+  .sf-cta { text-align: center; }
+  .sf-link {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none; font-weight: 400;
+    border-bottom: 1px solid rgba(201,169,110,0.35);
+    padding-bottom: 4px; transition: all 0.3s;
+  }
+  .sf-link:hover { color: var(--cream); border-bottom-color: rgba(245,240,234,0.4); gap: 14px; }
+  .sf-link svg { transition: transform 0.3s; }
+  .sf-link:hover svg { transform: translateX(4px); }
+
+  @media (max-width: 900px) {
+    .sf-grid { grid-template-columns: repeat(2, 1fr); }
+    .savoir-faire { padding: 60px 24px; }
+  }
+  @media (max-width: 600px) {
+    .sf-grid { grid-template-columns: 1fr; }
+    .sf-item { padding: 32px 24px; }
+    .sf-intro { margin-bottom: 44px; }
+  }
+
+  /* ── COLOR SWATCHES SUR CARTES ── */
+  .product-colors {
+    display: flex; gap: 6px; align-items: center; margin-top: 10px;
+  }
+  .color-dot {
+    width: 14px; height: 14px; border-radius: 50%;
+    border: 1.5px solid transparent;
+    cursor: pointer; transition: transform 0.2s, border-color 0.2s;
+    position: relative;
+    text-decoration: none; display: block;
+  }
+  .color-dot:hover { transform: scale(1.2); }
+  .color-dot.active { border-color: var(--dark-brown); }
+  .color-dot::after {
+    content: ''; position: absolute; inset: 2px;
+    border-radius: 50%; border: 1px solid rgba(255,255,255,0.3);
+  }
+  .color-dot-noir   { background: #1a1410; }
+  .color-dot-marine { background: #1e2d45; }
+  .color-dot-camel  { background: #C19A6B; }
+  .color-label {
+    font-size: 10px; color: var(--muted); letter-spacing: 0.08em;
+    margin-left: 4px;
+  }
+
+  /* ── LIFESTYLE MOSAÏQUE ── */
+  .lifestyle {
+    padding: 90px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .lifestyle-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 40px; gap: 24px; flex-wrap: wrap;
+  }
+  .lifestyle-header-text { }
+  .lifestyle-header-link {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--dark-brown); text-decoration: none;
+    border-bottom: 1px solid var(--border); padding-bottom: 3px;
+    white-space: nowrap; transition: all 0.2s; flex-shrink: 0;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .lifestyle-header-link:hover {
+    color: var(--terracotta); border-bottom-color: var(--terracotta); gap: 12px;
+  }
+
+  .lifestyle-mosaic {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+  .mosaic-item {
+    position: relative; overflow: hidden;
+    background: var(--cream); cursor: pointer;
+  }
+  .mosaic-item:first-child {
+    grid-row: 1 / 3;
+  }
+  .mosaic-item img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+    display: block;
+    transition: transform 0.7s ease;
+  }
+  .mosaic-item:hover img { transform: scale(1.04); }
+
+  .mosaic-item:first-child { aspect-ratio: auto; min-height: 600px; }
+  .mosaic-item:not(:first-child) { aspect-ratio: 4/3; }
+
+  .mosaic-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 28px 24px 20px;
+    background: linear-gradient(transparent, rgba(42,26,18,0.55));
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .mosaic-item:hover .mosaic-caption { opacity: 1; }
+  .mosaic-caption-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 300; color: #fff;
+    display: block; margin-bottom: 4px;
+  }
+  .mosaic-caption-link {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: gap 0.2s;
+  }
+  .mosaic-caption-link:hover { gap: 10px; color: #fff; }
+
+  @media (max-width: 900px) {
+    .lifestyle { padding: 60px 24px; }
+    .lifestyle-mosaic {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    .mosaic-item:first-child { grid-row: auto; min-height: auto; aspect-ratio: 3/4; }
+    .mosaic-item:not(:first-child) { aspect-ratio: 3/4; }
+  }
+  @media (max-width: 600px) {
+    .lifestyle-mosaic { grid-template-columns: 1fr; }
+    .mosaic-item:first-child,
+    .mosaic-item:not(:first-child) { aspect-ratio: 3/4; min-height: auto; }
+    .mosaic-caption { opacity: 1; }
+  }
 </style>
 </head>
 <body>
@@ -752,6 +931,11 @@
         <span class="price-current">350,00 €</span>
         <span class="price-old" aria-label="Ancien prix : 455 euros">455,00 €</span>
       </div>
+      <div class="product-colors" aria-label="Coloris disponibles">
+        <span class="color-dot color-dot-noir active" title="Noir" onclick="goToSlide('slider-1',0);setActiveColor(this)"></span>
+        <span class="color-dot color-dot-marine" title="Marine" onclick="goToSlide('slider-1',1);setActiveColor(this)"></span>
+        <span class="color-label" id="yun-court-color-label">Noir</span>
+      </div>
     </article>
 
     <!-- PRODUIT 2 : HUĀ LONG -->
@@ -779,6 +963,10 @@
         <span class="price-current">420,00 €</span>
         <span class="price-old" aria-label="Ancien prix : 545 euros">545,00 €</span>
       </div>
+      <div class="product-colors" aria-label="Coloris disponibles">
+        <span class="color-dot color-dot-camel active" title="Camel"></span>
+        <span class="color-label">Camel</span>
+      </div>
     </article>
 
     <!-- PRODUIT 3 : YŪN LONG -->
@@ -798,7 +986,112 @@
         <span class="price-current">450,00 €</span>
         <span class="price-old" aria-label="Ancien prix : 585 euros">585,00 €</span>
       </div>
+      <div class="product-colors" aria-label="Coloris disponibles">
+        <span class="color-dot color-dot-noir active" title="Noir"></span>
+        <span class="color-label">Noir</span>
+      </div>
     </article>
+
+  </div>
+</section>
+
+<!-- MATIÈRE & SAVOIR-FAIRE -->
+<section class="savoir-faire" aria-labelledby="sf-title">
+  <div class="sf-inner">
+
+    <div class="sf-intro fade-in">
+      <span class="sf-eyebrow">La matière avant tout</span>
+      <h2 class="sf-title" id="sf-title">Pourquoi notre<br><em>laine &amp; cachemire</em><br>est différent.</h2>
+    </div>
+
+    <div class="sf-grid">
+      <div class="sf-item fade-in">
+        <div class="sf-number" aria-hidden="true">01</div>
+        <h3 class="sf-item-title">La fibre de Mongolie-Intérieure</h3>
+        <p class="sf-item-text">Nous sélectionnons nos fibres en Mongolie-Intérieure, région réputée pour produire certaines des laines et cachemires les plus fins du monde. Les températures extrêmes y forgent des fibres d'une densité et d'une douceur exceptionnelles.</p>
+      </div>
+      <div class="sf-item fade-in" style="transition-delay:0.1s">
+        <div class="sf-number" aria-hidden="true">02</div>
+        <h3 class="sf-item-title">Le mélange 70 / 30</h3>
+        <p class="sf-item-text">Nos manteaux sont tissés à 70% de laine et 30% de cachemire. La laine apporte structure, durabilité et tenue. Le cachemire offre cette douceur incomparable contre la peau et ce tombé fluide qui transforme un manteau en une expérience.</p>
+      </div>
+      <div class="sf-item fade-in" style="transition-delay:0.2s">
+        <div class="sf-number" aria-hidden="true">03</div>
+        <h3 class="sf-item-title">Les ateliers de Suzhou</h3>
+        <p class="sf-item-text">Suzhou est le cœur historique du textile chinois, ville millénaire surnommée la "Venise de l'Orient". Nos pièces y sont fabriquées dans des ateliers spécialisés dont le savoir-faire se transmet de génération en génération.</p>
+      </div>
+      <div class="sf-item fade-in" style="transition-delay:0.3s">
+        <div class="sf-number" aria-hidden="true">04</div>
+        <h3 class="sf-item-title">La transparence totale</h3>
+        <p class="sf-item-text">Nous vous disons exactement ce que vous portez — composition, origine, fabrication. Pas de promesses excessives. Juste une matière belle, honnête, et travaillée avec le plus grand soin par des artisans qui en font leur métier.</p>
+      </div>
+    </div>
+
+    <div class="sf-cta fade-in">
+      <a href="notre-histoire.html" class="sf-link">Découvrir notre histoire
+        <svg width="16" height="10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 10" aria-hidden="true"><line x1="0" y1="5" x2="14" y2="5"/><polyline points="10,1 14,5 10,9"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="lifestyle" aria-label="La collection en images">
+  <div class="lifestyle-header fade-in">
+    <div class="lifestyle-header-text">
+      <p class="section-label">La collection</p>
+      <h2 class="section-title" style="margin-bottom:0">Portez-les,<br><em>vivez-les.</em></h2>
+    </div>
+    <a href="index.html#collection" class="lifestyle-header-link">
+      Voir tous les modèles
+      <svg width="14" height="9" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 14 9" aria-hidden="true"><line x1="0" y1="4.5" x2="12" y2="4.5"/><polyline points="8.5,1 12,4.5 8.5,8"/></svg>
+    </a>
+  </div>
+
+  <div class="lifestyle-mosaic fade-in" style="transition-delay:0.1s">
+
+    <!-- Grande image gauche — Yūn Long -->
+    <div class="mosaic-item">
+      <img src="yun-long-noir.png"
+           alt="Manteau Yūn Long Ceinturé — silhouette noir, coupe longue"
+           loading="lazy">
+      <div class="mosaic-caption">
+        <span class="mosaic-caption-name">Yūn Long Ceinturé</span>
+        <a href="yun-long.html" class="mosaic-caption-link">
+          Découvrir
+          <svg width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 12 8"><line x1="0" y1="4" x2="10" y2="4"/><polyline points="7,1 10,4 7,7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Haut droite — Huā Long -->
+    <div class="mosaic-item">
+      <img src="hua-long-camel-1.jpeg"
+           alt="Manteau Huā Long — coloris camel, élégance naturelle"
+           loading="lazy">
+      <div class="mosaic-caption">
+        <span class="mosaic-caption-name">Huā Long Camel</span>
+        <a href="hua-long.html" class="mosaic-caption-link">
+          Découvrir
+          <svg width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 12 8"><line x1="0" y1="4" x2="10" y2="4"/><polyline points="7,1 10,4 7,7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bas droite — Yūn Court -->
+    <div class="mosaic-item">
+      <img src="yun-court-noir.jpeg"
+           alt="Manteau Yūn Court Ceinturé — coupe mi-cuisse, coloris noir"
+           loading="lazy">
+      <div class="mosaic-caption">
+        <span class="mosaic-caption-name">Yūn Court Ceinturé</span>
+        <a href="yun-court.html" class="mosaic-caption-link">
+          Découvrir
+          <svg width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 12 8"><line x1="0" y1="4" x2="10" y2="4"/><polyline points="7,1 10,4 7,7"/></svg>
+        </a>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -1187,6 +1480,15 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
   // Relier le bouton burger
   document.querySelector('button[aria-label="Menu"]')?.addEventListener('click', openMobileMenu);
+
+  // ── Color swatches ──
+  function setActiveColor(el) {
+    const container = el.closest('.product-colors');
+    container.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+    el.classList.add('active');
+    const label = container.querySelector('.color-label');
+    if (label) label.textContent = el.getAttribute('title');
+  }
 </script>
 
 </body>
