@@ -4,7 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Notre Histoire — Atelier MAUDÉ</title>
-<meta name="description" content="Aude et Mathilde, deux sœurs unies par l'amour du beau et du vrai. L'histoire d'Atelier MAUDÉ et de son cachemire de Suzhou.">
+<meta name="description" content="Aude et Mathilde, deux sœurs unies par l'amour du beau. L'histoire d'Atelier MAUDÉ, du cachemire de Suzhou et d'une vision du luxe accessible.">
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ateliermaude.github.io/notre-histoire.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier MAUDÉ">
+  <meta property="og:title" content="Notre Histoire — Atelier MAUDÉ">
+  <meta property="og:description" content="Aude et Mathilde, deux sœurs unies par l'amour du beau. L'histoire d'Atelier MAUDÉ, du cachemire de Suzhou et d'une vision du luxe accessible.">
+  <meta property="og:url" content="https://ateliermaude.github.io/notre-histoire.html">
+  <meta property="og:image" content="https://ateliermaude.github.io/11B04F6B-279B-4048-85D2-934B8EF41A6E.png">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notre Histoire — Atelier MAUDÉ">
+  <meta name="twitter:description" content="Aude et Mathilde, deux sœurs unies par l'amour du beau. L'histoire d'Atelier MAUDÉ, du cachemire de Suzhou et d'une vision du luxe accessible.">
+  <meta name="twitter:image" content="https://ateliermaude.github.io/11B04F6B-279B-4048-85D2-934B8EF41A6E.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -295,6 +313,81 @@
     .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     .page-cta { padding: 60px 24px; }
   }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu-overlay {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(42,26,18,0.5);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease;
+    backdrop-filter: blur(2px);
+  }
+  .mobile-menu-overlay.open { opacity: 1; pointer-events: auto; }
+
+  .mobile-menu {
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: min(320px, 85vw);
+    background: var(--warm-white);
+    z-index: 201;
+    transform: translateX(-100%);
+    transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+  }
+  .mobile-menu.open { transform: translateX(0); }
+
+  .mobile-menu-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-menu-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 400; letter-spacing: 0.14em;
+    color: var(--dark-brown); text-decoration: none; text-transform: uppercase;
+  }
+  .mobile-menu-close {
+    background: none; border: none; cursor: pointer;
+    color: var(--muted); font-size: 22px; line-height: 1;
+    padding: 4px; transition: color 0.2s;
+  }
+  .mobile-menu-close:hover { color: var(--dark-brown); }
+
+  .mobile-menu-nav {
+    padding: 32px 28px; flex: 1;
+  }
+  .mobile-menu-nav a {
+    display: block;
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--dark-brown); text-decoration: none; font-weight: 400;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .mobile-menu-nav a:first-child { border-top: 1px solid var(--border); }
+  .mobile-menu-nav a:hover { color: var(--terracotta); padding-left: 6px; }
+
+  .mobile-menu-footer {
+    padding: 28px;
+    border-top: 1px solid var(--border);
+  }
+  .mobile-menu-footer a {
+    display: block; font-size: 12px; color: var(--muted);
+    text-decoration: none; margin-bottom: 10px;
+    letter-spacing: 0.08em; transition: color 0.2s;
+  }
+  .mobile-menu-footer a:hover { color: var(--dark-brown); }
+  .mobile-menu-social {
+    margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .mobile-menu-social a { display: inline; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 0; }
+
+  /* Burger actif → X sur mobile */
+  .burger-btn { cursor: pointer; }
+  @media (min-width: 901px) {
+    .mobile-menu, .mobile-menu-overlay { display: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -469,14 +562,14 @@
       <ul>
         <li><a href="notre-histoire.html">Notre histoire</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="#">CGV</a></li>
-        <li><a href="#">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="cgv.html#mentions">Mentions légales</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Nous rejoindre</h4>
       <ul>
-        <li><a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#7b171a0f1e17121e09161a0e1f1e3b1c161a121755181416"><span class="__cf_email__" data-cfemail="2b474a5f4e47424e59464a5e4f4e6b4c464a424705484446">[email&#160;protected]</span></a></li>
         <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
     </div>
@@ -536,7 +629,22 @@
 @media (max-width: 600px) { .popup-inner { padding: 44px 28px 34px; } .popup-title { font-size: 36px; } }
 </style>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  // ── Menu mobile ──
+  function openMobileMenu() {
+    document.getElementById('mobile-menu').classList.add('open');
+    document.getElementById('mobile-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('mobile-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
+  // Relier le bouton burger
+  document.querySelector('button[aria-label="Menu"]')?.addEventListener('click', openMobileMenu);
+</script><script>
   // ── Header shadow ──
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
@@ -570,12 +678,4 @@
     sessionStorage.setItem(POPUP_KEY, '1');
     setTimeout(closePopup, 1800);
   }
-  setTimeout(openPopup, 6000);
-  document.getElementById('cercle-popup').addEventListener('click', function(e) {
-    if (e.target === this) closePopup();
-  });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
-</script>
-
-</body>
-</html>
+  setTimeout(openPopup,
