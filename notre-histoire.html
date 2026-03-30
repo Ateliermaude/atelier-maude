@@ -680,4 +680,12 @@
     sessionStorage.setItem(POPUP_KEY, '1');
     setTimeout(closePopup, 1800);
   }
-  setTimeout(openPopup,
+  setTimeout(openPopup, 6000);
+  document.getElementById('cercle-popup').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+</script>
+
+</body>
+</html>
