@@ -2,11 +2,14 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manteau Yūn Long Ceinturé en Cachemire — Atelier MAUDÉ</title>
+<meta name="theme-color" content="#3A2A1E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manteau Yūn Long Ceinturé — Atelier MAUDÉ</title>
 <meta name="description" content="Le Manteau Yūn Long Ceinturé — 70% laine, 30% cachemire. Long manteau ceinturé, coloris noir. 450 € au lieu de 585 €. Livraison gratuite.">
   <!-- SEO -->
   <meta name="robots" content="index, follow">
+    <link rel="alternate" hreflang="fr" href="https://ateliermaude.github.io/yun-long.html">
+  <link rel="alternate" hreflang="x-default" href="https://ateliermaude.github.io/yun-long.html">
   <link rel="canonical" href="https://ateliermaude.github.io/yun-long.html">
 
   <!-- Open Graph -->
@@ -25,7 +28,10 @@
   <meta name="twitter:image" content="https://ateliermaude.github.io/yun-long-noir.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.svg">
+    <link rel="preload" as="image" href="yun-long-noir.png" type="image/png">
+    <link rel="dns-prefetch" href="https://ateliermaude.github.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -666,14 +672,443 @@
   @media (min-width: 901px) {
     .mobile-menu, .mobile-menu-overlay { display: none !important; }
   }
+
+  /* ── ANIMATIONS SCROLL AVANCÉES ── */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in-left.visible { opacity: 1; transform: translateX(0); }
+
+  .fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in-right.visible { opacity: 1; transform: translateX(0); }
+
+  .stagger-1 { transition-delay: 0.1s !important; }
+  .stagger-2 { transition-delay: 0.2s !important; }
+  .stagger-3 { transition-delay: 0.3s !important; }
+  .stagger-4 { transition-delay: 0.4s !important; }
+
+  /* ── BOUTON RETOUR EN HAUT ── */
+  .back-to-top {
+    position: fixed;
+    bottom: 32px; right: 32px;
+    width: 44px; height: 44px;
+    background: var(--dark-brown);
+    color: var(--gold);
+    border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+    z-index: 90;
+  }
+  .back-to-top.visible {
+    opacity: 1; pointer-events: auto; transform: translateY(0);
+  }
+  .back-to-top:hover { background: var(--terracotta); }
+  @media (max-width: 600px) {
+    .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+  }
+
+  /* ── COMPTEUR DE STOCK ── */
+  .stock-indicator {
+    display: flex; align-items: center; gap: 8px;
+    margin-top: 10px; margin-bottom: 4px;
+    font-size: 12px; letter-spacing: 0.06em;
+    transition: all 0.3s;
+  }
+  .stock-dot {
+    width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+    transition: background 0.3s;
+  }
+  .stock-dot.high   { background: #3B6D11; }
+  .stock-dot.medium { background: #BA7517; }
+  .stock-dot.low    { background: #A32D2D; animation: pulse-dot 1.5s ease-in-out infinite; }
+  .stock-dot.out    { background: var(--muted); }
+  .stock-text.high   { color: #3B6D11; }
+  .stock-text.medium { color: #BA7517; }
+  .stock-text.low    { color: #A32D2D; font-weight: 400; }
+  .stock-text.out    { color: var(--muted); }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  /* ── OPTIMISATION MOBILE AVANCÉE ── */
+
+  /* Supprime le flash bleu au tap sur iOS/Android */
+  * { -webkit-tap-highlight-color: transparent; }
+
+  /* Meilleure gestion du touch sur les boutons */
+  button, a, [role="button"] { touch-action: manipulation; }
+
+  /* Safe area pour iPhone avec notch/Dynamic Island */
+  .announcement { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  header { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  footer { padding-bottom: max(30px, env(safe-area-inset-bottom)); }
+  .back-to-top { bottom: max(32px, calc(env(safe-area-inset-bottom) + 16px)); right: max(32px, env(safe-area-inset-right)); }
+  #cookie-banner { padding-bottom: max(0px, env(safe-area-inset-bottom)); }
+
+  /* Inputs — évite le zoom auto sur iOS (min 16px) */
+  input, select, textarea {
+    font-size: 16px !important;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  /* Galerie produit mobile — swipe horizontal */
+  @media (max-width: 600px) {
+    .gallery {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+    }
+    .gallery-thumbs {
+      flex-direction: row !important;
+      overflow-x: auto !important;
+      gap: 8px !important;
+      padding-bottom: 4px !important;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .gallery-thumbs::-webkit-scrollbar { display: none; }
+    .gallery-thumb {
+      width: 60px !important;
+      flex-shrink: 0 !important;
+    }
+    .gallery-main { aspect-ratio: 3/4 !important; }
+
+    /* Onglets produit — scroll horizontal sur mobile */
+    .tabs-nav {
+      overflow-x: auto !important;
+      white-space: nowrap !important;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 0 !important;
+    }
+    .tabs-nav::-webkit-scrollbar { display: none; }
+    .tab-btn { flex-shrink: 0; padding: 14px 16px !important; font-size: 10px !important; }
+
+    /* Hero mobile — meilleure lisibilité */
+    .hero-title { font-size: 44px !important; }
+    .hero-content { padding: 36px 20px !important; }
+
+    /* Prix proéminents sur mobile */
+    .price-current { font-size: 28px !important; }
+    .product-title { font-size: 26px !important; }
+
+    /* Bouton CTA pleine largeur sur mobile */
+    .btn-primary, .btn-outline, .btn-add-cart {
+      width: 100% !important;
+      text-align: center !important;
+    }
+    .hero-actions { flex-direction: column !important; }
+
+    /* Noms produits sur cartes */
+    .product-name { font-size: 16px !important; }
+
+    /* Section savoir-faire mobile */
+    .sf-title { font-size: 34px !important; }
+
+    /* Accordéon livraison — plus grand zone de tap */
+    .accordion-btn { padding: 18px 0 !important; min-height: 54px; }
+
+    /* Compteur stock bien visible */
+    .stock-indicator { font-size: 12px !important; }
+  }
+
+  /* Tablette */
+  @media (max-width: 768px) and (min-width: 601px) {
+    .hero-content { padding: 44px 32px !important; }
+    .tab-btn { padding: 12px 14px !important; }
+  }
+
+  /* Performance : évite les repaints sur scroll */
+  .product-image, .gallery-main, .mosaic-item {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  /* Texte lisible sur petits écrans */
+  @media (max-width: 400px) {
+    .hero-title { font-size: 38px !important; }
+    .logo { font-size: 18px !important; }
+    nav a { font-size: 10px !important; letter-spacing: 0.12em !important; }
+  }
+
+
+  /* ── PARTAGE RÉSEAUX SOCIAUX ── */
+  .share-section {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+  }
+  .share-label {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 12px; display: block;
+  }
+  .share-buttons {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .share-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: none; border: 1px solid var(--border);
+    padding: 9px 16px; font-family: 'Jost', sans-serif;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); cursor: pointer; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .share-btn:hover {
+    border-color: var(--dark-brown); color: var(--dark-brown);
+    background: var(--cream);
+  }
+  .share-btn svg { flex-shrink: 0; }
+  @media (max-width: 600px) {
+    .share-buttons { flex-direction: column; }
+    .share-btn { justify-content: center; }
+  }
+
+  /* ── MICRO-ANIMATIONS BOUTONS CTA ── */
+
+  /* Bouton primaire — shimmer doré au hover */
+  .btn-primary {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201,169,110,0.18), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+  }
+  .btn-primary:hover::after { left: 150%; }
+  .btn-primary:active { transform: scale(0.98); }
+
+  /* Bouton outline — bordure animée */
+  .btn-outline {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, color 0.3s, transform 0.15s;
+  }
+  .btn-outline:active { transform: scale(0.98); }
+
+  /* Bouton Ajouter au panier — pulse au clic */
+  .btn-add-cart {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, transform 0.15s;
+  }
+  .btn-add-cart::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    opacity: 0; pointer-events: none;
+  }
+  .btn-add-cart:active::after {
+    width: 300px; height: 300px; opacity: 0;
+  }
+  .btn-add-cart:active { transform: scale(0.99); }
+
+  /* Wishlist — cœur qui bat */
+  .btn-wishlist {
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .btn-wishlist:hover { transform: translateY(-1px); }
+  .btn-wishlist:active { transform: scale(0.98); }
+  .btn-wishlist:hover svg { animation: heartbeat 0.6s ease; }
+  @keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    30%      { transform: scale(1.25); }
+    60%      { transform: scale(0.95); }
+  }
+
+  /* Nav links — soulignement animé déjà présent, on ajoute couleur au hover */
+  nav a { transition: color 0.2s; }
+  nav a:hover { color: var(--terracotta); }
+
+  /* Cards produit — légère élévation au hover */
+  .product-card {
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover { transform: translateY(-4px); }
+
+  /* Feature items — glow subtil */
+  .feature-item {
+    transition: background 0.3s, transform 0.2s;
+  }
+  .feature-item:hover { transform: translateY(-2px); }
+
+  /* Lien savoir-faire — flèche qui avance */
+  .sf-link { transition: color 0.3s, border-color 0.3s, gap 0.3s; }
+  .sf-link svg { transition: transform 0.3s; }
+  .sf-link:hover svg { transform: translateX(5px); }
+
+  /* Swatches couleurs — bounce subtil */
+  .color-swatch, .color-dot {
+    transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), border-color 0.2s;
+  }
+  .color-swatch:hover, .color-dot:hover {
+    transform: scale(1.18);
+  }
+
+  /* Taille buttons — micro scale */
+  .size-btn {
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+  .size-btn:hover:not(.unavailable) { transform: scale(1.04); }
+  .size-btn:active:not(.unavailable) { transform: scale(0.97); }
+
+  /* Logo — légère transition couleur */
+  .logo { transition: opacity 0.2s; }
+  .logo:hover { opacity: 0.8; }
+
+  /* Liens footer */
+  .footer-col ul li a {
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .footer-col ul li a:hover { padding-left: 4px; }
+
+  /* Back to top — rotation au hover */
+  .back-to-top svg {
+    transition: transform 0.3s;
+  }
+  .back-to-top:hover svg { transform: translateY(-2px); }
+
+  /* Réduction des animations si préférence système */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ── BARRE DE PROGRESSION ── */
+  .reading-progress {
+    position: fixed;
+    top: 0; left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    z-index: 200;
+    transition: width 0.1s linear;
+    pointer-events: none;
+  }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Manteau Yūn Long Ceinturé en Cachemire",
+  "description": "Long manteau ceinturé en 70% laine et 30% cachemire de Mongolie-Intérieure. Fabriqué à Suzhou, Chine. Coloris noir.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Atelier MAUDÉ"
+  },
+  "url": "https://ateliermaude.github.io/yun-long.html",
+  "image": [
+    "https://ateliermaude.github.io/yun-long-noir.png"
+  ],
+  "sku": "AM-YUN-LONG",
+  "material": "70% Laine, 30% Cachemire",
+  "color": "Noir",
+  "countryOfOrigin": "CN",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://ateliermaude.github.io/yun-long.html",
+    "priceCurrency": "EUR",
+    "price": "450.00",
+    "priceValidUntil": "2025-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Organization",
+      "name": "Atelier MAUDÉ"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "2",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://ateliermaude.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Manteaux",
+      "item": "https://ateliermaude.github.io/index.html#collection"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Yūn Long Ceinturé",
+      "item": "https://ateliermaude.github.io/yun-long.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
-<!-- ANNOUNCEMENT -->
-<div class="announcement">
-  SÉLECTION PREMIUM &nbsp;·&nbsp; –30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-hidden="true"></div>
+
+<!-- BANDEAU DÉFILANT -->
+<div class="announcement" role="marquee" aria-label="Informations">
+  <div class="ticker-track">
+    <!-- Série 1 -->
+    <span class="ticker-item">SÉLECTION PREMIUM &nbsp;·&nbsp; –30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">CACHEMIRE DE MONGOLIE-INTÉRIEURE — FABRIQUÉ À SUZHOU</span>
+    <span class="ticker-sep">✦</span>
+    <!-- Série 2 (copie pour boucle infinie) -->
+    <span class="ticker-item">SÉLECTION PREMIUM &nbsp;·&nbsp; –30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">CACHEMIRE DE MONGOLIE-INTÉRIEURE — FABRIQUÉ À SUZHOU</span>
+    <span class="ticker-sep">✦</span>
+  </div>
 </div>
+
 
 <!-- HEADER -->
 <header id="site-header">
@@ -714,7 +1149,7 @@
     <a href="#">Nouveautés</a>
     <a href="index.html#collection">Manteaux</a>
     <a href="#">Accessoires</a>
-    <a href="index.html#collection">Promotions</a>
+    <a href="promotions.html">Promotions</a>
     <a href="notre-histoire.html">Notre Histoire</a>
   </nav>
 </header>
@@ -735,10 +1170,10 @@
   <div class="gallery" id="product-gallery">
     <div class="gallery-thumbs">
       <div class="gallery-thumb active" onclick="switchImage(0)" role="button" aria-label="Vue 1 — Noir">
-        <img src="yun-long-noir.png" alt="Yūn Long noir — miniature 1" loading="lazy">
+        <img src="yun-long-noir.png" fetchpriority="high" alt="Yūn Long noir — miniature 1" loading="lazy">
       </div>
       <div class="gallery-thumb" onclick="switchImage(1)" role="button" aria-label="Vue 2 — Noir (détail)">
-        <img src="yun-long-noir.png" alt="Yūn Long noir — miniature 2" loading="lazy">
+        <img src="yun-long-noir.png" fetchpriority="high" alt="Yūn Long noir — miniature 2" loading="lazy">
       </div>
     </div>
     <div class="gallery-main">
@@ -755,7 +1190,7 @@
 
   <!-- PRODUCT INFO -->
   <div class="product-info fade-in">
-    <p class="product-eyebrow">Laine &amp; Cachemire · Atelier MAUDÉ</p>
+    <p class="product-eyebrow">Manteau long ceinturé laine &amp; cachemire · Atelier MAUDÉ</p>
     <h1 class="product-title">Manteau Yūn Long<br>Ceinturé en Cachemire</h1>
 
     <div class="product-rating">
@@ -770,6 +1205,11 @@
       <span class="price-saving">Vous économisez 135,00 €</span>
     </div>
 
+        <!-- COMPTEUR DE STOCK -->
+        <div class="stock-indicator" id="stock-indicator">
+          <span class="stock-dot medium"></span>
+          <span class="stock-text medium">Plus que 2 en stock</span>
+        </div>
     <hr class="divider">
 
     <!-- Color -->
@@ -815,6 +1255,25 @@
           <p>Les articles doivent être <strong>non portés</strong>, dans leur état d'origine. Les frais de livraison initiaux ne sont pas remboursables.</p>
           <p>Pour initier un retour, contactez-nous à <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d6e6263796c6e794d6c79686164687f606c786968236e6260">[email&#160;protected]</a></strong>.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- PARTAGE RÉSEAUX SOCIAUX -->
+    <div class="share-section">
+      <span class="share-label">Partager cette pièce</span>
+      <div class="share-buttons">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="share-btn" aria-label="Partager sur Instagram">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <button class="share-btn" onclick="shareWhatsApp_yun_longisolated()" aria-label="Partager sur WhatsApp">
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L.057 23.43a.75.75 0 0 0 .928.928l5.604-1.466A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.944 9.944 0 0 1-5.031-1.362l-.36-.214-3.733.977.997-3.645-.235-.374A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp
+        </button>
+        <button class="share-btn" onclick="copyProductLink_yun_longisolated(this)" aria-label="Copier le lien">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          Copier le lien
+        </button>
       </div>
     </div>
     <!-- CTAs -->
@@ -863,12 +1322,12 @@
   <div class="tab-panel active" id="tab-description" role="tabpanel">
     <div class="tab-description">
       <div class="description-text">
-        <p>Le Manteau Yūn Long Ceinturé est la version longue et enveloppante de notre bestseller. Sa longueur maxi et sa ceinture structurante créent une silhouette sculpturale à la fois forte et féminine, incarnant le raffinement de l'Atelier MAUDÉ.</p>
-        <p>Confectionné dans un mélange noble de 70% laine et 30% cachemire, ce manteau long incarne le luxe discret que nous défendons chez MAUDÉ. Sa longueur maxi et sa ceinture double tour en font une pièce structurante et élégante en toutes circonstances.</p>
-        <p>Le tombé ample du dos et la ceinture ajustable permettent de moduler la silhouette à volonté — structurée et cintrée ou fluide et décontractée.</p>
+        <p>Le Manteau Yūn Long Ceinturé est le grand manteau femme ceinturé signature d'Atelier MAUDÉ. Version longue et enveloppante du Yūn Court, sa longueur maxi et sa ceinture double tour créent une silhouette sculpturale à la fois forte et féminine — l'alliance parfaite du manteau luxe et du confort quotidien.</p>
+        <p>Composé à 70% de laine et 30% de cachemire de Mongolie-Intérieure, ce manteau long ceinturé femme incarne le luxe accessible que défend Atelier MAUDÉ. Sa longueur maxi et sa ceinture réglable en font une pièce structurante, élégante et polyvalente — du bureau au week-end, de l'automne au printemps.</p>
+        <p>Le tombé ample du dos et la ceinture ajustable permettent de moduler la silhouette à volonté — structurée et cintrée ou fluide et décontractée. Disponible en noir, ce manteau oversize ceinturé en laine cachemire est fabriqué à Suzhou, Chine.</p>
       </div>
       <ul class="description-features" aria-label="Caractéristiques du produit">
-        <li>Longueur maxi avec ceinture double tour</li>
+        <li>Longueur maxi avec ceinture double tour — longueur ~120 cm</li>
         <li>Mélange 70% Laine &amp; 30% Cachemire de Mongolie-Intérieure</li>
         <li>Doublure intérieure en soie satinée</li>
         <li>Fermeture boutonnée recouverte de tissu</li>
@@ -881,7 +1340,7 @@
 
   <!-- TAILLES -->
   <div class="tab-panel" id="tab-tailles" role="tabpanel">
-    <p class="size-guide-intro">Nos manteaux sont taillés dans un cachemire légèrement structuré. Nous recommandons de prendre votre taille habituelle. En cas de doute entre deux tailles, optez pour la taille supérieure pour un port décontracté, ou inférieure pour une silhouette plus cintrée.</p>
+    <p class="size-guide-intro">Nos manteaux longs en laine et cachemire sont taillés dans une matière légèrement structurée. Nous recommandons de prendre votre taille habituelle. En cas de doute entre deux tailles, optez pour la taille supérieure pour un port décontracté, ou inférieure pour une silhouette plus cintrée.</p>
     <div class="size-table-wrap">
       <table>
         <thead>
@@ -1201,6 +1660,115 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
   // Relier le bouton burger
   document.querySelector('button[aria-label="Menu"]')?.addEventListener('click', openMobileMenu);
+
+  // ── Bouton retour en haut ──
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+  }
+
+  // ── Animations scroll avancées ──
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        scrollObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => scrollObserver.observe(el));
+
+  // ── Compteur de stock ──
+  const stockData = {"XS": 4, "S": 2, "M": 3, "L": 2, "XL": 0};
+  const sizeButtons = document.querySelectorAll('.size-btn:not(.unavailable)');
+  const indicator = document.getElementById('stock-indicator');
+
+  function updateStock(size) {
+    if (!indicator) return;
+    const qty = stockData[size] !== undefined ? stockData[size] : 3;
+    const dot = indicator.querySelector('.stock-dot');
+    const text = indicator.querySelector('.stock-text');
+    let level, msg;
+    if (qty === 0)      { level = 'out';    msg = 'Rupture de stock'; }
+    else if (qty === 1) { level = 'low';    msg = "Plus qu'1 en stock — commandez vite"; }
+    else if (qty <= 3)  { level = 'medium'; msg = 'Plus que ' + qty + ' en stock'; }
+    else                { level = 'high';   msg = qty + ' en stock'; }
+    dot.className = 'stock-dot ' + level;
+    text.className = 'stock-text ' + level;
+    text.textContent = msg;
+  }
+
+  // Initialiser avec la taille active
+  const activeSize = document.querySelector('.size-btn.active');
+  if (activeSize) updateStock(activeSize.textContent.trim());
+
+  // Mettre à jour au clic sur une taille
+  sizeButtons.forEach(btn => {
+    btn.addEventListener('click', () => updateStock(btn.textContent.trim()));
+  });
+
+  // ── Swipe galerie sur mobile ──
+  (function() {
+    const gallery = document.getElementById('product-gallery');
+    if (!gallery) return;
+    let startX = 0, isDragging = false;
+    const mainImgs = gallery.querySelectorAll('.gallery-main img');
+    const thumbs = gallery.querySelectorAll('.gallery-thumb');
+    if (mainImgs.length < 2) return;
+
+    function getCurrentIndex() {
+      return Array.from(mainImgs).findIndex(img => img.classList.contains('active'));
+    }
+    function goTo(index) {
+      if (index < 0 || index >= mainImgs.length) return;
+      mainImgs.forEach((img, i) => img.classList.toggle('active', i === index));
+      thumbs.forEach((t, i) => t.classList.toggle('active', i === index));
+    }
+
+    const main = gallery.querySelector('.gallery-main');
+    if (!main) return;
+    main.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; }, { passive: true });
+    main.addEventListener('touchend', e => {
+      if (!isDragging) return;
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        const cur = getCurrentIndex();
+        goTo(diff > 0 ? cur + 1 : cur - 1);
+      }
+      isDragging = false;
+    }, { passive: true });
+  })();
+
+  // ── Partage réseaux sociaux ──
+  function shareWhatsApp_yun_longisolated() {
+    const text = encodeURIComponent("J'ai trouvé ce manteau en laine et cachemire sur Atelier MAUDÉ — Manteau Yūn Long Ceinturé en Cachemire à 450€ : https://ateliermaude.github.io/yun-long.html");
+    window.open('https://wa.me/?text=' + text, '_blank');
+  }
+  function copyProductLink_yun_longisolated(btn) {
+    navigator.clipboard.writeText('https://ateliermaude.github.io/yun-long.html').then(() => {
+      const orig = btn.textContent;
+      btn.innerHTML = btn.innerHTML.replace('Copier le lien', 'Copié ✓');
+      setTimeout(() => { btn.innerHTML = btn.innerHTML.replace('Copié ✓', 'Copier le lien'); }, 2000);
+    }).catch(() => {
+      prompt('Copiez ce lien :', 'https://ateliermaude.github.io/yun-long.html');
+    });
+  }
+
+  // ── Barre de progression de lecture ──
+  (function() {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  })();
 </script>
 
 
