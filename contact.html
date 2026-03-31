@@ -69,32 +69,134 @@
 
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
-html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-.announcement{background:var(--terracotta);color:#fff;font-size:11px;letter-spacing:0.12em;font-weight:400}/* ── BANDEAU DÉFILANT ── */
-  .announcement { overflow: hidden; padding: 0; position: relative; }
+  /* ── FAQ & CONTACT INFOS ── */
+  .contact-info-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); margin-bottom: 60px;
+  }
+  .contact-info-item {
+    background: var(--warm-white); padding: 36px 28px;
+    text-align: center; transition: background 0.3s;
+  }
+  .contact-info-item:hover { background: var(--cream); }
+  .contact-info-icon { color: var(--gold); font-size: 20px; margin-bottom: 14px; display: block; }
+  .contact-info-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dark-brown); margin-bottom: 8px; font-weight: 400; }
+  .contact-info-text { font-size: 13px; color: var(--muted); line-height: 1.8; }
+  .contact-info-text a { color: var(--dark-brown); text-decoration: underline; text-underline-offset: 3px; }
+
+  .faq-section { margin-top: 60px; padding-top: 60px; border-top: 1px solid var(--border); }
+  .faq-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,3vw,40px); font-weight: 300; color: var(--dark-brown); margin-bottom: 36px; line-height: 1.2; }
+  .faq-title em { font-style: italic; color: var(--brown); }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item:first-of-type { border-top: 1px solid var(--border); }
+  .faq-question {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0; text-align: left;
+    font-family: 'Jost', sans-serif; font-size: 14px;
+    color: var(--dark-brown); font-weight: 300; gap: 16px;
+    transition: color 0.2s;
+  }
+  .faq-question:hover { color: var(--terracotta); }
+  .faq-icon { color: var(--gold); font-size: 20px; flex-shrink: 0; transition: transform 0.3s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-answer-inner { padding: 0 0 20px; font-size: 13px; color: var(--muted); line-height: 1.9; }
+  .faq-answer-inner a { color: var(--dark-brown); text-decoration: underline; text-underline-offset: 3px; }
+  .faq-item.open .faq-answer { max-height: 300px; }
+
+  @media(max-width:700px){
+    .contact-info-grid { grid-template-columns: 1fr; }
+    .faq-section { margin-top: 40px; padding-top: 40px; }
+  }
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
   .ticker-track {
-    display: flex;
+    display: inline-flex;
     white-space: nowrap;
     animation: ticker 28s linear infinite;
+    will-change: transform;
   }
   .ticker-track:hover { animation-play-state: paused; }
   .ticker-item {
-    display: inline-flex; align-items: center; gap: 0;
-    padding: 10px 0; flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
   .ticker-sep {
     display: inline-block;
     margin: 0 28px;
     color: rgba(255,255,255,0.35);
     font-size: 14px;
+    flex-shrink: 0;
   }
   @keyframes ticker {
     0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ── BANDEAU DÉFILANT ── */
+  
+  
+  .ticker-track:hover { animation-play-state: paused; }
+  
+  
+  
     100% { transform: translateX(-50%); }
   }
 
@@ -331,7 +433,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   button, a, [role="button"] { touch-action: manipulation; }
 
   /* Safe area pour iPhone avec notch/Dynamic Island */
-  .announcement { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  
   header { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
   footer { padding-bottom: max(30px, env(safe-area-inset-bottom)); }
   .back-to-top { bottom: max(32px, calc(env(safe-area-inset-bottom) + 16px)); right: max(32px, env(safe-area-inset-right)); }
@@ -563,6 +665,16 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
 .popup-decline{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
 .popup-decline:hover{color:var(--dark-brown)}
 @media(max-width:600px){.popup-inner{padding:44px 28px 34px}.popup-title{font-size:36px}}
+
+  /* FALLBACK FADE-IN — évite les pages blanches */
+  .fade-in, .fade-in-up, .fade-in-left, .fade-in-right {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible, .fade-in-up.visible, .fade-in-left.visible, .fade-in-right.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 </style>
 </head>
 <body>
@@ -628,10 +740,11 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
   </div>
   <nav>
-    <a href="index.html#collection">Manteaux</a>
+    <a href="manteaux.html">Manteaux</a>
     <a href="promotions.html">Promotions</a>
     <a href="notre-histoire.html">Notre Histoire</a>
     <a href="lookbook.html">Lookbook</a>
+    <a href="journal.html">Journal</a>
     <a href="contact.html" class="active">Contact</a>
   </nav>
 </header>
@@ -759,7 +872,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer"><div class="faq-answer-inner">
-      Vous disposez de 30 jours à compter de la réception pour nous retourner votre manteau, sans condition. L'article doit être non porté et dans son emballage d'origine. Contactez-nous à <a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a> pour initier le retour. Le remboursement est effectué sous 5 à 10 jours ouvrés.
+      Vous disposez de 30 jours à compter de la réception pour nous retourner votre manteau, sans condition. L'article doit être non porté et dans son emballage d'origine. Contactez-nous à <a href="/cdn-cgi/l/email-protection#1b777a6f7e77727e69767a6e7f7e5b7c767a727735787476"><span class="__cf_email__" data-cfemail="bed2dfcadbd2d7dbccd3dfcbdadbfed9d3dfd7d290ddd1d3">[email&#160;protected]</span></a> pour initier le retour. Le remboursement est effectué sous 5 à 10 jours ouvrés.
     </div></div>
   </div>
 
@@ -789,7 +902,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       <span class="faq-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-answer"><div class="faq-answer-inner">
-      Oui ! Nous livrons en France métropolitaine, en Belgique et en Suisse avec livraison gratuite. Pour les autres destinations, contactez-nous à <a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a> pour un devis personnalisé.
+      Oui ! Nous livrons en France métropolitaine, en Belgique et en Suisse avec livraison gratuite. Pour les autres destinations, contactez-nous à <a href="/cdn-cgi/l/email-protection#dbb7baafbeb7b2bea9b6baaebfbe9bbcb6bab2b7f5b8b4b6"><span class="__cf_email__" data-cfemail="127e7366777e7b77607f7367767752757f737b7e3c717d7f">[email&#160;protected]</span></a> pour un devis personnalisé.
     </div></div>
   </div>
 
@@ -813,7 +926,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
     <div class="footer-col">
       <h4>Boutique</h4>
-      <ul><li><a href="index.html#collection">Manteaux</a></li><li><a href="promotions.html">Promotions</a></li></ul>
+      <ul><li><a href="manteaux.html">Manteaux</a></li><li><a href="promotions.html">Promotions</a></li></ul>
     </div>
     <div class="footer-col">
       <h4>Informations</h4>
@@ -847,7 +960,24 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  // Fallback fade-in au cas où IntersectionObserver rate des éléments
+  setTimeout(function() {
+    document.querySelectorAll('.fade-in, .fade-in-up').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      }
+    });
+  }, 300);
+
+  // Fallback universel — active tous les fade-in après 600ms si pas encore visibles
+  setTimeout(function() {
+    document.querySelectorAll('.fade-in:not(.visible),.fade-in-up:not(.visible),.fade-in-left:not(.visible),.fade-in-right:not(.visible)').forEach(function(el) {
+      el.classList.add('visible');
+    });
+  }, 600);
+</script><script>
   window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',scrollY>10),{passive:true});
 
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
@@ -948,18 +1078,4 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   // Fermer au clic extérieur
   document.addEventListener('click', function(e) {
     if (!document.getElementById('lang-selector')?.contains(e.target)) {
-      document.getElementById('lang-dropdown')?.classList.remove('open');
-    }
-  });
-
-  // ── FAQ Accordéon ──
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-    btn.setAttribute('aria-expanded', !isOpen);
-  }
-</script>
-</body>
-</html>
+      document.getElementById('lang-dropdown')?.classList.remov
