@@ -32,9 +32,46 @@
     <link rel="dns-prefetch" href="https://ateliermaude.github.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Notre Histoire — Atelier MAUDÉ",
+  "url": "https://ateliermaude.github.io/notre-histoire.html",
+  "description": "L'histoire d'Aude et Mathilde, fondatrices d'Atelier MAUDÉ et de leur vision du cachemire de Suzhou.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Atelier MAUDÉ",
+    "url": "https://ateliermaude.github.io"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://ateliermaude.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notre Histoire",
+      "item": "https://ateliermaude.github.io/notre-histoire.html"
+    }
+  ]
+}
+</script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --cream: #F5F0EA;
@@ -565,7 +602,6 @@
     nav a { font-size: 10px !important; letter-spacing: 0.12em !important; }
   }
 
-
   /* ── MICRO-ANIMATIONS BOUTONS CTA ── */
 
   /* Bouton primaire — shimmer doré au hover */
@@ -699,41 +735,36 @@
     transition: width 0.1s linear;
     pointer-events: none;
   }
+#cercle-popup {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(42,26,18,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(3px);
+}
+#cercle-popup.open { opacity: 1; pointer-events: auto; }
+.popup-inner {
+  background: var(--warm-white); max-width: 420px; width: 90%;
+  padding: 52px 44px 40px; position: relative; text-align: center;
+  transform: translateY(16px); transition: transform 0.4s ease;
+}
+#cercle-popup.open .popup-inner { transform: translateY(0); }
+.popup-close { position: absolute; top: 18px; right: 20px; background: none; border: none; cursor: pointer; color: var(--muted); font-size: 18px; line-height: 1; transition: color 0.2s; }
+.popup-close:hover { color: var(--dark-brown); }
+.popup-eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 14px; }
+.popup-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; line-height: 1.1; color: var(--dark-brown); margin-bottom: 18px; letter-spacing: 0.04em; }
+.popup-text { font-size: 13px; line-height: 1.85; color: var(--muted); margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto; }
+.popup-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+.popup-form input { background: transparent; border: none; border-bottom: 1px solid var(--border); padding: 12px 4px; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--dark-brown); outline: none; text-align: center; transition: border-color 0.2s; }
+.popup-form input:focus { border-bottom-color: var(--dark-brown); }
+.popup-form input::placeholder { color: var(--muted); letter-spacing: 0.06em; }
+.popup-form button[type="submit"] { background: var(--dark-brown); color: #fff; border: none; padding: 15px; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; margin-top: 4px; }
+.popup-form button[type="submit"]:hover { background: var(--terracotta); }
+.popup-decline { background: none; border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+.popup-decline:hover { color: var(--dark-brown); }
+@media (max-width: 600px) { .popup-inner { padding: 44px 28px 34px; } .popup-title { font-size: 36px; } }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "name": "Notre Histoire — Atelier MAUDÉ",
-  "url": "https://ateliermaude.github.io/notre-histoire.html",
-  "description": "L'histoire d'Aude et Mathilde, fondatrices d'Atelier MAUDÉ et de leur vision du cachemire de Suzhou.",
-  "mainEntity": {
-    "@type": "Organization",
-    "name": "Atelier MAUDÉ",
-    "url": "https://ateliermaude.github.io"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Accueil",
-      "item": "https://ateliermaude.github.io/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Notre Histoire",
-      "item": "https://ateliermaude.github.io/notre-histoire.html"
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -763,7 +794,6 @@
   </div>
 </div>
 
-
 <!-- HEADER -->
 <header id="site-header">
   <div class="header-inner">
@@ -784,6 +814,31 @@
           <circle cx="12" cy="7" r="4"/>
         </svg>
       </button>
+      <!-- SÉLECTEUR DE LANGUE -->
+  <div class="lang-selector" id="lang-selector">
+    <button class="lang-btn" onclick="toggleLangMenu()" aria-label="Changer de langue" aria-expanded="false" id="lang-btn">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span id="lang-current">FR</span>
+    </button>
+    <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+      <button class="lang-option active" onclick="setLang('fr', 'FR')" role="option">
+        <span class="lang-flag">🇫🇷</span> Français
+      </button>
+      <button class="lang-option" onclick="setLang('nl', 'NL')" role="option">
+        <span class="lang-flag">🇧🇪</span> Nederlands
+      </button>
+      <button class="lang-option" onclick="setLang('en', 'EN')" role="option">
+        <span class="lang-flag">🇬🇧</span> English
+      </button>
+      <button class="lang-option" onclick="setLang('es', 'ES')" role="option">
+        <span class="lang-flag">🇪🇸</span> Español
+      </button>
+    </div>
+  </div>
+  <div id="google_translate_element"></div>
       <button aria-label="Panier">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
@@ -804,7 +859,7 @@
 <!-- HERO -->
 <section class="page-hero">
   <div class="page-hero-image">
-    <img src="hero.png"
+    <img src="hero.png" width="1400" height="933"
          fetchpriority="high"
          alt="Atelier MAUDÉ — cachemire de Suzhou"
          loading="eager">
@@ -817,6 +872,26 @@
 </section>
 
 <!-- NOTRE HISTOIRE -->
+<!-- CHIFFRES CLÉS -->
+<div class="chiffres">
+  <div class="chiffre-item fade-in">
+    <span class="chiffre-num">3</span>
+    <span class="chiffre-label">Modèles<br>iconiques</span>
+  </div>
+  <div class="chiffre-item fade-in" style="transition-delay:0.1s">
+    <span class="chiffre-num">70<small style="font-size:28px">%</small></span>
+    <span class="chiffre-label">Laine<br>de qualité</span>
+  </div>
+  <div class="chiffre-item fade-in" style="transition-delay:0.2s">
+    <span class="chiffre-num">30<small style="font-size:28px">%</small></span>
+    <span class="chiffre-label">Cachemire<br>Mongolie-Intérieure</span>
+  </div>
+  <div class="chiffre-item fade-in" style="transition-delay:0.3s">
+    <span class="chiffre-num">2</span>
+    <span class="chiffre-label">Fondatrices<br>passionnées</span>
+  </div>
+</div>
+
 <div class="section-wrap">
   <span class="eyebrow fade-in">L'origine</span>
   <h2 class="section-title fade-in">Tout a commencé<br>par <em>un voyage</em>.</h2>
@@ -829,9 +904,9 @@
 
 <!-- IMAGE PLEINE LARGEUR -->
 <div class="full-image fade-in">
-  <img src="hua-long-camel-1.jpeg"
+  <img src="hua-long-camel-1.jpeg" width="800" height="1066"
        alt="Cachemire Atelier MAUDÉ — détail matière"
-       loading="lazy">
+       loading="lazy" decoding="async">
 </div>
 
 <!-- SUZHOU -->
@@ -887,6 +962,30 @@
   </div>
 </div>
 
+<!-- NOS VALEURS -->
+<div class="valeurs">
+  <div class="valeurs-inner">
+    <h2 class="valeurs-title fade-in">Ce en quoi nous <em>croyons</em></h2>
+    <div class="valeurs-grid">
+      <div class="valeur-item fade-in">
+        <span class="valeur-icon" aria-hidden="true">✦</span>
+        <p class="valeur-title">Transparence totale</p>
+        <p class="valeur-text">Nous vous disons exactement ce que vous portez — composition, origine, fabrication. Pas de promesses excessives, juste l'honnêteté.</p>
+      </div>
+      <div class="valeur-item fade-in" style="transition-delay:0.1s">
+        <span class="valeur-icon" aria-hidden="true">✦</span>
+        <p class="valeur-title">Luxe accessible</p>
+        <p class="valeur-text">Des matières nobles et un savoir-faire artisanal, à un prix qui ne devrait pas être réservé à une élite. C'est notre engagement.</p>
+      </div>
+      <div class="valeur-item fade-in" style="transition-delay:0.2s">
+        <span class="valeur-icon" aria-hidden="true">✦</span>
+        <p class="valeur-title">Pièces qui durent</p>
+        <p class="valeur-text">Chaque manteau MAUDÉ est conçu pour traverser les saisons et les années. Un investissement conscient, pas un achat impulsif.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FONDATRICES -->
 <div class="fondatrices">
   <p class="eyebrow fade-in">Les fondatrices</p>
@@ -909,6 +1008,7 @@
   <p class="eyebrow fade-in">La collection</p>
   <h2 class="section-title fade-in">Découvrir nos manteaux</h2>
   <a href="index.html#collection" class="btn-primary fade-in">Voir la collection</a>
+  <a href="lookbook.html" class="btn-outline fade-in" style="transition-delay:0.1s">Voir le lookbook</a>
 </div>
 
 <!-- FOOTER -->
@@ -923,6 +1023,7 @@
       <ul>
         <li><a href="index.html#collection">Manteaux</a></li>
         <li><a href="promotions.html">Promotions</a></li>
+        <li><a href="carte-cadeau.html">Carte cadeau</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -966,38 +1067,6 @@
     <button class="popup-decline" onclick="closePopup()">Non, merci</button>
   </div>
 </div>
-
-<style>
-#cercle-popup {
-  position: fixed; inset: 0; z-index: 300;
-  background: rgba(42,26,18,0.55);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.4s ease;
-  backdrop-filter: blur(3px);
-}
-#cercle-popup.open { opacity: 1; pointer-events: auto; }
-.popup-inner {
-  background: var(--warm-white); max-width: 420px; width: 90%;
-  padding: 52px 44px 40px; position: relative; text-align: center;
-  transform: translateY(16px); transition: transform 0.4s ease;
-}
-#cercle-popup.open .popup-inner { transform: translateY(0); }
-.popup-close { position: absolute; top: 18px; right: 20px; background: none; border: none; cursor: pointer; color: var(--muted); font-size: 18px; line-height: 1; transition: color 0.2s; }
-.popup-close:hover { color: var(--dark-brown); }
-.popup-eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 14px; }
-.popup-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; line-height: 1.1; color: var(--dark-brown); margin-bottom: 18px; letter-spacing: 0.04em; }
-.popup-text { font-size: 13px; line-height: 1.85; color: var(--muted); margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto; }
-.popup-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
-.popup-form input { background: transparent; border: none; border-bottom: 1px solid var(--border); padding: 12px 4px; font-family: 'Jost', sans-serif; font-size: 13px; color: var(--dark-brown); outline: none; text-align: center; transition: border-color 0.2s; }
-.popup-form input:focus { border-bottom-color: var(--dark-brown); }
-.popup-form input::placeholder { color: var(--muted); letter-spacing: 0.06em; }
-.popup-form button[type="submit"] { background: var(--dark-brown); color: #fff; border: none; padding: 15px; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; margin-top: 4px; }
-.popup-form button[type="submit"]:hover { background: var(--terracotta); }
-.popup-decline { background: none; border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
-.popup-decline:hover { color: var(--dark-brown); }
-@media (max-width: 600px) { .popup-inner { padding: 44px 28px 34px; } .popup-title { font-size: 36px; } }
-</style>
 
 <script>
   // ── Header shadow ──
@@ -1071,6 +1140,57 @@
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
   })();
+
+  // ── Sélecteur de langue Google Translate ──
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'fr',
+      includedLanguages: 'fr,nl,en,es',
+      autoDisplay: false,
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+  function toggleLangMenu() {
+    const dd = document.getElementById('lang-dropdown');
+    const btn = document.getElementById('lang-btn');
+    const open = dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+  function setLang(langCode, label) {
+    // Fermer le menu
+    document.getElementById('lang-dropdown').classList.remove('open');
+    document.getElementById('lang-current').textContent = label;
+    // Mettre à jour les options actives
+    document.querySelectorAll('.lang-option').forEach(opt => opt.classList.remove('active'));
+    event.target.closest('.lang-option').classList.add('active');
+    // Déclencher Google Translate
+    if (langCode === 'fr') {
+      // Revenir au français original
+      const restore = document.querySelector('.goog-te-menu-value');
+      if (restore) restore.click();
+      // Ou forcer via cookie
+      document.cookie = 'googtrans=/fr/fr; path=/';
+      location.reload();
+      return;
+    }
+    const select = document.querySelector('select.goog-te-combo');
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event('change'));
+    } else {
+      // Fallback : attendre que Google Translate charge
+      setTimeout(() => {
+        const s = document.querySelector('select.goog-te-combo');
+        if (s) { s.value = langCode; s.dispatchEvent(new Event('change')); }
+      }, 1500);
+    }
+  }
+  // Fermer au clic extérieur
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('lang-selector')?.contains(e.target)) {
+      document.getElementById('lang-dropdown')?.classList.remove('open');
+    }
+  });
 </script>
 
 </body>
