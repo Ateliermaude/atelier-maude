@@ -46,6 +46,10 @@
 </script>
 <style>
 
+  /* FALLBACK FADE-IN */
+  .fade-in,.fade-in-up,.fade-in-left,.fade-in-right{opacity:0;transition:opacity 0.7s ease,transform 0.7s ease}
+  .fade-in.visible,.fade-in-up.visible,.fade-in-left.visible,.fade-in-right.visible{opacity:1!important;transform:none!important}
+
   /* ── BANDEAU DÉFILANT — CORRECTION ── */
   .announcement {
     background: var(--terracotta);
@@ -519,6 +523,8 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       }
     });
   }, 300);
+
+  setTimeout(function(){document.querySelectorAll('.fade-in:not(.visible),.fade-in-up:not(.visible)').forEach(function(el){el.classList.add('visible');});},700);
 </script><script>
   window.addEventListener('scroll',()=>{
     document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
