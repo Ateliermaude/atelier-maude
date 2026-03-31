@@ -32,9 +32,79 @@
     <link rel="dns-prefetch" href="https://ateliermaude.github.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Manteau Yūn Court Ceinturé en Cachemire",
+  "description": "Manteau mi-cuisse ceinturé en 70% laine et 30% cachemire de Mongolie-Intérieure. Fabriqué à Suzhou, Chine. Disponible en noir et marine.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Atelier MAUDÉ"
+  },
+  "url": "https://ateliermaude.github.io/yun-court.html",
+  "image": [
+    "https://ateliermaude.github.io/yun-court-noir.jpeg",
+    "https://ateliermaude.github.io/yun-court-marine.jpeg"
+  ],
+  "sku": "AM-YUN-COURT",
+  "material": "70% Laine, 30% Cachemire",
+  "color": "Noir, Marine",
+  "countryOfOrigin": "CN",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://ateliermaude.github.io/yun-court.html",
+    "priceCurrency": "EUR",
+    "price": "350.00",
+    "priceValidUntil": "2025-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Organization",
+      "name": "Atelier MAUDÉ"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://ateliermaude.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Manteaux",
+      "item": "https://ateliermaude.github.io/index.html#collection"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Yūn Court Ceinturé",
+      "item": "https://ateliermaude.github.io/yun-court.html"
+    }
+  ]
+}
+</script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --cream: #F5F0EA;
@@ -848,7 +918,6 @@
     nav a { font-size: 10px !important; letter-spacing: 0.12em !important; }
   }
 
-
   /* ── PARTAGE RÉSEAUX SOCIAUX ── */
   .share-section {
     margin-top: 28px;
@@ -1013,74 +1082,69 @@
     transition: width 0.1s linear;
     pointer-events: none;
   }
+#cercle-popup {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(42,26,18,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(3px);
+}
+#cercle-popup.open { opacity: 1; pointer-events: auto; }
+.popup-inner {
+  background: var(--warm-white);
+  max-width: 420px; width: 90%;
+  padding: 52px 44px 40px;
+  position: relative; text-align: center;
+  transform: translateY(16px);
+  transition: transform 0.4s ease;
+}
+#cercle-popup.open .popup-inner { transform: translateY(0); }
+.popup-close {
+  position: absolute; top: 18px; right: 20px;
+  background: none; border: none; cursor: pointer;
+  color: var(--muted); font-size: 18px; line-height: 1;
+  transition: color 0.2s;
+}
+.popup-close:hover { color: var(--dark-brown); }
+.popup-eyebrow {
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--terracotta); margin-bottom: 14px;
+}
+.popup-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px; font-weight: 300; line-height: 1.1;
+  color: var(--dark-brown); margin-bottom: 18px;
+  letter-spacing: 0.04em;
+}
+.popup-text {
+  font-size: 13px; line-height: 1.85; color: var(--muted);
+  margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto;
+}
+.popup-form {
+  display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;
+}
+.popup-form input {
+  background: transparent;
+  border: none; border-bottom: 1px solid var(--border);
+  padding: 12px 4px; font-family: 'Jost', sans-serif;
+  font-size: 13px; color: var(--dark-brown); outline: none;
+  text-align: center; transition: border-color 0.2s;
+}
+.popup-form input:focus { border-bottom-color: var(--dark-brown); }
+.popup-form input::placeholder { color: var(--muted); letter-spacing: 0.06em; }
+.popup-form button[type="submit"] {
+  background: var(--dark-brown); color: #fff; border: none;
+  padding: 15px; font-family: 'Jost', sans-serif;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.3s; margin-top: 4px;
+}
+.popup-form button[type="submit"]:hover { background: var(--terracotta); }
+.popup-decline {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Jost', sans-serif; font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Manteau Yūn Court Ceinturé en Cachemire",
-  "description": "Manteau mi-cuisse ceinturé en 70% laine et 30% cachemire de Mongolie-Intérieure. Fabriqué à Suzhou, Chine. Disponible en noir et marine.",
-  "brand": {
-    "@type": "Brand",
-    "name": "Atelier MAUDÉ"
-  },
-  "url": "https://ateliermaude.github.io/yun-court.html",
-  "image": [
-    "https://ateliermaude.github.io/yun-court-noir.jpeg",
-    "https://ateliermaude.github.io/yun-court-marine.jpeg"
-  ],
-  "sku": "AM-YUN-COURT",
-  "material": "70% Laine, 30% Cachemire",
-  "color": "Noir, Marine",
-  "countryOfOrigin": "CN",
-  "offers": {
-    "@type": "Offer",
-    "url": "https://ateliermaude.github.io/yun-court.html",
-    "priceCurrency": "EUR",
-    "price": "350.00",
-    "priceValidUntil": "2025-12-31",
-    "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/NewCondition",
-    "seller": {
-      "@type": "Organization",
-      "name": "Atelier MAUDÉ"
-    }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "3",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Accueil",
-      "item": "https://ateliermaude.github.io/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Manteaux",
-      "item": "https://ateliermaude.github.io/index.html#collection"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Yūn Court Ceinturé",
-      "item": "https://ateliermaude.github.io/yun-court.html"
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -1110,7 +1174,6 @@
   </div>
 </div>
 
-
 <!-- HEADER -->
 <header id="site-header">
   <div class="header-inner">
@@ -1137,6 +1200,31 @@
           <circle cx="12" cy="7" r="4"/>
         </svg>
       </button>
+      <!-- SÉLECTEUR DE LANGUE -->
+  <div class="lang-selector" id="lang-selector">
+    <button class="lang-btn" onclick="toggleLangMenu()" aria-label="Changer de langue" aria-expanded="false" id="lang-btn">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span id="lang-current">FR</span>
+    </button>
+    <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+      <button class="lang-option active" onclick="setLang('fr', 'FR')" role="option">
+        <span class="lang-flag">🇫🇷</span> Français
+      </button>
+      <button class="lang-option" onclick="setLang('nl', 'NL')" role="option">
+        <span class="lang-flag">🇧🇪</span> Nederlands
+      </button>
+      <button class="lang-option" onclick="setLang('en', 'EN')" role="option">
+        <span class="lang-flag">🇬🇧</span> English
+      </button>
+      <button class="lang-option" onclick="setLang('es', 'ES')" role="option">
+        <span class="lang-flag">🇪🇸</span> Español
+      </button>
+    </div>
+  </div>
+  <div id="google_translate_element"></div>
       <button aria-label="Panier">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
@@ -1152,6 +1240,7 @@
     <a href="#">Accessoires</a>
     <a href="promotions.html">Promotions</a>
     <a href="notre-histoire.html">Notre Histoire</a>
+    <a href="lookbook.html">Lookbook</a>
   </nav>
 </header>
 
@@ -1171,27 +1260,28 @@
   <div class="gallery" id="product-gallery">
     <div class="gallery-thumbs">
       <div class="gallery-thumb active" onclick="switchImage(0)" role="button" aria-label="Vue 1 — Noir">
-        <img src="yun-court-noir.jpeg" fetchpriority="high" alt="Yūn Court noir — miniature 1" loading="lazy">
+        <img src="yun-court-noir.jpeg" width="800" height="1066" fetchpriority="high" alt="Yūn Court noir — miniature 1" loading="lazy" decoding="async">
       </div>
       <div class="gallery-thumb" onclick="switchImage(1)" role="button" aria-label="Vue 2 — Marine">
-        <img src="yun-court-marine.jpeg" alt="Yūn Court marine — miniature 2" loading="lazy">
+        <img src="yun-court-marine.jpeg" width="800" height="1066" alt="Yūn Court marine — miniature 2" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="gallery-main">
       <div class="promo-tag">Promotion</div>
       <div class="discount-badge">–23%</div>
-      <img src="yun-court-noir.jpeg"
+      <img src="yun-court-noir.jpeg" width="800" height="1066"
            alt="Manteau Yūn Court Ceinturé en Cachemire — coloris noir, vue principale"
            class="active" loading="eager">
-      <img src="yun-court-marine.jpeg"
+      <img src="yun-court-marine.jpeg" width="800" height="1066"
            alt="Manteau Yūn Court Ceinturé en Cachemire — coloris marine"
-           loading="lazy">
+           loading="lazy" decoding="async">
     </div>
   </div>
 
   <!-- PRODUCT INFO -->
   <div class="product-info fade-in">
     <p class="product-eyebrow">Manteau femme laine &amp; cachemire · Atelier MAUDÉ</p>
+    <span class="edition-badge"><span style="color:var(--gold)">✦</span> Édition limitée — stocks limités</span>
     <h1 class="product-title">Manteau Yūn Court<br>Ceinturé en Cachemire</h1>
 
     <div class="product-rating">
@@ -1211,6 +1301,10 @@
           <span class="stock-dot medium"></span>
           <span class="stock-text medium">Plus que 2 en stock</span>
         </div>
+    <p class="delivery-note">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      Livraison offerte — estimée dans 8 à 15 jours ouvrés
+    </p>
     <hr class="divider">
 
     <!-- Color -->
@@ -1235,6 +1329,10 @@
     </div>
     <button class="size-guide-link" onclick="openModal('size-modal')">Guide des tailles</button>
 
+    <a href="lookbook.html" class="product-lookbook-link">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+      Voir le lookbook complet →
+    </a>
     <!-- ACCORDION LIVRAISON & RETOUR -->
     <div class="accordion">
       <div class="accordion-item">
@@ -1477,8 +1575,8 @@
     <article class="related-card">
       <div class="related-image">
         <div class="related-promo-tag">Promotion</div>
-        <img src="hua-long-camel-1.jpeg"
-             alt="Manteau Huā Long en Cachemire camel" loading="lazy">
+        <img src="hua-long-camel-1.jpeg" width="800" height="1066"
+             alt="Manteau Huā Long en Cachemire camel" loading="lazy" decoding="async">
         <div class="related-hover"><a href="hua-long.html">Voir le produit</a></div>
       </div>
       <h3 class="related-name">Manteau Huā Long en Cachemire</h3>
@@ -1490,8 +1588,8 @@
     <article class="related-card">
       <div class="related-image">
         <div class="related-promo-tag">Promotion</div>
-        <img src="yun-long-noir.png"
-             alt="Manteau Yūn Long Ceinturé en Cachemire noir" loading="lazy">
+        <img src="yun-long-noir.png" width="800" height="1066"
+             alt="Manteau Yūn Long Ceinturé en Cachemire noir" loading="lazy" decoding="async">
         <div class="related-hover"><a href="yun-long.html">Voir le produit</a></div>
       </div>
       <h3 class="related-name">Manteau Yūn Long Ceinturé en Cachemire</h3>
@@ -1772,8 +1870,58 @@
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
   })();
-</script>
 
+  // ── Sélecteur de langue Google Translate ──
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'fr',
+      includedLanguages: 'fr,nl,en,es',
+      autoDisplay: false,
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+  function toggleLangMenu() {
+    const dd = document.getElementById('lang-dropdown');
+    const btn = document.getElementById('lang-btn');
+    const open = dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+  function setLang(langCode, label) {
+    // Fermer le menu
+    document.getElementById('lang-dropdown').classList.remove('open');
+    document.getElementById('lang-current').textContent = label;
+    // Mettre à jour les options actives
+    document.querySelectorAll('.lang-option').forEach(opt => opt.classList.remove('active'));
+    event.target.closest('.lang-option').classList.add('active');
+    // Déclencher Google Translate
+    if (langCode === 'fr') {
+      // Revenir au français original
+      const restore = document.querySelector('.goog-te-menu-value');
+      if (restore) restore.click();
+      // Ou forcer via cookie
+      document.cookie = 'googtrans=/fr/fr; path=/';
+      location.reload();
+      return;
+    }
+    const select = document.querySelector('select.goog-te-combo');
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event('change'));
+    } else {
+      // Fallback : attendre que Google Translate charge
+      setTimeout(() => {
+        const s = document.querySelector('select.goog-te-combo');
+        if (s) { s.value = langCode; s.dispatchEvent(new Event('change')); }
+      }, 1500);
+    }
+  }
+  // Fermer au clic extérieur
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('lang-selector')?.contains(e.target)) {
+      document.getElementById('lang-dropdown')?.classList.remove('open');
+    }
+  });
+</script>
 
 <!-- POP-UP CERCLE MAUDÉ -->
 <div id="cercle-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
@@ -1792,70 +1940,5 @@
     <button class="popup-decline" onclick="closePopup()">Non, merci</button>
   </div>
 </div>
-
-<style>
-#cercle-popup {
-  position: fixed; inset: 0; z-index: 300;
-  background: rgba(42,26,18,0.55);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.4s ease;
-  backdrop-filter: blur(3px);
-}
-#cercle-popup.open { opacity: 1; pointer-events: auto; }
-.popup-inner {
-  background: var(--warm-white);
-  max-width: 420px; width: 90%;
-  padding: 52px 44px 40px;
-  position: relative; text-align: center;
-  transform: translateY(16px);
-  transition: transform 0.4s ease;
-}
-#cercle-popup.open .popup-inner { transform: translateY(0); }
-.popup-close {
-  position: absolute; top: 18px; right: 20px;
-  background: none; border: none; cursor: pointer;
-  color: var(--muted); font-size: 18px; line-height: 1;
-  transition: color 0.2s;
-}
-.popup-close:hover { color: var(--dark-brown); }
-.popup-eyebrow {
-  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--terracotta); margin-bottom: 14px;
-}
-.popup-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px; font-weight: 300; line-height: 1.1;
-  color: var(--dark-brown); margin-bottom: 18px;
-  letter-spacing: 0.04em;
-}
-.popup-text {
-  font-size: 13px; line-height: 1.85; color: var(--muted);
-  margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto;
-}
-.popup-form {
-  display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;
-}
-.popup-form input {
-  background: transparent;
-  border: none; border-bottom: 1px solid var(--border);
-  padding: 12px 4px; font-family: 'Jost', sans-serif;
-  font-size: 13px; color: var(--dark-brown); outline: none;
-  text-align: center; transition: border-color 0.2s;
-}
-.popup-form input:focus { border-bottom-color: var(--dark-brown); }
-.popup-form input::placeholder { color: var(--muted); letter-spacing: 0.06em; }
-.popup-form button[type="submit"] {
-  background: var(--dark-brown); color: #fff; border: none;
-  padding: 15px; font-family: 'Jost', sans-serif;
-  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-  cursor: pointer; transition: background 0.3s; margin-top: 4px;
-}
-.popup-form button[type="submit"]:hover { background: var(--terracotta); }
-.popup-decline {
-  background: none; border: none; cursor: pointer;
-  font-family: 'Jost', sans-serif; font-size: 10px;
-  letter-spacing: 0.18em; text-transform: uppercase;
-</style>
 </body>
 </html>
