@@ -24,6 +24,79 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <style>
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
 html{scroll-behavior:smooth}
@@ -31,11 +104,11 @@ body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text
 *{-webkit-tap-highlight-color:transparent}
 button,a{touch-action:manipulation}
 
-.announcement{background:var(--terracotta);color:#fff;overflow:hidden}
-.ticker-track{display:flex;white-space:nowrap;animation:ticker 28s linear infinite}
-.ticker-item{display:inline-flex;align-items:center;padding:10px 0;flex-shrink:0;font-size:11px;letter-spacing:0.12em;font-weight:400}
-.ticker-sep{display:inline-block;margin:0 28px;color:rgba(255,255,255,0.35);font-size:14px}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+
+
+
+100%{transform:translateX(-50%)}}
 
 header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
 header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
@@ -143,6 +216,16 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   .cta-buttons{flex-direction:column;align-items:center}
   .lightbox-prev,.lightbox-next{display:none}
 }
+
+  /* FALLBACK FADE-IN — évite les pages blanches */
+  .fade-in, .fade-in-up, .fade-in-left, .fade-in-right {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible, .fade-in-up.visible, .fade-in-left.visible, .fade-in-right.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 </style>
 </head>
 <body>
@@ -176,7 +259,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
   </div>
   <nav>
-    <a href="index.html#collection">Manteaux</a>
+    <a href="manteaux.html">Manteaux</a>
     <a href="promotions.html">Promotions</a>
     <a href="notre-histoire.html">Notre Histoire</a>
     <a href="lookbook.html" class="active">Lookbook</a>
@@ -287,7 +370,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
     <div class="footer-col">
       <h4>Boutique</h4>
-      <ul><li><a href="index.html#collection">Manteaux</a></li><li><a href="promotions.html">Promotions</a></li>
+      <ul><li><a href="manteaux.html">Manteaux</a></li><li><a href="promotions.html">Promotions</a></li>
         <li><a href="carte-cadeau.html">Carte cadeau</a></li><li><a href="lookbook.html">Lookbook</a></li></ul>
     </div>
     <div class="footer-col">
@@ -309,7 +392,24 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14"><polyline points="2,10 7,4 12,10"/></svg>
 </button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  // Fallback fade-in au cas où IntersectionObserver rate des éléments
+  setTimeout(function() {
+    document.querySelectorAll('.fade-in, .fade-in-up').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      }
+    });
+  }, 300);
+
+  // Fallback universel — active tous les fade-in après 600ms si pas encore visibles
+  setTimeout(function() {
+    document.querySelectorAll('.fade-in:not(.visible),.fade-in-up:not(.visible),.fade-in-left:not(.visible),.fade-in-right:not(.visible)').forEach(function(el) {
+      el.classList.add('visible');
+    });
+  }, 600);
+</script><script>
   window.addEventListener('scroll',()=>{
     document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
     document.getElementById('back-to-top').classList.toggle('visible',scrollY>400);
