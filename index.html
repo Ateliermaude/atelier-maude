@@ -32,9 +32,51 @@
     <link rel="dns-prefetch" href="https://ateliermaude.github.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Atelier MAUDÉ",
+  "url": "https://ateliermaude.github.io",
+  "logo": "https://ateliermaude.github.io/favicon.svg",
+  "email": "lateliermaude@gmail.com",
+  "description": "Manteaux en laine et cachemire d'exception, fabriqués à Suzhou, Chine.",
+  "foundingDate": "2024",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "Aude"
+    },
+    {
+      "@type": "Person",
+      "name": "Mathilde"
+    }
+  ],
+  "areaServed": [
+    "FR",
+    "BE",
+    "CH"
+  ],
+  "sameAs": [
+    "https://instagram.com/ateliermaude"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Atelier MAUDÉ",
+  "url": "https://ateliermaude.github.io",
+  "inLanguage": "fr-FR"
+}
+</script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --cream: #F5F0EA;
@@ -978,7 +1020,6 @@
     nav a { font-size: 10px !important; letter-spacing: 0.12em !important; }
   }
 
-
   /* ── MICRO-ANIMATIONS BOUTONS CTA ── */
 
   /* Bouton primaire — shimmer doré au hover */
@@ -1100,46 +1141,168 @@
       transition-duration: 0.01ms !important;
     }
   }
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* ── POPUP ── */
+#cercle-popup {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(42,26,18,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(3px);
+}
+#cercle-popup.open { opacity: 1; pointer-events: auto; }
+
+.popup-inner {
+  background: var(--warm-white);
+  max-width: 420px; width: 90%;
+  padding: 52px 44px 40px;
+  position: relative; text-align: center;
+  transform: translateY(16px);
+  transition: transform 0.4s ease;
+}
+#cercle-popup.open .popup-inner { transform: translateY(0); }
+
+.popup-close {
+  position: absolute; top: 18px; right: 20px;
+  background: none; border: none; cursor: pointer;
+  color: var(--muted); font-size: 18px; line-height: 1;
+  transition: color 0.2s;
+}
+.popup-close:hover { color: var(--dark-brown); }
+
+.popup-eyebrow {
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--terracotta); margin-bottom: 14px;
+}
+.popup-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px; font-weight: 300; line-height: 1.1;
+  color: var(--dark-brown); margin-bottom: 18px;
+  letter-spacing: 0.04em;
+}
+.popup-text {
+  font-size: 13px; line-height: 1.85; color: var(--muted);
+  margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto;
+}
+
+.popup-form {
+  display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;
+}
+.popup-form input {
+  background: transparent;
+  border: none; border-bottom: 1px solid var(--border);
+  padding: 12px 4px; font-family: 'Jost', sans-serif;
+  font-size: 13px; color: var(--dark-brown); outline: none;
+  text-align: center; transition: border-color 0.2s;
+}
+.popup-form input:focus { border-bottom-color: var(--dark-brown); }
+.popup-form input::placeholder { color: var(--muted); letter-spacing: 0.06em; }
+.popup-form button[type="submit"] {
+  background: var(--dark-brown); color: #fff; border: none;
+  padding: 15px; font-family: 'Jost', sans-serif;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.3s; margin-top: 4px;
+}
+.popup-form button[type="submit"]:hover { background: var(--terracotta); }
+
+.popup-decline {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Jost', sans-serif; font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); transition: color 0.2s;
+}
+.popup-decline:hover { color: var(--dark-brown); }
+
+@media (max-width: 600px) {
+  .popup-inner { padding: 44px 28px 34px; }
+  .popup-title { font-size: 36px; }
+}
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 400;
+  background: var(--dark-brown);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+#cookie-banner.show { transform: translateY(0); }
+.cookie-inner {
+  max-width: 1400px; margin: 0 auto;
+  padding: 20px 40px;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 32px;
+  flex-wrap: wrap;
+}
+.cookie-text { flex: 1; min-width: 260px; }
+.cookie-title {
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px; font-weight: 400;
+}
+.cookie-text p {
+  font-size: 12px; color: rgba(245,240,234,0.65); line-height: 1.7;
+}
+.cookie-text a {
+  color: rgba(245,240,234,0.85); text-decoration: underline;
+  text-underline-offset: 3px; transition: color 0.2s;
+}
+.cookie-text a:hover { color: var(--gold); }
+.cookie-actions { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+.cookie-btn-accept {
+  background: var(--gold); color: var(--dark-brown); border: none;
+  padding: 11px 28px; font-family: 'Jost', sans-serif;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  cursor: pointer; font-weight: 500; transition: background 0.2s;
+  white-space: nowrap;
+}
+.cookie-btn-accept:hover { background: #d4b87a; }
+.cookie-btn-decline {
+  background: none; border: 1px solid rgba(245,240,234,0.25); color: rgba(245,240,234,0.6);
+  padding: 10px 22px; font-family: 'Jost', sans-serif;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.cookie-btn-decline:hover { border-color: rgba(245,240,234,0.5); color: rgba(245,240,234,0.9); }
+@media(max-width:600px) {
+  .cookie-inner { padding: 20px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .cookie-actions { width: 100%; }
+  .cookie-btn-accept, .cookie-btn-decline { flex: 1; text-align: center; }
+}
+
+  /* ── FAQ ACCUEIL ── */
+  .faq-home {
+    padding: 80px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .faq-home-header { text-align: center; margin-bottom: 48px; }
+  .faq-home-item { border-bottom: 1px solid var(--border); }
+  .faq-home-item:first-of-type { border-top: 1px solid var(--border); }
+  .faq-home-btn {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0; text-align: left;
+    font-family: 'Jost', sans-serif; font-size: 14px;
+    color: var(--dark-brown); font-weight: 300; gap: 16px;
+    transition: color 0.2s;
+  }
+  .faq-home-btn:hover { color: var(--terracotta); }
+  .faq-home-icon { color: var(--gold); font-size: 20px; flex-shrink: 0; transition: transform 0.3s; }
+  .faq-home-item.open .faq-home-icon { transform: rotate(45deg); }
+  .faq-home-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-home-answer-inner {
+    padding: 0 0 20px;
+    font-size: 13px; color: var(--muted); line-height: 1.9;
+  }
+  .faq-home-answer-inner a { color: var(--dark-brown); text-decoration: underline; text-underline-offset: 3px; }
+  .faq-home-item.open .faq-home-answer { max-height: 300px; }
+  .faq-home-more {
+    text-align: center; margin-top: 32px;
+    font-size: 13px; color: var(--muted);
+  }
+  .faq-home-more a { color: var(--dark-brown); text-decoration: underline; text-underline-offset: 3px; }
+  @media(max-width:600px){ .faq-home { padding: 60px 24px; } }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Atelier MAUDÉ",
-  "url": "https://ateliermaude.github.io",
-  "logo": "https://ateliermaude.github.io/favicon.svg",
-  "email": "lateliermaude@gmail.com",
-  "description": "Manteaux en laine et cachemire d'exception, fabriqués à Suzhou, Chine.",
-  "foundingDate": "2024",
-  "founders": [
-    {
-      "@type": "Person",
-      "name": "Aude"
-    },
-    {
-      "@type": "Person",
-      "name": "Mathilde"
-    }
-  ],
-  "areaServed": [
-    "FR",
-    "BE",
-    "CH"
-  ],
-  "sameAs": [
-    "https://instagram.com/ateliermaude"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Atelier MAUDÉ",
-  "url": "https://ateliermaude.github.io",
-  "inLanguage": "fr-FR"
-}
-</script>
 </head>
 <body>
 
@@ -1166,7 +1329,6 @@
     <span class="ticker-sep">✦</span>
   </div>
 </div>
-
 
 <!-- HEADER -->
 <header id="site-header">
@@ -1209,13 +1371,14 @@
     <a href="#">Accessoires</a>
     <a href="#collection">Promotions</a>
     <a href="notre-histoire.html">Notre Histoire</a>
+    <a href="lookbook.html">Lookbook</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero" aria-label="Collection vedette">
   <div class="hero-image">
-    <img src="hero.png"
+    <img src="hero.png" width="1400" height="933"
          fetchpriority="high"
          alt="Manteau en cachemire Atelier MAUDÉ — collection hiver"
          loading="eager">
@@ -1227,6 +1390,20 @@
     <div class="hero-actions">
       <a href="#collection" class="btn-primary">Découvrir la collection</a>
       <a href="#collection" class="btn-outline">Promotions –30%</a>
+    </div>
+    <div class="hero-trust" style="margin-top:24px;display:flex;gap:20px;flex-wrap:wrap">
+      <span class="hero-trust-item">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Livraison gratuite
+      </span>
+      <span class="hero-trust-item">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        Retours 30 jours
+      </span>
+      <span class="hero-trust-item">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Paiement sécurisé
+      </span>
     </div>
   </div>
 </section>
@@ -1252,10 +1429,10 @@
         <div class="promo-tag">Promotion</div>
         <div class="discount-badge">–23%</div>
         <div class="slider" id="slider-1" role="region" aria-label="Photos Manteau Yūn Court">
-          <img src="yun-court-noir.jpeg"
+          <img loading="lazy" decoding="async" src="yun-court-noir.jpeg" width="800" height="1066"
                alt="Manteau Yūn Court Ceinturé en Cachemire — coloris noir"
                class="active">
-          <img src="yun-court-marine.jpeg"
+          <img loading="lazy" decoding="async" src="yun-court-marine.jpeg" width="800" height="1066"
                alt="Manteau Yūn Court Ceinturé en Cachemire — coloris marine">
           <div class="slider-dots" aria-hidden="true">
             <button class="slider-dot active" onclick="goToSlide('slider-1',0)" aria-label="Photo 1"></button>
@@ -1284,10 +1461,10 @@
         <div class="promo-tag">Promotion</div>
         <div class="discount-badge">–23%</div>
         <div class="slider" id="slider-2" role="region" aria-label="Photos Manteau Huā Long">
-          <img src="hua-long-camel-1.jpeg"
+          <img loading="lazy" decoding="async" src="hua-long-camel-1.jpeg" width="800" height="1066"
                alt="Manteau Huā Long en Cachemire — coloris camel, vue de face"
                class="active">
-          <img src="hua-long-camel-2.jpeg"
+          <img loading="lazy" decoding="async" src="hua-long-camel-2.jpeg" width="800" height="1066"
                alt="Manteau Huā Long en Cachemire — coloris camel, détail">
           <div class="slider-dots" aria-hidden="true">
             <button class="slider-dot active" onclick="goToSlide('slider-2',0)" aria-label="Photo 1"></button>
@@ -1314,9 +1491,9 @@
       <div class="product-image">
         <div class="promo-tag">Promotion</div>
         <div class="discount-badge">–23%</div>
-        <img src="yun-long-noir.png"
+        <img src="yun-long-noir.png" width="800" height="1066"
              alt="Manteau Yūn Long Ceinturé en Cachemire — coloris noir"
-             loading="lazy">
+             loading="lazy" decoding="async">
         <div class="product-hover">
           <a href="yun-long.html">Voir le produit</a>
         </div>
@@ -1332,6 +1509,30 @@
       </div>
     </article>
 
+  </div>
+</section>
+
+<!-- LOOKBOOK TEASER -->
+<section class="lookbook-teaser" aria-label="Lookbook Atelier MAUDÉ">
+  <div class="lookbook-teaser-images">
+    <div class="lookbook-teaser-img">
+      <img src="yun-court-noir.jpeg" width="800" height="1066" alt="Manteau Yūn Court Ceinturé — Atelier MAUDÉ" loading="lazy" decoding="async">
+    </div>
+    <div class="lookbook-teaser-img">
+      <img src="hua-long-camel-1.jpeg" width="800" height="1066" alt="Manteau Huā Long Camel — Atelier MAUDÉ" loading="lazy" decoding="async">
+    </div>
+    <div class="lookbook-teaser-img">
+      <img src="yun-court-marine.jpeg" width="800" height="1066" alt="Manteau Yūn Court Marine — Atelier MAUDÉ" loading="lazy" decoding="async">
+    </div>
+    <div class="lookbook-teaser-img">
+      <img src="yun-long-noir.png" width="800" height="1066" alt="Manteau Yūn Long Ceinturé — Atelier MAUDÉ" loading="lazy" decoding="async">
+    </div>
+  </div>
+  <div class="lookbook-teaser-content fade-in">
+    <span class="lookbook-teaser-eyebrow">Galerie</span>
+    <h2 class="lookbook-teaser-title">Nos manteaux<br><em>sous tous les angles.</em></h2>
+    <p class="lookbook-teaser-text">Découvrez toutes nos pièces en situation — détails, matières, tombés. Filtrez par modèle et cliquez pour agrandir.</p>
+    <a href="lookbook.html" class="btn-gold">Voir le lookbook</a>
   </div>
 </section>
 
@@ -1383,7 +1584,7 @@
       <p class="section-label">La collection</p>
       <h2 class="section-title" style="margin-bottom:0">Portez-les,<br><em>vivez-les.</em></h2>
     </div>
-    <a href="index.html#collection" class="lifestyle-header-link">
+    <a href="lookbook.html" class="lifestyle-header-link">
       Voir tous les modèles
       <svg width="14" height="9" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 14 9" aria-hidden="true"><line x1="0" y1="4.5" x2="12" y2="4.5"/><polyline points="8.5,1 12,4.5 8.5,8"/></svg>
     </a>
@@ -1393,9 +1594,9 @@
 
     <!-- Grande image gauche — Yūn Long -->
     <div class="mosaic-item">
-      <img src="yun-long-noir.png"
+      <img src="yun-long-noir.png" width="800" height="1066"
            alt="Manteau Yūn Long Ceinturé — silhouette noir, coupe longue"
-           loading="lazy">
+           loading="lazy" decoding="async">
       <div class="mosaic-caption">
         <span class="mosaic-caption-name">Yūn Long Ceinturé</span>
         <a href="yun-long.html" class="mosaic-caption-link">
@@ -1407,9 +1608,9 @@
 
     <!-- Haut droite — Huā Long -->
     <div class="mosaic-item">
-      <img src="hua-long-camel-1.jpeg"
+      <img src="hua-long-camel-1.jpeg" width="800" height="1066"
            alt="Manteau Huā Long — coloris camel, élégance naturelle"
-           loading="lazy">
+           loading="lazy" decoding="async">
       <div class="mosaic-caption">
         <span class="mosaic-caption-name">Huā Long Camel</span>
         <a href="hua-long.html" class="mosaic-caption-link">
@@ -1421,9 +1622,9 @@
 
     <!-- Bas droite — Yūn Court -->
     <div class="mosaic-item">
-      <img src="yun-court-noir.jpeg"
+      <img src="yun-court-noir.jpeg" width="800" height="1066"
            alt="Manteau Yūn Court Ceinturé — coupe mi-cuisse, coloris noir"
-           loading="lazy">
+           loading="lazy" decoding="async">
       <div class="mosaic-caption">
         <span class="mosaic-caption-name">Yūn Court Ceinturé</span>
         <a href="yun-court.html" class="mosaic-caption-link">
@@ -1467,6 +1668,168 @@
     <p class="feature-text">Une équipe dédiée pour vous accompagner dans votre choix.</p>
   </div>
 </div>
+
+<!-- APERÇU JOURNAL -->
+<section class="journal-preview" aria-labelledby="journal-preview-title">
+  <div class="journal-preview-header fade-in">
+    <div>
+      <p class="section-label">Le Journal</p>
+      <h2 class="section-title" style="margin-bottom:0" id="journal-preview-title">Conseils, tendances<br><em>& coulisses.</em></h2>
+    </div>
+    <a href="journal.html" class="journal-preview-link">
+      Tous les articles
+      <svg width="14" height="9" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 14 9" aria-hidden="true"><line x1="0" y1="4.5" x2="12" y2="4.5"/><polyline points="8.5,1 12,4.5 8.5,8"/></svg>
+    </a>
+  </div>
+
+  <div class="journal-preview-grid">
+    <article class="journal-preview-card fade-in-up">
+      <div class="journal-preview-img">
+        <div class="journal-cat">Guide</div>
+        <img src="yun-court-noir.jpeg" width="800" height="1066" alt="Comment bien choisir son manteau en laine et cachemire" loading="lazy" decoding="async">
+      </div>
+      <span class="journal-preview-date">Mars 2025 &nbsp;·&nbsp; 6 min</span>
+      <a href="article-choisir-manteau.html" class="journal-preview-title">L'art du cachemire — comment bien choisir son manteau</a>
+      <p class="journal-preview-excerpt">Composition, coupe, longueur, prix… Le guide complet pour investir dans un manteau en laine et cachemire qui dure des années.</p>
+      <a href="article-choisir-manteau.html" class="journal-preview-read">
+        Lire l'article
+        <svg width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 12 8"><line x1="0" y1="4" x2="10" y2="4"/><polyline points="7,1 10,4 7,7"/></svg>
+      </a>
+    </article>
+
+    <article class="journal-preview-card fade-in-up stagger-1">
+      <div class="journal-preview-img">
+        <div class="journal-cat">Entretien</div>
+        <img src="hua-long-camel-1.jpeg" width="800" height="1066" alt="Comment entretenir son manteau en laine et cachemire" loading="lazy" decoding="async">
+      </div>
+      <span class="journal-preview-date">Février 2025 &nbsp;·&nbsp; 4 min</span>
+      <a href="article-entretien-cachemire.html" class="journal-preview-title">Comment entretenir son manteau en laine et cachemire</a>
+      <p class="journal-preview-excerpt">Lavage, séchage, rangement, bouloches… Les gestes essentiels pour préserver la douceur de votre manteau saison après saison.</p>
+      <a href="article-entretien-cachemire.html" class="journal-preview-read">
+        Lire l'article
+        <svg width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 12 8"><line x1="0" y1="4" x2="10" y2="4"/><polyline points="7,1 10,4 7,7"/></svg>
+      </a>
+    </article>
+
+    <article class="journal-preview-card fade-in-up stagger-2">
+      <div class="journal-preview-img">
+        <div class="journal-cat">Tendances</div>
+        <img src="yun-long-noir.png" width="800" height="1066" alt="Tendances manteaux femme automne-hiver 2026" loading="lazy" decoding="async">
+      </div>
+      <span class="journal-preview-date">Janvier 2025 &nbsp;·&nbsp; 5 min</span>
+      <a href="article-tendances-2026.html" class="journal-preview-title">Tendances manteaux femme automne-hiver 2026</a>
+      <p class="journal-preview-excerpt">Coupes oversizes, cachemire, coloris neutres — décryptage des grandes tendances manteaux pour l'hiver 2026.</p>
+      <a href="article-tendances-2026.html" class="journal-preview-read">
+        Lire l'article
+        <svg width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 12 8"><line x1="0" y1="4" x2="10" y2="4"/><polyline points="7,1 10,4 7,7"/></svg>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- COMPARATIF -->
+<section class="comparatif" aria-label="Pourquoi choisir Atelier MAUDÉ">
+  <div class="comparatif-inner">
+    <span class="comparatif-eyebrow fade-in">Pourquoi nous choisir</span>
+    <h2 class="comparatif-title fade-in">Atelier MAUDÉ vs<br>les <em>autres marques</em></h2>
+    <div class="comparatif-grid fade-in">
+
+      <div class="comp-col">
+        <div class="comp-header maude">Atelier MAUDÉ</div>
+        <div class="comp-row maude"><span class="comp-check">✓</span> Laine &amp; cachemire Mongolie</div>
+        <div class="comp-row maude"><span class="comp-check">✓</span> Prix direct, sans intermédiaire</div>
+        <div class="comp-row maude"><span class="comp-check">✓</span> Composition 100% transparente</div>
+        <div class="comp-row maude"><span class="comp-check">✓</span> Livraison gratuite</div>
+        <div class="comp-row maude"><span class="comp-check">✓</span> Retours 30 jours</div>
+        <div class="comp-row maude"><span class="comp-check">✓</span> Fondé par deux sœurs</div>
+      </div>
+
+      <div class="comp-col">
+        <div class="comp-header other">Grandes maisons</div>
+        <div class="comp-row other"><span class="comp-check">✓</span> Bonne qualité matières</div>
+        <div class="comp-row other"><span class="comp-cross">✗</span> Prix 800€ – 2 000€+</div>
+        <div class="comp-row other"><span class="comp-check">✓</span> Composition affichée</div>
+        <div class="comp-row other"><span class="comp-cross">✗</span> Frais de port souvent facturés</div>
+        <div class="comp-row other"><span class="comp-check">✓</span> Retours acceptés</div>
+        <div class="comp-row other"><span class="comp-cross">✗</span> Structure corporate</div>
+      </div>
+
+      <div class="comp-col">
+        <div class="comp-header other">Fast fashion</div>
+        <div class="comp-row other"><span class="comp-cross">✗</span> Synthétiques ou laine bas de gamme</div>
+        <div class="comp-row other"><span class="comp-check">✓</span> Prix bas (50€ – 150€)</div>
+        <div class="comp-row other"><span class="comp-cross">✗</span> Composition souvent floue</div>
+        <div class="comp-row other"><span class="comp-check">✓</span> Livraison rapide</div>
+        <div class="comp-row other"><span class="comp-cross">✗</span> Retours complexes</div>
+        <div class="comp-row other"><span class="comp-cross">✗</span> Durée de vie 1 à 2 saisons</div>
+      </div>
+
+    </div>
+    <p class="comparatif-cta fade-in">Le luxe accessible, sans compromis. <a href="#collection">Découvrir nos manteaux →</a></p>
+  </div>
+</section>
+
+<!-- FAQ ACCUEIL -->
+<section class="faq-home" aria-labelledby="faq-home-title">
+  <div class="faq-home-header fade-in">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title" id="faq-home-title">Questions <em>fréquentes</em></h2>
+  </div>
+
+  <div class="faq-home-item fade-in">
+    <button class="faq-home-btn" onclick="toggleFaqHome(this)" aria-expanded="false">
+      Quelle est la composition de vos manteaux ?
+      <span class="faq-home-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="faq-home-answer"><div class="faq-home-answer-inner">
+      Nos manteaux sont composés à <strong>70% de laine et 30% de cachemire</strong> soigneusement sélectionnés en Mongolie-Intérieure. La laine apporte structure et durabilité, le cachemire offre ce toucher soyeux incomparable. Composition complète affichée sur chaque page produit.
+    </div></div>
+  </div>
+
+  <div class="faq-home-item fade-in">
+    <button class="faq-home-btn" onclick="toggleFaqHome(this)" aria-expanded="false">
+      Comment choisir ma taille ?
+      <span class="faq-home-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="faq-home-answer"><div class="faq-home-answer-inner">
+      Nos manteaux sont taillés dans une matière légèrement structurée — nous recommandons votre taille habituelle. Pour une silhouette plus enveloppante, prenez une taille au-dessus. Le <a href="guide-des-tailles.html">guide des tailles complet</a> est disponible sur chaque page produit et en page dédiée.
+    </div></div>
+  </div>
+
+  <div class="faq-home-item fade-in">
+    <button class="faq-home-btn" onclick="toggleFaqHome(this)" aria-expanded="false">
+      Quels sont les délais et frais de livraison ?
+      <span class="faq-home-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="faq-home-answer"><div class="faq-home-answer-inner">
+      La livraison est <strong>gratuite</strong> en France, Belgique et Suisse. Délai estimé : 8 à 15 jours ouvrés depuis la confirmation de commande. Un numéro de suivi vous est envoyé par e-mail dès l'expédition depuis nos ateliers à Suzhou.
+    </div></div>
+  </div>
+
+  <div class="faq-home-item fade-in">
+    <button class="faq-home-btn" onclick="toggleFaqHome(this)" aria-expanded="false">
+      Puis-je retourner mon manteau ?
+      <span class="faq-home-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="faq-home-answer"><div class="faq-home-answer-inner">
+      Oui, vous disposez de <strong>30 jours</strong> à compter de la réception pour retourner votre manteau, sans condition. L'article doit être non porté et dans son emballage d'origine. Contactez-nous à <a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a> pour initier le retour.
+    </div></div>
+  </div>
+
+  <div class="faq-home-item fade-in">
+    <button class="faq-home-btn" onclick="toggleFaqHome(this)" aria-expanded="false">
+      Où sont fabriqués vos manteaux ?
+      <span class="faq-home-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="faq-home-answer"><div class="faq-home-answer-inner">
+      Nos manteaux sont fabriqués à <strong>Suzhou, Chine</strong> — ville historiquement réputée pour son excellence dans le textile et la soie depuis plus de 2 500 ans. Nos ateliers partenaires y transmettent un savoir-faire artisanal de génération en génération.
+    </div></div>
+  </div>
+
+  <p class="faq-home-more fade-in">
+    D'autres questions ? <a href="contact.html">Consultez notre FAQ complète →</a>
+  </p>
+</section>
 
 <!-- NEWSLETTER -->
 <div class="newsletter">
@@ -1523,10 +1886,48 @@
 </footer>
 
 <!-- Visually hidden helper for accessibility -->
-<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+<!-- POP-UP CERCLE MAUDÉ -->
+<div id="cercle-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup-inner">
+    <button class="popup-close" onclick="closePopup()" aria-label="Fermer">✕</button>
+    <p class="popup-eyebrow">Bienvenue</p>
+    <h2 class="popup-title" id="popup-title">Le Cercle<br>MAUDÉ</h2>
+    <p class="popup-text">Recevez nos nouvelles pièces, inspirations matière et actualités de l'atelier.</p>
+    <form class="popup-form" onsubmit="handlePopupSubmit(event)" novalidate>
+      <label for="popup-email" class="sr-only">Votre adresse e-mail</label>
+      <input type="email" id="popup-email" name="email"
+             placeholder="Votre adresse e-mail"
+             autocomplete="email" required>
+      <button type="submit">S'inscrire</button>
+    </form>
+    <button class="popup-decline" onclick="closePopup()">Non, merci</button>
+  </div>
+</div>
+
+<!-- BOUTON RETOUR EN HAUT -->
+<button class="back-to-top" id="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14" aria-hidden="true">
+    <polyline points="2,10 7,4 12,10"/>
+  </svg>
+</button>
+
+<!-- BANNIÈRE COOKIES -->
+<div id="cookie-banner" role="dialog" aria-label="Gestion des cookies">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <p class="cookie-title">Cookies &amp; confidentialité</p>
+      <p>Nous utilisons uniquement des cookies techniques nécessaires au bon fonctionnement du site. Aucun cookie publicitaire. <a href="confidentialite.html#cookies">En savoir plus</a></p>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-btn-accept" onclick="acceptCookies()">Accepter</button>
+      <button class="cookie-btn-decline" onclick="declineCookies()">Continuer sans accepter</button>
+    </div>
+  </div>
+</div>
 
 <script>
-  // ── Header shadow on scroll ──
+// ── Header shadow on scroll ──
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 10);
@@ -1620,180 +2021,6 @@
     if (e.target === this) closePopup();
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
-</script>
-
-<!-- POP-UP CERCLE MAUDÉ -->
-<div id="cercle-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-  <div class="popup-inner">
-    <button class="popup-close" onclick="closePopup()" aria-label="Fermer">✕</button>
-    <p class="popup-eyebrow">Bienvenue</p>
-    <h2 class="popup-title" id="popup-title">Le Cercle<br>MAUDÉ</h2>
-    <p class="popup-text">Recevez nos nouvelles pièces, inspirations matière et actualités de l'atelier.</p>
-    <form class="popup-form" onsubmit="handlePopupSubmit(event)" novalidate>
-      <label for="popup-email" class="sr-only">Votre adresse e-mail</label>
-      <input type="email" id="popup-email" name="email"
-             placeholder="Votre adresse e-mail"
-             autocomplete="email" required>
-      <button type="submit">S'inscrire</button>
-    </form>
-    <button class="popup-decline" onclick="closePopup()">Non, merci</button>
-  </div>
-</div>
-
-<style>
-/* ── POPUP ── */
-#cercle-popup {
-  position: fixed; inset: 0; z-index: 300;
-  background: rgba(42,26,18,0.55);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.4s ease;
-  backdrop-filter: blur(3px);
-}
-#cercle-popup.open { opacity: 1; pointer-events: auto; }
-
-.popup-inner {
-  background: var(--warm-white);
-  max-width: 420px; width: 90%;
-  padding: 52px 44px 40px;
-  position: relative; text-align: center;
-  transform: translateY(16px);
-  transition: transform 0.4s ease;
-}
-#cercle-popup.open .popup-inner { transform: translateY(0); }
-
-.popup-close {
-  position: absolute; top: 18px; right: 20px;
-  background: none; border: none; cursor: pointer;
-  color: var(--muted); font-size: 18px; line-height: 1;
-  transition: color 0.2s;
-}
-.popup-close:hover { color: var(--dark-brown); }
-
-.popup-eyebrow {
-  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--terracotta); margin-bottom: 14px;
-}
-.popup-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px; font-weight: 300; line-height: 1.1;
-  color: var(--dark-brown); margin-bottom: 18px;
-  letter-spacing: 0.04em;
-}
-.popup-text {
-  font-size: 13px; line-height: 1.85; color: var(--muted);
-  margin-bottom: 30px; max-width: 300px; margin-left: auto; margin-right: auto;
-}
-
-.popup-form {
-  display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;
-}
-.popup-form input {
-  background: transparent;
-  border: none; border-bottom: 1px solid var(--border);
-  padding: 12px 4px; font-family: 'Jost', sans-serif;
-  font-size: 13px; color: var(--dark-brown); outline: none;
-  text-align: center; transition: border-color 0.2s;
-}
-.popup-form input:focus { border-bottom-color: var(--dark-brown); }
-.popup-form input::placeholder { color: var(--muted); letter-spacing: 0.06em; }
-.popup-form button[type="submit"] {
-  background: var(--dark-brown); color: #fff; border: none;
-  padding: 15px; font-family: 'Jost', sans-serif;
-  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-  cursor: pointer; transition: background 0.3s; margin-top: 4px;
-}
-.popup-form button[type="submit"]:hover { background: var(--terracotta); }
-
-.popup-decline {
-  background: none; border: none; cursor: pointer;
-  font-family: 'Jost', sans-serif; font-size: 10px;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--muted); transition: color 0.2s;
-}
-.popup-decline:hover { color: var(--dark-brown); }
-
-@media (max-width: 600px) {
-  .popup-inner { padding: 44px 28px 34px; }
-  .popup-title { font-size: 36px; }
-}
-</style>
-
-<!-- BOUTON RETOUR EN HAUT -->
-<button class="back-to-top" id="back-to-top" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14" aria-hidden="true">
-    <polyline points="2,10 7,4 12,10"/>
-  </svg>
-</button>
-
-<!-- BANNIÈRE COOKIES -->
-<div id="cookie-banner" role="dialog" aria-label="Gestion des cookies">
-  <div class="cookie-inner">
-    <div class="cookie-text">
-      <p class="cookie-title">Cookies &amp; confidentialité</p>
-      <p>Nous utilisons uniquement des cookies techniques nécessaires au bon fonctionnement du site. Aucun cookie publicitaire. <a href="confidentialite.html#cookies">En savoir plus</a></p>
-    </div>
-    <div class="cookie-actions">
-      <button class="cookie-btn-accept" onclick="acceptCookies()">Accepter</button>
-      <button class="cookie-btn-decline" onclick="declineCookies()">Continuer sans accepter</button>
-    </div>
-  </div>
-</div>
-
-<style>
-#cookie-banner {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 400;
-  background: var(--dark-brown);
-  transform: translateY(100%);
-  transition: transform 0.4s ease;
-}
-#cookie-banner.show { transform: translateY(0); }
-.cookie-inner {
-  max-width: 1400px; margin: 0 auto;
-  padding: 20px 40px;
-  display: flex; align-items: center;
-  justify-content: space-between; gap: 32px;
-  flex-wrap: wrap;
-}
-.cookie-text { flex: 1; min-width: 260px; }
-.cookie-title {
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 6px; font-weight: 400;
-}
-.cookie-text p {
-  font-size: 12px; color: rgba(245,240,234,0.65); line-height: 1.7;
-}
-.cookie-text a {
-  color: rgba(245,240,234,0.85); text-decoration: underline;
-  text-underline-offset: 3px; transition: color 0.2s;
-}
-.cookie-text a:hover { color: var(--gold); }
-.cookie-actions { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
-.cookie-btn-accept {
-  background: var(--gold); color: var(--dark-brown); border: none;
-  padding: 11px 28px; font-family: 'Jost', sans-serif;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  cursor: pointer; font-weight: 500; transition: background 0.2s;
-  white-space: nowrap;
-}
-.cookie-btn-accept:hover { background: #d4b87a; }
-.cookie-btn-decline {
-  background: none; border: 1px solid rgba(245,240,234,0.25); color: rgba(245,240,234,0.6);
-  padding: 10px 22px; font-family: 'Jost', sans-serif;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  cursor: pointer; transition: all 0.2s; white-space: nowrap;
-}
-.cookie-btn-decline:hover { border-color: rgba(245,240,234,0.5); color: rgba(245,240,234,0.9); }
-@media(max-width:600px) {
-  .cookie-inner { padding: 20px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
-  .cookie-actions { width: 100%; }
-  .cookie-btn-accept, .cookie-btn-decline { flex: 1; text-align: center; }
-}
-</style>
-
-<script>
 (function() {
   const COOKIE_KEY = 'maude_cookies_consent';
   function acceptCookies() {
@@ -1857,7 +2084,66 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => scrollObserver.observe(el));
-</script>
 
+  // ── Sélecteur de langue Google Translate ──
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'fr',
+      includedLanguages: 'fr,nl,en,es',
+      autoDisplay: false,
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+  function toggleLangMenu() {
+    const dd = document.getElementById('lang-dropdown');
+    const btn = document.getElementById('lang-btn');
+    const open = dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+  function setLang(langCode, label) {
+    // Fermer le menu
+    document.getElementById('lang-dropdown').classList.remove('open');
+    document.getElementById('lang-current').textContent = label;
+    // Mettre à jour les options actives
+    document.querySelectorAll('.lang-option').forEach(opt => opt.classList.remove('active'));
+    event.target.closest('.lang-option').classList.add('active');
+    // Déclencher Google Translate
+    if (langCode === 'fr') {
+      // Revenir au français original
+      const restore = document.querySelector('.goog-te-menu-value');
+      if (restore) restore.click();
+      // Ou forcer via cookie
+      document.cookie = 'googtrans=/fr/fr; path=/';
+      location.reload();
+      return;
+    }
+    const select = document.querySelector('select.goog-te-combo');
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event('change'));
+    } else {
+      // Fallback : attendre que Google Translate charge
+      setTimeout(() => {
+        const s = document.querySelector('select.goog-te-combo');
+        if (s) { s.value = langCode; s.dispatchEvent(new Event('change')); }
+      }, 1500);
+    }
+  }
+  // Fermer au clic extérieur
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('lang-selector')?.contains(e.target)) {
+      document.getElementById('lang-dropdown')?.classList.remove('open');
+    }
+  });
+
+  // ── FAQ Accueil ──
+  function toggleFaqHome(btn) {
+    const item = btn.closest('.faq-home-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-home-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+    btn.setAttribute('aria-expanded', !isOpen);
+  }
+</script>
 </body>
 </html>
