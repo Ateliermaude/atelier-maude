@@ -5,90 +5,70 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page introuvable — Atelier MAUDÉ</title>
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#3A2A1E">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
 html,body{height:100%}
-body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);font-weight:300;display:flex;flex-direction:column;min-height:100vh}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+*{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
 
-/* HEADER */
 header{background:var(--warm-white);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:center}
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.14em;color:var(--dark-brown);text-decoration:none;text-transform:uppercase}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.14em;color:var(--dark-brown);text-decoration:none;text-transform:uppercase;transition:opacity 0.2s}
+.logo:hover{opacity:0.8}
 
-/* MAIN */
 main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px;text-align:center}
-.error-inner{max-width:560px}
 
-.error-number{
+.error-wrap{max-width:560px;width:100%;animation:fadeUp 0.7s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+.error-num{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(120px,20vw,200px);
-  font-weight:300;line-height:1;
-  color:var(--dark-brown);
-  opacity:0.08;
-  user-select:none;
-  margin-bottom:-30px;
-  display:block;
+  font-size:clamp(100px,20vw,180px);font-weight:300;
+  color:var(--dark-brown);line-height:1;
+  opacity:0.08;display:block;margin-bottom:-20px;
+  letter-spacing:-0.02em;
 }
-.error-eyebrow{
-  font-size:10px;letter-spacing:0.28em;text-transform:uppercase;
-  color:var(--terracotta);margin-bottom:20px;display:block;
-}
-.error-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(32px,5vw,52px);font-weight:300;
-  line-height:1.1;color:var(--dark-brown);margin-bottom:20px;
-}
+.error-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:16px;display:block}
+.error-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;color:var(--dark-brown);line-height:1.1;margin-bottom:18px}
 .error-title em{font-style:italic;color:var(--brown)}
-.error-text{
-  font-size:14px;line-height:1.9;color:var(--muted);
-  max-width:400px;margin:0 auto 44px;
-}
+.error-text{font-size:14px;color:var(--muted);line-height:1.9;max-width:400px;margin:0 auto 40px}
 
-.error-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+/* Liens rapides */
+.quick-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px;text-align:left}
+.quick-link{
+  display:flex;align-items:center;gap:12px;
+  border:1px solid var(--border);padding:14px 18px;
+  text-decoration:none;color:var(--dark-brown);
+  transition:all 0.2s;
+}
+.quick-link:hover{border-color:var(--dark-brown);background:var(--cream)}
+.quick-link-icon{color:var(--gold);font-size:16px;flex-shrink:0}
+.quick-link-text{font-size:12px;letter-spacing:0.06em}
+.quick-link-name{display:block;font-weight:400;margin-bottom:2px}
+.quick-link-desc{font-size:11px;color:var(--muted);letter-spacing:0.04em}
+
 .btn-primary{
   display:inline-block;background:var(--dark-brown);color:#fff;
-  padding:14px 38px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
-  text-decoration:none;font-family:'Jost',sans-serif;font-weight:400;transition:background 0.3s;
+  padding:14px 40px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+  text-decoration:none;font-family:'Jost',sans-serif;font-weight:400;
+  transition:background 0.3s;
 }
 .btn-primary:hover{background:var(--terracotta)}
-.btn-outline{
-  display:inline-block;border:1px solid var(--dark-brown);color:var(--dark-brown);
-  padding:13px 36px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
-  text-decoration:none;font-family:'Jost',sans-serif;font-weight:400;transition:all 0.3s;
-}
-.btn-outline:hover{background:var(--dark-brown);color:#fff}
 
-.error-divider{
-  border:none;border-top:1px solid var(--border);
-  max-width:80px;margin:50px auto;
-}
-.error-suggestions p{
-  font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:18px;
-}
-.error-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
-.error-links a{
-  font-size:12px;color:var(--dark-brown);text-decoration:none;
-  letter-spacing:0.08em;transition:color 0.2s;
-  border-bottom:1px solid var(--border);padding-bottom:2px;
-}
-.error-links a:hover{color:var(--terracotta);border-bottom-color:var(--terracotta)}
-
-/* FOOTER */
-footer{background:var(--warm-white);border-top:1px solid var(--border);padding:20px 40px;text-align:center}
+footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 40px;text-align:center}
 footer p{font-size:12px;color:var(--muted)}
-
-/* ANIMATION */
-.error-inner{animation:fadeUp 0.7s ease both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+footer a{color:var(--muted);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--dark-brown)}
 
 @media(max-width:600px){
   header{padding:16px 20px}
-  .error-actions{flex-direction:column;align-items:center}
-  .btn-primary,.btn-outline{width:100%;max-width:280px;text-align:center}
+  .quick-links{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -99,34 +79,63 @@ footer p{font-size:12px;color:var(--muted)}
 </header>
 
 <main>
-  <div class="error-inner">
-    <span class="error-number" aria-hidden="true">404</span>
+  <div class="error-wrap">
+    <span class="error-num">404</span>
     <span class="error-eyebrow">Page introuvable</span>
     <h1 class="error-title">Cette page s'est<br><em>égarée en chemin.</em></h1>
-    <p class="error-text">La page que vous cherchez n'existe pas ou a été déplacée. Revenez à l'accueil pour explorer notre collection.</p>
+    <p class="error-text">La page que vous cherchez n'existe pas ou a été déplacée. Voici quelques endroits où vous trouverez votre bonheur.</p>
 
-    <div class="error-actions">
-      <a href="index.html" class="btn-primary">Retour à l'accueil</a>
-      <a href="index.html#collection" class="btn-outline">Voir les manteaux</a>
+    <div class="quick-links">
+      <a href="index.html#collection" class="quick-link">
+        <span class="quick-link-icon">✦</span>
+        <div class="quick-link-text">
+          <span class="quick-link-name">Nos manteaux</span>
+          <span class="quick-link-desc">Voir la collection</span>
+        </div>
+      </a>
+      <a href="promotions.html" class="quick-link">
+        <span class="quick-link-icon">✦</span>
+        <div class="quick-link-text">
+          <span class="quick-link-name">Promotions –23%</span>
+          <span class="quick-link-desc">Offres en cours</span>
+        </div>
+      </a>
+      <a href="lookbook.html" class="quick-link">
+        <span class="quick-link-icon">✦</span>
+        <div class="quick-link-text">
+          <span class="quick-link-name">Lookbook</span>
+          <span class="quick-link-desc">Galerie photos</span>
+        </div>
+      </a>
+      <a href="notre-histoire.html" class="quick-link">
+        <span class="quick-link-icon">✦</span>
+        <div class="quick-link-text">
+          <span class="quick-link-name">Notre histoire</span>
+          <span class="quick-link-desc">Aude & Mathilde</span>
+        </div>
+      </a>
+      <a href="journal.html" class="quick-link">
+        <span class="quick-link-icon">✦</span>
+        <div class="quick-link-text">
+          <span class="quick-link-name">Le Journal</span>
+          <span class="quick-link-desc">Conseils & tendances</span>
+        </div>
+      </a>
+      <a href="carte-cadeau.html" class="quick-link">
+        <span class="quick-link-icon">✦</span>
+        <div class="quick-link-text">
+          <span class="quick-link-name">Carte cadeau</span>
+          <span class="quick-link-desc">Offrir un manteau</span>
+        </div>
+      </a>
     </div>
 
-    <hr class="error-divider">
-
-    <div class="error-suggestions">
-      <p>Vous cherchiez peut-être</p>
-      <div class="error-links">
-        <a href="yun-court.html">Yūn Court</a>
-        <a href="hua-long.html">Huā Long</a>
-        <a href="yun-long.html">Yūn Long</a>
-        <a href="notre-histoire.html">Notre Histoire</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
+    <a href="index.html" class="btn-primary">Retour à l'accueil</a>
   </div>
 </main>
 
 <footer>
-  <p>© 2025 Atelier MAUDÉ — <a href="index.html" style="color:var(--muted);text-decoration:none">ateliermaude.github.io</a></p>
+  <p>© 2025 Atelier MAUDÉ &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="cgv.html">CGV</a> &nbsp;·&nbsp; <a href="confidentialite.html">Confidentialité</a></p>
 </footer>
 
 </body>
