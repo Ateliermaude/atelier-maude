@@ -45,6 +45,79 @@
 }
 </script>
 <style>
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
 html{scroll-behavior:smooth}
@@ -52,12 +125,12 @@ body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text
 *{-webkit-tap-highlight-color:transparent}
 button,a{touch-action:manipulation}
 
-.announcement{background:var(--terracotta);color:#fff;overflow:hidden}
-.ticker-track{display:flex;white-space:nowrap;animation:ticker 28s linear infinite}
-.ticker-track:hover{animation-play-state:paused}
-.ticker-item{display:inline-flex;align-items:center;padding:10px 0;flex-shrink:0;font-size:11px;letter-spacing:0.12em;font-weight:400}
-.ticker-sep{display:inline-block;margin:0 28px;color:rgba(255,255,255,0.35);font-size:14px}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+
+
+
+
+100%{transform:translateX(-50%)}}
 
 header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
 header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
@@ -257,7 +330,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
   </div>
   <nav>
-    <a href="index.html#collection">Manteaux</a>
+    <a href="manteaux.html">Manteaux</a>
     <a href="promotions.html">Promotions</a>
     <a href="notre-histoire.html">Notre Histoire</a>
     <a href="lookbook.html">Lookbook</a>
@@ -354,7 +427,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
     <div class="footer-col">
       <h4>Boutique</h4>
-      <ul><li><a href="index.html#collection">Manteaux</a></li><li><a href="promotions.html">Promotions</a></li>
+      <ul><li><a href="manteaux.html">Manteaux</a></li><li><a href="promotions.html">Promotions</a></li>
         <li><a href="carte-cadeau.html">Carte cadeau</a></li></ul>
     </div>
     <div class="footer-col">
@@ -436,6 +509,16 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       document.getElementById('lang-dropdown')?.classList.remove('open');
     }
   });
+
+  // Fallback fade-in au cas où IntersectionObserver rate des éléments
+  setTimeout(function() {
+    document.querySelectorAll('.fade-in, .fade-in-up').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      }
+    });
+  }, 300);
 </script><script>
   window.addEventListener('scroll',()=>{
     document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
@@ -443,7 +526,14 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   },{passive:true});
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
   document.querySelectorAll('.fade-in,.fade-in-up').forEach(el=>obs.observe(el));
-  setTimeout(()=>document.querySelector('.page-hero .fade-in')?.classList.add('visible'),150);
+  // Activer tous les fade-in du hero immédiatement
+  setTimeout(()=>{
+    document.querySelectorAll('.page-hero .fade-in, .page-hero .fade-in-up').forEach(el=>el.classList.add('visible'));
+  }, 100);
+  // Fallback : si IntersectionObserver ne déclenche pas, activer après 800ms
+  setTimeout(()=>{
+    document.querySelectorAll('.fade-in:not(.visible), .fade-in-up:not(.visible)').forEach(el=>el.classList.add('visible'));
+  }, 800);
   function handleNewsletter(e){
     e.preventDefault();
     const input=e.target.querySelector('input');
