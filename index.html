@@ -76,6 +76,79 @@
 
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -101,15 +174,7 @@
   }
 
   /* ── ANNOUNCEMENT ── */
-  .announcement {
-    background: var(--terracotta);
-    color: #fff;
-    text-align: center;
-    padding: 11px 20px;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    font-weight: 400;
-  }
+  
 
   /* ── HEADER ── */
   header {
@@ -927,7 +992,7 @@
   button, a, [role="button"] { touch-action: manipulation; }
 
   /* Safe area pour iPhone avec notch/Dynamic Island */
-  .announcement { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  
   header { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
   footer { padding-bottom: max(30px, env(safe-area-inset-bottom)); }
   .back-to-top { bottom: max(32px, calc(env(safe-area-inset-bottom) + 16px)); right: max(32px, env(safe-area-inset-right)); }
@@ -1302,6 +1367,103 @@
   }
   .faq-home-more a { color: var(--dark-brown); text-decoration: underline; text-underline-offset: 3px; }
   @media(max-width:600px){ .faq-home { padding: 60px 24px; } }
+
+  /* ── LOOKBOOK TEASER ── */
+  .lookbook-teaser{background:var(--dark-brown);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;min-height:400px}
+  .lookbook-teaser-images{display:grid;grid-template-columns:1fr 1fr;gap:2px;overflow:hidden}
+  .lookbook-teaser-img{overflow:hidden;background:var(--cream)}
+  .lookbook-teaser-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform 0.7s ease}
+  .lookbook-teaser-img:hover img{transform:scale(1.06)}
+  .lookbook-teaser-content{display:flex;flex-direction:column;justify-content:center;padding:60px 56px}
+  .lookbook-teaser-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:18px;display:block}
+  .lookbook-teaser-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,3.5vw,52px);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:20px}
+  .lookbook-teaser-title em{font-style:italic;color:var(--gold)}
+  .lookbook-teaser-text{font-size:14px;color:rgba(245,240,234,0.6);line-height:1.9;margin-bottom:36px;max-width:360px}
+  .btn-gold{display:inline-block;background:var(--gold);color:var(--dark-brown);padding:14px 36px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;font-weight:500;transition:background 0.3s;align-self:flex-start}
+  .btn-gold:hover{background:#d4b87a}
+
+  /* ── COMPARATIF ── */
+  .comparatif{background:var(--dark-brown);padding:80px 40px;border-top:1px solid rgba(201,169,110,0.1)}
+  .comparatif-inner{max-width:900px;margin:0 auto;text-align:center}
+  .comparatif-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:16px;display:block}
+  .comparatif-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;color:var(--cream);margin-bottom:48px;line-height:1.2}
+  .comparatif-title em{font-style:italic;color:var(--gold)}
+  .comparatif-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(201,169,110,0.12);border:1px solid rgba(201,169,110,0.12);text-align:left;margin-bottom:40px}
+  .comp-col{padding:0}
+  .comp-header{padding:18px 24px;border-bottom:1px solid rgba(201,169,110,0.12);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:400}
+  .comp-header.maude{color:var(--gold);background:rgba(201,169,110,0.08)}
+  .comp-header.other{color:rgba(245,240,234,0.4)}
+  .comp-row{padding:14px 24px;border-bottom:1px solid rgba(201,169,110,0.08);font-size:12px;display:flex;align-items:center;gap:10px}
+  .comp-row:last-child{border-bottom:none}
+  .comp-row.maude{color:rgba(245,240,234,0.85)}
+  .comp-row.other{color:rgba(245,240,234,0.35)}
+  .comp-check{color:var(--gold);font-size:14px;flex-shrink:0}
+  .comp-cross{color:rgba(245,240,234,0.2);font-size:14px;flex-shrink:0}
+  .comparatif-cta{font-size:11px;color:rgba(245,240,234,0.4);letter-spacing:0.1em}
+  .comparatif-cta a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+
+  /* ── JOURNAL PREVIEW ── */
+  .journal-preview{padding:90px 40px;max-width:1400px;margin:0 auto}
+  .journal-preview-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:24px;flex-wrap:wrap}
+  .journal-preview-link{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dark-brown);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:3px;white-space:nowrap;transition:all 0.2s;flex-shrink:0;display:inline-flex;align-items:center;gap:8px}
+  .journal-preview-link:hover{color:var(--terracotta);border-bottom-color:var(--terracotta);gap:12px}
+  .journal-preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .journal-preview-card{cursor:pointer}
+  .journal-preview-card:hover .journal-preview-img img{transform:scale(1.04)}
+  .journal-preview-img{position:relative;overflow:hidden;background:var(--cream);aspect-ratio:4/3;margin-bottom:18px}
+  .journal-preview-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.7s ease;display:block}
+  .journal-cat{position:absolute;top:14px;left:14px;background:var(--dark-brown);color:var(--gold);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;padding:4px 10px;font-family:'Jost',sans-serif}
+  .journal-preview-date{font-size:11px;color:var(--muted);letter-spacing:0.08em;margin-bottom:8px;display:block}
+  .journal-preview-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:var(--dark-brown);line-height:1.3;margin-bottom:10px;text-decoration:none;display:block;transition:color 0.2s}
+  .journal-preview-title:hover{color:var(--terracotta)}
+  .journal-preview-excerpt{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:14px}
+  .journal-preview-read{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dark-brown);text-decoration:none;display:inline-flex;align-items:center;gap:7px;border-bottom:1px solid var(--border);padding-bottom:2px;transition:all 0.2s}
+  .journal-preview-read:hover{color:var(--terracotta);border-bottom-color:var(--terracotta);gap:11px}
+
+  /* ── FAQ ACCUEIL ── */
+  .faq-home{padding:80px 40px;max-width:860px;margin:0 auto}
+  .faq-home-header{text-align:center;margin-bottom:48px}
+  .faq-home-item{border-bottom:1px solid var(--border)}
+  .faq-home-item:first-of-type{border-top:1px solid var(--border)}
+  .faq-home-btn{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:20px 0;text-align:left;font-family:'Jost',sans-serif;font-size:14px;color:var(--dark-brown);font-weight:300;gap:16px;transition:color 0.2s}
+  .faq-home-btn:hover{color:var(--terracotta)}
+  .faq-home-icon{color:var(--gold);font-size:20px;flex-shrink:0;transition:transform 0.3s}
+  .faq-home-item.open .faq-home-icon{transform:rotate(45deg)}
+  .faq-home-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+  .faq-home-answer-inner{padding:0 0 20px;font-size:13px;color:var(--muted);line-height:1.9}
+  .faq-home-answer-inner a{color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px}
+  .faq-home-item.open .faq-home-answer{max-height:300px}
+  .faq-home-more{text-align:center;margin-top:32px;font-size:13px;color:var(--muted)}
+  .faq-home-more a{color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px}
+
+  /* RESPONSIVE NOUVEAUX BLOCS */
+  @media(max-width:900px){
+    .lookbook-teaser{grid-template-columns:1fr}
+    .lookbook-teaser-images{height:280px}
+    .lookbook-teaser-content{padding:44px 28px}
+    .comparatif{padding:60px 24px}
+    .comparatif-grid{grid-template-columns:1fr}
+    .comp-col:not(:first-child){display:none}
+    .journal-preview{padding:60px 24px}
+    .journal-preview-grid{grid-template-columns:1fr 1fr;gap:20px}
+    .faq-home{padding:60px 24px}
+  }
+  @media(max-width:600px){
+    .lookbook-teaser-images{grid-template-columns:1fr 1fr;height:220px}
+    .btn-gold{align-self:stretch;text-align:center}
+    .journal-preview-grid{grid-template-columns:1fr}
+  }
+
+
+  /* FALLBACK FADE-IN — évite les pages blanches */
+  .fade-in, .fade-in-up, .fade-in-left, .fade-in-right {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible, .fade-in-up.visible, .fade-in-left.visible, .fade-in-right.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 </style>
 </head>
 <body>
@@ -1812,7 +1974,7 @@
       <span class="faq-home-icon" aria-hidden="true">+</span>
     </button>
     <div class="faq-home-answer"><div class="faq-home-answer-inner">
-      Oui, vous disposez de <strong>30 jours</strong> à compter de la réception pour retourner votre manteau, sans condition. L'article doit être non porté et dans son emballage d'origine. Contactez-nous à <a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a> pour initier le retour.
+      Oui, vous disposez de <strong>30 jours</strong> à compter de la réception pour retourner votre manteau, sans condition. L'article doit être non porté et dans son emballage d'origine. Contactez-nous à <a href="/cdn-cgi/l/email-protection#89e5e8fdece5e0ecfbe4e8fcedecc9eee4e8e0e5a7eae6e4"><span class="__cf_email__" data-cfemail="94f8f5e0f1f8fdf1e6f9f5e1f0f1d4f3f9f5fdf8baf7fbf9">[email&#160;protected]</span></a> pour initier le retour.
     </div></div>
   </div>
 
@@ -1926,7 +2088,24 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  // Fallback fade-in au cas où IntersectionObserver rate des éléments
+  setTimeout(function() {
+    document.querySelectorAll('.fade-in, .fade-in-up').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      }
+    });
+  }, 300);
+
+  // Fallback universel — active tous les fade-in après 600ms si pas encore visibles
+  setTimeout(function() {
+    document.querySelectorAll('.fade-in:not(.visible),.fade-in-up:not(.visible),.fade-in-left:not(.visible),.fade-in-right:not(.visible)').forEach(function(el) {
+      el.classList.add('visible');
+    });
+  }, 600);
+</script><script>
 // ── Header shadow on scroll ──
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
@@ -2139,11 +2318,4 @@
   // ── FAQ Accueil ──
   function toggleFaqHome(btn) {
     const item = btn.closest('.faq-home-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-home-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-    btn.setAttribute('aria-expanded', !isOpen);
-  }
-</script>
-</body>
-</html>
+    const isOpen =
