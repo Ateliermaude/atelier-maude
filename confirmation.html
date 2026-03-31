@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#3A2A1E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commande confirmée — Atelier MAUDÉ</title>
+  <meta name="description" content="Votre commande Atelier MAUDÉ a bien été confirmée. Merci pour votre confiance.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://ateliermaude.github.io/confirmation.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier MAUDÉ">
+  <meta property="og:title" content="Commande confirmée — Atelier MAUDÉ">
+  <meta property="og:description" content="Votre commande Atelier MAUDÉ a bien été confirmée. Merci pour votre confiance.">
+  <meta property="og:url" content="https://ateliermaude.github.io/confirmation.html">
+  <meta property="og:image" content="https://ateliermaude.github.io/hero.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Commande confirmée — Atelier MAUDÉ">
+  <meta name="twitter:description" content="Votre commande Atelier MAUDÉ a bien été confirmée.">
+  <meta name="twitter:image" content="https://ateliermaude.github.io/hero.png">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="dns-prefetch" href="https://ateliermaude.github.io">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
+html,body{height:100%}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);font-weight:300;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+*{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+
+/* HEADER */
+header{background:var(--warm-white);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:center}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.14em;color:var(--dark-brown);text-decoration:none;text-transform:uppercase}
+
+/* MAIN */
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
+
+.confirm-card{
+  background:var(--warm-white);
+  max-width:580px;width:100%;
+  padding:60px 52px;
+  border:1px solid var(--border);
+  text-align:center;
+  animation:fadeUp 0.7s ease both;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* Icône succès */
+.confirm-icon{
+  width:64px;height:64px;
+  background:var(--cream);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 28px;
+  border:1px solid var(--border);
+}
+.confirm-icon svg{color:var(--gold)}
+
+.confirm-eyebrow{
+  font-size:10px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--terracotta);margin-bottom:16px;display:block;
+}
+.confirm-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,5vw,48px);font-weight:300;
+  color:var(--dark-brown);line-height:1.1;margin-bottom:18px;
+}
+.confirm-title em{font-style:italic;color:var(--brown)}
+.confirm-text{
+  font-size:14px;line-height:1.9;color:var(--muted);
+  max-width:420px;margin:0 auto 36px;
+}
+
+/* Récap commande */
+.confirm-recap{
+  background:var(--cream);
+  border:1px solid var(--border);
+  padding:24px 28px;
+  margin-bottom:32px;
+  text-align:left;
+}
+.recap-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 0;border-bottom:1px solid var(--border);
+  font-size:13px;
+}
+.recap-row:last-child{border-bottom:none;padding-bottom:0}
+.recap-row:first-child{padding-top:0}
+.recap-label{color:var(--muted);letter-spacing:0.04em}
+.recap-value{color:var(--dark-brown);font-weight:400}
+.recap-value.email{color:var(--brown);font-style:italic}
+
+/* Étapes */
+.confirm-steps{
+  display:flex;flex-direction:column;gap:0;
+  margin-bottom:36px;text-align:left;
+}
+.step{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:16px 0;border-bottom:1px solid var(--border);
+}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.step:first-child{padding-top:0}
+.step-num{
+  width:28px;height:28px;flex-shrink:0;
+  background:var(--dark-brown);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;letter-spacing:0.1em;font-weight:400;
+}
+.step-content{}
+.step-title{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:4px;font-weight:400}
+.step-text{font-size:12px;color:var(--muted);line-height:1.7}
+
+/* CTAs */
+.confirm-actions{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.btn-primary{
+  display:block;background:var(--dark-brown);color:#fff;
+  padding:15px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+  text-decoration:none;font-family:'Jost',sans-serif;font-weight:400;
+  transition:background 0.3s;text-align:center;border:none;cursor:pointer;width:100%;
+}
+.btn-primary:hover{background:var(--terracotta)}
+.btn-outline{
+  display:block;border:1px solid var(--border);color:var(--dark-brown);
+  padding:14px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+  text-decoration:none;font-family:'Jost',sans-serif;font-weight:400;
+  transition:all 0.3s;text-align:center;
+}
+.btn-outline:hover{border-color:var(--dark-brown);background:var(--cream)}
+
+/* Partage */
+.confirm-share{border-top:1px solid var(--border);padding-top:24px}
+.share-label{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:block}
+.share-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.share-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:none;border:1px solid var(--border);
+  padding:10px 18px;font-family:'Jost',sans-serif;
+  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--dark-brown);cursor:pointer;text-decoration:none;
+  transition:all 0.2s;
+}
+.share-btn:hover{background:var(--cream);border-color:var(--dark-brown)}
+
+/* Confettis légers */
+.confetti-wrap{
+  position:fixed;top:0;left:0;right:0;
+  pointer-events:none;z-index:999;overflow:hidden;height:100vh;
+}
+.confetti-piece{
+  position:absolute;top:-10px;
+  width:8px;height:8px;
+  opacity:0;
+  animation:confetti-fall var(--dur,3s) var(--delay,0s) ease-in forwards;
+}
+@keyframes confetti-fall{
+  0%  {opacity:1;transform:translateY(0) rotate(0deg)}
+  100%{opacity:0;transform:translateY(100vh) rotate(720deg)}
+}
+
+/* FOOTER */
+footer{background:var(--warm-white);border-top:1px solid var(--border);padding:24px 40px;text-align:center}
+footer p{font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--dark-brown)}
+
+@media(max-width:600px){
+  .confirm-card{padding:40px 24px}
+  header{padding:16px 20px}
+  .share-buttons{flex-direction:column;align-items:stretch}
+  .share-btn{justify-content:center}
+}
+
+  /* ── MICRO-ANIMATIONS BOUTONS CTA ── */
+
+  /* Bouton primaire — shimmer doré au hover */
+  .btn-primary {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201,169,110,0.18), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+  }
+  .btn-primary:hover::after { left: 150%; }
+  .btn-primary:active { transform: scale(0.98); }
+
+  /* Bouton outline — bordure animée */
+  .btn-outline {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, color 0.3s, transform 0.15s;
+  }
+  .btn-outline:active { transform: scale(0.98); }
+
+  /* Bouton Ajouter au panier — pulse au clic */
+  .btn-add-cart {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, transform 0.15s;
+  }
+  .btn-add-cart::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    opacity: 0; pointer-events: none;
+  }
+  .btn-add-cart:active::after {
+    width: 300px; height: 300px; opacity: 0;
+  }
+  .btn-add-cart:active { transform: scale(0.99); }
+
+  /* Wishlist — cœur qui bat */
+  .btn-wishlist {
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .btn-wishlist:hover { transform: translateY(-1px); }
+  .btn-wishlist:active { transform: scale(0.98); }
+  .btn-wishlist:hover svg { animation: heartbeat 0.6s ease; }
+  @keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    30%      { transform: scale(1.25); }
+    60%      { transform: scale(0.95); }
+  }
+
+  /* Nav links — soulignement animé déjà présent, on ajoute couleur au hover */
+  nav a { transition: color 0.2s; }
+  nav a:hover { color: var(--terracotta); }
+
+  /* Cards produit — légère élévation au hover */
+  .product-card {
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover { transform: translateY(-4px); }
+
+  /* Feature items — glow subtil */
+  .feature-item {
+    transition: background 0.3s, transform 0.2s;
+  }
+  .feature-item:hover { transform: translateY(-2px); }
+
+  /* Lien savoir-faire — flèche qui avance */
+  .sf-link { transition: color 0.3s, border-color 0.3s, gap 0.3s; }
+  .sf-link svg { transition: transform 0.3s; }
+  .sf-link:hover svg { transform: translateX(5px); }
+
+  /* Swatches couleurs — bounce subtil */
+  .color-swatch, .color-dot {
+    transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), border-color 0.2s;
+  }
+  .color-swatch:hover, .color-dot:hover {
+    transform: scale(1.18);
+  }
+
+  /* Taille buttons — micro scale */
+  .size-btn {
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+  .size-btn:hover:not(.unavailable) { transform: scale(1.04); }
+  .size-btn:active:not(.unavailable) { transform: scale(0.97); }
+
+  /* Logo — légère transition couleur */
+  .logo { transition: opacity 0.2s; }
+  .logo:hover { opacity: 0.8; }
+
+  /* Liens footer */
+  .footer-col ul li a {
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .footer-col ul li a:hover { padding-left: 4px; }
+
+  /* Back to top — rotation au hover */
+  .back-to-top svg {
+    transition: transform 0.3s;
+  }
+  .back-to-top:hover svg { transform: translateY(-2px); }
+
+  /* Réduction des animations si préférence système */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Confettis dorés -->
+<div class="confetti-wrap" id="confetti"></div>
+
+<header>
+  <a href="index.html" class="logo">Atelier MAUDÉ</a>
+</header>
+
+<main>
+  <div class="confirm-card">
+
+    <!-- Icône -->
+    <div class="confirm-icon">
+      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <span class="confirm-eyebrow">Commande confirmée</span>
+    <h1 class="confirm-title">Merci pour<br>votre <em>confiance</em>.</h1>
+    <p class="confirm-text">Votre commande a bien été reçue. Vous allez recevoir un e-mail de confirmation dans quelques minutes. Nous préparons votre manteau avec soin.</p>
+
+    <!-- Récap -->
+    <div class="confirm-recap">
+      <div class="recap-row">
+        <span class="recap-label">Confirmation envoyée à</span>
+        <span class="recap-value email" id="order-email">votre adresse e-mail</span>
+      </div>
+      <div class="recap-row">
+        <span class="recap-label">Délai de livraison</span>
+        <span class="recap-value">8 à 15 jours ouvrés</span>
+      </div>
+      <div class="recap-row">
+        <span class="recap-label">Livraison</span>
+        <span class="recap-value">Gratuite — suivi inclus</span>
+      </div>
+      <div class="recap-row">
+        <span class="recap-label">Retours</span>
+        <span class="recap-value">30 jours, sans condition</span>
+      </div>
+    </div>
+
+    <!-- Étapes suivantes -->
+    <div class="confirm-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <p class="step-title">E-mail de confirmation</p>
+          <p class="step-text">Vous recevrez sous peu un récapitulatif de votre commande à l'adresse indiquée lors du paiement.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <p class="step-title">Préparation de votre manteau</p>
+          <p class="step-text">Votre pièce est préparée avec soin depuis nos ateliers partenaires à Suzhou avant expédition.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <p class="step-title">Expédition & suivi</p>
+          <p class="step-text">Vous recevrez un e-mail avec votre numéro de suivi dès l'expédition de votre commande.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <p class="step-title">Livraison chez vous</p>
+          <p class="step-text">Votre manteau vous sera livré sous 8 à 15 jours ouvrés. Une question ? <a href="/cdn-cgi/l/email-protection#026e6376676e6b67706f6377666742656f636b6e2c616d6f" style="color:var(--dark-brown)"><span class="__cf_email__" data-cfemail="600c0114050c0905120d0115040520070d01090c4e030f0d">[email&#160;protected]</span></a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="confirm-actions">
+      <a href="index.html#collection" class="btn-primary">Continuer mes achats</a>
+      <a href="contact.html" class="btn-outline">Une question ? Contactez-nous</a>
+    </div>
+
+    <!-- Partage -->
+    <div class="confirm-share">
+      <span class="share-label">Partagez votre découverte</span>
+      <div class="share-buttons">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="share-btn">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <button class="share-btn" onclick="shareWhatsApp()">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L.057 23.43a.75.75 0 0 0 .928.928l5.604-1.466A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.944 9.944 0 0 1-5.031-1.362l-.36-.214-3.733.977.997-3.645-.235-.374A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp
+        </button>
+        <button class="share-btn" onclick="copyLink()">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span id="copy-label">Copier le lien</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Atelier MAUDÉ — <a href="index.html">ateliermaude.github.io</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="cgv.html">CGV</a></p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Récupérer l'email depuis l'URL si Stripe le passe (?email=...)
+  const params = new URLSearchParams(window.location.search);
+  const email = params.get('email');
+  if (email) {
+    document.getElementById('order-email').textContent = decodeURIComponent(email);
+  }
+
+  // Partage WhatsApp
+  function shareWhatsApp() {
+    const text = encodeURIComponent("Je viens de commander un manteau en laine et cachemire sur Atelier MAUDÉ 🤍 ateliermaude.github.io");
+    window.open('https://wa.me/?text=' + text, '_blank');
+  }
+
+  // Copier le lien
+  function copyLink() {
+    navigator.clipboard.writeText('https://ateliermaude.github.io').then(() => {
+      const label = document.getElementById('copy-label');
+      label.textContent = 'Copié ✓';
+      setTimeout(() => label.textContent = 'Copier le lien', 2000);
+    });
+  }
+
+  // Confettis dorés
+  (function() {
+    const wrap = document.getElementById('confetti');
+    const colors = ['#C9A96E', '#8B4A3A', '#3A2A1E', '#F5F0EA', '#6B4F3A'];
+    for (let i = 0; i < 40; i++) {
+      const el = document.createElement('div');
+      el.className = 'confetti-piece';
+      const size = Math.random() * 8 + 4;
+      el.style.cssText = `
+        left: ${Math.random() * 100}%;
+        width: ${size}px; height: ${size}px;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        --dur: ${Math.random() * 2 + 2}s;
+        --delay: ${Math.random() * 1.5}s;
+        border-rad
