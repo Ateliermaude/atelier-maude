@@ -31,7 +31,30 @@
     <link rel="dns-prefetch" href="https://ateliermaude.github.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://ateliermaude.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Promotions",
+      "item": "https://ateliermaude.github.io/promotions.html"
+    }
+  ]
+}
+</script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
@@ -320,7 +343,6 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     nav a { font-size: 10px !important; letter-spacing: 0.12em !important; }
   }
 
-
   /* ── MICRO-ANIMATIONS BOUTONS CTA ── */
 
   /* Bouton primaire — shimmer doré au hover */
@@ -454,27 +476,36 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     transition: width 0.1s linear;
     pointer-events: none;
   }
+#cercle-popup{position:fixed;inset:0;z-index:300;background:rgba(42,26,18,0.55);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(3px)}
+#cercle-popup.open{opacity:1;pointer-events:auto}
+.popup-inner{background:var(--warm-white);max-width:420px;width:90%;padding:52px 44px 40px;position:relative;text-align:center;transform:translateY(16px);transition:transform 0.4s ease}
+#cercle-popup.open .popup-inner{transform:translateY(0)}
+.popup-close{position:absolute;top:18px;right:20px;background:none;border:none;cursor:pointer;color:var(--muted);font-size:18px;line-height:1;transition:color 0.2s}
+.popup-close:hover{color:var(--dark-brown)}
+.popup-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px}
+.popup-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1.1;color:var(--dark-brown);margin-bottom:18px;letter-spacing:0.04em}
+.popup-text{font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:30px;max-width:300px;margin-left:auto;margin-right:auto}
+.popup-form{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.popup-form input{background:transparent;border:none;border-bottom:1px solid var(--border);padding:12px 4px;font-family:'Jost',sans-serif;font-size:13px;color:var(--dark-brown);outline:none;text-align:center;transition:border-color 0.2s}
+.popup-form input:focus{border-bottom-color:var(--dark-brown)}
+.popup-form input::placeholder{color:var(--muted);letter-spacing:0.06em}
+.popup-form button[type="submit"]{background:var(--dark-brown);color:#fff;border:none;padding:15px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;margin-top:4px}
+.popup-form button[type="submit"]:hover{background:var(--terracotta)}
+.popup-decline{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.popup-decline:hover{color:var(--dark-brown)}
+@media(max-width:600px){.popup-inner{padding:44px 28px 34px}.popup-title{font-size:36px}}
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--dark-brown);transform:translateY(100%);transition:transform 0.4s ease}
+#cookie-banner.show{transform:translateY(0)}
+.cookie-inner{max-width:1400px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.cookie-text{flex:1;min-width:260px}
+.cookie-title{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:400}
+.cookie-text p{font-size:12px;color:rgba(245,240,234,0.65);line-height:1.7}
+.cookie-text a{color:rgba(245,240,234,0.85);text-decoration:underline;text-underline-offset:3px}
+.cookie-actions{display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap}
+.cookie-btn-accept{background:var(--gold);color:var(--dark-brown);border:none;padding:11px 28px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-weight:500;white-space:nowrap}
+.cookie-btn-decline{background:none;border:1px solid rgba(245,240,234,0.25);color:rgba(245,240,234,0.6);padding:10px 22px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+@media(max-width:600px){.cookie-inner{padding:20px 24px;flex-direction:column;align-items:flex-start;gap:16px}.cookie-actions{width:100%}.cookie-btn-accept,.cookie-btn-decline{flex:1;text-align:center}}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Accueil",
-      "item": "https://ateliermaude.github.io/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Promotions",
-      "item": "https://ateliermaude.github.io/promotions.html"
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -512,6 +543,31 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     <a href="index.html" class="logo">Atelier MAUDÉ</a>
     <div class="header-right">
       <button aria-label="Mon compte"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <!-- SÉLECTEUR DE LANGUE -->
+  <div class="lang-selector" id="lang-selector">
+    <button class="lang-btn" onclick="toggleLangMenu()" aria-label="Changer de langue" aria-expanded="false" id="lang-btn">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span id="lang-current">FR</span>
+    </button>
+    <div class="lang-dropdown" id="lang-dropdown" role="listbox">
+      <button class="lang-option active" onclick="setLang('fr', 'FR')" role="option">
+        <span class="lang-flag">🇫🇷</span> Français
+      </button>
+      <button class="lang-option" onclick="setLang('nl', 'NL')" role="option">
+        <span class="lang-flag">🇧🇪</span> Nederlands
+      </button>
+      <button class="lang-option" onclick="setLang('en', 'EN')" role="option">
+        <span class="lang-flag">🇬🇧</span> English
+      </button>
+      <button class="lang-option" onclick="setLang('es', 'ES')" role="option">
+        <span class="lang-flag">🇪🇸</span> Español
+      </button>
+    </div>
+  </div>
+  <div id="google_translate_element"></div>
       <button aria-label="Panier"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
     </div>
   </div>
@@ -519,6 +575,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     <a href="index.html#collection">Manteaux</a>
     <a href="promotions.html" class="active">Promotions</a>
     <a href="notre-histoire.html">Notre Histoire</a>
+    <a href="lookbook.html">Lookbook</a>
     <a href="journal.html">Journal</a>
     <a href="contact.html">Contact</a>
   </nav>
@@ -562,20 +619,30 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   </div>
 </div>
 
+  <!-- BANDE URGENCE -->
+  <div style="background:rgba(139,74,58,0.15);border-top:1px solid rgba(139,74,58,0.3);border-bottom:1px solid rgba(139,74,58,0.3);padding:14px 40px;text-align:center;margin-top:0">
+    <p style="font-size:12px;color:rgba(245,240,234,0.7);letter-spacing:0.12em;text-transform:uppercase">
+      ⚠ &nbsp; Ces prix ne seront pas renouvelés — une fois les stocks épuisés, les manteaux reviennent au prix plein
+    </p>
+  </div>
+
 <!-- SAVINGS BAR -->
 <div class="savings-bar">
   <div class="savings-inner">
     <div class="saving-item fade-in">
       <span class="saving-amount">105 €</span>
       <span class="saving-label">économisés sur le Yūn Court</span>
+      <span style="font-size:10px;color:var(--muted);margin-top:2px;display:block;letter-spacing:0.06em">350€ au lieu de 455€</span>
     </div>
     <div class="saving-item fade-in" style="transition-delay:0.1s">
       <span class="saving-amount">125 €</span>
       <span class="saving-label">économisés sur le Huā Long</span>
+      <span style="font-size:10px;color:var(--muted);margin-top:2px;display:block;letter-spacing:0.06em">420€ au lieu de 545€</span>
     </div>
     <div class="saving-item fade-in" style="transition-delay:0.2s">
       <span class="saving-amount">135 €</span>
       <span class="saving-label">économisés sur le Yūn Long</span>
+      <span style="font-size:10px;color:var(--muted);margin-top:2px;display:block;letter-spacing:0.06em">450€ au lieu de 585€</span>
     </div>
   </div>
 </div>
@@ -585,6 +652,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   <div class="section-header">
     <span class="section-eyebrow fade-in">Notre sélection</span>
     <h2 class="section-title fade-in" id="promos-title">Les pièces <em>en promotion</em></h2>
+  <p class="fade-in" style="font-size:13px;color:var(--muted);margin-top:12px;line-height:1.8">Chaque manteau est proposé avec <strong style="color:var(--dark-brown);font-weight:400">livraison gratuite</strong>, <strong style="color:var(--dark-brown);font-weight:400">retours 30 jours</strong> et <strong style="color:var(--dark-brown);font-weight:400">paiement sécurisé</strong>. Prix valables jusqu'à épuisement des stocks, sans réassort.</p>
   </div>
 
   <div class="promos-grid">
@@ -595,7 +663,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
         <div class="promo-tag">Promotion</div>
         <div class="discount-badge">–23%</div>
         <div class="saving-tag">Économisez 105 €</div>
-        <img src="yun-court-noir.jpeg" alt="Manteau Yūn Court Ceinturé en Cachemire — coloris noir" loading="lazy">
+        <img src="yun-court-noir.jpeg" width="800" height="1066" alt="Manteau Yūn Court Ceinturé en Cachemire — coloris noir" loading="lazy" decoding="async">
         <div class="product-hover"><a href="yun-court.html">Voir le produit</a></div>
       </div>
       <a href="yun-court.html" style="text-decoration:none">
@@ -623,7 +691,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
         <div class="promo-tag">Promotion</div>
         <div class="discount-badge">–23%</div>
         <div class="saving-tag">Économisez 125 €</div>
-        <img src="hua-long-camel-1.jpeg" alt="Manteau Huā Long en Cachemire — coloris camel" loading="lazy">
+        <img src="hua-long-camel-1.jpeg" width="800" height="1066" alt="Manteau Huā Long en Cachemire — coloris camel" loading="lazy" decoding="async">
         <div class="product-hover"><a href="hua-long.html">Voir le produit</a></div>
       </div>
       <a href="hua-long.html" style="text-decoration:none">
@@ -650,7 +718,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
         <div class="promo-tag">Promotion</div>
         <div class="discount-badge">–23%</div>
         <div class="saving-tag">Économisez 135 €</div>
-        <img src="yun-long-noir.png" fetchpriority="high" alt="Manteau Yūn Long Ceinturé en Cachemire — coloris noir" loading="lazy">
+        <img src="yun-long-noir.png" width="800" height="1066" fetchpriority="high" alt="Manteau Yūn Long Ceinturé en Cachemire — coloris noir" loading="lazy" decoding="async">
         <div class="product-hover"><a href="yun-long.html">Voir le produit</a></div>
       </div>
       <a href="yun-long.html" style="text-decoration:none">
@@ -673,6 +741,16 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
 
   </div>
 </section>
+
+  <!-- LIEN JOURNAL -->
+  <div style="text-align:center;padding:0 40px 60px;max-width:1400px;margin:0 auto">
+    <p style="font-size:13px;color:var(--muted);line-height:1.85">
+      Vous hésitez encore ? Lisez notre guide &nbsp;
+      <a href="article-choisir-manteau.html" style="color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px">
+        comment bien choisir son manteau en cachemire →
+      </a>
+    </p>
+  </div>
 
 <!-- RÉASSURANCE -->
 <div class="reassurance-section">
@@ -712,6 +790,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       <ul>
         <li><a href="index.html#collection">Manteaux</a></li>
         <li><a href="promotions.html">Promotions</a></li>
+        <li><a href="carte-cadeau.html">Carte cadeau</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -760,27 +839,6 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   </div>
 </div>
 
-<style>
-#cercle-popup{position:fixed;inset:0;z-index:300;background:rgba(42,26,18,0.55);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(3px)}
-#cercle-popup.open{opacity:1;pointer-events:auto}
-.popup-inner{background:var(--warm-white);max-width:420px;width:90%;padding:52px 44px 40px;position:relative;text-align:center;transform:translateY(16px);transition:transform 0.4s ease}
-#cercle-popup.open .popup-inner{transform:translateY(0)}
-.popup-close{position:absolute;top:18px;right:20px;background:none;border:none;cursor:pointer;color:var(--muted);font-size:18px;line-height:1;transition:color 0.2s}
-.popup-close:hover{color:var(--dark-brown)}
-.popup-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px}
-.popup-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;line-height:1.1;color:var(--dark-brown);margin-bottom:18px;letter-spacing:0.04em}
-.popup-text{font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:30px;max-width:300px;margin-left:auto;margin-right:auto}
-.popup-form{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-.popup-form input{background:transparent;border:none;border-bottom:1px solid var(--border);padding:12px 4px;font-family:'Jost',sans-serif;font-size:13px;color:var(--dark-brown);outline:none;text-align:center;transition:border-color 0.2s}
-.popup-form input:focus{border-bottom-color:var(--dark-brown)}
-.popup-form input::placeholder{color:var(--muted);letter-spacing:0.06em}
-.popup-form button[type="submit"]{background:var(--dark-brown);color:#fff;border:none;padding:15px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;margin-top:4px}
-.popup-form button[type="submit"]:hover{background:var(--terracotta)}
-.popup-decline{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
-.popup-decline:hover{color:var(--dark-brown)}
-@media(max-width:600px){.popup-inner{padding:44px 28px 34px}.popup-title{font-size:36px}}
-</style>
-
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" role="dialog" aria-label="Gestion des cookies">
   <div class="cookie-inner">
@@ -794,20 +852,6 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
   </div>
 </div>
-
-<style>
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--dark-brown);transform:translateY(100%);transition:transform 0.4s ease}
-#cookie-banner.show{transform:translateY(0)}
-.cookie-inner{max-width:1400px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
-.cookie-text{flex:1;min-width:260px}
-.cookie-title{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:400}
-.cookie-text p{font-size:12px;color:rgba(245,240,234,0.65);line-height:1.7}
-.cookie-text a{color:rgba(245,240,234,0.85);text-decoration:underline;text-underline-offset:3px}
-.cookie-actions{display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap}
-.cookie-btn-accept{background:var(--gold);color:var(--dark-brown);border:none;padding:11px 28px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-weight:500;white-space:nowrap}
-.cookie-btn-decline{background:none;border:1px solid rgba(245,240,234,0.25);color:rgba(245,240,234,0.6);padding:10px 22px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
-@media(max-width:600px){.cookie-inner{padding:20px 24px;flex-direction:column;align-items:flex-start;gap:16px}.cookie-actions{width:100%}.cookie-btn-accept,.cookie-btn-decline{flex:1;text-align:center}}
-</style>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Header
@@ -880,6 +924,57 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
   })();
+
+  // ── Sélecteur de langue Google Translate ──
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'fr',
+      includedLanguages: 'fr,nl,en,es',
+      autoDisplay: false,
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+  function toggleLangMenu() {
+    const dd = document.getElementById('lang-dropdown');
+    const btn = document.getElementById('lang-btn');
+    const open = dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+  function setLang(langCode, label) {
+    // Fermer le menu
+    document.getElementById('lang-dropdown').classList.remove('open');
+    document.getElementById('lang-current').textContent = label;
+    // Mettre à jour les options actives
+    document.querySelectorAll('.lang-option').forEach(opt => opt.classList.remove('active'));
+    event.target.closest('.lang-option').classList.add('active');
+    // Déclencher Google Translate
+    if (langCode === 'fr') {
+      // Revenir au français original
+      const restore = document.querySelector('.goog-te-menu-value');
+      if (restore) restore.click();
+      // Ou forcer via cookie
+      document.cookie = 'googtrans=/fr/fr; path=/';
+      location.reload();
+      return;
+    }
+    const select = document.querySelector('select.goog-te-combo');
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event('change'));
+    } else {
+      // Fallback : attendre que Google Translate charge
+      setTimeout(() => {
+        const s = document.querySelector('select.goog-te-combo');
+        if (s) { s.value = langCode; s.dispatchEvent(new Event('change')); }
+      }, 1500);
+    }
+  }
+  // Fermer au clic extérieur
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('lang-selector')?.contains(e.target)) {
+      document.getElementById('lang-dropdown')?.classList.remove('open');
+    }
+  });
 </script>
 
 <!-- MENU MOBILE -->
@@ -893,6 +988,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     <a href="index.html#collection">Manteaux</a>
     <a href="promotions.html">Promotions</a>
     <a href="notre-histoire.html">Notre Histoire</a>
+    <a href="lookbook.html">Lookbook</a>
     <a href="journal.html">Journal</a>
     <a href="contact.html">Contact</a>
     <a href="cgv.html">CGV &amp; Mentions légales</a>
