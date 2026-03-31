@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#3A2A1E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — Atelier MAUDÉ</title>
+<meta name="description" content="Politique de confidentialité et protection des données personnelles d'Atelier MAUDÉ. RGPD, cookies, vos droits.">
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ateliermaude.github.io/confidentialite.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier MAUDÉ">
+  <meta property="og:title" content="Politique de confidentialité — Atelier MAUDÉ">
+  <meta property="og:description" content="Politique de confidentialité et protection des données personnelles d'Atelier MAUDÉ. RGPD, cookies, vos droits.">
+  <meta property="og:url" content="https://ateliermaude.github.io/confidentialite.html">
+  <meta property="og:image" content="https://ateliermaude.github.io/hero.png">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Politique de confidentialité — Atelier MAUDÉ">
+  <meta name="twitter:description" content="Politique de confidentialité et protection des données personnelles d'Atelier MAUDÉ. RGPD, cookies, vos droits.">
+  <meta name="twitter:image" content="https://ateliermaude.github.io/hero.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="dns-prefetch" href="https://ateliermaude.github.io">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
+*{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+
+/* BANDEAU */
+.announcement{background:var(--terracotta);color:#fff;overflow:hidden}
+.ticker-track{display:flex;white-space:nowrap;animation:ticker 28s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:inline-flex;align-items:center;padding:10px 0;flex-shrink:0;font-size:11px;letter-spacing:0.12em;font-weight:400}
+.ticker-sep{display:inline-block;margin:0 28px;color:rgba(255,255,255,0.35);font-size:14px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
+header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1400px;margin:0 auto}
+.header-left,.header-right{display:flex;gap:22px;align-items:center}
+.header-left button,.header-right button{background:none;border:none;cursor:pointer;color:var(--dark-brown);padding:4px;transition:color 0.2s}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.14em;color:var(--dark-brown);text-decoration:none;text-transform:uppercase}
+nav{display:flex;justify-content:center;gap:40px;padding:0 40px 14px}
+nav a{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--dark-brown);text-decoration:none;font-weight:400;position:relative;padding-bottom:2px}
+nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--terracotta);transition:width 0.3s}
+nav a:hover::after{width:100%}
+
+/* PAGE HERO */
+.page-hero{background:var(--cream);padding:70px 40px 60px;border-bottom:1px solid var(--border)}
+.page-hero-inner{max-width:860px;margin:0 auto}
+.page-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:18px;display:block}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;color:var(--dark-brown);margin-bottom:16px}
+.page-updated{font-size:11px;color:var(--muted);letter-spacing:0.08em}
+
+/* SOMMAIRE */
+.sommaire{background:var(--cream);border:1px solid var(--border);padding:32px 36px;margin-bottom:52px}
+.sommaire h3{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:18px;font-weight:400}
+.sommaire ol{list-style:none;display:flex;flex-direction:column;gap:8px;padding:0}
+.sommaire ol li a{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;display:flex;gap:10px;align-items:baseline}
+.sommaire ol li a:hover{color:var(--dark-brown)}
+.sommaire ol li a span{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold);flex-shrink:0}
+
+/* CONTENT */
+.content-wrap{max-width:860px;margin:0 auto;padding:60px 40px 100px}
+
+.legal-section{margin-bottom:56px;scroll-margin-top:100px}
+.legal-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.5vw,34px);font-weight:300;color:var(--dark-brown);margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border);line-height:1.2}
+.legal-section h3{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--dark-brown);margin:28px 0 12px;font-weight:400}
+.legal-section p{font-size:14px;line-height:1.95;color:var(--muted);margin-bottom:14px}
+.legal-section p:last-child{margin-bottom:0}
+.legal-section ul{padding-left:20px;margin-bottom:14px}
+.legal-section ul li{font-size:14px;line-height:1.85;color:var(--muted);margin-bottom:6px}
+.legal-section strong{color:var(--dark-brown);font-weight:400}
+.legal-section a{color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px}
+
+.todo{background:#fff8f0;border-left:3px solid var(--gold);padding:10px 16px;font-size:12px;color:var(--brown);margin:6px 0 16px;letter-spacing:0.04em;font-style:italic}
+
+.highlight-box{background:var(--cream);border-left:2px solid var(--gold);padding:18px 22px;margin:20px 0}
+.highlight-box p{font-size:13px;color:var(--muted);line-height:1.8;margin:0}
+.highlight-box strong{color:var(--dark-brown)}
+
+.section-divider{border:none;border-top:1px solid var(--border);margin:52px 0}
+
+/* FOOTER */
+footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 40px 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;max-width:1400px;margin:0 auto 50px}
+.footer-brand p{font-size:13px;color:var(--muted);line-height:1.85;max-width:260px;margin-top:18px}
+.footer-col h4{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:22px;font-weight:400}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--dark-brown)}
+.footer-bottom{max-width:1400px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:12px;color:var(--muted)}
+
+.back-to-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--dark-brown);color:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s ease,transform 0.3s ease,background 0.2s;z-index:90}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:var(--terracotta)}
+
+@media(max-width:900px){
+  .header-inner{padding:16px 20px}
+  nav{gap:22px;padding:0 20px 12px;overflow-x:auto;white-space:nowrap}
+  .page-hero{padding:50px 24px 40px}
+  .content-wrap{padding:40px 24px 70px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .sommaire{padding:24px 20px}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+}
+
+  /* ── MICRO-ANIMATIONS BOUTONS CTA ── */
+
+  /* Bouton primaire — shimmer doré au hover */
+  .btn-primary {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201,169,110,0.18), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+  }
+  .btn-primary:hover::after { left: 150%; }
+  .btn-primary:active { transform: scale(0.98); }
+
+  /* Bouton outline — bordure animée */
+  .btn-outline {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, color 0.3s, transform 0.15s;
+  }
+  .btn-outline:active { transform: scale(0.98); }
+
+  /* Bouton Ajouter au panier — pulse au clic */
+  .btn-add-cart {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, transform 0.15s;
+  }
+  .btn-add-cart::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    opacity: 0; pointer-events: none;
+  }
+  .btn-add-cart:active::after {
+    width: 300px; height: 300px; opacity: 0;
+  }
+  .btn-add-cart:active { transform: scale(0.99); }
+
+  /* Wishlist — cœur qui bat */
+  .btn-wishlist {
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .btn-wishlist:hover { transform: translateY(-1px); }
+  .btn-wishlist:active { transform: scale(0.98); }
+  .btn-wishlist:hover svg { animation: heartbeat 0.6s ease; }
+  @keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    30%      { transform: scale(1.25); }
+    60%      { transform: scale(0.95); }
+  }
+
+  /* Nav links — soulignement animé déjà présent, on ajoute couleur au hover */
+  nav a { transition: color 0.2s; }
+  nav a:hover { color: var(--terracotta); }
+
+  /* Cards produit — légère élévation au hover */
+  .product-card {
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover { transform: translateY(-4px); }
+
+  /* Feature items — glow subtil */
+  .feature-item {
+    transition: background 0.3s, transform 0.2s;
+  }
+  .feature-item:hover { transform: translateY(-2px); }
+
+  /* Lien savoir-faire — flèche qui avance */
+  .sf-link { transition: color 0.3s, border-color 0.3s, gap 0.3s; }
+  .sf-link svg { transition: transform 0.3s; }
+  .sf-link:hover svg { transform: translateX(5px); }
+
+  /* Swatches couleurs — bounce subtil */
+  .color-swatch, .color-dot {
+    transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), border-color 0.2s;
+  }
+  .color-swatch:hover, .color-dot:hover {
+    transform: scale(1.18);
+  }
+
+  /* Taille buttons — micro scale */
+  .size-btn {
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+  .size-btn:hover:not(.unavailable) { transform: scale(1.04); }
+  .size-btn:active:not(.unavailable) { transform: scale(0.97); }
+
+  /* Logo — légère transition couleur */
+  .logo { transition: opacity 0.2s; }
+  .logo:hover { opacity: 0.8; }
+
+  /* Liens footer */
+  .footer-col ul li a {
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .footer-col ul li a:hover { padding-left: 4px; }
+
+  /* Back to top — rotation au hover */
+  .back-to-top svg {
+    transition: transform 0.3s;
+  }
+  .back-to-top:hover svg { transform: translateY(-2px); }
+
+  /* Réduction des animations si préférence système */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ── BARRE DE PROGRESSION ── */
+  .reading-progress {
+    position: fixed;
+    top: 0; left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    z-index: 200;
+    transition: width 0.1s linear;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-hidden="true"></div>
+
+<!-- BANDEAU -->
+<div class="announcement" role="marquee">
+  <div class="ticker-track">
+    <span class="ticker-item">SÉLECTION PREMIUM &nbsp;·&nbsp; –30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">CACHEMIRE DE MONGOLIE-INTÉRIEURE — FABRIQUÉ À SUZHOU</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">SÉLECTION PREMIUM &nbsp;·&nbsp; –30% SUR NOS PIÈCES EMBLÉMATIQUES — ÉDITION LIMITÉE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">CACHEMIRE DE MONGOLIE-INTÉRIEURE — FABRIQUÉ À SUZHOU</span>
+    <span class="ticker-sep">✦</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <button aria-label="Menu"><svg width="22" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="1" x2="22" y2="1"/><line x1="0" y1="7" x2="16" y2="7"/><line x1="0" y1="13" x2="22" y2="13"/></svg></button>
+    </div>
+    <a href="index.html" class="logo">Atelier MAUDÉ</a>
+    <div class="header-right">
+      <button aria-label="Mon compte"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button aria-label="Panier"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+    </div>
+  </div>
+  <nav>
+    <a href="index.html#collection">Manteaux</a>
+    <a href="promotions.html">Promotions</a>
+    <a href="notre-histoire.html">Notre Histoire</a>
+    <a href="journal.html">Journal</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-eyebrow">Atelier MAUDÉ</span>
+    <h1 class="page-title">Politique de confidentialité</h1>
+    <p class="page-updated">Dernière mise à jour : mars 2025</p>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <div class="highlight-box">
+    <p>Chez <strong>Atelier MAUDÉ</strong>, nous croyons en la transparence totale. Cette page vous explique simplement quelles données nous collectons, pourquoi, et comment vous pouvez exercer vos droits. Nous ne vendons jamais vos données à des tiers.</p>
+  </div>
+
+  <!-- SOMMAIRE -->
+  <div class="sommaire">
+    <h3>Sommaire</h3>
+    <ol>
+      <li><a href="#responsable"><span>1.</span> Responsable du traitement</a></li>
+      <li><a href="#collecte"><span>2.</span> Données collectées</a></li>
+      <li><a href="#finalites"><span>3.</span> Finalités du traitement</a></li>
+      <li><a href="#conservation"><span>4.</span> Durée de conservation</a></li>
+      <li><a href="#partage"><span>5.</span> Partage des données</a></li>
+      <li><a href="#droits"><span>6.</span> Vos droits</a></li>
+      <li><a href="#cookies"><span>7.</span> Cookies</a></li>
+      <li><a href="#securite"><span>8.</span> Sécurité</a></li>
+      <li><a href="#modifications"><span>9.</span> Modifications</a></li>
+      <li><a href="#contact-rgpd"><span>10.</span> Contact</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="legal-section" id="responsable">
+    <h2>1. Responsable du traitement</h2>
+    <p>Le responsable du traitement de vos données personnelles est :</p>
+    <p><strong>Atelier MAUDÉ</strong><br>
+    Représentées par : Aude et Mathilde<br>
+    E-mail : <a href="/cdn-cgi/l/email-protection#cba7aabfaea7a2aeb9a6aabeafae8baca6aaa2a7e5a8a4a6"><span class="__cf_email__" data-cfemail="5e323f2a3b32373b2c333f2b3a3b1e39333f3732703d3133">[email&#160;protected]</span></a><br>
+    Adresse : <span class="todo">[À compléter après immatriculation]</span></p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 2 -->
+  <div class="legal-section" id="collecte">
+    <h2>2. Données collectées</h2>
+    <h3>Lors d'une commande</h3>
+    <ul>
+      <li>Nom et prénom</li>
+      <li>Adresse e-mail</li>
+      <li>Adresse de livraison</li>
+      <li>Données de paiement (traitées directement par Stripe — nous n'y avons pas accès)</li>
+    </ul>
+    <h3>Lors d'une inscription à la newsletter</h3>
+    <ul>
+      <li>Adresse e-mail uniquement</li>
+    </ul>
+    <h3>Lors d'un message via le formulaire de contact</h3>
+    <ul>
+      <li>Nom, prénom, adresse e-mail, contenu du message</li>
+    </ul>
+    <h3>Automatiquement lors de la navigation</h3>
+    <ul>
+      <li>Cookies techniques nécessaires au fonctionnement du site (voir section 7)</li>
+      <li>Aucune donnée de navigation n'est collectée sans votre consentement</li>
+    </ul>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 3 -->
+  <div class="legal-section" id="finalites">
+    <h2>3. Finalités du traitement</h2>
+    <p>Vos données sont utilisées exclusivement pour :</p>
+    <ul>
+      <li><strong>Traitement des commandes</strong> — préparation, expédition, suivi, service après-vente</li>
+      <li><strong>Communication transactionnelle</strong> — confirmation de commande, numéro de suivi</li>
+      <li><strong>Newsletter</strong> — envoi d'e-mails sur nos nouvelles pièces et actualités (uniquement si vous y avez consenti)</li>
+      <li><strong>Gestion des retours</strong> — traitement des demandes de retour ou remboursement</li>
+      <li><strong>Obligations légales</strong> — conservation des données comptables et fiscales</li>
+    </ul>
+    <p>Nous ne faisons <strong>jamais</strong> de prospection commerciale non sollicitée ni de profilage publicitaire.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 4 -->
+  <div class="legal-section" id="conservation">
+    <h2>4. Durée de conservation</h2>
+    <ul>
+      <li><strong>Données de commande</strong> — conservées 3 ans à compter de la dernière commande (obligation légale comptable : 10 ans pour les factures)</li>
+      <li><strong>Newsletter</strong> — jusqu'à désinscription ou 3 ans sans interaction</li>
+      <li><strong>Messages de contact</strong> — 1 an après la clôture de la demande</li>
+      <li><strong>Cookies</strong> — 13 mois maximum (conformément aux recommandations CNIL)</li>
+    </ul>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 5 -->
+  <div class="legal-section" id="partage">
+    <h2>5. Partage des données</h2>
+    <p>Vos données ne sont <strong>jamais vendues</strong> à des tiers. Elles peuvent être partagées uniquement avec :</p>
+    <ul>
+      <li><strong>Stripe</strong> (prestataire de paiement) — pour le traitement sécurisé des paiements. Stripe est certifié PCI-DSS. <a href="https://stripe.com/fr/privacy" target="_blank" rel="noopener">Politique de confidentialité Stripe</a></li>
+      <li><strong>Prestataire logistique</strong> — adresse de livraison uniquement, pour l'expédition de votre commande</li>
+      <li><strong>Klaviyo</strong> (si vous êtes inscrite à la newsletter) — e-mail uniquement. <a href="https://www.klaviyo.com/legal/privacy-notice" target="_blank" rel="noopener">Politique de confidentialité Klaviyo</a></li>
+    </ul>
+    <p>Ces prestataires agissent en qualité de sous-traitants et sont contractuellement tenus de protéger vos données conformément au RGPD.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 6 -->
+  <div class="legal-section" id="droits">
+    <h2>6. Vos droits</h2>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679), vous disposez des droits suivants :</p>
+    <ul>
+      <li><strong>Droit d'accès</strong> — obtenir une copie de vos données personnelles</li>
+      <li><strong>Droit de rectification</strong> — corriger des données inexactes ou incomplètes</li>
+      <li><strong>Droit à l'effacement</strong> — demander la suppression de vos données ("droit à l'oubli")</li>
+      <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré</li>
+      <li><strong>Droit d'opposition</strong> — vous opposer au traitement de vos données à des fins marketing</li>
+      <li><strong>Droit à la limitation</strong> — restreindre le traitement de vos données</li>
+      <li><strong>Droit de retrait du consentement</strong> — retirer votre consentement à tout moment (ex : désinscription newsletter)</li>
+    </ul>
+    <div class="highlight-box">
+      <p>Pour exercer vos droits, contactez-nous à <a href="/cdn-cgi/l/email-protection#670b0613020b0e02150a0612030227000a060e0b4904080a"><strong><span class="__cf_email__" data-cfemail="1e727f6a7b72777b6c737f6b7a7b5e79737f7772307d7173">[email&#160;protected]</span></strong></a>. Nous répondrons dans un délai maximum de <strong>30 jours</strong>.</p>
+    </div>
+    <p>Vous avez également le droit d'introduire une réclamation auprès de la <a href="https://www.cnil.fr" target="_blank" rel="noopener"><strong>CNIL</strong></a> (Commission Nationale de l'Informatique et des Libertés) si vous estimez que vos droits ne sont pas respectés.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 7 -->
+  <div class="legal-section" id="cookies">
+    <h2>7. Cookies</h2>
+    <h3>Cookies techniques (obligatoires)</h3>
+    <p>Ces cookies sont indispensables au fonctionnement du site. Ils ne peuvent pas être désactivés.</p>
+    <ul>
+      <li><strong>Préférences cookies</strong> — mémorise votre choix d'acceptation ou de refus (localStorage)</li>
+      <li><strong>Session newsletter</strong> — évite d'afficher plusieurs fois la pop-up dans la même session (sessionStorage)</li>
+    </ul>
+    <h3>Cookies analytiques et publicitaires</h3>
+    <p>Nous n'utilisons <strong>aucun cookie analytique</strong> (Google Analytics, etc.) ni <strong>aucun cookie publicitaire</strong> sans votre consentement explicite.</p>
+    <h3>Gérer vos préférences</h3>
+    <p>Vous pouvez à tout moment modifier les paramètres de votre navigateur pour refuser ou supprimer les cookies. Cela peut affecter certaines fonctionnalités du site.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 8 -->
+  <div class="legal-section" id="securite">
+    <h2>8. Sécurité</h2>
+    <p>Nous mettons en œuvre les mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte ou divulgation :</p>
+    <ul>
+      <li>Connexion sécurisée HTTPS sur l'ensemble du site</li>
+      <li>Paiements traités exclusivement via Stripe (certifié PCI-DSS niveau 1)</li>
+      <li>Aucune donnée bancaire stockée par Atelier MAUDÉ</li>
+      <li>Accès aux données limité aux seules fondatrices (Aude et Mathilde)</li>
+    </ul>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 9 -->
+  <div class="legal-section" id="modifications">
+    <h2>9. Modifications</h2>
+    <p>Nous pouvons mettre à jour cette politique à tout moment pour refléter des changements légaux, réglementaires ou liés à nos pratiques. La date de dernière mise à jour est indiquée en haut de cette page.</p>
+    <p>En cas de modification substantielle, nous vous en informerons par e-mail si vous êtes inscrite à notre newsletter.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 10 -->
+  <div class="legal-section" id="contact-rgpd">
+    <h2>10. Contact</h2>
+    <p>Pour toute question relative à cette politique ou à l'exercice de vos droits :</p>
+    <div class="highlight-box">
+      <p><strong>Atelier MAUDÉ</strong><br>
+      E-mail : <a href="/cdn-cgi/l/email-protection#3f535e4b5a53565a4d525e4a5b5a7f58525e5653115c5052"><span class="__cf_email__" data-cfemail="dcb0bda8b9b0b5b9aeb1bda9b8b99cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</span></a><br>
+      Adresse : <span style="font-style:italic;color:var(--muted)">[À compléter après immatriculation]</span></p>
+    </div>
+    <p>Autorité de contrôle : <a href="https://www.cnil.fr" target="_blank" rel="noopener">Commission Nationale de l'Informatique et des Libertés (CNIL)</a> — 3 Place de Fontenoy, 75007 Paris.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Atelier MAUDÉ</a>
+      <p>Des manteaux en laine et cachemire d'exception, conçus pour celles qui choisissent l'élégance intemporelle.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Boutique</h4>
+      <ul><li><a href="index.html#collection">Manteaux</a></li><li><a href="promotions.html">Promotions</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Informations</h4>
+      <ul>
+        <li><a href="notre-histoire.html">Notre histoire</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html#mentions">Mentions légales</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Nous rejoindre</h4>
+      <ul>
+        <li><a href="/cdn-cgi/l/email-protection#6509041100090c00170804100100250208040c094b060a08"><span class="__cf_email__" data-cfemail="7e121f0a1b12171b0c131f0b1a1b3e19131f1712501d1113">[email&#160;protected]</span></a></li>
+        <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Atelier MAUDÉ. Tous droits réservés.</p>
+    <p style="letter-spacing:0.1em">FR &nbsp;|&nbsp; BE &nbsp;|&nbsp; CH</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Reto
+  // ── Barre de progression de lecture ──
+  (function() {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  })();
+u
