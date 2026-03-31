@@ -297,7 +297,49 @@ footer a:hover{color:var(--dark-brown)}
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* ── SÉLECTEUR DE LANGUE ── */
+  .lang-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  #google_translate_element {
+    display: none; /* On cache le widget natif ugly */
+  }
+  .lang-btn {
+    background: none; border: 1px solid var(--border);
+    padding: 6px 12px; font-family: 'Jost', sans-serif;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); cursor: pointer; display: flex;
+    align-items: center; gap: 6px; transition: all 0.2s;
+  }
+  .lang-btn:hover { border-color: var(--dark-brown); color: var(--dark-brown); }
+  .lang-dropdown {
+    position: absolute; top: calc(100% + 8px); right: 0;
+    background: var(--warm-white); border: 1px solid var(--border);
+    min-width: 160px; z-index: 200;
+    box-shadow: 0 8px 24px rgba(42,26,18,0.1);
+    display: none;
+  }
+  .lang-dropdown.open { display: block; }
+  .lang-option {
+    display: flex; align-items: center; gap: 10px;
+    padding: 11px 16px; font-size: 12px; color: var(--muted);
+    cursor: pointer; transition: background 0.15s, color 0.15s;
+    letter-spacing: 0.04em; border: none; background: none;
+    width: 100%; text-align: left; font-family: 'Jost', sans-serif;
+  }
+  .lang-option:hover { background: var(--cream); color: var(--dark-brown); }
+  .lang-option.active { color: var(--dark-brown); font-weight: 500; }
+  .lang-flag { font-size: 16px; line-height: 1; }
+  /* Cacher la barre Google Translate en haut */
+  .goog-te-banner-frame, .skiptranslate { display: none !important; }
+  body { top: 0 !important; }
+  .goog-te-gadget { display: none !important; }
 </style>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </head>
 <body>
 
@@ -406,7 +448,58 @@ footer a:hover{color:var(--dark-brown)}
   <p>© 2025 Atelier MAUDÉ — <a href="index.html">ateliermaude.github.io</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="cgv.html">CGV</a></p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+  // ── Sélecteur de langue Google Translate ──
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'fr',
+      includedLanguages: 'fr,nl,en,es',
+      autoDisplay: false,
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+  function toggleLangMenu() {
+    const dd = document.getElementById('lang-dropdown');
+    const btn = document.getElementById('lang-btn');
+    const open = dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+  function setLang(langCode, label) {
+    // Fermer le menu
+    document.getElementById('lang-dropdown').classList.remove('open');
+    document.getElementById('lang-current').textContent = label;
+    // Mettre à jour les options actives
+    document.querySelectorAll('.lang-option').forEach(opt => opt.classList.remove('active'));
+    event.target.closest('.lang-option').classList.add('active');
+    // Déclencher Google Translate
+    if (langCode === 'fr') {
+      // Revenir au français original
+      const restore = document.querySelector('.goog-te-menu-value');
+      if (restore) restore.click();
+      // Ou forcer via cookie
+      document.cookie = 'googtrans=/fr/fr; path=/';
+      location.reload();
+      return;
+    }
+    const select = document.querySelector('select.goog-te-combo');
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event('change'));
+    } else {
+      // Fallback : attendre que Google Translate charge
+      setTimeout(() => {
+        const s = document.querySelector('select.goog-te-combo');
+        if (s) { s.value = langCode; s.dispatchEvent(new Event('change')); }
+      }, 1500);
+    }
+  }
+  // Fermer au clic extérieur
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('lang-selector')?.contains(e.target)) {
+      document.getElementById('lang-dropdown')?.classList.remove('open');
+    }
+  });
+</script><script>
   // Récupérer l'email depuis l'URL si Stripe le passe (?email=...)
   const params = new URLSearchParams(window.location.search);
   const email = params.get('email');
