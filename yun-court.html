@@ -1365,22 +1365,40 @@
 
   <!-- GALLERY -->
   <div class="gallery" id="product-gallery">
-    <div class="gallery-thumbs">
-      <div class="gallery-thumb active" onclick="switchImage(0)" role="button" aria-label="Vue 1 — Noir">
-        <img src="yun-court-noir.jpeg" width="800" height="1066" fetchpriority="high" alt="Yūn Court noir — miniature 1" loading="lazy" decoding="async">
+    <div class="gallery-thumbs" id="gallery-thumbs">
+      <div class="gallery-thumb active" data-color="marine" onclick="switchImage(0)" role="button" aria-label="Marine — face">
+        <img src="yun-court-marine-face.png" alt="Yūn Court marine — face" loading="eager" decoding="async">
       </div>
-      <div class="gallery-thumb" onclick="switchImage(1)" role="button" aria-label="Vue 2 — Marine">
-        <img src="yun-court-marine.jpeg" width="800" height="1066" alt="Yūn Court marine — miniature 2" loading="lazy" decoding="async">
+      <div class="gallery-thumb" data-color="marine" onclick="switchImage(1)" role="button" aria-label="Marine — dos">
+        <img src="yun-court-marine-dos.png" alt="Yūn Court marine — dos" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-thumb" data-color="marine" onclick="switchImage(2)" role="button" aria-label="Marine — profil droit">
+        <img src="yun-court-marine-profil-droit.png" alt="Yūn Court marine — profil droit" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-thumb" data-color="marine" onclick="switchImage(3)" role="button" aria-label="Marine — profil gauche">
+        <img src="yun-court-marine-profil-gauche.png" alt="Yūn Court marine — profil gauche" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-thumb" data-color="noir" style="display:none" onclick="switchImage(4)" role="button" aria-label="Noir — vue principale">
+        <img src="yun-court-noir.jpeg" alt="Yūn Court noir — vue principale" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="gallery-main">
       <div class="promo-tag">Promotion</div>
       <div class="discount-badge">–23%</div>
-      <img src="yun-court-noir.jpeg" width="800" height="1066"
-           alt="Manteau Yūn Court Ceinturé en Cachemire — coloris noir, vue principale"
+      <img src="yun-court-marine-face.png"
+           alt="Manteau Yūn Court Ceinturé — marine, face"
            class="active" loading="eager">
-      <img src="yun-court-marine.jpeg" width="800" height="1066"
-           alt="Manteau Yūn Court Ceinturé en Cachemire — coloris marine"
+      <img src="yun-court-marine-dos.png"
+           alt="Manteau Yūn Court Ceinturé — marine, dos"
+           loading="lazy" decoding="async">
+      <img src="yun-court-marine-profil-droit.png"
+           alt="Manteau Yūn Court Ceinturé — marine, profil droit"
+           loading="lazy" decoding="async">
+      <img src="yun-court-marine-profil-gauche.png"
+           alt="Manteau Yūn Court Ceinturé — marine, profil gauche"
+           loading="lazy" decoding="async">
+      <img src="yun-court-noir.jpeg"
+           alt="Manteau Yūn Court Ceinturé — noir"
            loading="lazy" decoding="async">
     </div>
   </div>
@@ -1417,12 +1435,12 @@
     <!-- Color -->
     <label class="option-label" id="color-label">Coloris — <span id="color-name-display" class="color-name">Noir</span></label>
     <div class="color-options" role="group" aria-labelledby="color-label">
-      <div class="color-swatch swatch-noir active"
-           onclick="selectColor(this, 'Noir', 0)"
-           title="Noir" role="button" aria-label="Coloris Noir" tabindex="0"></div>
-      <div class="color-swatch swatch-marine"
-           onclick="selectColor(this, 'Marine', 1)"
+      <div class="color-swatch swatch-marine active"
+           onclick="selectColor(this, 'Marine', 0)"
            title="Marine" role="button" aria-label="Coloris Marine" tabindex="0"></div>
+      <div class="color-swatch swatch-noir"
+           onclick="selectColor(this, 'Noir', 1)"
+           title="Noir" role="button" aria-label="Coloris Noir" tabindex="0"></div>
     </div>
 
     <!-- Size -->
