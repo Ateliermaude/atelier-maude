@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#3A2A1E">
+<meta name="theme-color" content="#5A4633">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Atelier MAUDÉ</title>
 <meta name="description" content="Une question sur nos manteaux, une commande ou un retour ? Écrivez-nous à lateliermaude@gmail.com. Réponse sous 48h.">
@@ -69,6 +69,20 @@
 
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>
+  /* ── ANIMATIONS FADE-IN ── */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1 !important; transform: translateY(0) !important; }
+  .fade-in-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in-up.visible { opacity: 1 !important; transform: translateY(0) !important; }
+  .fade-in-left { opacity: 0; transform: translateX(-24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in-left.visible { opacity: 1 !important; transform: translateX(0) !important; }
+  .fade-in-right { opacity: 0; transform: translateX(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in-right.visible { opacity: 1 !important; transform: translateX(0) !important; }
+  .stagger-1 { transition-delay: 0.1s !important; }
+  .stagger-2 { transition-delay: 0.2s !important; }
+  .stagger-3 { transition-delay: 0.3s !important; }
+  .stagger-4 { transition-delay: 0.4s !important; }
+
 
   /* ── FAQ & CONTACT INFOS ── */
   .contact-info-grid {
@@ -77,7 +91,7 @@
     border: 1px solid var(--border); margin-bottom: 60px;
   }
   .contact-info-item {
-    background: var(--warm-white); padding: 36px 28px;
+    background: var(--bg-main); padding: 36px 28px;
     text-align: center; transition: background 0.3s;
   }
   .contact-info-item:hover { background: var(--cream); }
@@ -185,9 +199,26 @@
     100% { transform: translateX(-50%); }
   }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
+:root{
+  --bg-main:#F5EDE3;
+  --bg-section:#E6D3B3;
+  --primary:#A67C52;
+  --primary-hover:#8B5E3C;
+  --secondary:#C2A27C;
+  --text-main:#5A4633;
+  --text-muted:#8B7355;
+  --accent:#D9A441;
+  --white:#FFFFFF;
+  --cream:#FAF7F4;
+  --border:rgba(166,124,82,0.18);
+  --shadow:0 4px 24px rgba(90,70,51,0.08);
+  --shadow-hover:0 8px 32px rgba(90,70,51,0.14);
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:16px;
+}
 html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
+body{font-family:'Jost',sans-serif;background:var(--bg-main);color:var(--text);font-weight:300;overflow-x:hidden}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* ── BANDEAU DÉFILANT ── */
@@ -200,7 +231,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text
     100% { transform: translateX(-50%); }
   }
 
-header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
+header{position:sticky;top:0;z-index:100;background:var(--bg-main);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
 header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1400px;margin:0 auto}
 .header-left,.header-right{display:flex;gap:22px;align-items:center}
@@ -281,8 +312,8 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
 .footer-bottom{max-width:1400px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:12px;color:var(--muted)}
 
-.fade-in{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
+
+
 
 @media(max-width:900px){
   .contact-layout{grid-template-columns:1fr;padding:50px 24px}
@@ -313,7 +344,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   .mobile-menu {
     position: fixed; top: 0; left: 0; bottom: 0;
     width: min(320px, 85vw);
-    background: var(--warm-white);
+    background: var(--bg-main);
     z-index: 201;
     transform: translateX(-100%);
     transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
@@ -375,32 +406,20 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     .mobile-menu, .mobile-menu-overlay { display: none !important; }
   }
 
-  /* ── ANIMATIONS SCROLL AVANCÉES ── */
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+  
+  
+  
 
-  .fade-in-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in-left.visible { opacity: 1; transform: translateX(0); }
+  
+  
 
-  .fade-in-right {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in-right.visible { opacity: 1; transform: translateX(0); }
+  
+  
 
-  .stagger-1 { transition-delay: 0.1s !important; }
-  .stagger-2 { transition-delay: 0.2s !important; }
-  .stagger-3 { transition-delay: 0.3s !important; }
-  .stagger-4 { transition-delay: 0.4s !important; }
+  
+  
+  
+  
 
   /* ── BOUTON RETOUR EN HAUT ── */
   .back-to-top {
@@ -526,7 +545,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     nav a { font-size: 10px !important; letter-spacing: 0.12em !important; }
   }
 
-  /* ── MICRO-ANIMATIONS BOUTONS CTA ── */
+  
 
   /* Bouton primaire — shimmer doré au hover */
   .btn-primary {
@@ -640,7 +659,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   }
   .back-to-top:hover svg { transform: translateY(-2px); }
 
-  /* Réduction des animations si préférence système */
+  
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -649,7 +668,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   }
 #cercle-popup{position:fixed;inset:0;z-index:300;background:rgba(42,26,18,0.55);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(3px)}
 #cercle-popup.open{opacity:1;pointer-events:auto}
-.popup-inner{background:var(--warm-white);max-width:420px;width:90%;padding:52px 44px 40px;position:relative;text-align:center;transform:translateY(16px);transition:transform 0.4s ease}
+.popup-inner{background:var(--bg-main);max-width:420px;width:90%;padding:52px 44px 40px;position:relative;text-align:center;transform:translateY(16px);transition:transform 0.4s ease}
 #cercle-popup.open .popup-inner{transform:translateY(0)}
 .popup-close{position:absolute;top:18px;right:20px;background:none;border:none;cursor:pointer;color:var(--muted);font-size:18px;line-height:1;transition:color 0.2s}
 .popup-close:hover{color:var(--dark-brown)}
@@ -666,15 +685,37 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
 .popup-decline:hover{color:var(--dark-brown)}
 @media(max-width:600px){.popup-inner{padding:44px 28px 34px}.popup-title{font-size:36px}}
 
-  /* FALLBACK FADE-IN — évite les pages blanches */
-  .fade-in, .fade-in-up, .fade-in-left, .fade-in-right {
-    opacity: 0;
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible, .fade-in-up.visible, .fade-in-left.visible, .fade-in-right.visible {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+  
+  
+  
+
+  /* Texte adapté sur fond latte clair */
+  .savoir-faire .sf-eyebrow,
+  .savoir-faire .sf-title,
+  .savoir-faire .sf-item-title { color: var(--dark-brown) !important; }
+  .savoir-faire .sf-num { color: rgba(58,42,30,0.2) !important; }
+  .savoir-faire .sf-item-text { color: rgba(58,42,30,0.65) !important; }
+  .savoir-faire .section-label { color: var(--terracotta) !important; }
+  .comparatif-title { color: var(--dark-brown) !important; }
+  .comp-head.ours { color: var(--brown) !important; }
+  .comp-head.other { color: rgba(58,42,30,0.45) !important; }
+  .comp-row.ours { color: rgba(58,42,30,0.85) !important; }
+  .comp-row.other { color: rgba(58,42,30,0.4) !important; }
+  .check { color: var(--brown) !important; }
+  .cross { color: rgba(58,42,30,0.2) !important; }
+  .comp-note { color: rgba(58,42,30,0.5) !important; }
+  .comp-note a { color: var(--brown) !important; }
+  .newsletter-eyebrow { color: var(--brown) !important; }
+  .newsletter-title { color: var(--dark-brown) !important; }
+  .newsletter-text { color: rgba(58,42,30,0.65) !important; }
+  .newsletter-form { border-color: rgba(58,42,30,0.2) !important; }
+  .newsletter-form input { color: var(--dark-brown) !important; }
+  .newsletter-form input::placeholder { color: rgba(58,42,30,0.35) !important; }
+  .lookbook-eyebrow { color: var(--brown) !important; opacity: 1 !important; }
+  .lookbook-title { color: var(--dark-brown) !important; }
+  .lookbook-title em { color: var(--brown) !important; }
+  .lookbook-text { color: rgba(58,42,30,0.65) !important; }
+
 </style>
 </head>
 <body>
@@ -831,7 +872,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     <h2 class="faq-title fade-in">Ce que nos clientes<br>demandent souvent</h2>
     <div class="faq-item fade-in">
       <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Quels sont les délais de livraison ?<span class="faq-icon" aria-hidden="true">+</span></button>
-      <div class="faq-body">Vos manteaux sont expédiés depuis nos ateliers partenaires avec un suivi inclus. Livraison <strong>gratuite</strong> sous <strong>8 à 15 jours ouvrés</strong>. Nous livrons en France, Belgique et Suisse.</div>
+      <div class="faq-body">Vos manteaux sont expédiés depuis nos ateliers partenaires avec un suivi inclus. Livraison <strong>gratuite</strong> sous <strong>8 à 15 jours ouvrés</strong>. Nous livrons en France et Belgique.</div>
     </div>
     <div class="faq-item fade-in" style="transition-delay:0.05s">
       <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Comment fonctionnent les retours ?<span class="faq-icon" aria-hidden="true">+</span></button>
@@ -843,7 +884,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
     <div class="faq-item fade-in" style="transition-delay:0.15s">
       <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Quelle est la composition des manteaux ?<span class="faq-icon" aria-hidden="true">+</span></button>
-      <div class="faq-body"><strong>70% Laine, 30% Cachemire</strong> de Mongolie-Intérieure. Fabriqués à Suzhou, Chine, dans des ateliers spécialisés. Nous croyons en la transparence totale sur la composition.</div>
+      <div class="faq-body"><strong>50% Laine, 50% Cachemire</strong> de Mongolie-Intérieure. Fabriqués à Suzhou, Chine, dans des ateliers spécialisés. Nous croyons en la transparence totale sur la composition.</div>
     </div>
     <div class="faq-item fade-in" style="transition-delay:0.2s">
       <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">Comment entretenir mon manteau ?<span class="faq-icon" aria-hidden="true">+</span></button>
@@ -941,7 +982,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   </div>
   <div class="footer-bottom">
     <p>© 2025 Atelier MAUDÉ. Tous droits réservés.</p>
-    <p style="letter-spacing:0.1em">FR &nbsp;|&nbsp; BE &nbsp;|&nbsp; CH</p>
+    <p style="letter-spacing:0.1em">FR &nbsp;|&nbsp; BE</p>
   </div>
 </footer>
 
@@ -978,11 +1019,29 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       el.classList.add('visible');
     });
   }, 600);
+
+  // ── Animations au scroll ──
+  (function() {
+    var els = document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right');
+    // Activer immédiatement les éléments déjà visibles
+    function activate(el) { el.classList.add('visible'); }
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) { activate(e.target); obs.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      els.forEach(function(el) { obs.observe(el); });
+    } else {
+      els.forEach(activate); // Fallback si pas d'IntersectionObserver
+    }
+    // Sécurité absolue : tout visible après 500ms
+    setTimeout(function() {
+      document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right').forEach(activate);
+    }, 500);
+  })();
 </script><script>
   window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',scrollY>10),{passive:true});
 
-  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
-  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+  
   setTimeout(()=>document.querySelector('.page-hero.fade-in')?.classList.add('visible'),150);
 
   function submitForm(){
@@ -1021,17 +1080,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     }, { passive: true });
   }
 
-  // ── Animations scroll avancées ──
-  const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        scrollObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => scrollObserver.observe(el));
-
+  
   // ── Sélecteur de langue Google Translate ──
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
