@@ -1368,33 +1368,33 @@
   <div class="gallery" id="product-gallery">
     <div class="gallery-thumbs" id="gallery-thumbs">
       <!-- Camel -->
-      <div class="gallery-thumb active" data-color="camel" onclick="switchImage(0)" role="button" aria-label="Camel — face">
+      <div class="gallery-thumb active" data-color="camel" data-index="0" onclick="switchImage(0)" role="button" aria-label="Camel — face">
         <img src="hua-long-camel-face.jpg" alt="Huā Long camel — face" loading="eager" decoding="async">
       </div>
-      <div class="gallery-thumb" data-color="camel" onclick="switchImage(1)" role="button" aria-label="Camel — dos">
+      <div class="gallery-thumb" data-color="camel" data-index="1" onclick="switchImage(1)" role="button" aria-label="Camel — dos">
         <img src="hua-long-camel-dos.jpg" alt="Huā Long camel — dos" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-thumb" data-color="camel" onclick="switchImage(2)" role="button" aria-label="Camel — profil droit">
+      <div class="gallery-thumb" data-color="camel" data-index="2" onclick="switchImage(2)" role="button" aria-label="Camel — profil droit">
         <img src="hua-long-camel-profil.jpg" alt="Huā Long camel — profil droit" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-thumb" data-color="camel" onclick="switchImage(3)" role="button" aria-label="Camel — vue">
+      <div class="gallery-thumb" data-color="camel" data-index="3" onclick="switchImage(3)" role="button" aria-label="Camel — vue">
         <img src="hua-long-camel-1.jpeg" alt="Huā Long camel — vue" loading="lazy" decoding="async">
       </div>
       <!-- Gris -->
-      <div class="gallery-thumb" data-color="gris" style="display:none" onclick="switchImage(4)" role="button" aria-label="Gris — face">
+      <div class="gallery-thumb" data-color="gris" style="display:none" data-index="4" onclick="switchImage(4)" role="button" aria-label="Gris — face">
         <img src="hua-long-gris-face.png" alt="Huā Long gris — face" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-thumb" data-color="gris" style="display:none" onclick="switchImage(5)" role="button" aria-label="Gris — dos">
+      <div class="gallery-thumb" data-color="gris" style="display:none" data-index="5" onclick="switchImage(5)" role="button" aria-label="Gris — dos">
         <img src="hua-long-gris-dos.png" alt="Huā Long gris — dos" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-thumb" data-color="gris" style="display:none" onclick="switchImage(6)" role="button" aria-label="Gris — profil droit">
+      <div class="gallery-thumb" data-color="gris" style="display:none" data-index="6" onclick="switchImage(6)" role="button" aria-label="Gris — profil droit">
         <img src="hua-long-gris-profil-droit.png" alt="Huā Long gris — profil droit" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-thumb" data-color="gris" style="display:none" onclick="switchImage(7)" role="button" aria-label="Gris — profil gauche">
+      <div class="gallery-thumb" data-color="gris" style="display:none" data-index="7" onclick="switchImage(7)" role="button" aria-label="Gris — profil gauche">
         <img src="hua-long-gris-profil-gauche.png" alt="Huā Long gris — profil gauche" loading="lazy" decoding="async">
       </div>
     </div>
-    <div class="gallery-main">
+    <div class="gallery-main" id="gallery-main">
       <div class="promo-tag">Promotion</div>
       <div class="discount-badge">–23%</div>
       <img src="hua-long-camel-face.jpg"
@@ -1789,38 +1789,46 @@
 
   // ── Gallery ──
   function switchImage(index) {
-    const gallery = document.getElementById('product-gallery');
-    gallery.querySelectorAll('.gallery-thumb').forEach((t, i) => t.classList.toggle('active', i === index));
-    gallery.querySelectorAll('.gallery-main img').forEach((img, i) => img.classList.toggle('active', i === index));
+    // Images principales : activer par index absolu
+    var imgs = document.getElementById('gallery-main').querySelectorAll('img');
+    imgs.forEach(function(img, i) {
+      img.classList.toggle('active', i === index);
+    });
+    // Miniatures : activer celle avec data-index correspondant
+    document.querySelectorAll('.gallery-thumb').forEach(function(t) {
+      t.classList.toggle('active', parseInt(t.dataset.index) === index);
+    });
   }
 
   // ── Color selector ──
   function selectColor(el, name, colorIdx) {
-    // Activer le swatch
-    document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+    // Swatch actif
+    document.querySelectorAll('.color-swatch').forEach(function(s) { s.classList.remove('active'); });
     el.classList.add('active');
     var display = document.getElementById('color-name-display');
     if(display) display.textContent = name;
-    var label = document.querySelector('.color-name');
-    if(label) label.textContent = name;
 
-    // Couleur sélectionnée
     var color = colorIdx === 0 ? 'camel' : 'gris';
+    var startIndex = colorIdx === 0 ? 0 : 4;
 
-    // Afficher uniquement les miniatures de la couleur choisie
+    // Miniatures : afficher/cacher selon couleur
     document.querySelectorAll('.gallery-thumb').forEach(function(t) {
       t.style.display = (t.dataset.color === color) ? 'block' : 'none';
       t.classList.remove('active');
     });
 
-    // Activer la première miniature de la couleur
+    // Activer première miniature
     var first = document.querySelector('.gallery-thumb[data-color="' + color + '"]');
     if(first) first.classList.add('active');
 
-    // Afficher la première image de la couleur
-    switchImage(colorIdx === 0 ? 0 : 4);
+    // Images principales
+    var imgs = document.getElementById('gallery-main').querySelectorAll('img');
+    imgs.forEach(function(img, i) {
+      img.classList.toggle('active', i === startIndex);
+    });
   }
 
+  
   // ── Size selector ──
   function selectSize(el) {
     document.querySelectorAll('.size-btn:not(.unavailable)').forEach(b => b.classList.remove('active'));
@@ -1967,34 +1975,41 @@
 
   // ── Swipe galerie sur mobile ──
   (function() {
-    const gallery = document.getElementById('product-gallery');
-    if (!gallery) return;
-    let startX = 0, isDragging = false;
-    const mainImgs = gallery.querySelectorAll('.gallery-main img');
-    const thumbs = gallery.querySelectorAll('.gallery-thumb');
-    if (mainImgs.length < 2) return;
+    const main = document.querySelector('.gallery-main');
+    if (!main) return;
+    let startX = 0;
 
     function getCurrentIndex() {
-      return Array.from(mainImgs).findIndex(img => img.classList.contains('active'));
-    }
-    function goTo(index) {
-      if (index < 0 || index >= mainImgs.length) return;
-      mainImgs.forEach((img, i) => img.classList.toggle('active', i === index));
-      thumbs.forEach((t, i) => t.classList.toggle('active', i === index));
+      var imgs = main.querySelectorAll('img');
+      return Array.from(imgs).findIndex(function(img) { return img.classList.contains('active'); });
     }
 
-    const main = gallery.querySelector('.gallery-main');
-    if (!main) return;
-    main.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; }, { passive: true });
-    main.addEventListener('touchend', e => {
-      if (!isDragging) return;
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) {
-        const cur = getCurrentIndex();
-        goTo(diff > 0 ? cur + 1 : cur - 1);
-      }
-      isDragging = false;
-    }, { passive: true });
+    function goNext() {
+      var imgs = main.querySelectorAll('img');
+      var currentIdx = getCurrentIndex();
+      // Trouver la prochaine image visible de la même couleur
+      var visibleThumbs = Array.from(document.querySelectorAll('.gallery-thumb')).filter(function(t) {
+        return t.style.display !== 'none';
+      });
+      var currentThumb = visibleThumbs.findIndex(function(t) { return t.classList.contains('active'); });
+      var nextThumb = visibleThumbs[currentThumb + 1];
+      if (nextThumb) nextThumb.click();
+    }
+
+    function goPrev() {
+      var visibleThumbs = Array.from(document.querySelectorAll('.gallery-thumb')).filter(function(t) {
+        return t.style.display !== 'none';
+      });
+      var currentThumb = visibleThumbs.findIndex(function(t) { return t.classList.contains('active'); });
+      var prevThumb = visibleThumbs[currentThumb - 1];
+      if (prevThumb) prevThumb.click();
+    }
+
+    main.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive: true});
+    main.addEventListener('touchend', function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { diff > 0 ? goNext() : goPrev(); }
+    }, {passive: true});
   })();
 
   // ── Partage réseaux sociaux ──
