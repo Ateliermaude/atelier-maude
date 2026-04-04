@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#5A4633">
+<meta name="theme-color" content="#2C2218">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Commande confirmée — Atelier MAUDÉ</title>
   <meta name="description" content="Votre commande Atelier MAUDÉ a bien été confirmée. Merci pour votre confiance.">
@@ -126,22 +126,15 @@
   }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg-main:#F5EDE3;
-  --bg-section:#E6D3B3;
-  --primary:#A67C52;
-  --primary-hover:#8B5E3C;
-  --secondary:#C2A27C;
-  --text-main:#5A4633;
-  --text-muted:#8B7355;
-  --accent:#D9A441;
-  --white:#FFFFFF;
-  --cream:#FAF7F4;
-  --border:rgba(166,124,82,0.18);
-  --shadow:0 4px 24px rgba(90,70,51,0.08);
-  --shadow-hover:0 8px 32px rgba(90,70,51,0.14);
-  --r-sm:8px;
-  --r-md:12px;
-  --r-lg:16px;
+  --cream:#F5F0EA;
+  --warm-white:#FAF8F5;
+  --brown:#6B4F3A;
+  --dark-brown:#3A2A1E;
+  --terracotta:#8B4A3A;
+  --gold:#C9A96E;
+  --text:#2C2218;
+  --muted:#8A7B6F;
+  --border:rgba(107,79,58,0.15);
 }
 html,body{height:100%}
 body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);font-weight:300;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
@@ -149,14 +142,14 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);fon
 button,a{touch-action:manipulation}
 
 /* HEADER */
-header{background:var(--bg-main);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:center}
+header{background:var(--warm-white);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:center}
 .logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.14em;color:var(--dark-brown);text-decoration:none;text-transform:uppercase}
 
 /* MAIN */
 main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
 
 .confirm-card{
-  background:var(--bg-main);
+  background:var(--warm-white);
   max-width:580px;width:100%;
   padding:60px 52px;
   border:1px solid var(--border);
@@ -279,7 +272,7 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 
 }
 
 /* FOOTER */
-footer{background:var(--bg-main);border-top:1px solid var(--border);padding:24px 40px;text-align:center}
+footer{background:var(--warm-white);border-top:1px solid var(--border);padding:24px 40px;text-align:center}
 footer p{font-size:12px;color:var(--muted)}
 footer a{color:var(--muted);text-decoration:none;transition:color 0.2s}
 footer a:hover{color:var(--dark-brown)}
@@ -432,7 +425,7 @@ footer a:hover{color:var(--dark-brown)}
   .lang-btn:hover { border-color: var(--dark-brown); color: var(--dark-brown); }
   .lang-dropdown {
     position: absolute; top: calc(100% + 8px); right: 0;
-    background: var(--bg-main); border: 1px solid var(--border);
+    background: var(--warm-white); border: 1px solid var(--border);
     min-width: 160px; z-index: 200;
     box-shadow: 0 8px 24px rgba(42,26,18,0.1);
     display: none;
@@ -453,7 +446,7 @@ footer a:hover{color:var(--dark-brown)}
   body { top: 0 !important; }
   .goog-te-gadget { display: none !important; }
 
-  /* Texte adapté sur fond latte clair */
+  
   .savoir-faire .sf-eyebrow,
   .savoir-faire .sf-title,
   .savoir-faire .sf-item-title { color: var(--dark-brown) !important; }
@@ -678,7 +671,7 @@ footer a:hover{color:var(--dark-brown)}
   // Confettis dorés
   (function() {
     const wrap = document.getElementById('confetti');
-    const colors = ['#D9A441', '#A67C52', '#5A4633', '#F5EDE3', '#A67C52'];
+    const colors = ['#C9A96E', '#6B4F3A', '#2C2218', '#F5F0EA', '#6B4F3A'];
     for (let i = 0; i < 40; i++) {
       const el = document.createElement('div');
       el.className = 'confetti-piece';
