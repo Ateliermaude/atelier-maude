@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#3A2A1E">
+<meta name="theme-color" content="#5A4633">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CGV & Mentions légales — Atelier MAUDÉ</title>
 <meta name="description" content="Conditions Générales de Vente, mentions légales et politique de confidentialité d'Atelier MAUDÉ.">
@@ -33,35 +33,137 @@
 
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
-html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
 
-.announcement{background:var(--terracotta);color:#fff;font-size:11px;letter-spacing:0.12em;font-weight:400}/* ── BANDEAU DÉFILANT ── */
-  .announcement { overflow: hidden; padding: 0; position: relative; }
+  /* ── FADE-IN SÉCURISÉ ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Fallback : si JS ne charge pas, tout reste visible */
+  .no-js .fade-in, .no-js .fade-in-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
   .ticker-track {
-    display: flex;
+    display: inline-flex;
     white-space: nowrap;
     animation: ticker 28s linear infinite;
+    will-change: transform;
   }
   .ticker-track:hover { animation-play-state: paused; }
   .ticker-item {
-    display: inline-flex; align-items: center; gap: 0;
-    padding: 10px 0; flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
   .ticker-sep {
     display: inline-block;
     margin: 0 28px;
     color: rgba(255,255,255,0.35);
     font-size: 14px;
+    flex-shrink: 0;
   }
   @keyframes ticker {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
 
-header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-main:#F5EDE3;
+  --bg-section:#E6D3B3;
+  --primary:#A67C52;
+  --primary-hover:#8B5E3C;
+  --secondary:#C2A27C;
+  --text-main:#5A4633;
+  --text-muted:#8B7355;
+  --accent:#D9A441;
+  --white:#FFFFFF;
+  --cream:#FAF7F4;
+  --border:rgba(166,124,82,0.18);
+  --shadow:0 4px 24px rgba(90,70,51,0.08);
+  --shadow-hover:0 8px 32px rgba(90,70,51,0.14);
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--bg-main);color:var(--text);font-weight:300;overflow-x:hidden}
+
+/* ── BANDEAU DÉFILANT ── */
+  
+  
+  .ticker-track:hover { animation-play-state: paused; }
+  
+  
+  
+    100% { transform: translateX(-50%); }
+  }
+
+header{position:sticky;top:0;z-index:100;background:var(--bg-main);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
 header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1400px;margin:0 auto}
 .header-left,.header-right{display:flex;gap:22px;align-items:center}
@@ -143,7 +245,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   .mobile-menu {
     position: fixed; top: 0; left: 0; bottom: 0;
     width: min(320px, 85vw);
-    background: var(--warm-white);
+    background: var(--bg-main);
     z-index: 201;
     transform: translateX(-100%);
     transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
@@ -263,7 +365,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   button, a, [role="button"] { touch-action: manipulation; }
 
   /* Safe area pour iPhone avec notch/Dynamic Island */
-  .announcement { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  
   header { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
   footer { padding-bottom: max(30px, env(safe-area-inset-bottom)); }
   .back-to-top { bottom: max(32px, calc(env(safe-area-inset-bottom) + 16px)); right: max(32px, env(safe-area-inset-right)); }
@@ -509,7 +611,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   .lang-btn:hover { border-color: var(--dark-brown); color: var(--dark-brown); }
   .lang-dropdown {
     position: absolute; top: calc(100% + 8px); right: 0;
-    background: var(--warm-white); border: 1px solid var(--border);
+    background: var(--bg-main); border: 1px solid var(--border);
     min-width: 160px; z-index: 200;
     box-shadow: 0 8px 24px rgba(42,26,18,0.1);
     display: none;
@@ -579,6 +681,34 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   .cookie-actions { width: 100%; }
   .cookie-btn-accept, .cookie-btn-decline { flex: 1; text-align: center; }
 }
+
+  /* Texte adapté sur fond latte clair */
+  .savoir-faire .sf-eyebrow,
+  .savoir-faire .sf-title,
+  .savoir-faire .sf-item-title { color: var(--dark-brown) !important; }
+  .savoir-faire .sf-num { color: rgba(58,42,30,0.2) !important; }
+  .savoir-faire .sf-item-text { color: rgba(58,42,30,0.65) !important; }
+  .savoir-faire .section-label { color: var(--terracotta) !important; }
+  .comparatif-title { color: var(--dark-brown) !important; }
+  .comp-head.ours { color: var(--brown) !important; }
+  .comp-head.other { color: rgba(58,42,30,0.45) !important; }
+  .comp-row.ours { color: rgba(58,42,30,0.85) !important; }
+  .comp-row.other { color: rgba(58,42,30,0.4) !important; }
+  .check { color: var(--brown) !important; }
+  .cross { color: rgba(58,42,30,0.2) !important; }
+  .comp-note { color: rgba(58,42,30,0.5) !important; }
+  .comp-note a { color: var(--brown) !important; }
+  .newsletter-eyebrow { color: var(--brown) !important; }
+  .newsletter-title { color: var(--dark-brown) !important; }
+  .newsletter-text { color: rgba(58,42,30,0.65) !important; }
+  .newsletter-form { border-color: rgba(58,42,30,0.2) !important; }
+  .newsletter-form input { color: var(--dark-brown) !important; }
+  .newsletter-form input::placeholder { color: rgba(58,42,30,0.35) !important; }
+  .lookbook-eyebrow { color: var(--brown) !important; opacity: 1 !important; }
+  .lookbook-title { color: var(--dark-brown) !important; }
+  .lookbook-title em { color: var(--brown) !important; }
+  .lookbook-text { color: rgba(58,42,30,0.65) !important; }
+
 </style>
 </head>
 <body>
@@ -646,7 +776,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
   </div>
   <nav>
-    <a href="index.html#collection">Manteaux</a>
+    <a href="manteaux.html">Manteaux</a>
     <a href="promotions.html">Promotions</a>
     <a href="notre-histoire.html">Notre Histoire</a>
     <a href="lookbook.html">Lookbook</a>
@@ -850,7 +980,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     </div>
     <div class="footer-col">
       <h4>Boutique</h4>
-      <ul><li><a href="index.html#collection">Manteaux</a></li><li><a href="promotions.html">Promotions</a></li>
+      <ul><li><a href="manteaux.html">Manteaux</a></li><li><a href="promotions.html">Promotions</a></li>
         <li><a href="carte-cadeau.html">Carte cadeau</a></li></ul>
     </div>
     <div class="footer-col">
@@ -874,7 +1004,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   </div>
   <div class="footer-bottom">
     <p>© 2025 Atelier MAUDÉ. Tous droits réservés.</p>
-    <p style="letter-spacing:0.1em">FR &nbsp;|&nbsp; BE &nbsp;|&nbsp; CH</p>
+    <p style="letter-spacing:0.1em">FR &nbsp;|&nbsp; BE</p>
   </div>
 </footer>
 
@@ -1004,6 +1134,16 @@ window.addEventListener('scroll',()=>document.getElementById('site-header').clas
       document.getElementById('lang-dropdown')?.classList.remove('open');
     }
   });
+
+  // Fallback fade-in au cas où IntersectionObserver rate des éléments
+  setTimeout(function() {
+    document.querySelectorAll('.fade-in, .fade-in-up').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      }
+    });
+  }, 300);
 </script>
 </body>
 </html>
