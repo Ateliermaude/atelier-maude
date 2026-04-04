@@ -402,6 +402,7 @@
   }
   .swatch-camel { background: #C19A6B; }
   .swatch-caramel { background: #a0785a; }
+  .swatch-gris { background: #4A4A4A; }
   .color-name {
     font-size: 11px; color: var(--muted);
     margin-left: 4px; letter-spacing: 0.06em;
@@ -1366,21 +1367,45 @@
   <!-- GALLERY -->
   <div class="gallery" id="product-gallery">
     <div class="gallery-thumbs">
-      <div class="gallery-thumb active" onclick="switchImage(0)" role="button" aria-label="Vue 1 — Camel">
-        <img src="yun-court-noir.jpeg" width="800" height="1066" alt="Huā Long camel — miniature 1" loading="lazy" decoding="async">
+      <div class="gallery-thumb active" onclick="switchImage(0)" role="button" aria-label="Vue de face — Camel">
+        <img src="hua-long-camel-face.jpg" alt="Huā Long camel — vue de face" loading="eager" decoding="async">
       </div>
-      <div class="gallery-thumb" onclick="switchImage(1)" role="button" aria-label="Vue 2 — Camel détail">
-        <img src="hua-long-camel-2.jpeg" width="800" height="1066" alt="Huā Long camel détail — miniature 2" loading="lazy" decoding="async">
+      <div class="gallery-thumb" onclick="switchImage(1)" role="button" aria-label="Vue de dos — Camel">
+        <img src="hua-long-camel-dos.jpg" alt="Huā Long camel — vue de dos" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-thumb" onclick="switchImage(2)" role="button" aria-label="Profil droit — Camel">
+        <img src="hua-long-camel-profil.jpg" alt="Huā Long camel — profil droit" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-thumb" onclick="switchImage(3)" role="button" aria-label="Vue 4 — Camel">
+        <img src="hua-long-camel-1.jpeg" alt="Huā Long camel — vue supplémentaire" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="gallery-main">
       <div class="promo-tag">Promotion</div>
       <div class="discount-badge">–23%</div>
-      <img src="yun-court-noir.jpeg" width="800" height="1066"
-           alt="Manteau Huā Long en Cachemire — coloris camel, vue principale"
+      <img src="hua-long-camel-face.jpg"
+           alt="Manteau Huā Long — camel, vue de face"
            class="active" loading="eager">
-      <img src="hua-long-camel-2.jpeg" width="800" height="1066"
-           alt="Manteau Huā Long en Cachemire — coloris camel, détail"
+      <img src="hua-long-camel-dos.jpg"
+           alt="Manteau Huā Long — camel, vue de dos"
+           loading="lazy" decoding="async">
+      <img src="hua-long-camel-profil.jpg"
+           alt="Manteau Huā Long — camel, profil droit"
+           loading="lazy" decoding="async">
+      <img src="hua-long-camel-1.jpeg"
+           alt="Manteau Huā Long — camel"
+           loading="lazy" decoding="async">
+      <img src="hua-long-gris-face.png"
+           alt="Manteau Huā Long — gris, vue de face"
+           loading="lazy" decoding="async">
+      <img src="hua-long-gris-dos.png"
+           alt="Manteau Huā Long — gris, vue de dos"
+           loading="lazy" decoding="async">
+      <img src="hua-long-gris-profil-droit.png"
+           alt="Manteau Huā Long — gris, profil droit"
+           loading="lazy" decoding="async">
+      <img src="hua-long-gris-profil-gauche.png"
+           alt="Manteau Huā Long — gris, profil gauche"
            loading="lazy" decoding="async">
     </div>
   </div>
@@ -1420,9 +1445,9 @@
       <div class="color-swatch swatch-camel active"
            onclick="selectColor(this, 'Camel', 0)"
            title="Camel" role="button" aria-label="Coloris Camel" tabindex="0"></div>
-      <div class="color-swatch swatch-caramel"
-           onclick="selectColor(this, 'Caramel', 1)"
-           title="Caramel" role="button" aria-label="Coloris Caramel" tabindex="0"></div>
+      <div class="color-swatch swatch-gris"
+           onclick="selectColor(this, 'Gris', 1)"
+           title="Gris" role="button" aria-label="Coloris Gris" tabindex="0"></div>
     </div>
 
     <!-- Size -->
