@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guide des tailles — Manteaux en Cachemire — Atelier MAUDÉ</title>
 <meta name="description" content="Guide des tailles Atelier MAUDÉ — comment choisir la bonne taille pour votre manteau en laine et cachemire. Tableau des tailles XS au XL avec mesures en cm.">
-<meta name="theme-color" content="#3A2A1E">
+<meta name="theme-color" content="#5A4633">
 <link rel="canonical" href="https://ateliermaude.github.io/guide-des-tailles.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Atelier MAUDÉ">
@@ -20,6 +20,20 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <style>
+  /* ── ANIMATIONS FADE-IN ── */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1 !important; transform: translateY(0) !important; }
+  .fade-in-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in-up.visible { opacity: 1 !important; transform: translateY(0) !important; }
+  .fade-in-left { opacity: 0; transform: translateX(-24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in-left.visible { opacity: 1 !important; transform: translateX(0) !important; }
+  .fade-in-right { opacity: 0; transform: translateX(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in-right.visible { opacity: 1 !important; transform: translateX(0) !important; }
+  .stagger-1 { transition-delay: 0.1s !important; }
+  .stagger-2 { transition-delay: 0.2s !important; }
+  .stagger-3 { transition-delay: 0.3s !important; }
+  .stagger-4 { transition-delay: 0.4s !important; }
+
 
   /* ── BANDEAU DÉFILANT — CORRECTION ── */
   .announcement {
@@ -94,9 +108,26 @@
     100% { transform: translateX(-50%); }
   }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
+:root{
+  --bg-main:#F5EDE3;
+  --bg-section:#E6D3B3;
+  --primary:#A67C52;
+  --primary-hover:#8B5E3C;
+  --secondary:#C2A27C;
+  --text-main:#5A4633;
+  --text-muted:#8B7355;
+  --accent:#D9A441;
+  --white:#FFFFFF;
+  --cream:#FAF7F4;
+  --border:rgba(166,124,82,0.18);
+  --shadow:0 4px 24px rgba(90,70,51,0.08);
+  --shadow-hover:0 8px 32px rgba(90,70,51,0.14);
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:16px;
+}
 html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
+body{font-family:'Jost',sans-serif;background:var(--bg-main);color:var(--text);font-weight:300;overflow-x:hidden}
 *{-webkit-tap-highlight-color:transparent}
 button,a{touch-action:manipulation}
 .reading-progress{position:fixed;top:0;left:0;width:0%;height:2px;background:linear-gradient(90deg,var(--terracotta),var(--gold));z-index:200;transition:width 0.1s linear;pointer-events:none}
@@ -107,7 +138,7 @@ button,a{touch-action:manipulation}
 
 100%{transform:translateX(-50%)}}
 
-header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
+header{position:sticky;top:0;z-index:100;background:var(--bg-main);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
 header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1400px;margin:0 auto}
 .header-left,.header-right{display:flex;gap:22px;align-items:center}
@@ -195,8 +226,8 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
 .back-to-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--dark-brown);color:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity 0.3s,transform 0.3s,background 0.2s;z-index:90}
 .back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 .back-to-top:hover{background:var(--terracotta)}
-.fade-in{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
+
+
 @media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
 @media(max-width:900px){
   .header-inner{padding:16px 20px}
@@ -216,15 +247,37 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
 }
 
-  /* FALLBACK FADE-IN — évite les pages blanches */
-  .fade-in, .fade-in-up, .fade-in-left, .fade-in-right {
-    opacity: 0;
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible, .fade-in-up.visible, .fade-in-left.visible, .fade-in-right.visible {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+  
+  
+  
+
+  /* Texte adapté sur fond latte clair */
+  .savoir-faire .sf-eyebrow,
+  .savoir-faire .sf-title,
+  .savoir-faire .sf-item-title { color: var(--dark-brown) !important; }
+  .savoir-faire .sf-num { color: rgba(58,42,30,0.2) !important; }
+  .savoir-faire .sf-item-text { color: rgba(58,42,30,0.65) !important; }
+  .savoir-faire .section-label { color: var(--terracotta) !important; }
+  .comparatif-title { color: var(--dark-brown) !important; }
+  .comp-head.ours { color: var(--brown) !important; }
+  .comp-head.other { color: rgba(58,42,30,0.45) !important; }
+  .comp-row.ours { color: rgba(58,42,30,0.85) !important; }
+  .comp-row.other { color: rgba(58,42,30,0.4) !important; }
+  .check { color: var(--brown) !important; }
+  .cross { color: rgba(58,42,30,0.2) !important; }
+  .comp-note { color: rgba(58,42,30,0.5) !important; }
+  .comp-note a { color: var(--brown) !important; }
+  .newsletter-eyebrow { color: var(--brown) !important; }
+  .newsletter-title { color: var(--dark-brown) !important; }
+  .newsletter-text { color: rgba(58,42,30,0.65) !important; }
+  .newsletter-form { border-color: rgba(58,42,30,0.2) !important; }
+  .newsletter-form input { color: var(--dark-brown) !important; }
+  .newsletter-form input::placeholder { color: rgba(58,42,30,0.35) !important; }
+  .lookbook-eyebrow { color: var(--brown) !important; opacity: 1 !important; }
+  .lookbook-title { color: var(--dark-brown) !important; }
+  .lookbook-title em { color: var(--brown) !important; }
+  .lookbook-text { color: rgba(58,42,30,0.65) !important; }
+
 </style>
 </head>
 <body>
@@ -482,7 +535,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   </div>
   <div class="footer-bottom">
     <p>© 2025 Atelier MAUDÉ. Tous droits réservés.</p>
-    <p style="letter-spacing:0.1em">FR &nbsp;|&nbsp; BE &nbsp;|&nbsp; CH</p>
+    <p style="letter-spacing:0.1em">FR &nbsp;|&nbsp; BE</p>
   </div>
 </footer>
 
@@ -507,6 +560,25 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       el.classList.add('visible');
     });
   }, 600);
+
+  // ── Animations au scroll ──
+  (function() {
+    var els = document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right');
+    // Activer immédiatement les éléments déjà visibles
+    function activate(el) { el.classList.add('visible'); }
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) { activate(e.target); obs.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      els.forEach(function(el) { obs.observe(el); });
+    } else {
+      els.forEach(activate); // Fallback si pas d'IntersectionObserver
+    }
+    // Sécurité absolue : tout visible après 500ms
+    setTimeout(function() {
+      document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right').forEach(activate);
+    }, 500);
+  })();
 </script><script>
   window.addEventListener('scroll',()=>{
     document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
