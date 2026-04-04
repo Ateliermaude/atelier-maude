@@ -371,30 +371,7 @@
     max-width: 280px; margin: 0 auto;
   }
 
-  /* ── FONDATRICES ── */
-  .fondatrices {
-    background: var(--dark-brown);
-    padding: 80px 40px; text-align: center;
-  }
-  .fondatrices .eyebrow { color: var(--gold); opacity: 0.8; }
-  .fondatrices .section-title { color: var(--cream); margin-bottom: 16px; }
-  .fondatrices-text {
-    font-size: 14px; line-height: 1.95; color: rgba(245,240,234,0.65);
-    max-width: 560px; margin: 0 auto 50px;
-  }
-  .fondatrices-names {
-    display: flex; justify-content: center; gap: 80px; flex-wrap: wrap;
-  }
-  .fondatrice-item { text-align: center; }
-  .fondatrice-prenom {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 38px; font-weight: 300; font-style: italic;
-    color: var(--cream); display: block; margin-bottom: 6px;
-  }
-  .fondatrice-role {
-    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--gold); opacity: 0.75;
-  }
+  
 
   /* ── CTA ── */
   .page-cta {
@@ -444,15 +421,12 @@
     nav { gap: 22px; padding: 0 20px 12px; overflow-x: auto; white-space: nowrap; }
     .header-inner { padding: 16px 20px; }
     .full-image { aspect-ratio: 16/9; }
-    .fondatrices-names { gap: 50px; }
   }
   @media (max-width: 600px) {
     .section-wrap { padding: 60px 24px; }
     .noms-grid { margin: 0; }
     .nom-item { padding: 40px 28px; }
     .citation-block { padding: 50px 24px; }
-    .fondatrices { padding: 60px 24px; }
-    .fondatrices-names { gap: 36px; }
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     .page-cta { padding: 60px 24px; }
@@ -896,6 +870,18 @@
   .lookbook-title em { color: var(--brown) !important; }
   .lookbook-text { color: rgba(58,42,30,0.65) !important; }
 
+
+  /* ── VALEURS ── */
+  .valeurs-section { padding: 80px 40px; background: var(--warm-white); }
+  .valeurs-inner { max-width: 1100px; margin: 0 auto; }
+  .valeurs-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,4vw,50px); font-weight: 300; color: var(--dark-brown); margin-bottom: 56px; line-height: 1.1; }
+  .valeurs-title em { font-style: italic; color: var(--brown); }
+  .valeurs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-top: 1px solid var(--border); }
+  .valeur-item { padding: 40px 36px 40px 0; border-bottom: 1px solid var(--border); }
+  .valeur-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold); letter-spacing: 0.14em; display: block; margin-bottom: 18px; }
+  .valeur-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--dark-brown); margin-bottom: 14px; line-height: 1.2; }
+  .valeur-text { font-size: 13px; color: var(--muted); line-height: 1.9; }
+  @media(max-width:700px) { .valeurs-grid { grid-template-columns: 1fr; } .valeurs-section { padding: 60px 24px; } }
 </style>
 </head>
 <body>
@@ -1007,20 +993,24 @@
 <!-- CHIFFRES CLÉS -->
 <div class="chiffres">
   <div class="chiffre-item fade-in">
+    <span class="chiffre-num">2</span>
+    <span class="chiffre-label">Fondatrices<br>passionnées</span>
+  </div>
+  <div class="chiffre-item fade-in" style="transition-delay:0.1s">
+    <span class="chiffre-num">50<small style="font-size:28px">%</small></span>
+    <span class="chiffre-label">Cachemire<br>Mongolie-Intérieure</span>
+  </div>
+  <div class="chiffre-item fade-in" style="transition-delay:0.2s">
     <span class="chiffre-num">3</span>
     <span class="chiffre-label">Modèles<br>iconiques</span>
   </div>
-  <div class="chiffre-item fade-in" style="transition-delay:0.1s">
-    <span class="chiffre-num">70<small style="font-size:28px">%</small></span>
-    <span class="chiffre-label">Laine<br>de qualité</span>
-  </div>
-  <div class="chiffre-item fade-in" style="transition-delay:0.2s">
-    <span class="chiffre-num">30<small style="font-size:28px">%</small></span>
-    <span class="chiffre-label">Cachemire<br>Mongolie-Intérieure</span>
-  </div>
-  <div class="chiffre-item fade-in" style="transition-delay:0.3s">
-    <span class="chiffre-num">2</span>
-    <span class="chiffre-label">Fondatrices<br>passionnées</span>
+</div>
+
+<div class="section-wrap">
+  <span class="eyebrow fade-in">Entre sœurs</span>
+  <h2 class="section-title fade-in">Entre sœurs, on<br>se dit <em>tout.</em></h2>
+  <div class="body-text fade-in">
+    <p>Aude et Mathilde ont longtemps cherché ce manteau : celui qui a du caractère, qui tient chaud et qui dure dans le temps. MAUDÉ, c'est leurs deux prénoms mêlés, leurs deux visions qui ne font qu'une. Juste deux sœurs qui ont tout misé sur la matière, l'honnêteté et l'élégance simple.</p>
   </div>
 </div>
 
@@ -1028,9 +1018,9 @@
   <span class="eyebrow fade-in">L'origine</span>
   <h2 class="section-title fade-in">Tout a commencé<br>par <em>un voyage</em>.</h2>
   <div class="body-text fade-in">
-    <p>Atelier MAUDÉ est né d'une évidence partagée entre deux sœurs : pourquoi les plus belles matières devraient-elles rester le privilège de quelques-unes ? Aude et Mathilde ont fondé leur atelier avec une ambition simple — <strong>créer des pièces d'exception, honnêtement</strong>.</p>
-    <p>Tout a commencé lors d'un voyage à Suzhou, en Chine, ville millénaire surnommée la « Venise de l'Orient » et berceau historique des arts textiles. C'est là qu'elles ont découvert des ateliers de tissage d'une précision rare, travaillant des fibres de laine et de cachemire d'une douceur qu'elles n'avaient encore jamais touchée.</p>
-    <p>De retour en France, la décision était prise : elles créeraient une collection de manteaux qui porterait l'âme de ces ateliers — des pièces pensées pour durer, pour traverser les saisons et les années avec la même élégance silencieuse.</p>
+    <p>Atelier MAUDÉ est né d'une évidence partagée entre deux sœurs : pourquoi les plus belles matières devraient-elles rester hors de portée ? Aude et Mathilde ont fondé leur atelier avec une ambition simple, créer des pièces d'exception, honnêtement.</p>
+    <p>Tout a commencé lors d'un voyage à Suzhou, en Chine, ville millénaire surnommée la « Venise de l'Orient » et berceau historique des arts textiles. C'est là qu'elles ont découvert des ateliers de tissage d'une précision rare, travaillant des fibres de laine et de cachemire d'une douceur qu'elles n'avaient encore jamais rencontrée.</p>
+    <p>De retour en France, la décision était prise : elles créeraient une collection de manteaux — des pièces pensées pour durer, pour traverser les saisons et les années.</p>
   </div>
 </div>
 
@@ -1055,7 +1045,7 @@
 <!-- CITATION -->
 <div class="citation-block">
   <blockquote class="fade-in">
-    « Le luxe, pour nous, c'est le soin porté à chaque détail — pas le prix affiché sur l'étiquette. »
+    « On ne croit pas aux pièces qu'on porte deux saisons. On croit aux manteaux qu'on ne veut plus enlever. »
   </blockquote>
   <cite>Aude &amp; Mathilde, fondatrices</cite>
 </div>
@@ -1095,45 +1085,29 @@
 </div>
 
 <!-- NOS VALEURS -->
-<div class="valeurs">
+<section class="valeurs-section">
   <div class="valeurs-inner">
-    <h2 class="valeurs-title fade-in">Ce en quoi nous <em>croyons</em></h2>
+    <h2 class="valeurs-title fade-in">Ce en quoi<br>nous <em>croyons</em></h2>
     <div class="valeurs-grid">
       <div class="valeur-item fade-in">
-        <span class="valeur-icon" aria-hidden="true">✦</span>
+        <span class="valeur-num">01</span>
         <p class="valeur-title">Transparence totale</p>
         <p class="valeur-text">Nous vous disons exactement ce que vous portez — composition, origine, fabrication. Pas de promesses excessives, juste l'honnêteté.</p>
       </div>
-      <div class="valeur-item fade-in" style="transition-delay:0.1s">
-        <span class="valeur-icon" aria-hidden="true">✦</span>
+      <div class="valeur-item fade-in" style="transition-delay:0.12s">
+        <span class="valeur-num">02</span>
         <p class="valeur-title">Luxe accessible</p>
         <p class="valeur-text">Des matières nobles et un savoir-faire artisanal, à un prix qui ne devrait pas être réservé à une élite. C'est notre engagement.</p>
       </div>
-      <div class="valeur-item fade-in" style="transition-delay:0.2s">
-        <span class="valeur-icon" aria-hidden="true">✦</span>
+      <div class="valeur-item fade-in" style="transition-delay:0.24s">
+        <span class="valeur-num">03</span>
         <p class="valeur-title">Pièces qui durent</p>
         <p class="valeur-text">Chaque manteau MAUDÉ est conçu pour traverser les saisons et les années. Un investissement conscient, pas un achat impulsif.</p>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- FONDATRICES -->
-<div class="fondatrices">
-  <p class="eyebrow fade-in">Les fondatrices</p>
-  <h2 class="section-title fade-in">Derrière l'atelier</h2>
-  <p class="fondatrices-text fade-in">Deux sœurs, une vision commune. MAUDÉ est d'ailleurs né de la contraction de leurs deux prénoms — un nom qui porte en lui l'histoire d'une complicité.</p>
-  <div class="fondatrices-names fade-in">
-    <div class="fondatrice-item fade-in-up">
-      <span class="fondatrice-prenom">Aude</span>
-      <span class="fondatrice-role">Co-fondatrice</span>
-    </div>
-    <div class="fondatrice-item fade-in-up stagger-2">
-      <span class="fondatrice-prenom">Mathilde</span>
-      <span class="fondatrice-role">Co-fondatrice</span>
-    </div>
-  </div>
-</div>
 
 <!-- CTA -->
 <div class="page-cta">
