@@ -177,6 +177,33 @@ button{cursor:pointer;font-family:inherit}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
 }
+
+  /* ── MENU DÉROULANT ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
+  .nav-dropdown > a::after { display: none !important; }
+  .nav-dropdown-arrow { font-size: 8px; opacity: .5; transition: transform .3s; display: inline-block; }
+  .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
+  .dropdown-menu {
+    position: absolute; top: calc(100% + 14px); left: 50%;
+    background: var(--warm-white); border: 1px solid var(--border);
+    min-width: 180px; opacity: 0; pointer-events: none;
+    transition: opacity .25s, transform .25s;
+    transform: translateX(-50%) translateY(-6px);
+    box-shadow: 0 8px 32px rgba(58,42,30,.1); z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0);
+  }
+  .dropdown-menu a {
+    display: block; padding: 13px 20px;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--dark-brown); border-bottom: 1px solid var(--border);
+    transition: background .2s, color .2s;
+  }
+  .dropdown-menu a:last-child { border-bottom: none; }
+  .dropdown-menu a:hover { background: var(--cream); color: var(--terracotta); }
+  .dropdown-menu a.active { color: var(--terracotta); }
 </style>
 </head>
 <body>
@@ -221,7 +248,13 @@ button{cursor:pointer;font-family:inherit}
   <nav class="site-nav">
     <a href="manteaux.html" class="active">Manteaux</a>
     <a href="promotions.html">Promotions</a>
-    <a href="notre-histoire.html">Notre Histoire</a>
+    <div class="nav-dropdown">
+      <a href="notre-histoire.html">La Maison <span class="nav-dropdown-arrow">▾</span></a>
+      <div class="dropdown-menu">
+        <a href="notre-histoire.html">Notre Histoire</a>
+        <a href="notre-cachemire.html">Notre Cachemire</a>
+      </div>
+    </div>
     <a href="lookbook.html">Lookbook</a>
     <a href="journal.html">Journal</a>
     <a href="contact.html">Contact</a>
@@ -353,7 +386,7 @@ button{cursor:pointer;font-family:inherit}
         <div class="accordion-body-inner">
           <p><strong>Livraison gratuite</strong> en France et Belgique. Délai : 8 à 15 jours ouvrés.</p>
           <br>
-          <p><strong>Retours gratuits</strong> sous 30 jours. Article non porté, dans son emballage d'origine. Contactez-nous à <a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a>.</p>
+          <p><strong>Retours gratuits</strong> sous 30 jours. Article non porté, dans son emballage d'origine. Contactez-nous à <a href="/cdn-cgi/l/email-protection#e488859081888d81968985918081a48389858d88ca878b89"><span class="__cf_email__" data-cfemail="7c101d08191015190e111d0918193c1b111d1510521f1311">[email&#160;protected]</span></a>.</p>
         </div>
       </div>
     </div>
@@ -391,6 +424,7 @@ button{cursor:pointer;font-family:inherit}
         <h4>Informations</h4>
         <ul>
           <li><a href="notre-histoire.html">Notre histoire</a></li>
+          <li><a href="notre-cachemire.html">Notre cachemire</a></li>
           <li><a href="lookbook.html">Lookbook</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="cgv.html">CGV</a></li>
@@ -400,7 +434,7 @@ button{cursor:pointer;font-family:inherit}
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#b2ded3c6d7dedbd7c0dfd3c7d6d7f2d5dfd3dbde9cd1dddf"><span class="__cf_email__" data-cfemail="b8d4d9ccddd4d1ddcad5d9cddcddf8dfd5d9d1d496dbd7d5">[email&#160;protected]</span></a></li>
           <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>
@@ -416,7 +450,7 @@ button{cursor:pointer;font-family:inherit}
   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14"><polyline points="2,10 7,4 12,10"/></svg>
 </button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 window.addEventListener('scroll',function(){
   document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
   document.getElementById('btt').classList.toggle('show',scrollY>400);
@@ -462,16 +496,4 @@ function addToCart(btn) {
 function toggleAccordion(btn) {
   var item = btn.closest('.accordion-item');
   var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.accordion-item.open').forEach(function(i){i.classList.remove('open');});
-  if(!isOpen) item.classList.add('open');
-}
-
-function switchTab(btn, id) {
-  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
-  document.querySelectorAll('.tab-content').forEach(function(c){c.classList.remove('active');});
-  btn.classList.add('active');
-  document.getElementById('tab-'+id).classList.add('active');
-}
-</script>
-</body>
-</html>
+  document.querySelectorAll('.accordion-item.open').forEach(function(i){i.classList.remove('ope
