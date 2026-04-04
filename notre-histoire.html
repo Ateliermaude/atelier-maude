@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#5A4633">
+<meta name="theme-color" content="#2C2218">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Notre Histoire — Atelier MAUDÉ</title>
 <meta name="description" content="Aude et Mathilde, deux sœurs unies par l'amour du beau. L'histoire d'Atelier MAUDÉ, du cachemire de Suzhou et d'une vision du luxe accessible.">
@@ -169,28 +169,21 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root{
-  --bg-main:#F5EDE3;
-  --bg-section:#E6D3B3;
-  --primary:#A67C52;
-  --primary-hover:#8B5E3C;
-  --secondary:#C2A27C;
-  --text-main:#5A4633;
-  --text-muted:#8B7355;
-  --accent:#D9A441;
-  --white:#FFFFFF;
-  --cream:#FAF7F4;
-  --border:rgba(166,124,82,0.18);
-  --shadow:0 4px 24px rgba(90,70,51,0.08);
-  --shadow-hover:0 8px 32px rgba(90,70,51,0.14);
-  --r-sm:8px;
-  --r-md:12px;
-  --r-lg:16px;
+  --cream:#F5F0EA;
+  --warm-white:#FAF8F5;
+  --brown:#6B4F3A;
+  --dark-brown:#3A2A1E;
+  --terracotta:#8B4A3A;
+  --gold:#C9A96E;
+  --text:#2C2218;
+  --muted:#8A7B6F;
+  --border:rgba(107,79,58,0.15);
 }
 
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Jost', sans-serif;
-    background: var(--bg-main);
+    background: var(--warm-white);
     color: var(--text);
     font-weight: 300;
     overflow-x: hidden;
@@ -211,7 +204,7 @@
   /* ── HEADER ── */
   header {
     position: sticky; top: 0; z-index: 100;
-    background: var(--bg-main);
+    background: var(--warm-white);
     border-bottom: 1px solid var(--border);
     transition: box-shadow 0.3s;
   }
@@ -354,7 +347,7 @@
     margin: 0 40px;
   }
   .nom-item {
-    background: var(--bg-main);
+    background: var(--warm-white);
     padding: 52px 44px; text-align: center;
     transition: background 0.3s;
   }
@@ -478,7 +471,7 @@
   .mobile-menu {
     position: fixed; top: 0; left: 0; bottom: 0;
     width: min(320px, 85vw);
-    background: var(--bg-main);
+    background: var(--warm-white);
     z-index: 201;
     transform: translateX(-100%);
     transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
@@ -822,7 +815,7 @@
 }
 #cercle-popup.open { opacity: 1; pointer-events: auto; }
 .popup-inner {
-  background: var(--bg-main); max-width: 420px; width: 90%;
+  background: var(--warm-white); max-width: 420px; width: 90%;
   padding: 52px 44px 40px; position: relative; text-align: center;
   transform: translateY(16px); transition: transform 0.4s ease;
 }
@@ -850,7 +843,7 @@
     margin: 0 40px 80px;
   }
   .chiffre-item {
-    background: var(--bg-main); padding: 40px 28px; text-align: center;
+    background: var(--warm-white); padding: 40px 28px; text-align: center;
     transition: background 0.3s;
   }
   .chiffre-item:hover { background: var(--cream); }
@@ -876,7 +869,7 @@
   
   
 
-  /* Texte adapté sur fond latte clair */
+  
   .savoir-faire .sf-eyebrow,
   .savoir-faire .sf-title,
   .savoir-faire .sf-item-title { color: var(--dark-brown) !important; }
@@ -1242,7 +1235,7 @@
     if (!input.value) return;
     const btn = e.target.querySelector('button[type="submit"]');
     btn.textContent = 'Bienvenue ✓';
-    btn.style.background = '#A67C52';
+    btn.style.background = '#6B4F3A';
     sessionStorage.setItem(POPUP_KEY, '1');
     setTimeout(closePopup, 1800);
   }
