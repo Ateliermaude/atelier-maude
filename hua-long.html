@@ -1366,18 +1366,32 @@
 
   <!-- GALLERY -->
   <div class="gallery" id="product-gallery">
-    <div class="gallery-thumbs">
-      <div class="gallery-thumb active" onclick="switchImage(0)" role="button" aria-label="Vue de face — Camel">
-        <img src="hua-long-camel-face.jpg" alt="Huā Long camel — vue de face" loading="eager" decoding="async">
+    <div class="gallery-thumbs" id="gallery-thumbs">
+      <!-- Camel -->
+      <div class="gallery-thumb active" data-color="camel" onclick="switchImage(0)" role="button" aria-label="Camel — face">
+        <img src="hua-long-camel-face.jpg" alt="Huā Long camel — face" loading="eager" decoding="async">
       </div>
-      <div class="gallery-thumb" onclick="switchImage(1)" role="button" aria-label="Vue de dos — Camel">
-        <img src="hua-long-camel-dos.jpg" alt="Huā Long camel — vue de dos" loading="lazy" decoding="async">
+      <div class="gallery-thumb" data-color="camel" onclick="switchImage(1)" role="button" aria-label="Camel — dos">
+        <img src="hua-long-camel-dos.jpg" alt="Huā Long camel — dos" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-thumb" onclick="switchImage(2)" role="button" aria-label="Profil droit — Camel">
+      <div class="gallery-thumb" data-color="camel" onclick="switchImage(2)" role="button" aria-label="Camel — profil droit">
         <img src="hua-long-camel-profil.jpg" alt="Huā Long camel — profil droit" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-thumb" onclick="switchImage(3)" role="button" aria-label="Vue 4 — Camel">
-        <img src="hua-long-camel-1.jpeg" alt="Huā Long camel — vue supplémentaire" loading="lazy" decoding="async">
+      <div class="gallery-thumb" data-color="camel" onclick="switchImage(3)" role="button" aria-label="Camel — vue">
+        <img src="hua-long-camel-1.jpeg" alt="Huā Long camel — vue" loading="lazy" decoding="async">
+      </div>
+      <!-- Gris -->
+      <div class="gallery-thumb" data-color="gris" style="display:none" onclick="switchImage(4)" role="button" aria-label="Gris — face">
+        <img src="hua-long-gris-face.png" alt="Huā Long gris — face" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-thumb" data-color="gris" style="display:none" onclick="switchImage(5)" role="button" aria-label="Gris — dos">
+        <img src="hua-long-gris-dos.png" alt="Huā Long gris — dos" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-thumb" data-color="gris" style="display:none" onclick="switchImage(6)" role="button" aria-label="Gris — profil droit">
+        <img src="hua-long-gris-profil-droit.png" alt="Huā Long gris — profil droit" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-thumb" data-color="gris" style="display:none" onclick="switchImage(7)" role="button" aria-label="Gris — profil gauche">
+        <img src="hua-long-gris-profil-gauche.png" alt="Huā Long gris — profil gauche" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="gallery-main">
@@ -1781,11 +1795,30 @@
   }
 
   // ── Color selector ──
-  function selectColor(el, name, imgIndex) {
+  function selectColor(el, name, colorIdx) {
+    // Activer le swatch
     document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
     el.classList.add('active');
-    document.getElementById('color-name-display').textContent = name;
-    switchImage(imgIndex);
+    var display = document.getElementById('color-name-display');
+    if(display) display.textContent = name;
+    var label = document.querySelector('.color-name');
+    if(label) label.textContent = name;
+
+    // Couleur sélectionnée
+    var color = colorIdx === 0 ? 'camel' : 'gris';
+
+    // Afficher uniquement les miniatures de la couleur choisie
+    document.querySelectorAll('.gallery-thumb').forEach(function(t) {
+      t.style.display = (t.dataset.color === color) ? 'block' : 'none';
+      t.classList.remove('active');
+    });
+
+    // Activer la première miniature de la couleur
+    var first = document.querySelector('.gallery-thumb[data-color="' + color + '"]');
+    if(first) first.classList.add('active');
+
+    // Afficher la première image de la couleur
+    switchImage(colorIdx === 0 ? 0 : 4);
   }
 
   // ── Size selector ──
