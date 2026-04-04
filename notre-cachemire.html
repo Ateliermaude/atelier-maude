@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notre Cachemire — Laine & Cachemire de Mongolie-Intérieure | Atelier MAUDÉ</title>
+<meta name="description" content="Découvrez pourquoi nous choisissons le cachemire de Mongolie-Intérieure, comment il est fabriqué à Suzhou et ce qui rend nos manteaux si exceptionnels.">
+<meta name="theme-color" content="#3A2A1E">
+<link rel="canonical" href="https://ateliermaude.github.io/notre-cachemire.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atelier MAUDÉ">
+<meta property="og:title" content="Notre Cachemire — Atelier MAUDÉ">
+<meta property="og:description" content="Le cachemire de Mongolie-Intérieure, fabriqué à Suzhou. Tout ce que vous devez savoir.">
+<meta property="og:url" content="https://ateliermaude.github.io/notre-cachemire.html">
+<meta property="og:image" content="https://ateliermaude.github.io/hua-long-camel-face.jpg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;
+  --dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;
+  --text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden;line-height:1.7}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit}
+
+/* BANDEAU */
+.ticker-wrap{background:var(--terracotta);overflow:hidden;white-space:nowrap}
+.ticker{display:inline-flex;animation:ticker 30s linear infinite}
+.ticker:hover{animation-play-state:paused}
+.ticker-item{display:inline-block;padding:10px 0;font-size:11px;letter-spacing:.13em;color:#fff}
+.ticker-sep{display:inline-block;margin:0 28px;color:rgba(255,255,255,.3)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,.08)}
+.header-inner{max-width:1400px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
+.header-btn{background:none;border:none;color:var(--dark-brown);padding:4px;display:flex;align-items:center;transition:color .2s}
+.header-btn:hover{color:var(--terracotta)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.14em;color:var(--dark-brown);text-transform:uppercase}
+.logo:hover{opacity:.8}
+.header-actions{display:flex;align-items:center;gap:18px}
+.site-nav{display:flex;justify-content:center;gap:36px;padding:0 40px 14px;max-width:1400px;margin:0 auto}
+.site-nav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);font-weight:400;position:relative;padding-bottom:2px;transition:color .2s}
+.site-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--terracotta);transition:width .3s}
+.site-nav a:hover{color:var(--terracotta)}
+.site-nav a:hover::after{width:100%}
+
+/* HERO */
+.page-hero{background:var(--dark-brown);min-height:70vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.35;display:block}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:80px}
+.hero-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:20px;display:block}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,82px);font-weight:300;line-height:1.05;color:var(--cream);margin-bottom:22px}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-text{font-size:15px;color:rgba(245,240,234,.7);line-height:1.9;max-width:500px}
+
+/* CHAPEAU INTRO */
+.intro-section{max-width:860px;margin:0 auto;padding:90px 40px;text-align:center}
+.intro-label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:18px;display:block}
+.intro-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.1;color:var(--dark-brown);margin-bottom:28px}
+.intro-title em{font-style:italic;color:var(--brown)}
+.intro-text{font-size:15px;color:var(--muted);line-height:1.95;max-width:620px;margin:0 auto}
+
+/* CHIFFRES */
+.chiffres-band{background:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.chiffres-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.chiffre-item{background:var(--cream);padding:44px 32px;text-align:center}
+.chiffre-num{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;color:var(--dark-brown);line-height:1;display:block;margin-bottom:10px}
+.chiffre-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.6}
+.chiffre-label em{font-style:normal;color:var(--gold);display:block;margin-top:4px}
+
+/* SECTION STANDARD */
+.section{padding:90px 40px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px;display:block}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,50px);font-weight:300;line-height:1.1;color:var(--dark-brown);margin-bottom:24px}
+.section-title em{font-style:italic;color:var(--brown)}
+.section-text{font-size:14px;color:var(--muted);line-height:1.95;max-width:560px}
+.section-text p{margin-bottom:16px}
+.section-text p:last-child{margin-bottom:0}
+.section-text strong{color:var(--dark-brown);font-weight:400}
+
+/* SPLIT SECTIONS */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden}
+.split.reverse{direction:rtl}
+.split.reverse > *{direction:ltr}
+.split-image{overflow:hidden;background:var(--cream);min-height:520px}
+.split-image img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .8s ease}
+.split-image:hover img{transform:scale(1.03)}
+.split-content{display:flex;flex-direction:column;justify-content:center;padding:70px 64px;background:var(--warm-white)}
+.split.dark .split-content{background:var(--dark-brown)}
+.split.dark .section-label{color:var(--gold);opacity:.85}
+.split.dark .section-title{color:var(--cream)}
+.split.dark .section-title em{color:var(--gold)}
+.split.dark .section-text{color:rgba(245,240,234,.65)}
+.split.dark .section-text strong{color:var(--cream)}
+.split.cream .split-content{background:var(--cream)}
+
+/* CHÈVRES / ORIGINE */
+.origine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px}
+.origine-card{background:var(--cream);padding:40px 32px;position:relative}
+.origine-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:var(--gold);opacity:.25;line-height:1;display:block;margin-bottom:14px}
+.origine-title{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:12px;font-weight:400}
+.origine-text{font-size:13px;color:var(--muted);line-height:1.85}
+
+/* MATIÈRE EN CHIFFRES */
+.matiere-section{background:var(--dark-brown);padding:90px 40px}
+.matiere-inner{max-width:1100px;margin:0 auto}
+.matiere-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,46px);font-weight:300;color:var(--cream);margin-bottom:60px;line-height:1.1}
+.matiere-title em{font-style:italic;color:var(--gold)}
+.matiere-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,169,110,.12)}
+.matiere-item{padding:44px 40px;background:var(--dark-brown);transition:background .3s}
+.matiere-item:hover{background:rgba(255,255,255,.03)}
+.matiere-question{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--cream);margin-bottom:14px;line-height:1.2}
+.matiere-reponse{font-size:13px;color:rgba(245,240,234,.6);line-height:1.9}
+.matiere-reponse strong{color:var(--gold);font-weight:400}
+
+/* ENTRETIEN */
+.entretien-section{padding:90px 40px;background:var(--cream)}
+.entretien-inner{max-width:1100px;margin:0 auto}
+.entretien-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:52px}
+.entretien-step{text-align:center}
+.entretien-icon{width:56px;height:56px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:var(--brown)}
+.entretien-title{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:10px;font-weight:400}
+.entretien-text{font-size:13px;color:var(--muted);line-height:1.8}
+
+/* CITATION */
+.citation-block{padding:90px 40px;text-align:center;background:var(--warm-white)}
+.citation-block blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,38px);font-weight:300;font-style:italic;color:var(--dark-brown);line-height:1.4;max-width:780px;margin:0 auto 24px}
+.citation-block cite{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* FAQ */
+.faq-section{padding:0 40px 90px;max-width:860px;margin:0 auto}
+.faq-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,40px);font-weight:300;color:var(--dark-brown);margin-bottom:40px}
+.faq-title em{font-style:italic;color:var(--brown)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-of-type{border-top:1px solid var(--border)}
+.faq-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;text-align:left;font-family:'Jost',sans-serif;font-size:14px;color:var(--dark-brown);font-weight:300;gap:16px;transition:color .2s}
+.faq-btn:hover{color:var(--terracotta)}
+.faq-icon{color:var(--gold);font-size:20px;flex-shrink:0;transition:transform .3s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-answer p{padding:0 0 20px;font-size:13px;color:var(--muted);line-height:1.9}
+.faq-answer strong{color:var(--dark-brown);font-weight:400}
+.faq-item.open .faq-answer{max-height:300px}
+
+/* CTA */
+.cta-section{background:var(--dark-brown);padding:90px 40px;text-align:center}
+.cta-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:16px;display:block}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--cream);margin-bottom:14px;line-height:1.15}
+.cta-text{font-size:14px;color:rgba(245,240,234,.6);margin-bottom:36px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.85}
+.btn-primary{display:inline-block;background:var(--gold);color:var(--dark-brown);padding:16px 44px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:background .3s}
+.btn-primary:hover{background:#d4b87a}
+.btn-outline{display:inline-block;border:1px solid rgba(245,240,234,.3);color:rgba(245,240,234,.8);padding:15px 36px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:all .3s;margin-left:12px}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FOOTER */
+.site-footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 40px 32px}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;margin-bottom:48px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.14em;color:var(--dark-brown);text-transform:uppercase;display:block;margin-bottom:14px}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.85;max-width:240px}
+.footer-col h4{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:20px;font-weight:400}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:var(--muted);transition:color .2s}
+.footer-col ul li a:hover{color:var(--dark-brown)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:12px;color:var(--muted)}
+
+/* BACK TO TOP */
+.back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--dark-brown);color:var(--gold);border:none;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s;z-index:90}
+.back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top:hover{background:var(--terracotta)}
+
+/* PLACEHOLDER PHOTO */
+.photo-placeholder{width:100%;height:100%;min-height:520px;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--muted)}
+.photo-placeholder svg{opacity:.3}
+.photo-placeholder span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5}
+
+@media(max-width:1024px){
+  .split{grid-template-columns:1fr}
+  .split-content{padding:52px 40px}
+  .split-image{min-height:380px}
+  .chiffres-inner{grid-template-columns:1fr 1fr}
+  .origine-grid{grid-template-columns:1fr}
+  .matiere-grid{grid-template-columns:1fr}
+  .entretien-steps{grid-template-columns:1fr 1fr;gap:24px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .header-inner{padding:14px 24px}
+  .site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}
+}
+@media(max-width:700px){
+  .hero-content{padding:52px 24px}
+  .intro-section{padding:60px 24px}
+  .section{padding:60px 24px}
+  .matiere-section,.entretien-section,.cta-section,.citation-block{padding:60px 24px}
+  .faq-section{padding:0 24px 60px}
+  .chiffres-inner{grid-template-columns:1fr 1fr}
+  .entretien-steps{grid-template-columns:1fr 1fr}
+  .split-content{padding:40px 24px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+  .btn-outline{margin:12px 0 0;display:block}
+}
+</style>
+</head>
+<body>
+
+<!-- BANDEAU -->
+<div class="ticker-wrap" role="marquee">
+  <div class="ticker">
+    <span class="ticker-item">50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">FABRIQUÉ À SUZHOU · CHINE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">FABRIQUÉ À SUZHOU · CHINE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+    <span class="ticker-sep">✦</span>
+    <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
+    <span class="ticker-sep">✦</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <div class="header-actions">
+      <button class="header-btn" aria-label="Menu">
+        <svg width="22" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="1" x2="22" y2="1"/><line x1="0" y1="7" x2="16" y2="7"/><line x1="0" y1="13" x2="22" y2="13"/></svg>
+      </button>
+    </div>
+    <a href="index.html" class="logo">Atelier MAUDÉ</a>
+    <div class="header-actions">
+      <button class="header-btn" aria-label="Panier">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav">
+    <a href="manteaux.html">Manteaux</a>
+    <a href="promotions.html">Promotions</a>
+    <a href="notre-histoire.html">Notre Histoire</a>
+    <a href="lookbook.html">Lookbook</a>
+    <a href="journal.html">Journal</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-bg">
+    <!-- Remplacer par une photo de paysage Mongolie ou texture cachemire -->
+    <img src="cachemire-mongolie-chevres.png" alt="Éleveurs de chèvres en Mongolie-Intérieure — Atelier MAUDÉ" fetchpriority="high">
+  </div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Atelier MAUDÉ — La matière</span>
+    <h1 class="hero-title">La matière<br>avant <em>tout.</em></h1>
+    <p class="hero-text">Nous ne vendons pas des manteaux. Nous vendons des années de port, de douceur et d'élégance silencieuse. Tout commence par le choix de la fibre.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <span class="intro-label">Notre philosophie</span>
+  <h2 class="intro-title">Pourquoi le cachemire<br>mêlé à la <em>laine</em> ?</h2>
+  <p class="intro-text">Chaque matière a ses forces. La laine apporte la structure, la durabilité, la tenue dans le temps. Le cachemire apporte la douceur incomparable, la légèreté, le toucher soyeux contre la peau. En mariant les deux à parts égales, nous obtenons un manteau qui tient ses promesses saison après saison — sans jamais perdre de sa grâce.</p>
+</section>
+
+<!-- CHIFFRES -->
+<div class="chiffres-band">
+  <div class="chiffres-inner">
+    <div class="chiffre-item">
+      <span class="chiffre-num">50<small style="font-size:22px">%</small></span>
+      <span class="chiffre-label">Cachemire<em>Mongolie-Intérieure</em></span>
+    </div>
+    <div class="chiffre-item">
+      <span class="chiffre-num">50<small style="font-size:22px">%</small></span>
+      <span class="chiffre-label">Laine<em>sélectionnée</em></span>
+    </div>
+    <div class="chiffre-item">
+      <span class="chiffre-num">2500</span>
+      <span class="chiffre-label">Ans de savoir-faire<em>textile à Suzhou</em></span>
+    </div>
+    <div class="chiffre-item">
+      <span class="chiffre-num">3</span>
+      <span class="chiffre-label">Manteaux<em>iconiques</em></span>
+    </div>
+  </div>
+</div>
+
+<!-- SPLIT 1 — L'ORIGINE -->
+<div class="split">
+  <div class="split-image">
+    <!-- Idéal : photo de chèvres en Mongolie ou paysage de steppe -->
+    <img src="cachemire-mongolie-chevres.png" alt="Éleveurs et troupeau de chèvres à cachemire en Mongolie-Intérieure au coucher du soleil" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+  </div>
+  <div class="split-content">
+    <span class="section-label">L'origine</span>
+    <h2 class="section-title">La Mongolie-Intérieure,<br>berceau du <em>meilleur cachemire.</em></h2>
+    <div class="section-text">
+      <p>Le cachemire provient du duvet des chèvres Capra Hircus, élevées sur les hauts plateaux de Mongolie-Intérieure. À cette altitude, les écarts de température extrêmes — jusqu'à –40°C en hiver — poussent ces chèvres à développer un sous-poil d'une finesse et d'une douceur exceptionnelles.</p>
+      <p>Chaque chèvre ne produit que <strong>150 à 200 grammes de cachemire par an</strong>. C'est cette rareté, combinée à la qualité de la fibre, qui explique la valeur du matériau. Pour un seul manteau MAUDÉ, plusieurs chèvres contribuent leur duvet annuel.</p>
+      <p>Nous travaillons avec des partenaires établis dans cette région depuis des décennies, garantissant une traçabilité totale de la fibre.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SPLIT 2 — SUZHOU -->
+<div class="split reverse dark">
+  <div class="split-image">
+    <!-- Idéal : photo d'atelier ou de canaux de Suzhou -->
+    <img src="cachemire-atelier-suzhou.png" alt="Artisan tisseur dans un atelier traditionnel de Suzhou, Chine" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+  </div>
+  <div class="split-content">
+    <span class="section-label">La fabrication</span>
+    <h2 class="section-title">Suzhou,<br><em>2 500 ans</em> de textile.</h2>
+    <div class="section-text">
+      <p>Surnommée la « Venise de l'Orient », Suzhou est depuis l'Antiquité la capitale mondiale du textile précieux. La soie impériale, la broderie fine, le cachemire travaillé — tout ce qui demande patience et précision trouve ici ses maîtres.</p>
+      <p>Nos ateliers partenaires à Suzhou maîtrisent l'art du tissage du cachemire selon des techniques transmises de génération en génération. <strong>Chaque manteau MAUDÉ passe par plus de 40 étapes de fabrication</strong> avant d'être prêt à voyager jusqu'à vous.</p>
+      <p>Nous visitons régulièrement nos ateliers. Nous connaissons les personnes qui fabriquent vos manteaux. C'est une relation de confiance, pas une commande anonyme.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ORIGINE — 3 ÉTAPES -->
+<section class="section" style="background:var(--cream)">
+  <div class="section-inner">
+    <span class="section-label">De la fibre au manteau</span>
+    <h2 class="section-title">Un voyage en <em>trois étapes.</em></h2>
+    <div class="origine-grid">
+      <div class="origine-card">
+        <span class="origine-num">01</span>
+        <p class="origine-title">La récolte</p>
+        <p class="origine-text">Au printemps, les éleveurs peignent délicatement le sous-poil des chèvres à la main. Le duvet est ensuite trié, nettoyé et peigné pour séparer les fibres les plus longues et les plus fines — seules celles-ci entreront dans la composition de nos manteaux.</p>
+      </div>
+      <div class="origine-card">
+        <span class="origine-num">02</span>
+        <p class="origine-title">Le filage &amp; tissage</p>
+        <p class="origine-text">Les fibres sont filées, teintes dans des bains minutieusement contrôlés, puis tissées avec la laine sélectionnée pour créer notre mélange 50/50. Ce processus exige une précision d'horloger : la tension des fils, la densité du tissu, le grammage final sont vérifiés à chaque étape.</p>
+      </div>
+      <div class="origine-card">
+        <span class="origine-num">03</span>
+        <p class="origine-title">La confection</p>
+        <p class="origine-text">Le tissu est ensuite coupé et cousu par nos artisans à Suzhou. Chaque pièce est contrôlée individuellement avant expédition. Les coutures, les boutonnières, le tombé, les finitions — rien n'est laissé au hasard. Un manteau MAUDÉ ne quitte l'atelier que lorsqu'il est parfait.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATIÈRE EN QUESTIONS -->
+<section class="matiere-section">
+  <div class="matiere-inner">
+    <h2 class="matiere-title">Ce que vous vous<br>demandez <em>vraiment.</em></h2>
+    <div class="matiere-grid">
+      <div class="matiere-item">
+        <p class="matiere-question">Pourquoi mélanger laine et cachemire plutôt que du 100% cachemire ?</p>
+        <p class="matiere-reponse">Le 100% cachemire est spectaculaire au toucher — mais il est fragile. La laine apporte une <strong>résistance et une structure</strong> que le cachemire seul ne peut garantir dans un manteau porté quotidiennement. Notre mélange 50/50 combine le meilleur des deux : la douceur du cachemire, la durabilité de la laine.</p>
+      </div>
+      <div class="matiere-item">
+        <p class="matiere-question">Comment savoir si un cachemire est de qualité ?</p>
+        <p class="matiere-reponse">Une fibre de qualité supérieure mesure moins de <strong>15 microns d'épaisseur</strong> — à titre de comparaison, un cheveu humain mesure 70 microns. Plus la fibre est fine, plus le tissu est doux et léger. Nous sélectionnons exclusivement des fibres longues et fines, ce qui limite le boulochage et prolonge la durée de vie du manteau.</p>
+      </div>
+      <div class="matiere-item">
+        <p class="matiere-question">Est-ce que le manteau va boulochonner ?</p>
+        <p class="matiere-reponse">Tout cachemire, même le meilleur, peut légèrement boulochonner au début — c'est un signe que les fibres courtes restantes s'éliminent naturellement. Après quelques ports, le phénomène disparaît et le tissu révèle sa <strong>douceur définitive</strong>. Utilisez une pierre à cachemire douce pour éliminer les bouloches si nécessaire.</p>
+      </div>
+      <div class="matiere-item">
+        <p class="matiere-question">Combien de temps va durer mon manteau MAUDÉ ?</p>
+        <p class="matiere-reponse">Avec un entretien approprié, un manteau en laine et cachemire de qualité se porte <strong>10 à 15 ans</strong>. C'est l'inverse de la fast fashion : vous payez plus une fois, mais vous divisez le coût par dix. Un manteau MAUDÉ porté 10 ans revient à moins de 40€ par an.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT 3 — LE TOUCHER -->
+<div class="split cream">
+  <div class="split-content" style="background:var(--warm-white)">
+    <span class="section-label">La sensorialité</span>
+    <h2 class="section-title">Un toucher que les<br>mots ne <em>suffisent pas</em> à décrire.</h2>
+    <div class="section-text">
+      <p>Il y a des choses qu'on ne peut pas expliquer, seulement ressentir. Le moment où vous enfilez un manteau en laine et cachemire de qualité pour la première fois — cette enveloppe douce et chaude qui épouse immédiatement votre silhouette — c'est une expérience unique.</p>
+      <p>C'est précisément pourquoi nous proposons des <strong>retours gratuits sous 30 jours</strong>. Nous savons que toucher change tout. Si le manteau ne vous enveloppe pas comme vous l'espériez, renvoyez-le. Mais notre expérience nous dit que vous ne voudrez plus l'enlever.</p>
+    </div>
+  </div>
+  <div class="split-image">
+    <!-- Idéal : zoom texture tissu cachemire ou mannequin portant le manteau -->
+    <img src="cachemire-texture-zoom.png" alt="Zoom macro sur la texture du cachemire — douceur et finesse des fibres" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+  </div>
+</div>
+
+<!-- ENTRETIEN -->
+<section class="entretien-section">
+  <div class="entretien-inner">
+    <span class="section-label">Prendre soin de votre manteau</span>
+    <h2 class="section-title" style="max-width:600px">Les gestes essentiels pour qu'il <em>dure.</em></h2>
+    <div class="entretien-steps">
+      <div class="entretien-step">
+        <div class="entretien-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <p class="entretien-title">Aérer plutôt que laver</p>
+        <p class="entretien-text">Entre les ports, suspendez votre manteau à l'air libre une nuit. Le cachemire s'auto-régénère — l'humidité naturelle de l'air suffit à lisser les fibres.</p>
+      </div>
+      <div class="entretien-step">
+        <div class="entretien-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <p class="entretien-title">Lavage délicat</p>
+        <p class="entretien-text">Si lavage nécessaire : à la main à l'eau froide avec un détergent spécial laine, ou cycle délicat en machine dans un filet. Ne jamais essorer. Sécher à plat.</p>
+      </div>
+      <div class="entretien-step">
+        <div class="entretien-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <p class="entretien-title">Rangement hors saison</p>
+        <p class="entretien-text">Pliez votre manteau, ne le suspendez pas (le poids déforme les épaules). Rangez-le propre dans une housse en coton avec quelques feuilles de cèdre anti-mites.</p>
+      </div>
+      <div class="entretien-step">
+        <div class="entretien-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <p class="entretien-title">Les bouloches</p>
+        <p class="entretien-text">Utilisez une pierre à cachemire ou un peigne doux. Posez le manteau à plat, effleurez doucement la surface. Les bouloches disparaissent en quelques passages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITATION -->
+<div class="citation-block">
+  <blockquote>« On ne croit pas aux pièces qu'on porte deux saisons. On croit aux manteaux qu'on ne veut plus enlever. »</blockquote>
+  <cite>Aude &amp; Mathilde, fondatrices d'Atelier MAUDÉ</cite>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <h2 class="faq-title">Questions sur<br>la <em>matière.</em></h2>
+
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)">
+      Quelle est la différence entre laine et cachemire ?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>La <strong>laine</strong> provient des moutons — elle est robuste, isolante, légèrement rugueuse au toucher. Le <strong>cachemire</strong> provient du duvet des chèvres Capra Hircus de Mongolie — il est rare, extrêmement fin (8 à 15 microns vs 20-40 pour la laine), et d'une douceur incomparable. Notre mélange 50/50 tire le meilleur des deux fibres.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)">
+      Le manteau peut-il se laver en machine ?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Avec précautions, oui. <strong>Programme délicat à 30°C maximum</strong>, dans un filet de lavage. Utilisez un détergent spécial laine-cachemire (sans enzymes). Ne jamais essorer ni mettre au sèche-linge. Séchez à plat sur une serviette. Nous recommandons cependant le nettoyage à sec pour les lavages complets.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)">
+      Mon manteau bouloche — est-ce normal ?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Oui, c'est tout à fait normal les premières semaines. Le boulochage est causé par les fibres courtes résiduelles qui s'agrègent à la surface. Après 3 à 5 ports, le phénomène disparaît naturellement. Vous pouvez accélérer le processus avec une <strong>pierre à cachemire</strong> (2 à 5€, disponible en droguerie). Ce n'est pas un défaut, c'est la nature du cachemire.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)">
+      Vos manteaux sont-ils éthiques ?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Nous travaillons avec des ateliers partenaires à Suzhou avec lesquels nous avons une relation directe et de long terme. Nous visitons régulièrement nos producteurs. La récolte du cachemire par peignage (et non tonte) respecte le bien-être animal. Nous croyons que <strong>la transparence est la meilleure forme d'éthique</strong> — c'est pourquoi nous vous disons exactement d'où vient chaque matière.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)">
+      Pourquoi vos manteaux coûtent-ils moins cher que les grandes maisons ?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Parce que nous vendons en direct, sans intermédiaires. Pas de boutiques parisiennes, pas de distributeurs, pas de marges gonflées. Vous payez la matière, le savoir-faire, et notre travail — c'est tout. Une marque comme Bompard ou Max Mara facture le même manteau 800€ à 1 500€. <strong>La différence, c'est leur structure de coût, pas la qualité de votre manteau.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <span class="cta-eyebrow">La collection</span>
+  <h2 class="cta-title">Prête à trouver<br>votre manteau ?</h2>
+  <p class="cta-text">Trois modèles. Des fibres d'exception. Fabriqués pour durer. Livraison gratuite, retours 30 jours.</p>
+  <a href="manteaux.html" class="btn-primary">Voir la collection</a>
+  <a href="guide-des-tailles.html" class="btn-outline">Guide des tailles</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-logo">Atelier MAUDÉ</a>
+        <p class="footer-desc">Des manteaux en laine et cachemire d'exception, conçus pour durer.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="manteaux.html">Manteaux</a></li>
+          <li><a href="promotions.html">Promotions</a></li>
+          <li><a href="guide-des-tailles.html">Guide des tailles</a></li>
+          <li><a href="carte-cadeau.html">Carte cadeau</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>La Maison</h4>
+        <ul>
+          <li><a href="notre-histoire.html">Notre histoire</a></li>
+          <li><a href="notre-cachemire.html">Notre cachemire</a></li>
+          <li><a href="lookbook.html">Lookbook</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="cgv.html">CGV</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#aec2cfdacbc2c7cbdcc3cfdbcacbeec9c3cfc7c280cdc1c3"><span class="__cf_email__" data-cfemail="f498958091989d91869995819091b49399959d98da979b99">[email&#160;protected]</span></a></li>
+          <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Atelier MAUDÉ. Tous droits réservés.</p>
+      <p>FR · BE</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="btt" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14"><polyline points="2,10 7,4 12,10"/></svg>
+</button>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+window.addEventListener('scroll',function(){
+  document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
+  document.getElementById('btt').classList.toggle('show',scrollY>400);
+},{passive:true});
+
+function toggleFaq(btn) {
+  v
