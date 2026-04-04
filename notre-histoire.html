@@ -811,7 +811,7 @@
 
   /* ── CHIFFRES CLÉS ── */
   .chiffres {
-    display: grid; grid-template-columns: repeat(4,1fr);
+    display: grid; grid-template-columns: repeat(3,1fr);
     gap: 1px; background: var(--border);
     border: 1px solid var(--border);
     margin: 0 40px 80px;
@@ -970,6 +970,8 @@
     <a href="manteaux.html">Manteaux</a>
     <a href="promotions.html">Promotions</a>
     <a href="notre-histoire.html" class="active">Notre Histoire</a>
+    <a href="lookbook.html">Lookbook</a>
+    <a href="journal.html">Journal</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
@@ -977,9 +979,9 @@
 <!-- HERO -->
 <section class="page-hero">
   <div class="page-hero-image">
-    <img src="hero.png" width="1400" height="933"
+    <img src="notre-histoire-hero.png" width="1400" height="933"
          fetchpriority="high"
-         alt="Atelier MAUDÉ — cachemire de Suzhou"
+         alt="Atelier MAUDÉ — les quatre manteaux de la collection"
          loading="eager">
   </div>
   <div class="page-hero-content fade-in">
@@ -1113,12 +1115,8 @@
 <div class="page-cta">
   <p class="eyebrow fade-in">La collection</p>
   <h2 class="section-title fade-in">Découvrir nos manteaux</h2>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-    <a href="index.html#collection" class="btn-primary fade-in">Voir la collection</a>
-    <a href="lookbook.html" class="fade-in" style="transition-delay:0.1s;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--dark-brown);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:3px;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s">
-      Voir le lookbook
-      <svg width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 12 8"><line x1="0" y1="4" x2="10" y2="4"/><polyline points="7,1 10,4 7,7"/></svg>
-    </a>
+  <div style="display:flex;justify-content:center;margin-top:28px;">
+    <a href="manteaux.html" class="btn-primary fade-in">Voir la collection</a>
   </div>
 </div>
 
