@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#3A2A1E">
+<meta name="theme-color" content="#5A4633">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Commande confirmée — Atelier MAUDÉ</title>
   <meta name="description" content="Votre commande Atelier MAUDÉ a bien été confirmée. Merci pour votre confiance.">
@@ -26,22 +26,137 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+  /* ── FADE-IN SÉCURISÉ ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Fallback : si JS ne charge pas, tout reste visible */
+  .no-js .fade-in, .no-js .fade-in-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+
+  /* ── BANDEAU DÉFILANT — CORRECTION ── */
+  .announcement {
+    background: var(--terracotta);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+  }
+  .ticker-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    will-change: transform;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .ticker-sep {
+    display: inline-block;
+    margin: 0 28px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
+:root{
+  --bg-main:#F5EDE3;
+  --bg-section:#E6D3B3;
+  --primary:#A67C52;
+  --primary-hover:#8B5E3C;
+  --secondary:#C2A27C;
+  --text-main:#5A4633;
+  --text-muted:#8B7355;
+  --accent:#D9A441;
+  --white:#FFFFFF;
+  --cream:#FAF7F4;
+  --border:rgba(166,124,82,0.18);
+  --shadow:0 4px 24px rgba(90,70,51,0.08);
+  --shadow-hover:0 8px 32px rgba(90,70,51,0.14);
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:16px;
+}
 html,body{height:100%}
 body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);font-weight:300;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
 *{-webkit-tap-highlight-color:transparent}
 button,a{touch-action:manipulation}
 
 /* HEADER */
-header{background:var(--warm-white);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:center}
+header{background:var(--bg-main);border-bottom:1px solid var(--border);padding:18px 40px;display:flex;align-items:center;justify-content:center}
 .logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.14em;color:var(--dark-brown);text-decoration:none;text-transform:uppercase}
 
 /* MAIN */
 main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
 
 .confirm-card{
-  background:var(--warm-white);
+  background:var(--bg-main);
   max-width:580px;width:100%;
   padding:60px 52px;
   border:1px solid var(--border);
@@ -164,7 +279,7 @@ main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 
 }
 
 /* FOOTER */
-footer{background:var(--warm-white);border-top:1px solid var(--border);padding:24px 40px;text-align:center}
+footer{background:var(--bg-main);border-top:1px solid var(--border);padding:24px 40px;text-align:center}
 footer p{font-size:12px;color:var(--muted)}
 footer a{color:var(--muted);text-decoration:none;transition:color 0.2s}
 footer a:hover{color:var(--dark-brown)}
@@ -317,7 +432,7 @@ footer a:hover{color:var(--dark-brown)}
   .lang-btn:hover { border-color: var(--dark-brown); color: var(--dark-brown); }
   .lang-dropdown {
     position: absolute; top: calc(100% + 8px); right: 0;
-    background: var(--warm-white); border: 1px solid var(--border);
+    background: var(--bg-main); border: 1px solid var(--border);
     min-width: 160px; z-index: 200;
     box-shadow: 0 8px 24px rgba(42,26,18,0.1);
     display: none;
@@ -337,6 +452,34 @@ footer a:hover{color:var(--dark-brown)}
   .goog-te-banner-frame, .skiptranslate { display: none !important; }
   body { top: 0 !important; }
   .goog-te-gadget { display: none !important; }
+
+  /* Texte adapté sur fond latte clair */
+  .savoir-faire .sf-eyebrow,
+  .savoir-faire .sf-title,
+  .savoir-faire .sf-item-title { color: var(--dark-brown) !important; }
+  .savoir-faire .sf-num { color: rgba(58,42,30,0.2) !important; }
+  .savoir-faire .sf-item-text { color: rgba(58,42,30,0.65) !important; }
+  .savoir-faire .section-label { color: var(--terracotta) !important; }
+  .comparatif-title { color: var(--dark-brown) !important; }
+  .comp-head.ours { color: var(--brown) !important; }
+  .comp-head.other { color: rgba(58,42,30,0.45) !important; }
+  .comp-row.ours { color: rgba(58,42,30,0.85) !important; }
+  .comp-row.other { color: rgba(58,42,30,0.4) !important; }
+  .check { color: var(--brown) !important; }
+  .cross { color: rgba(58,42,30,0.2) !important; }
+  .comp-note { color: rgba(58,42,30,0.5) !important; }
+  .comp-note a { color: var(--brown) !important; }
+  .newsletter-eyebrow { color: var(--brown) !important; }
+  .newsletter-title { color: var(--dark-brown) !important; }
+  .newsletter-text { color: rgba(58,42,30,0.65) !important; }
+  .newsletter-form { border-color: rgba(58,42,30,0.2) !important; }
+  .newsletter-form input { color: var(--dark-brown) !important; }
+  .newsletter-form input::placeholder { color: rgba(58,42,30,0.35) !important; }
+  .lookbook-eyebrow { color: var(--brown) !important; opacity: 1 !important; }
+  .lookbook-title { color: var(--dark-brown) !important; }
+  .lookbook-title em { color: var(--brown) !important; }
+  .lookbook-text { color: rgba(58,42,30,0.65) !important; }
+
 </style>
 
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
@@ -499,6 +642,16 @@ footer a:hover{color:var(--dark-brown)}
       document.getElementById('lang-dropdown')?.classList.remove('open');
     }
   });
+
+  // Fallback fade-in au cas où IntersectionObserver rate des éléments
+  setTimeout(function() {
+    document.querySelectorAll('.fade-in, .fade-in-up').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      }
+    });
+  }, 300);
 </script><script>
   // Récupérer l'email depuis l'URL si Stripe le passe (?email=...)
   const params = new URLSearchParams(window.location.search);
@@ -525,7 +678,7 @@ footer a:hover{color:var(--dark-brown)}
   // Confettis dorés
   (function() {
     const wrap = document.getElementById('confetti');
-    const colors = ['#C9A96E', '#8B4A3A', '#3A2A1E', '#F5F0EA', '#6B4F3A'];
+    const colors = ['#D9A441', '#A67C52', '#5A4633', '#F5EDE3', '#A67C52'];
     for (let i = 0; i < 40; i++) {
       const el = document.createElement('div');
       el.className = 'confetti-piece';
