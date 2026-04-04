@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#3A2A1E">
+<meta name="theme-color" content="#5A4633">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Notre Histoire — Atelier MAUDÉ</title>
 <meta name="description" content="Aude et Mathilde, deux sœurs unies par l'amour du beau. L'histoire d'Atelier MAUDÉ, du cachemire de Suzhou et d'une vision du luxe accessible.">
@@ -71,31 +71,28 @@
 
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <style>
+  /* ── ANIMATIONS FADE-IN ── */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1 !important; transform: translateY(0) !important; }
+  .fade-in-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in-up.visible { opacity: 1 !important; transform: translateY(0) !important; }
+  .fade-in-left { opacity: 0; transform: translateX(-24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in-left.visible { opacity: 1 !important; transform: translateX(0) !important; }
+  .fade-in-right { opacity: 0; transform: translateX(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in-right.visible { opacity: 1 !important; transform: translateX(0) !important; }
+  .stagger-1 { transition-delay: 0.1s !important; }
+  .stagger-2 { transition-delay: 0.2s !important; }
+  .stagger-3 { transition-delay: 0.3s !important; }
+  .stagger-4 { transition-delay: 0.4s !important; }
 
-  /* ── FADE-IN SÉCURISÉ ── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+  
+  
+  
+  
+  
   /* Fallback : si JS ne charge pas, tout reste visible */
-  .no-js .fade-in, .no-js .fade-in-up {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+  .no-js 
 
   /* ── BANDEAU DÉFILANT — CORRECTION ── */
   .announcement {
@@ -171,22 +168,29 @@
   }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --cream: #F5F0EA;
-    --warm-white: #FAF8F5;
-    --brown: #6B4F3A;
-    --dark-brown: #3A2A1E;
-    --terracotta: #8B4A3A;
-    --gold: #C9A96E;
-    --text: #2C2218;
-    --muted: #8A7B6F;
-    --border: rgba(107,79,58,0.15);
-  }
+  :root{
+  --bg-main:#F5EDE3;
+  --bg-section:#E6D3B3;
+  --primary:#A67C52;
+  --primary-hover:#8B5E3C;
+  --secondary:#C2A27C;
+  --text-main:#5A4633;
+  --text-muted:#8B7355;
+  --accent:#D9A441;
+  --white:#FFFFFF;
+  --cream:#FAF7F4;
+  --border:rgba(166,124,82,0.18);
+  --shadow:0 4px 24px rgba(90,70,51,0.08);
+  --shadow-hover:0 8px 32px rgba(90,70,51,0.14);
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:16px;
+}
 
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Jost', sans-serif;
-    background: var(--warm-white);
+    background: var(--bg-main);
     color: var(--text);
     font-weight: 300;
     overflow-x: hidden;
@@ -207,7 +211,7 @@
   /* ── HEADER ── */
   header {
     position: sticky; top: 0; z-index: 100;
-    background: var(--warm-white);
+    background: var(--bg-main);
     border-bottom: 1px solid var(--border);
     transition: box-shadow 0.3s;
   }
@@ -350,7 +354,7 @@
     margin: 0 40px;
   }
   .nom-item {
-    background: var(--warm-white);
+    background: var(--bg-main);
     padding: 52px 44px; text-align: center;
     transition: background 0.3s;
   }
@@ -433,9 +437,9 @@
   .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
   .footer-bottom p { font-size: 12px; color: var(--muted); }
 
-  /* ── FADE IN ── */
-  .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  
+  
+  
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -474,7 +478,7 @@
   .mobile-menu {
     position: fixed; top: 0; left: 0; bottom: 0;
     width: min(320px, 85vw);
-    background: var(--warm-white);
+    background: var(--bg-main);
     z-index: 201;
     transform: translateX(-100%);
     transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
@@ -536,32 +540,20 @@
     .mobile-menu, .mobile-menu-overlay { display: none !important; }
   }
 
-  /* ── ANIMATIONS SCROLL AVANCÉES ── */
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+  
+  
+  
 
-  .fade-in-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in-left.visible { opacity: 1; transform: translateX(0); }
+  
+  
 
-  .fade-in-right {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in-right.visible { opacity: 1; transform: translateX(0); }
+  
+  
 
-  .stagger-1 { transition-delay: 0.1s !important; }
-  .stagger-2 { transition-delay: 0.2s !important; }
-  .stagger-3 { transition-delay: 0.3s !important; }
-  .stagger-4 { transition-delay: 0.4s !important; }
+  
+  
+  
+  
 
   /* ── BOUTON RETOUR EN HAUT ── */
   .back-to-top {
@@ -687,7 +679,7 @@
     nav a { font-size: 10px !important; letter-spacing: 0.12em !important; }
   }
 
-  /* ── MICRO-ANIMATIONS BOUTONS CTA ── */
+  
 
   /* Bouton primaire — shimmer doré au hover */
   .btn-primary {
@@ -801,7 +793,7 @@
   }
   .back-to-top:hover svg { transform: translateY(-2px); }
 
-  /* Réduction des animations si préférence système */
+  
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -830,7 +822,7 @@
 }
 #cercle-popup.open { opacity: 1; pointer-events: auto; }
 .popup-inner {
-  background: var(--warm-white); max-width: 420px; width: 90%;
+  background: var(--bg-main); max-width: 420px; width: 90%;
   padding: 52px 44px 40px; position: relative; text-align: center;
   transform: translateY(16px); transition: transform 0.4s ease;
 }
@@ -858,7 +850,7 @@
     margin: 0 40px 80px;
   }
   .chiffre-item {
-    background: var(--warm-white); padding: 40px 28px; text-align: center;
+    background: var(--bg-main); padding: 40px 28px; text-align: center;
     transition: background 0.3s;
   }
   .chiffre-item:hover { background: var(--cream); }
@@ -880,15 +872,37 @@
     .chiffre-num { font-size: 40px; }
   }
 
-  /* FALLBACK FADE-IN — évite les pages blanches */
-  .fade-in, .fade-in-up, .fade-in-left, .fade-in-right {
-    opacity: 0;
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible, .fade-in-up.visible, .fade-in-left.visible, .fade-in-right.visible {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+  
+  
+  
+
+  /* Texte adapté sur fond latte clair */
+  .savoir-faire .sf-eyebrow,
+  .savoir-faire .sf-title,
+  .savoir-faire .sf-item-title { color: var(--dark-brown) !important; }
+  .savoir-faire .sf-num { color: rgba(58,42,30,0.2) !important; }
+  .savoir-faire .sf-item-text { color: rgba(58,42,30,0.65) !important; }
+  .savoir-faire .section-label { color: var(--terracotta) !important; }
+  .comparatif-title { color: var(--dark-brown) !important; }
+  .comp-head.ours { color: var(--brown) !important; }
+  .comp-head.other { color: rgba(58,42,30,0.45) !important; }
+  .comp-row.ours { color: rgba(58,42,30,0.85) !important; }
+  .comp-row.other { color: rgba(58,42,30,0.4) !important; }
+  .check { color: var(--brown) !important; }
+  .cross { color: rgba(58,42,30,0.2) !important; }
+  .comp-note { color: rgba(58,42,30,0.5) !important; }
+  .comp-note a { color: var(--brown) !important; }
+  .newsletter-eyebrow { color: var(--brown) !important; }
+  .newsletter-title { color: var(--dark-brown) !important; }
+  .newsletter-text { color: rgba(58,42,30,0.65) !important; }
+  .newsletter-form { border-color: rgba(58,42,30,0.2) !important; }
+  .newsletter-form input { color: var(--dark-brown) !important; }
+  .newsletter-form input::placeholder { color: rgba(58,42,30,0.35) !important; }
+  .lookbook-eyebrow { color: var(--brown) !important; opacity: 1 !important; }
+  .lookbook-title { color: var(--dark-brown) !important; }
+  .lookbook-title em { color: var(--brown) !important; }
+  .lookbook-text { color: rgba(58,42,30,0.65) !important; }
+
 </style>
 </head>
 <body>
@@ -1040,7 +1054,7 @@
   <h2 class="section-title fade-in">Pourquoi <em>Suzhou</em> ?</h2>
   <div class="body-text fade-in">
     <p>Suzhou n'est pas un choix anodin. Depuis plus de deux mille ans, cette ville est le cœur battant du textile chinois. Ses artisans maîtrisent l'art du tissage avec une précision transmise de génération en génération, dans le respect des techniques ancestrales.</p>
-    <p>Le mélange de <strong>70% laine et 30% cachemire</strong> que nous utilisons est le fruit d'un long travail de sélection. La laine apporte la tenue, la structure, la durabilité. Le cachemire — issu des régions de Mongolie-Intérieure — apporte cette douceur incomparable contre la peau, ce toucher soyeux qui transforme un vêtement ordinaire en une expérience.</p>
+    <p>Le mélange de <strong>50% laine et 50% cachemire</strong> que nous utilisons est le fruit d'un long travail de sélection. La laine apporte la tenue, la structure, la durabilité. Le cachemire — issu des régions de Mongolie-Intérieure — apporte cette douceur incomparable contre la peau, ce toucher soyeux qui transforme un vêtement ordinaire en une expérience.</p>
     <p>Nous avons choisi la transparence sur la composition de nos pièces parce que nous croyons que nos clientes méritent de savoir exactement ce qu'elles portent. Pas de promesses excessives — juste une matière belle, honnête, et travaillée avec soin.</p>
   </div>
 </div>
@@ -1177,7 +1191,7 @@
   </div>
   <div class="footer-bottom">
     <p>© 2025 Atelier MAUDÉ. Tous droits réservés.</p>
-    <p style="letter-spacing:0.1em;">FR &nbsp;|&nbsp; BE &nbsp;|&nbsp; CH</p>
+    <p style="letter-spacing:0.1em;">FR &nbsp;|&nbsp; BE</p>
   </div>
 </footer>
 
@@ -1228,7 +1242,7 @@
     if (!input.value) return;
     const btn = e.target.querySelector('button[type="submit"]');
     btn.textContent = 'Bienvenue ✓';
-    btn.style.background = '#6B4F3A';
+    btn.style.background = '#A67C52';
     sessionStorage.setItem(POPUP_KEY, '1');
     setTimeout(closePopup, 1800);
   }
@@ -1246,17 +1260,7 @@
     }, { passive: true });
   }
 
-  // ── Animations scroll avancées ──
-  const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        scrollObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => scrollObserver.observe(el));
-
+  
   // ── Barre de progression de lecture ──
   (function() {
     const bar = document.getElementById('reading-progress');
@@ -1338,6 +1342,25 @@
       el.classList.add('visible');
     });
   }, 600);
+
+  // ── Animations au scroll ──
+  (function() {
+    var els = document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right');
+    // Activer immédiatement les éléments déjà visibles
+    function activate(el) { el.classList.add('visible'); }
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) { activate(e.target); obs.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      els.forEach(function(el) { obs.observe(el); });
+    } else {
+      els.forEach(activate); // Fallback si pas d'IntersectionObserver
+    }
+    // Sécurité absolue : tout visible après 500ms
+    setTimeout(function() {
+      document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right').forEach(activate);
+    }, 500);
+  })();
 </script>
 
 </body>
