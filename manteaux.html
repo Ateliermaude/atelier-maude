@@ -69,7 +69,7 @@ button{cursor:pointer;font-family:inherit}
 
 /* FILTRES */
 .filters-wrap{display:flex;justify-content:center;gap:8px;padding:36px 40px 0;flex-wrap:wrap}
-.filter-btn{background:none;border:1px solid var(--border);padding:9px 20px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:all .2s}
+.filter-btn{background:none;border:1px solid var(--border);padding:9px 20px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:all .2s;cursor:pointer;text-decoration:none;display:inline-block}
 .filter-btn:hover,.filter-btn.active{background:var(--dark-brown);color:#fff;border-color:var(--dark-brown)}
 
 /* GRILLE */
@@ -250,7 +250,6 @@ button{cursor:pointer;font-family:inherit}
   <button class="filter-btn active" onclick="filter('all',this)">Tous (3)</button>
   <a href="manteaux-court.html" class="filter-btn">Court</a>
   <a href="manteaux-long.html" class="filter-btn">Long</a>
-  <button class="filter-btn" onclick="filter('ceinture',this)">Ceinturés</button>
 </div>
 
 <section class="collection-section">
