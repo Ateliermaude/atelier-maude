@@ -212,21 +212,21 @@ button{cursor:pointer;font-family:inherit}
 <div class="ticker-wrap" role="marquee">
   <div class="ticker">
     <span class="ticker-item">SÉLECTION PREMIUM · –30% SUR NOS PIÈCES EMBLÉMATIQUES</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">SÉLECTION PREMIUM · –30% SUR NOS PIÈCES EMBLÉMATIQUES</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
-    <span class="ticker-sep">✦</span>
+    
   </div>
 </div>
 
@@ -249,7 +249,7 @@ button{cursor:pointer;font-family:inherit}
     <a href="manteaux.html" class="active">Manteaux</a>
     <a href="promotions.html">Promotions</a>
     <div class="nav-dropdown">
-      <a href="notre-histoire.html">La Maison <span class="nav-dropdown-arrow">▾</span></a>
+      <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">▾</span></a>
       <div class="dropdown-menu">
         <a href="notre-histoire.html">Notre Histoire</a>
         <a href="notre-cachemire.html">Notre Cachemire</a>
@@ -286,10 +286,7 @@ button{cursor:pointer;font-family:inherit}
       <div class="gallery-thumb" data-color="marine" data-index="3" onclick="switchImage(3)" role="button" aria-label="Marine — profil gauche">
         <img src="yun-court-marine-profil-gauche.png" alt="Yūn Court marine — profil gauche" loading="lazy" decoding="async">
       </div>
-      <div class="gallery-thumb" data-color="noir" data-index="4" style="display:none" onclick="switchImage(4)" role="button" aria-label="Noir — vue">
-        <img src="yun-court-noir.jpeg" alt="Yūn Court noir" loading="lazy" decoding="async">
-      </div>
-    </div>
+</div>
     <div class="gallery-main" id="gallery-main">
       <div class="promo-tag">Promotion</div>
       <div class="discount-badge">–23%</div>
@@ -297,7 +294,6 @@ button{cursor:pointer;font-family:inherit}
       <img src="yun-court-marine-dos.png" alt="Manteau Yūn Court — marine, dos" loading="lazy" decoding="async">
       <img src="yun-court-marine-profil-droit.png" alt="Manteau Yūn Court — marine, profil droit" loading="lazy" decoding="async">
       <img src="yun-court-marine-profil-gauche.png" alt="Manteau Yūn Court — marine, profil gauche" loading="lazy" decoding="async">
-      <img src="yun-court-noir.jpeg" alt="Manteau Yūn Court — noir" loading="lazy" decoding="async">
     </div>
   </div>
 
@@ -320,8 +316,7 @@ button{cursor:pointer;font-family:inherit}
     <!-- COULEUR -->
     <label class="option-label" id="color-label">Couleur — <span class="color-name-display" id="color-name-display">Marine</span></label>
     <div class="color-options" role="group">
-      <div class="color-swatch swatch-marine active" onclick="selectColor(this,'Marine',0)" title="Marine" role="button" tabindex="0"></div>
-      <div class="color-swatch swatch-noir" onclick="selectColor(this,'Noir',1)" title="Noir" role="button" tabindex="0"></div>
+      <div class="color-swatch swatch-marine active" onclick="return false" title="Marine" role="button" tabindex="0"></div>
     </div>
 
     <!-- TAILLE -->
@@ -469,18 +464,7 @@ function selectColor(el, name, colorIdx) {
   document.querySelectorAll('.color-swatch').forEach(function(s){s.classList.remove('active');});
   el.classList.add('active');
   document.getElementById('color-name-display').textContent = name;
-  var color = colorIdx===0 ? 'marine' : 'noir';
-  document.querySelectorAll('.gallery-thumb').forEach(function(t){
-    t.style.display = t.dataset.color===color ? 'block' : 'none';
-    t.classList.remove('active');
-  });
-  var first = document.querySelector('.gallery-thumb[data-color="'+color+'"]');
-  if(first) first.classList.add('active');
-  document.getElementById('gallery-main').querySelectorAll('img').forEach(function(img,i){
-    img.classList.toggle('active', i===(colorIdx===0?0:4));
-  });
 }
-
 function selectSize(el) {
   document.querySelectorAll('.size-btn:not(.unavailable)').forEach(function(b){b.classList.remove('active');});
   el.classList.add('active');
