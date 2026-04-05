@@ -3,340 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atelier MAUDÉ — Manteaux en Laine & Cachemire</title>
-<meta name="description" content="Manteaux en laine et cachemire de Mongolie-Intérieure. Jusqu'à –30%. Livraison gratuite en France et Belgique.">
-<meta name="theme-color" content="#F5F0EA">
+<title>Atelier MAUDÉ — Manteaux en Laine & Cachemire de Mongolie-Intérieure</title>
+<meta name="description" content="Atelier MAUDÉ — Des manteaux en laine et cachemire de Mongolie-Intérieure, fabriqués à Suzhou. Livraison gratuite en France et Belgique.">
+<meta name="theme-color" content="#3A2A1E">
 <link rel="canonical" href="https://ateliermaude.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Atelier MAUDÉ">
 <meta property="og:title" content="Atelier MAUDÉ — Manteaux en Laine & Cachemire">
+<meta property="og:description" content="Des manteaux en laine et cachemire de Mongolie-Intérieure, fabriqués à Suzhou. Livraison gratuite FR & BE.">
 <meta property="og:url" content="https://ateliermaude.github.io/">
-<meta property="og:image" content="https://ateliermaude.github.io/hero.png">
+<meta property="og:image" content="https://ateliermaude.github.io/hua-long-camel-face.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="hero.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --cream:#F5F0EA;
-  --warm-white:#FAF8F5;
-  --brown:#6B4F3A;
-  --dark-brown:#3A2A1E;
-  --terracotta:#8B4A3A;
-  --gold:#C9A96E;
-  --text:#2C2218;
-  --muted:#8A7B6F;
-  --border:rgba(107,79,58,0.15);
+  --cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;
+  --dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;
+  --text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden;line-height:1.7}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{cursor:pointer;font-family:inherit}
-*{-webkit-tap-highlight-color:transparent}
 
-/* ── BANDEAU ── */
-.ticker-wrap{background:var(--dark-brown);overflow:hidden;white-space:nowrap}
-.ticker{display:inline-flex;animation:ticker 32s linear infinite}
+/* BANDEAU */
+.ticker-wrap{background:var(--terracotta);overflow:hidden;white-space:nowrap}
+.ticker{display:inline-flex;animation:ticker 30s linear infinite}
 .ticker:hover{animation-play-state:paused}
-.ticker-item{display:inline-block;padding:10px 0;font-size:11px;letter-spacing:.12em;color:#fff;font-weight:400}
-.ticker-sep{display:inline-block;margin:0 24px;color:rgba(255,255,255,.4)}
+.ticker-item{display:inline-block;padding:10px 0;font-size:11px;letter-spacing:.13em;color:#fff}
+.ticker-sep{display:inline-block;margin:0 28px;color:rgba(255,255,255,.3)}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ── HEADER ── */
-.site-header{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-.site-header.scrolled{box-shadow:none}
-.header-inner{max-width:1400px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
-.header-btn{background:none;border:none;color:var(--text);padding:6px;display:flex;align-items:center;transition:color .2s;border-radius:0px}
-.header-btn:hover{color:var(--dark-brown)}
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.14em;color:var(--text);text-transform:uppercase;transition:opacity .2s}
-.logo:hover{opacity:.75}
-.header-actions{display:flex;align-items:center;gap:16px}
-.site-nav{display:flex;justify-content:center;gap:32px;padding:0 40px 13px;max-width:1400px;margin:0 auto}
-.site-nav a{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:400;position:relative;padding-bottom:3px;transition:color .2s}
-.site-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--dark-brown);transition:width .3s;border-radius:2px}
-.site-nav a:hover{color:var(--dark-brown)}
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,.08)}
+.header-inner{max-width:1400px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
+.header-btn{background:none;border:none;color:var(--dark-brown);padding:4px;display:flex;align-items:center;transition:color .2s}
+.header-btn:hover{color:var(--terracotta)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.14em;color:var(--dark-brown);text-transform:uppercase}
+.logo:hover{opacity:.8}
+.header-actions{display:flex;align-items:center;gap:18px}
+.site-nav{display:flex;justify-content:center;gap:36px;padding:0 40px 14px;max-width:1400px;margin:0 auto}
+.site-nav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);font-weight:400;position:relative;padding-bottom:2px;transition:color .2s}
+.site-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--terracotta);transition:width .3s}
+.site-nav a:hover{color:var(--terracotta)}
 .site-nav a:hover::after,.site-nav a.active::after{width:100%}
-.site-nav a.active{color:var(--dark-brown)}
+.site-nav a.active{color:var(--terracotta)}
 
-/* ── HERO ── */
-.hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden;background:var(--cream);border-radius:0 0 0px 0px}
-.hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.5}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(245,237,227,.7) 0%,rgba(245,237,227,.2) 100%)}
-.hero-content{position:relative;z-index:2;max-width:600px;padding:80px 60px}
-.hero-badge{display:inline-block;background:var(--dark-brown);color:#fff;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:6px 16px;border-radius:0px;margin-bottom:24px}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,86px);font-weight:300;line-height:1.05;color:var(--text);margin-bottom:20px}
-.hero-title em{font-style:italic;color:var(--dark-brown)}
-.hero-text{font-size:15px;color:var(--muted);line-height:1.85;max-width:420px;margin-bottom:36px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--dark-brown);color:#fff;padding:14px 32px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:none;border-radius:0px;transition:background .25s,box-shadow .25s,transform .15s;box-shadow:0 2px 12px rgba(166,124,82,.3)}
-.btn-primary:hover{background:var(--terracotta);box-shadow:0 4px 20px rgba(166,124,82,.4);transform:translateY(-1px)}
-.btn-primary:active{transform:translateY(0)}
-.btn-outline{display:inline-flex;align-items:center;border:1.5px solid var(--dark-brown);color:var(--dark-brown);padding:13px 28px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-radius:0px;transition:all .25s;background:transparent}
-.btn-outline:hover{background:var(--dark-brown);color:#fff}
-.hero-trust{display:flex;gap:20px;flex-wrap:wrap}
-.hero-trust span{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
-.trust-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+/* DROPDOWN */
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:5px}
+.nav-dropdown>a::after{display:none!important}
+.nav-dropdown-arrow{font-size:8px;opacity:.5;transition:transform .3s;display:inline-block}
+.nav-dropdown:hover .nav-dropdown-arrow{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;background:var(--warm-white);border:1px solid var(--border);min-width:180px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;transform:translateX(-50%) translateY(-6px);box-shadow:0 8px 32px rgba(58,42,30,.1);z-index:200}
+.nav-dropdown:hover .dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dropdown-menu a{display:block;padding:13px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dark-brown);border-bottom:1px solid var(--border);transition:background .2s,color .2s}
+.dropdown-menu a:last-child{border-bottom:none}
+.dropdown-menu a:hover{background:var(--cream);color:var(--terracotta)}
 
-/* ── SECTIONS ── */
-.section-label{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:12px}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:300;color:var(--text);line-height:1.1;margin-bottom:14px}
-.section-title em{font-style:italic;color:var(--dark-brown)}
-.section-sub{font-size:14px;color:var(--muted);line-height:1.85;max-width:540px}
+/* HERO VIDÉO */
+.hero{position:relative;height:100vh;min-height:500px;overflow:hidden;background:#1a1008}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,16,8,.08) 0%,rgba(26,16,8,.0) 40%,rgba(26,16,8,.5) 100%);z-index:1}
+.hero-content{position:absolute;bottom:52px;left:52px;z-index:2}
+.hero-label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(245,240,234,.9);font-family:'Jost',sans-serif;display:block;margin-bottom:8px}
+.hero-season{font-size:12px;color:rgba(245,240,234,.6);font-family:'Jost',sans-serif;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:20px}
+.hero-discover{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,234,.85);font-family:'Jost',sans-serif;text-decoration:none;border-bottom:1px solid rgba(245,240,234,.4);padding-bottom:3px;transition:color .2s,border-color .2s;display:inline-block}
+.hero-discover:hover{color:var(--gold);border-color:var(--gold)}
 
-/* ── COLLECTION ── */
-.collection{padding:80px 40px;max-width:1400px;margin:0 auto}
-.collection-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:24px;flex-wrap:wrap}
-.text-link{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dark-brown);border-bottom:1.5px solid var(--brown);padding-bottom:2px;transition:all .2s;white-space:nowrap}
-.text-link:hover{color:var(--terracotta);border-bottom-color:var(--dark-brown)}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.product-card{background:var(--cream);border-radius:0px;overflow:hidden;box-shadow:none;transition:box-shadow .3s,transform .3s}
-.product-card:hover{box-shadow:none;transform:translateY(-4px)}
-.product-img{position:relative;overflow:hidden;aspect-ratio:3/4}
-.product-img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s ease;display:block}
-.product-card:hover .product-img img{transform:scale(1.04)}
-.product-tag{position:absolute;top:14px;left:14px;background:var(--dark-brown);color:#fff;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:0px;z-index:2}
-.product-badge{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.9);color:var(--dark-brown);font-size:10px;letter-spacing:.1em;padding:5px 10px;border-radius:0px;z-index:2;font-weight:500}
-.product-cta-hover{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(90,70,51,.5));opacity:0;transition:opacity .3s;display:flex;justify-content:center;z-index:2}
-.product-card:hover .product-cta-hover{opacity:1}
-.product-cta-hover a{background:#fff;color:var(--dark-brown);padding:10px 24px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;border-radius:0px;transition:all .2s;font-weight:500}
-.product-cta-hover a:hover{background:var(--dark-brown);color:#fff}
-.product-info{padding:20px 22px 22px}
-.product-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:var(--text);margin-bottom:8px;line-height:1.3}
-.product-prices{display:flex;gap:10px;align-items:center;margin-bottom:6px}
-.price-now{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--dark-brown)}
-.price-old{font-size:13px;color:var(--muted);text-decoration:line-through}
-.price-save{font-size:11px;color:var(--brown);display:block;margin-bottom:10px}
-.swatches{display:flex;gap:7px;align-items:center}
-.swatch{width:16px;height:16px;border-radius:50%;border:2px solid transparent;transition:transform .2s,border-color .2s;cursor:pointer}
-.swatch:hover{transform:scale(1.15)}
-.swatch.active{border-color:var(--dark-brown)}
-.sw-noir{background:#1a1410}
-.sw-marine{background:#1e2d45}
-.sw-camel{background:#C19A6B}
-.sw-label{font-size:11px;color:var(--muted);margin-left:4px}
+/* COLLECTION */
+.collection{padding:80px 40px}
+.collection-head{max-width:1400px;margin:0 auto 48px;display:flex;justify-content:space-between;align-items:flex-end}
+.section-label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);display:block;margin-bottom:10px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,50px);font-weight:300;line-height:1.1;color:var(--dark-brown)}
+.section-title em{font-style:italic;color:var(--brown)}
+.text-link{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);border-bottom:1px solid var(--border);padding-bottom:3px;transition:all .2s}
+.text-link:hover{color:var(--terracotta);border-color:var(--terracotta)}
+.products-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.product-card{position:relative}
+.product-card-img{aspect-ratio:3/4;overflow:hidden;background:var(--cream);position:relative}
+.product-card-img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s ease;display:block}
+.product-card:hover .product-card-img img{transform:scale(1.04)}
+.product-badge{position:absolute;top:16px;left:16px;background:var(--terracotta);color:#fff;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;z-index:2}
+.product-card-info{padding:18px 0 0}
+.product-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--dark-brown);margin-bottom:6px}
+.product-price{display:flex;align-items:center;gap:10px}
+.price-now{font-size:15px;color:var(--dark-brown)}
+.price-was{font-size:13px;color:var(--muted);text-decoration:line-through}
+.price-save{font-size:10px;color:var(--terracotta);letter-spacing:.06em}
+.product-colors{display:flex;gap:6px;margin-top:10px}
+.color-dot{width:14px;height:14px;border-radius:50%;border:1.5px solid transparent;cursor:pointer;transition:border-color .2s}
+.color-dot:hover{border-color:var(--dark-brown)}
+.color-dot.active{border-color:var(--dark-brown)}
 
-/* ── SAVOIR-FAIRE ── */
-.savoir-faire{background:var(--cream);padding:80px 40px;margin:0}
+/* SAVOIR-FAIRE */
+.savoir-faire{background:var(--cream);padding:80px 40px}
 .sf-inner{max-width:1400px;margin:0 auto}
-.sf-header{margin-bottom:52px}
-.sf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.sf-item{background:var(--cream);padding:36px 28px;border-radius:0px;box-shadow:none;transition:box-shadow .3s,transform .3s}
-.sf-item:hover{box-shadow:none;transform:translateY(-3px)}
-.sf-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--brown);opacity:.5;line-height:1;display:block;margin-bottom:16px}
-.sf-item-title{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:10px;font-weight:500}
-.sf-item-text{font-size:13px;color:var(--muted);line-height:1.85}
+.sf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:48px}
+.sf-item{background:var(--cream);padding:36px 28px}
+.sf-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--gold);opacity:.4;line-height:1;margin-bottom:12px}
+.sf-title{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:10px;font-weight:400}
+.sf-text{font-size:13px;color:var(--muted);line-height:1.85}
 
-/* ── LOOKBOOK TEASER ── */
-.lookbook-teaser{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;margin:0;min-height:500px}
-.lookbook-photos{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--cream)}
-.lookbook-photo{overflow:hidden}
-.lookbook-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s ease;display:block}
-.lookbook-photo:hover img{transform:scale(1.05)}
-.lookbook-content{background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:60px 56px}
-.lookbook-eyebrow{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--brown);margin-bottom:16px;display:block}
-.lookbook-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,48px);font-weight:300;color:var(--text);line-height:1.1;margin-bottom:18px}
-.lookbook-title em{font-style:italic;color:var(--dark-brown)}
-.lookbook-text{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:32px;max-width:340px}
+/* COMPARATIF */
+.comparatif{padding:80px 40px;background:var(--dark-brown)}
+.comparatif-inner{max-width:1000px;margin:0 auto;text-align:center}
+.comparatif-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,46px);font-weight:300;color:var(--cream);margin-bottom:48px;line-height:1.1}
+.comparatif-title em{font-style:italic;color:var(--gold)}
+.comparatif-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,169,110,.12)}
+.comp-col{padding:36px 28px;background:var(--dark-brown)}
+.comp-col.highlight{background:rgba(201,169,110,.06)}
+.comp-brand{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:block;opacity:.75}
+.comp-price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--cream);margin-bottom:20px;line-height:1}
+.comp-items{list-style:none}
+.comp-items li{font-size:12px;color:rgba(245,240,234,.55);padding:8px 0;border-bottom:1px solid rgba(201,169,110,.1);line-height:1.5}
+.comp-items li:last-child{border-bottom:none}
+.comp-items li.yes{color:rgba(245,240,234,.8)}
 
-/* ── COMPARATIF ── */
-.comparatif{background:var(--cream);padding:80px 40px}
-.comp-inner{max-width:900px;margin:0 auto;text-align:center}
-.comp-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;color:var(--text);margin-bottom:48px;line-height:1.2}
-.comp-title em{font-style:italic;color:var(--dark-brown)}
-.comp-table{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:left;margin-bottom:32px}
-.comp-col-box{background:var(--warm-white);border-radius:0px;overflow:hidden;box-shadow:none}
-.comp-col-box.ours{background:var(--dark-brown);box-shadow:0 4px 24px rgba(166,124,82,.3)}
-.comp-head{padding:16px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border-bottom:1px solid rgba(255,255,255,.15)}
-.comp-col-box.ours .comp-head{color:#fff}
-.comp-col-box:not(.ours) .comp-head{color:var(--muted);border-bottom:1px solid var(--border)}
-.comp-row{padding:12px 20px;font-size:12px;display:flex;align-items:center;gap:9px;border-bottom:1px solid rgba(255,255,255,.08)}
-.comp-row:last-child{border-bottom:none}
-.comp-col-box.ours .comp-row{color:rgba(255,255,255,.9)}
-.comp-col-box:not(.ours) .comp-row{color:var(--muted);border-bottom:1px solid var(--border)}
-.check{color:var(--gold);font-size:13px;flex-shrink:0}
-.comp-col-box.ours .check{color:#fff}
-.cross{color:rgba(90,70,51,.25);flex-shrink:0}
-.comp-note{font-size:12px;color:var(--muted);margin-top:8px}
-.comp-note a{color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px}
+/* NEWSLETTER */
+.newsletter{padding:80px 40px;text-align:center;background:var(--warm-white)}
+.newsletter-inner{max-width:560px;margin:0 auto}
+.newsletter h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,40px);font-weight:300;color:var(--dark-brown);margin-bottom:12px}
+.newsletter h2 em{font-style:italic;color:var(--brown)}
+.newsletter p{font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.85}
+.newsletter-form{display:flex;gap:0;max-width:420px;margin:0 auto}
+.newsletter-form input{flex:1;padding:14px 18px;border:1px solid var(--border);background:var(--cream);font-family:'Jost',sans-serif;font-size:13px;color:var(--text);outline:none}
+.newsletter-form input:focus{border-color:var(--dark-brown)}
+.newsletter-form button{background:var(--dark-brown);color:#fff;border:none;padding:14px 24px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .3s;white-space:nowrap}
+.newsletter-form button:hover{background:var(--terracotta)}
 
-/* ── JOURNAL ── */
-.journal-preview{padding:80px 40px;max-width:1400px;margin:0 auto}
-.journal-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;gap:24px;flex-wrap:wrap}
-.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.article-card{background:var(--cream);border-radius:0px;overflow:hidden;box-shadow:none;transition:box-shadow .3s,transform .3s}
-.article-card:hover{box-shadow:none;transform:translateY(-4px)}
-.article-img{position:relative;overflow:hidden;aspect-ratio:4/3}
-.article-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;display:block}
-.article-card:hover .article-img img{transform:scale(1.04)}
-.article-cat{position:absolute;top:12px;left:12px;background:var(--dark-brown);color:#fff;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border-radius:0px}
-.article-body{padding:20px 22px 22px}
-.article-meta{font-size:11px;color:var(--muted);margin-bottom:10px;display:flex;gap:8px}
-.article-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:var(--text);line-height:1.3;margin-bottom:10px;display:block;transition:color .2s}
-.article-card:hover .article-title{color:var(--dark-brown)}
-.article-excerpt{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:16px}
-.article-link{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dark-brown);display:inline-flex;align-items:center;gap:6px;font-weight:500;transition:gap .2s}
-.article-link:hover{gap:10px}
-
-/* ── FAQ ── */
-.faq-section{padding:70px 40px;max-width:860px;margin:0 auto}
-.faq-head{text-align:center;margin-bottom:40px}
-.faq-item{background:var(--cream);border-radius:0px;margin-bottom:10px;overflow:hidden;box-shadow:none}
-.faq-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;text-align:left;font-family:'Jost',sans-serif;font-size:14px;color:var(--text);font-weight:400;gap:16px;transition:color .2s}
-.faq-btn:hover{color:var(--dark-brown)}
-.faq-icon{color:var(--dark-brown);font-size:20px;flex-shrink:0;transition:transform .3s;line-height:1}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.faq-answer-text{padding:0 24px 20px;font-size:13px;color:var(--muted);line-height:1.9}
-.faq-answer-text a{color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px}
-.faq-item.open .faq-answer{max-height:300px}
-.faq-more{text-align:center;margin-top:24px;font-size:13px;color:var(--muted)}
-.faq-more a{color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px}
-
-/* ── NEWSLETTER ── */
-.newsletter-section{background:var(--cream);padding:80px 40px;text-align:center;margin:0}
-.nl-eyebrow{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--brown);margin-bottom:14px;display:block}
-.nl-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:300;color:var(--text);margin-bottom:12px;line-height:1.15}
-.nl-text{font-size:14px;color:var(--muted);margin-bottom:36px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.85}
-.nl-form{display:flex;max-width:460px;margin:0 auto;border-radius:0px;overflow:hidden;box-shadow:none}
-.nl-form input{flex:1;background:#fff;border:none;padding:16px 22px;color:var(--text);font-family:'Jost',sans-serif;font-size:13px;outline:none}
-.nl-form input::placeholder{color:var(--muted)}
-.nl-form button{background:var(--dark-brown);color:#fff;border:none;padding:16px 28px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:500;white-space:nowrap;transition:background .25s}
-.nl-form button:hover{background:var(--terracotta)}
-
-/* ── FOOTER ── */
+/* FOOTER */
 .site-footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 40px 32px}
 .footer-inner{max-width:1400px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;margin-bottom:48px}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.14em;color:var(--text);text-transform:uppercase;display:block;margin-bottom:14px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.14em;color:var(--dark-brown);text-transform:uppercase;display:block;margin-bottom:14px}
 .footer-desc{font-size:13px;color:var(--muted);line-height:1.85;max-width:240px}
-.footer-col h4{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text);margin-bottom:18px;font-weight:500}
+.footer-col h4{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:20px;font-weight:400}
 .footer-col ul{list-style:none}
 .footer-col ul li{margin-bottom:10px}
-.footer-col ul li a{font-size:13px;color:var(--muted);transition:color .2s;display:inline-block}
+.footer-col ul li a{font-size:13px;color:var(--muted);transition:color .2s}
 .footer-col ul li a:hover{color:var(--dark-brown)}
 .footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:12px;color:var(--muted)}
 
-/* ── UTILITAIRES ── */
-.back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--dark-brown);color:#fff;border:none;display:flex;align-items:center;justify-content:center;border-radius:0px;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s,background .2s;z-index:90;box-shadow:0 4px 16px rgba(166,124,82,.35)}
+/* BACK TO TOP */
+.back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--dark-brown);color:var(--gold);border:none;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s;z-index:90}
 .back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
 .back-to-top:hover{background:var(--terracotta)}
 
 /* POPUP */
-.popup-overlay{position:fixed;inset:0;z-index:300;background:rgba(90,70,51,.4);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s;backdrop-filter:blur(4px)}
-.popup-overlay.open{opacity:1;pointer-events:auto}
-.popup-box{background:var(--cream);max-width:420px;width:90%;padding:48px 44px 40px;position:relative;text-align:center;transform:translateY(16px);transition:transform .4s;border-radius:0px;box-shadow:0 20px 60px rgba(90,70,51,.15)}
-.popup-overlay.open .popup-box{transform:translateY(0)}
-.popup-close{position:absolute;top:16px;right:18px;background:none;border:none;color:var(--muted);font-size:20px;line-height:1;transition:color .2s;border-radius:0px}
-.popup-close:hover{color:var(--text)}
-.popup-eyebrow{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--brown);margin-bottom:12px;display:block}
-.popup-title{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;line-height:1.1;color:var(--text);margin-bottom:16px}
-.popup-text{font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:26px}
-.popup-form{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-.popup-form input{background:#fff;border:1.5px solid var(--border);border-radius:0px;padding:12px 16px;font-family:'Jost',sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;text-align:center}
-.popup-form input:focus{border-color:var(--dark-brown)}
-.popup-form input::placeholder{color:var(--muted)}
-.popup-submit{background:var(--dark-brown);color:#fff;border:none;padding:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:background .25s;border-radius:0px}
-.popup-submit:hover{background:var(--terracotta)}
-.popup-decline{background:none;border:none;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);transition:color .2s}
-.popup-decline:hover{color:var(--text)}
+.popup-overlay{position:fixed;inset:0;background:rgba(58,42,30,.6);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+.popup-overlay.show{opacity:1;pointer-events:auto}
+.popup{background:var(--warm-white);max-width:460px;width:90%;padding:48px 40px;position:relative;text-align:center}
+.popup-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer;line-height:1}
+.popup h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--dark-brown);margin-bottom:10px}
+.popup h2 em{font-style:italic;color:var(--brown)}
+.popup p{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:24px}
+.popup input{width:100%;padding:13px 16px;border:1px solid var(--border);background:var(--cream);font-family:'Jost',sans-serif;font-size:13px;color:var(--text);margin-bottom:12px;outline:none}
+.popup button{width:100%;background:var(--dark-brown);color:#fff;border:none;padding:15px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.popup button:hover{background:var(--terracotta)}
+.popup-skip{font-size:11px;color:var(--muted);margin-top:14px;cursor:pointer;display:block;text-decoration:underline;text-underline-offset:3px}
 
 /* COOKIE */
-.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--cream);border-top:1px solid var(--border);transform:translateY(100%);transition:transform .4s;box-shadow:0 -4px 20px rgba(90,70,51,.08)}
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--dark-brown);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:150;transform:translateY(100%);transition:transform .4s}
 .cookie-banner.show{transform:translateY(0)}
-.cookie-inner{max-width:1400px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.cookie-text p{font-size:12px;color:var(--muted);line-height:1.7}
-.cookie-text a{color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px}
-.cookie-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text);margin-bottom:4px;font-weight:500;display:block}
+.cookie-text{font-size:12px;color:rgba(245,240,234,.7);line-height:1.6}
+.cookie-text a{color:var(--gold);text-decoration:underline}
 .cookie-actions{display:flex;gap:10px;flex-shrink:0}
-.cookie-accept{background:var(--dark-brown);color:#fff;border:none;padding:9px 22px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;border-radius:0px;transition:background .2s}
-.cookie-accept:hover{background:var(--terracotta)}
-.cookie-decline{background:none;border:1.5px solid var(--border);color:var(--muted);padding:8px 16px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;border-radius:0px;transition:all .2s}
-.cookie-decline:hover{border-color:var(--dark-brown);color:var(--dark-brown)}
+.cookie-btn{padding:9px 20px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border:none;transition:all .2s}
+.cookie-accept{background:var(--gold);color:var(--dark-brown)}
+.cookie-accept:hover{background:#d4b87a}
+.cookie-refuse{background:transparent;color:rgba(245,240,234,.6);border:1px solid rgba(245,240,234,.2)}
+.cookie-refuse:hover{color:var(--cream)}
 
-/* MENU MOBILE */
-.mobile-overlay{position:fixed;inset:0;z-index:150;background:rgba(90,70,51,.35);opacity:0;pointer-events:none;transition:opacity .35s;backdrop-filter:blur(2px)}
-.mobile-overlay.open{opacity:1;pointer-events:auto}
-.mobile-menu{position:fixed;top:0;left:0;bottom:0;width:min(320px,85vw);background:var(--cream);z-index:160;transform:translateX(-100%);transition:transform .35s;display:flex;flex-direction:column;box-shadow:4px 0 24px rgba(90,70,51,.12)}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border)}
-.mobile-close{background:none;border:none;color:var(--muted);font-size:22px;line-height:1;padding:4px;transition:color .2s;border-radius:0px}
-.mobile-close:hover{color:var(--text)}
-.mobile-nav{padding:24px;flex:1;display:flex;flex-direction:column}
-.mobile-nav a{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--text);padding:15px 0;border-bottom:1px solid var(--border);display:block;transition:color .2s}
-.mobile-nav a:first-child{border-top:1px solid var(--border)}
-.mobile-nav a:hover{color:var(--dark-brown)}
-.mobile-footer{padding:22px 24px;border-top:1px solid var(--border)}
-.mobile-footer a{font-size:12px;color:var(--muted);display:block;margin-bottom:10px;transition:color .2s}
-.mobile-footer a:hover{color:var(--dark-brown)}
-
-/* RESPONSIVE */
 @media(max-width:1024px){
-  .products-grid{grid-template-columns:1fr 1fr;gap:20px}
-  .sf-grid{grid-template-columns:1fr 1fr;gap:16px}
-  .lookbook-teaser{grid-template-columns:1fr}
-  .lookbook-photos{height:320px}
-  .comp-table{grid-template-columns:1fr}
-  .comp-col-box:not(:first-child){display:none}
-  .journal-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .products-grid{grid-template-columns:1fr 1fr}
+  .sf-grid{grid-template-columns:1fr 1fr}
+  .comparatif-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .header-inner{padding:14px 24px}
   .site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}
+  .collection,.savoir-faire,.newsletter{padding:60px 24px}
+  .comparatif{padding:60px 24px}
 }
 @media(max-width:700px){
-  .hero-content{padding:60px 24px}
-  .hero-title{font-size:44px}
-  .hero-actions{flex-direction:column;align-items:flex-start}
-  .btn-primary,.btn-outline{width:100%;text-align:center;justify-content:center}
-  .collection,.journal-preview,.faq-section{padding:56px 24px}
-  .savoir-faire,.newsletter-section,.comparatif{padding:56px 24px}
-  .lookbook-content{padding:40px 24px}
+  .hero-content{left:24px;bottom:36px}
   .products-grid{grid-template-columns:1fr}
-  .journal-grid{grid-template-columns:1fr}
   .sf-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
-  .nl-form{flex-direction:column;border-radius:0px}
-  .cookie-inner{flex-direction:column;padding:18px 24px;gap:14px}
-  .cookie-actions{width:100%}
-  .cookie-accept,.cookie-decline{flex:1;text-align:center}
-  .back-to-top{bottom:20px;right:20px}
+  .cookie-banner{flex-direction:column;padding:20px 24px}
+  .newsletter-form{flex-direction:column}
 }
-@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-
-  /* ── MENU DÉROULANT ── */
-  .nav-dropdown { position: relative; }
-  .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
-  .nav-dropdown > a::after { display: none; }
-  .nav-dropdown-arrow { font-size: 8px; opacity: .5; transition: transform .3s; display: inline-block; }
-  .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
-  .dropdown-menu {
-    position: absolute; top: calc(100% + 14px); left: 50%;
-    transform: translateX(-50%);
-    background: var(--warm-white); border: 1px solid var(--border);
-    min-width: 180px; opacity: 0; pointer-events: none;
-    transition: opacity .25s, transform .25s;
-    transform: translateX(-50%) translateY(-6px);
-    box-shadow: 0 8px 32px rgba(58,42,30,.1);
-    z-index: 200;
-  }
-  .nav-dropdown:hover .dropdown-menu {
-    opacity: 1; pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-  }
-  .dropdown-menu a {
-    display: block; padding: 13px 20px;
-    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--dark-brown); border-bottom: 1px solid var(--border);
-    transition: background .2s, color .2s;
-  }
-  .dropdown-menu a:last-child { border-bottom: none; }
-  .dropdown-menu a:hover { background: var(--cream); color: var(--terracotta); }
-  .dropdown-menu a.active { color: var(--terracotta); }
 </style>
 </head>
 <body>
@@ -367,15 +230,12 @@ button{cursor:pointer;font-family:inherit}
 <header class="site-header" id="site-header">
   <div class="header-inner">
     <div class="header-actions">
-      <button class="header-btn" id="menu-btn" aria-label="Menu">
+      <button class="header-btn" aria-label="Menu">
         <svg width="22" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="1" x2="22" y2="1"/><line x1="0" y1="7" x2="16" y2="7"/><line x1="0" y1="13" x2="22" y2="13"/></svg>
       </button>
     </div>
     <a href="index.html" class="logo">Atelier MAUDÉ</a>
     <div class="header-actions">
-      <button class="header-btn" aria-label="Mon compte">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      </button>
       <button class="header-btn" aria-label="Panier">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
       </button>
@@ -397,23 +257,16 @@ button{cursor:pointer;font-family:inherit}
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO VIDÉO -->
 <section class="hero">
-  <div class="hero-bg"><img src="hero.png" alt="Collection Atelier MAUDÉ" fetchpriority="high" width="1400" height="933"></div>
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hua-long-camel-face.jpg">
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="hero-badge">Collection 2025 · –30%</span>
-    <h1 class="hero-title">Des manteaux<br>faits pour <em>durer.</em></h1>
-    <p class="hero-text">50% laine, 50% cachemire de Mongolie-Intérieure. Fabriqués à Suzhou avec soin.</p>
-    <div class="hero-actions">
-      <a href="manteaux.html" class="btn-primary">Découvrir la collection</a>
-      <a href="promotions.html" class="btn-outline">Promotions –30%</a>
-    </div>
-    <div class="hero-trust">
-      <span><span class="trust-dot"></span>Livraison gratuite</span>
-      <span><span class="trust-dot"></span>Retours 30 jours</span>
-      <span><span class="trust-dot"></span>Paiement sécurisé</span>
-    </div>
+    <span class="hero-label">Nouveautés</span>
+    <span class="hero-season">Collection Automne-Hiver 2026</span>
+    <a href="manteaux.html" class="hero-discover">Découvrir</a>
   </div>
 </section>
 
@@ -424,246 +277,149 @@ button{cursor:pointer;font-family:inherit}
       <span class="section-label">La Collection</span>
       <h2 class="section-title">Nos <em>manteaux</em></h2>
     </div>
-    <a href="manteaux.html" class="text-link">Voir tous les modèles →</a>
+    <a href="manteaux.html" class="text-link">Voir tous les manteaux →</a>
   </div>
   <div class="products-grid">
-    <article class="product-card">
-      <div class="product-img">
-        <div class="product-tag">Promotion</div>
-        <div class="product-badge">–23%</div>
-        <img src="yun-court-noir.jpeg" alt="Manteau Yūn Court Ceinturé — noir" loading="lazy" width="800" height="1066">
-        <div class="product-cta-hover"><a href="yun-court.html">Voir le produit</a></div>
+    <!-- YŪN COURT -->
+    <div class="product-card">
+      <div class="product-card-img">
+        <span class="product-badge">–23%</span>
+        <a href="yun-court.html"><img src="yun-court-marine-face.png" alt="Manteau Yūn Court Ceinturé" loading="lazy"></a>
       </div>
-      <div class="product-info">
-        <h3 class="product-name">Manteau Yūn Court Ceinturé</h3>
-        <div class="product-prices">
+      <div class="product-card-info">
+        <p class="product-name">Yūn Court Ceinturé</p>
+        <div class="product-price">
           <span class="price-now">350 €</span>
-          <span class="price-old">455 €</span>
+          <span class="price-was">455 €</span>
+          <span class="price-save">–23%</span>
         </div>
-        <span class="price-save">Économisez 105 €</span>
-        <div class="swatches">
-          <span class="swatch sw-noir active" title="Noir"></span>
-          <span class="swatch sw-marine" title="Marine"></span>
-          <span class="sw-label">Noir, Marine</span>
+        <div class="product-colors">
+          <div class="color-dot active" style="background:#1e2d45" title="Marine"></div>
+          <div class="color-dot" style="background:#1a1410" title="Noir"></div>
         </div>
       </div>
-    </article>
-    <article class="product-card">
-      <div class="product-img">
-        <div class="product-tag">Promotion</div>
-        <div class="product-badge">–23%</div>
-        <img src="hua-long-camel-1.jpeg" alt="Manteau Huā Long — camel" loading="lazy" width="800" height="1066">
-        <div class="product-cta-hover"><a href="hua-long.html">Voir le produit</a></div>
+    </div>
+    <!-- HUĀ LONG -->
+    <div class="product-card">
+      <div class="product-card-img">
+        <span class="product-badge">–23%</span>
+        <a href="hua-long.html"><img src="hua-long-camel-face.jpg" alt="Manteau Huā Long" loading="lazy"></a>
       </div>
-      <div class="product-info">
-        <h3 class="product-name">Manteau Huā Long</h3>
-        <div class="product-prices">
+      <div class="product-card-info">
+        <p class="product-name">Huā Long</p>
+        <div class="product-price">
           <span class="price-now">420 €</span>
-          <span class="price-old">545 €</span>
+          <span class="price-was">545 €</span>
+          <span class="price-save">–23%</span>
         </div>
-        <span class="price-save">Économisez 125 €</span>
-        <div class="swatches">
-          <span class="swatch sw-camel active" title="Camel"></span>
-          <span class="sw-label">Camel</span>
+        <div class="product-colors">
+          <div class="color-dot active" style="background:#C19A6B" title="Camel"></div>
+          <div class="color-dot" style="background:#4A4A4A" title="Gris"></div>
         </div>
       </div>
-    </article>
-    <article class="product-card">
-      <div class="product-img">
-        <div class="product-tag">Promotion</div>
-        <div class="product-badge">–23%</div>
-        <img src="yun-long-noir.png" alt="Manteau Yūn Long Ceinturé — noir" loading="lazy" width="800" height="1066">
-        <div class="product-cta-hover"><a href="yun-long.html">Voir le produit</a></div>
+    </div>
+    <!-- YŪN LONG -->
+    <div class="product-card">
+      <div class="product-card-img">
+        <span class="product-badge">–23%</span>
+        <a href="yun-long.html"><img src="yun-long-marron-cote.jpg" alt="Manteau Yūn Long Ceinturé" loading="lazy"></a>
       </div>
-      <div class="product-info">
-        <h3 class="product-name">Manteau Yūn Long Ceinturé</h3>
-        <div class="product-prices">
+      <div class="product-card-info">
+        <p class="product-name">Yūn Long Ceinturé</p>
+        <div class="product-price">
           <span class="price-now">450 €</span>
-          <span class="price-old">585 €</span>
+          <span class="price-was">585 €</span>
+          <span class="price-save">–23%</span>
         </div>
-        <span class="price-save">Économisez 135 €</span>
-        <div class="swatches">
-          <span class="swatch sw-noir active" title="Noir"></span>
-          <span class="sw-label">Noir</span>
+        <div class="product-colors">
+          <div class="color-dot active" style="background:#1a1410" title="Noir"></div>
+          <div class="color-dot" style="background:#3D1A14" title="Marron"></div>
         </div>
       </div>
-    </article>
+    </div>
   </div>
 </section>
 
 <!-- SAVOIR-FAIRE -->
 <section class="savoir-faire">
   <div class="sf-inner">
-    <div class="sf-header">
-      <span class="section-label">La Matière avant tout</span>
-      <h2 class="section-title">Nos manteaux<br>sont <em>différents.</em></h2>
-    </div>
+    <span class="section-label">Nos engagements</span>
+    <h2 class="section-title">Nos manteaux sont <em>différents.</em></h2>
     <div class="sf-grid">
       <div class="sf-item">
-        <span class="sf-num">01</span>
-        <p class="sf-item-title">Fibre de Mongolie-Intérieure</p>
-        <p class="sf-item-text">Fibres sélectionnées en Mongolie-Intérieure, région réputée pour ses laines et cachemires parmi les plus fins au monde.</p>
+        <div class="sf-num">01</div>
+        <p class="sf-title">La matière</p>
+        <p class="sf-text">50% laine, 50% cachemire de Mongolie-Intérieure. Une fibre sélectionnée pour sa finesse et sa durabilité.</p>
       </div>
       <div class="sf-item">
-        <span class="sf-num">02</span>
-        <p class="sf-item-title">Fabriqués à Suzhou</p>
-        <p class="sf-item-text">Capitale historique du textile chinois depuis 2 500 ans. Un savoir-faire artisanal transmis de génération en génération.</p>
+        <div class="sf-num">02</div>
+        <p class="sf-title">Le savoir-faire</p>
+        <p class="sf-text">Fabriqués à Suzhou, Chine, avec 2 500 ans de tradition textile. Plus de 40 étapes de confection par manteau.</p>
       </div>
       <div class="sf-item">
-        <span class="sf-num">03</span>
-        <p class="sf-item-title">50% Laine · 50% Cachemire</p>
-        <p class="sf-item-text">La laine apporte structure et durabilité. Le cachemire offre ce toucher soyeux incomparable. L'alliance parfaite.</p>
+        <div class="sf-num">03</div>
+        <p class="sf-title">Le prix juste</p>
+        <p class="sf-text">Vente en direct, sans intermédiaire. Vous payez la matière et le savoir-faire — pas les marges de distribution.</p>
       </div>
       <div class="sf-item">
-        <span class="sf-num">04</span>
-        <p class="sf-item-title">Prix Direct</p>
-        <p class="sf-item-text">Sans intermédiaires. Vous payez la matière et le savoir-faire, pas les marges d'une grande maison.</p>
+        <div class="sf-num">04</div>
+        <p class="sf-title">Pour durer</p>
+        <p class="sf-text">Chaque pièce est conçue pour traverser les années. Un investissement conscient, pas un achat impulsif.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- LOOKBOOK TEASER -->
-<section class="lookbook-teaser">
-  <div class="lookbook-photos">
-    <div class="lookbook-photo"><img src="yun-court-noir.jpeg" alt="Yūn Court noir" loading="lazy"></div>
-    <div class="lookbook-photo"><img src="hua-long-camel-1.jpeg" alt="Huā Long camel" loading="lazy"></div>
-    <div class="lookbook-photo"><img src="yun-court-marine.jpeg" alt="Yūn Court marine" loading="lazy"></div>
-    <div class="lookbook-photo"><img src="yun-long-noir.png" alt="Yūn Long noir" loading="lazy"></div>
-  </div>
-  <div class="lookbook-content">
-    <span class="lookbook-eyebrow">Galerie</span>
-    <h2 class="lookbook-title">Nos manteaux<br><em>sous tous les angles.</em></h2>
-    <p class="lookbook-text">Détails, matières, tombés — découvrez chaque pièce en situation.</p>
-    <a href="lookbook.html" class="btn-primary" style="align-self:flex-start">Voir le lookbook</a>
   </div>
 </section>
 
 <!-- COMPARATIF -->
 <section class="comparatif">
-  <div class="comp-inner">
-    <span class="section-label" style="display:block;text-align:center">Pourquoi nous choisir</span>
-    <h2 class="comp-title">Atelier MAUDÉ vs<br><em>les autres marques</em></h2>
-    <div class="comp-table">
-      <div class="comp-col-box ours">
-        <div class="comp-head">Atelier MAUDÉ</div>
-        <div class="comp-row"><span class="check">✓</span> Laine &amp; cachemire Mongolie</div>
-        <div class="comp-row"><span class="check">✓</span> Prix direct, sans intermédiaire</div>
-        <div class="comp-row"><span class="check">✓</span> Composition transparente</div>
-        <div class="comp-row"><span class="check">✓</span> Livraison gratuite FR &amp; BE</div>
-        <div class="comp-row"><span class="check">✓</span> Retours 30 jours</div>
-        <div class="comp-row"><span class="check">✓</span> Fondé par deux sœurs</div>
+  <div class="comparatif-inner">
+    <h2 class="comparatif-title">Pourquoi MAUDÉ plutôt qu'<em>ailleurs</em> ?</h2>
+    <div class="comparatif-grid">
+      <div class="comp-col">
+        <span class="comp-brand">Grandes maisons</span>
+        <p class="comp-price">800–1 500€</p>
+        <ul class="comp-items">
+          <li class="yes">Qualité cachemire ✓</li>
+          <li>Marges boutiques ×3</li>
+          <li>Publicité coûteuse</li>
+          <li>Vous payez l'image</li>
+        </ul>
       </div>
-      <div class="comp-col-box">
-        <div class="comp-head">Grandes maisons</div>
-        <div class="comp-row"><span class="check">✓</span> Bonne qualité matières</div>
-        <div class="comp-row"><span class="cross">✗</span> Prix 800€ – 2 000€+</div>
-        <div class="comp-row"><span class="check">✓</span> Composition affichée</div>
-        <div class="comp-row"><span class="cross">✗</span> Frais de port facturés</div>
-        <div class="comp-row"><span class="check">✓</span> Retours acceptés</div>
-        <div class="comp-row"><span class="cross">✗</span> Structure corporate</div>
+      <div class="comp-col highlight">
+        <span class="comp-brand">Atelier MAUDÉ</span>
+        <p class="comp-price" style="color:var(--gold)">350–450€</p>
+        <ul class="comp-items">
+          <li class="yes">Même qualité matière ✓</li>
+          <li class="yes">Vente directe ✓</li>
+          <li class="yes">Transparence totale ✓</li>
+          <li class="yes">Livraison gratuite ✓</li>
+        </ul>
       </div>
-      <div class="comp-col-box">
-        <div class="comp-head">Fast fashion</div>
-        <div class="comp-row"><span class="cross">✗</span> Synthétiques bas de gamme</div>
-        <div class="comp-row"><span class="check">✓</span> Prix bas (50€ – 150€)</div>
-        <div class="comp-row"><span class="cross">✗</span> Composition souvent floue</div>
-        <div class="comp-row"><span class="check">✓</span> Livraison rapide</div>
-        <div class="comp-row"><span class="cross">✗</span> Retours complexes</div>
-        <div class="comp-row"><span class="cross">✗</span> Dure 1 à 2 saisons</div>
+      <div class="comp-col">
+        <span class="comp-brand">Fast fashion</span>
+        <p class="comp-price">30–80€</p>
+        <ul class="comp-items">
+          <li>Synthétique / polyester</li>
+          <li>Durée de vie : 1 saison</li>
+          <li>Impact environnemental</li>
+          <li>Aucun savoir-faire</li>
+        </ul>
       </div>
     </div>
-    <p class="comp-note">Le luxe accessible, sans compromis. <a href="manteaux.html">Découvrir nos manteaux →</a></p>
   </div>
-</section>
-
-<!-- JOURNAL -->
-<section class="journal-preview">
-  <div class="journal-head">
-    <div>
-      <span class="section-label">Le Journal</span>
-      <h2 class="section-title">Conseils &amp; <em>tendances</em></h2>
-    </div>
-    <a href="journal.html" class="text-link">Tous les articles →</a>
-  </div>
-  <div class="journal-grid">
-    <article class="article-card">
-      <div class="article-img">
-        <div class="article-cat">Guide</div>
-        <img src="yun-court-noir.jpeg" alt="Choisir son manteau" loading="lazy">
-      </div>
-      <div class="article-body">
-        <div class="article-meta"><span>Mars 2025</span><span>·</span><span>6 min</span></div>
-        <a href="article-choisir-manteau.html" class="article-title">L'art du cachemire — comment bien choisir son manteau</a>
-        <p class="article-excerpt">Composition, coupe, longueur, prix… Le guide complet pour investir intelligemment.</p>
-        <a href="article-choisir-manteau.html" class="article-link">Lire l'article →</a>
-      </div>
-    </article>
-    <article class="article-card">
-      <div class="article-img">
-        <div class="article-cat">Entretien</div>
-        <img src="hua-long-camel-1.jpeg" alt="Entretien cachemire" loading="lazy">
-      </div>
-      <div class="article-body">
-        <div class="article-meta"><span>Février 2025</span><span>·</span><span>4 min</span></div>
-        <a href="article-entretien-cachemire.html" class="article-title">Comment entretenir son manteau en laine et cachemire</a>
-        <p class="article-excerpt">Les gestes essentiels pour préserver la douceur de votre manteau saison après saison.</p>
-        <a href="article-entretien-cachemire.html" class="article-link">Lire l'article →</a>
-      </div>
-    </article>
-    <article class="article-card">
-      <div class="article-img">
-        <div class="article-cat">Tendances</div>
-        <img src="yun-long-noir.png" alt="Tendances 2026" loading="lazy">
-      </div>
-      <div class="article-body">
-        <div class="article-meta"><span>Janvier 2025</span><span>·</span><span>5 min</span></div>
-        <a href="article-tendances-2026.html" class="article-title">Tendances manteaux femme automne-hiver 2026</a>
-        <p class="article-excerpt">Coupes oversizes, matières nobles — décryptage des grandes tendances pour l'hiver.</p>
-        <a href="article-tendances-2026.html" class="article-link">Lire l'article →</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="faq-head">
-    <span class="section-label">FAQ</span>
-    <h2 class="section-title">Questions <em>fréquentes</em></h2>
-  </div>
-  <div class="faq-item">
-    <button class="faq-btn" aria-expanded="false">Quelle est la composition de vos manteaux ?<span class="faq-icon">+</span></button>
-    <div class="faq-answer"><p class="faq-answer-text">Nos manteaux sont composés à <strong>50% de laine et 50% de cachemire</strong> de Mongolie-Intérieure. La laine apporte structure, le cachemire offre le toucher soyeux incomparable.</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-btn" aria-expanded="false">Comment choisir ma taille ?<span class="faq-icon">+</span></button>
-    <div class="faq-answer"><p class="faq-answer-text">Nous recommandons votre taille habituelle. Pour un port plus enveloppant, prenez une taille au-dessus. Consultez notre <a href="guide-des-tailles.html">guide des tailles</a>.</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-btn" aria-expanded="false">Quels sont les délais et frais de livraison ?<span class="faq-icon">+</span></button>
-    <div class="faq-answer"><p class="faq-answer-text">La livraison est <strong>gratuite</strong> en France et Belgique. Délai estimé : 8 à 15 jours ouvrés. Numéro de suivi envoyé par e-mail dès l'expédition.</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-btn" aria-expanded="false">Puis-je retourner mon manteau ?<span class="faq-icon">+</span></button>
-    <div class="faq-answer"><p class="faq-answer-text"><strong>30 jours</strong> à compter de la réception, article non porté. Contactez-nous à <a href="/cdn-cgi/l/email-protection#84e8e5f0e1e8ede1f6e9e5f1e0e1c4e3e9e5ede8aae7ebe9"><span class="__cf_email__" data-cfemail="8ae6ebfeefe6e3eff8e7ebffeeefcaede7ebe3e6a4e9e5e7">[email&#160;protected]</span></a>.</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-btn" aria-expanded="false">Où sont fabriqués vos manteaux ?<span class="faq-icon">+</span></button>
-    <div class="faq-answer"><p class="faq-answer-text">À <strong>Suzhou, Chine</strong> — capitale historique du textile depuis 2 500 ans, dans des ateliers artisanaux partenaires.</p></div>
-  </div>
-  <p class="faq-more">D'autres questions ? <a href="contact.html">Consulter notre FAQ complète →</a></p>
 </section>
 
 <!-- NEWSLETTER -->
-<section class="newsletter-section">
-  <span class="nl-eyebrow">Le Cercle MAUDÉ</span>
-  <h2 class="nl-title">Restez informée</h2>
-  <p class="nl-text">Recevez en avant-première nos nouvelles collections et offres exclusives.</p>
-  <form class="nl-form" onsubmit="handleNL(event)" novalidate>
-    <input type="email" placeholder="Votre adresse e-mail" autocomplete="email" required>
-    <button type="submit">S'abonner</button>
-  </form>
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <span class="section-label">Le Cercle MAUDÉ</span>
+    <h2>Restez <em>informée.</em></h2>
+    <p>Accès en avant-première aux nouvelles pièces, conseils d'entretien et offres exclusives.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Votre adresse email" aria-label="Email">
+      <button type="button">S'inscrire</button>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -672,33 +428,33 @@ button{cursor:pointer;font-family:inherit}
     <div class="footer-grid">
       <div>
         <a href="index.html" class="footer-logo">Atelier MAUDÉ</a>
-        <p class="footer-desc">Des manteaux en laine et cachemire d'exception, pour celles qui choisissent l'élégance intemporelle.</p>
+        <p class="footer-desc">Des manteaux en laine et cachemire d'exception, conçus pour durer.</p>
       </div>
       <div class="footer-col">
         <h4>Boutique</h4>
         <ul>
           <li><a href="manteaux.html">Manteaux</a></li>
           <li><a href="promotions.html">Promotions</a></li>
-          <li><a href="carte-cadeau.html">Carte cadeau</a></li>
           <li><a href="guide-des-tailles.html">Guide des tailles</a></li>
+          <li><a href="carte-cadeau.html">Carte cadeau</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Informations</h4>
+        <h4>La Maison</h4>
         <ul>
           <li><a href="notre-histoire.html">Notre histoire</a></li>
           <li><a href="notre-cachemire.html">Notre cachemire</a></li>
           <li><a href="lookbook.html">Lookbook</a></li>
           <li><a href="journal.html">Journal</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="cgv.html">CGV</a></li>
-          <li><a href="confidentialite.html">Confidentialité</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Nous rejoindre</h4>
+        <h4>Légal</h4>
         <ul>
-          <li><a href="/cdn-cgi/l/email-protection#1975786d7c75707c6b74786c7d7c597e74787075377a7674"><span class="__cf_email__" data-cfemail="99f5f8edfcf5f0fcebf4f8ecfdfcd9fef4f8f0f5b7faf6f4">[email&#160;protected]</span></a></li>
+          <li><a href="cgv.html">CGV</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+          <li><a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a></li>
           <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>
@@ -710,85 +466,53 @@ button{cursor:pointer;font-family:inherit}
   </div>
 </footer>
 
+<!-- BACK TO TOP -->
 <button class="back-to-top" id="btt" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14"><polyline points="2,10 7,4 12,10"/></svg>
 </button>
 
-<!-- POPUP -->
-<div class="popup-overlay" id="popup" role="dialog" aria-modal="true">
-  <div class="popup-box">
-    <button class="popup-close" onclick="closePopup()">✕</button>
-    <span class="popup-eyebrow">Bienvenue</span>
-    <h2 class="popup-title">Le Cercle MAUDÉ</h2>
-    <p class="popup-text">Recevez nos nouvelles pièces et offres exclusives en avant-première.</p>
-    <form class="popup-form" onsubmit="handlePopup(event)" novalidate>
-      <input type="email" placeholder="Votre adresse e-mail" required>
-      <button type="submit" class="popup-submit">S'inscrire</button>
-    </form>
-    <button class="popup-decline" onclick="closePopup()">Non, merci</button>
+<!-- POPUP NEWSLETTER -->
+<div class="popup-overlay" id="popup">
+  <div class="popup">
+    <button class="popup-close" onclick="closePopup()">×</button>
+    <h2>Le Cercle <em>MAUDÉ</em></h2>
+    <p>Rejoignez notre cercle et bénéficiez d'un accès privilégié aux nouvelles pièces et offres exclusives.</p>
+    <input type="email" placeholder="Votre adresse email">
+    <button type="button">Rejoindre le cercle</button>
+    <span class="popup-skip" onclick="closePopup()">Non merci, continuer sans s'inscrire</span>
   </div>
 </div>
 
 <!-- COOKIE -->
-<div class="cookie-banner" id="cookie" role="dialog">
-  <div class="cookie-inner">
-    <div class="cookie-text">
-      <span class="cookie-label">Cookies</span>
-      <p>Cookies techniques uniquement. <a href="confidentialite.html">En savoir plus</a></p>
-    </div>
-    <div class="cookie-actions">
-      <button class="cookie-accept" onclick="acceptCookies()">Accepter</button>
-      <button class="cookie-decline" onclick="declineCookies()">Refuser</button>
-    </div>
+<div class="cookie-banner" id="cookie">
+  <p class="cookie-text">Nous utilisons des cookies pour améliorer votre expérience. <a href="confidentialite.html">En savoir plus</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-refuse" onclick="refuseCookie()">Refuser</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookie()">Accepter</button>
   </div>
 </div>
 
-<!-- MENU MOBILE -->
-<div class="mobile-overlay" id="mob-overlay" onclick="closeMenu()"></div>
-<div class="mobile-menu" id="mob-menu" role="dialog" aria-modal="true">
-  <div class="mobile-head">
-    <a href="index.html" class="logo">Atelier MAUDÉ</a>
-    <button class="mobile-close" onclick="closeMenu()">✕</button>
-  </div>
-  <nav class="mobile-nav">
-    <a href="manteaux.html">Manteaux</a>
-    <a href="promotions.html">Promotions</a>
-    <a href="notre-histoire.html">Notre Histoire</a>
-    <a href="lookbook.html">Lookbook</a>
-    <a href="journal.html">Journal</a>
-    <a href="contact.html">Contact</a>
-    <a href="carte-cadeau.html">Carte cadeau</a>
-    <a href="guide-des-tailles.html">Guide des tailles</a>
-  </nav>
-  <div class="mobile-footer">
-    <a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a>
-    <a href="/cdn-cgi/l/email-protection#016d6075646d6864736c6074656441666c60686d2f626e6c"><span class="__cf_email__" data-cfemail="701c1104151c1915021d1105141530171d11191c5e131f1d">[email&#160;protected]</span></a>
-  </div>
-</div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 window.addEventListener('scroll',function(){
   document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
   document.getElementById('btt').classList.toggle('show',scrollY>400);
 },{passive:true});
 
-document.querySelectorAll('.faq-btn').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var item=btn.closest('.faq-item'),isOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
-    if(!isOpen)item.classList.add('open');
-    btn.setAttribute('aria-expanded',!isOpen);
-  });
-});
+// Popup newsletter
+if(!sessionStorage.getItem('popup_shown')){
+  setTimeout(function(){
+    document.getElementById('popup').classList.add('show');
+    sessionStorage.setItem('popup_shown','1');
+  },4000);
+}
+function closePopup(){document.getElementById('popup').classList.remove('show');}
 
-function openMenu(){document.getElementById('mob-menu').classList.add('open');document.getElementById('mob-overlay').classList.add('open');document.body.style.overflow='hidden';}
-function closeMenu(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('mob-overlay').classList.remove('open');document.body.style.overflow='';}
-document.getElementById('menu-btn').addEventListener('click',openMenu);
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenu();closePopup();}});
-
-function closePopup(){document.getElementById('popup').classList.remove('open');sessionStorage.setItem('maude_popup','1');}
-function handlePopup(e){e.preventDefault();var btn=e.target.querySelector('.popup-submit');btn.textContent='Bienvenue ✓';btn.style.background='var(--terracotta)';sessionStorage.setItem('maude_popup','1');setTimeout(closePopup,1800);}
-document.getElementById('popup').addEventListener('click',function(e){if(e.target===this)closePopup();});
-setTimeout(function(){if(!sessionStorage.getItem('maude_popup'))document.getElementById('popup').classList.add('open');},6000);
-
-function handleNL(e){e.preventDefault();var btn=e.target.querySelector('button');btn.textContent='Merci !';btn.style.background='var(--terracotta)';e.t
+// Cookie
+if(!localStorage.getItem('cookie_choice')){
+  setTimeout(function(){document.getElementById('cookie').classList.add('show');},1000);
+}
+function acceptCookie(){localStorage.setItem('cookie_choice','accepted');document.getElementById('cookie').classList.remove('show');}
+function refuseCookie(){localStorage.setItem('cookie_choice','refused');document.getElementById('cookie').classList.remove('show');}
+</script>
+</body>
+</html>
