@@ -337,6 +337,36 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   .lookbook-title em { color: var(--brown) !important; }
   .lookbook-text { color: rgba(58,42,30,0.65) !important; }
 
+
+  /* ── MENU DÉROULANT ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
+  .nav-dropdown > a::after { display: none; }
+  .nav-dropdown-arrow { font-size: 8px; opacity: .5; transition: transform .3s; display: inline-block; }
+  .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
+  .dropdown-menu {
+    position: absolute; top: calc(100% + 14px); left: 50%;
+    transform: translateX(-50%);
+    background: var(--warm-white); border: 1px solid var(--border);
+    min-width: 180px; opacity: 0; pointer-events: none;
+    transition: opacity .25s, transform .25s;
+    transform: translateX(-50%) translateY(-6px);
+    box-shadow: 0 8px 32px rgba(58,42,30,.1);
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1; pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .dropdown-menu a {
+    display: block; padding: 13px 20px;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--dark-brown); border-bottom: 1px solid var(--border);
+    transition: background .2s, color .2s;
+  }
+  .dropdown-menu a:last-child { border-bottom: none; }
+  .dropdown-menu a:hover { background: var(--cream); color: var(--terracotta); }
+  .dropdown-menu a.active { color: var(--terracotta); }
 </style>
 
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
@@ -400,7 +430,13 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   <nav>
     <a href="manteaux.html">Manteaux</a>
     <a href="promotions.html">Promotions</a>
-    <a href="notre-histoire.html">Notre Histoire</a>
+    <div class="nav-dropdown">
+      <a href="notre-histoire.html">La Maison <span class="nav-dropdown-arrow">▾</span></a>
+      <div class="dropdown-menu">
+        <a href="notre-histoire.html">Notre Histoire</a>
+        <a href="notre-cachemire.html">Notre Cachemire</a>
+      </div>
+    </div>
     <a href="lookbook.html">Lookbook</a>
     <a href="journal.html">Journal</a>
     <a href="contact.html">Contact</a>
@@ -409,7 +445,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
 
     <div class="article-hero">
       <div class="article-hero-image">
-        <img src="yun-court-noir.jpeg" width="800" height="1066" alt="Manteau en laine et cachemire Atelier MAUDÉ — comment bien choisir" loading="eager" fetchpriority="high">
+        <img src="yun-court-marine-face.png" width="800" height="1066" alt="Manteau en laine et cachemire Atelier MAUDÉ — comment bien choisir" loading="eager" fetchpriority="high">
       </div>
       <div class="article-hero-content">
         <nav class="breadcrumb" aria-label="Fil d'Ariane">
@@ -502,7 +538,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
         <h2 class="related-title fade-in">Trouvez votre manteau idéal</h2>
         <div class="related-grid">
           <div class="related-card fade-in">
-            <div class="related-img"><div class="promo-tag-sm">–23%</div><img src="yun-court-noir.jpeg" width="800" height="1066" alt="Manteau Yūn Court Ceinturé" loading="lazy" decoding="async"></div>
+            <div class="related-img"><div class="promo-tag-sm">–23%</div><img src="yun-court-marine-face.png" width="800" height="1066" alt="Manteau Yūn Court Ceinturé" loading="lazy" decoding="async"></div>
             <a href="yun-court.html" class="related-name">Yūn Court Ceinturé</a>
             <p class="related-price"><span class="current">350 €</span> <span style="text-decoration:line-through;margin-left:6px">455 €</span></p>
           </div>
