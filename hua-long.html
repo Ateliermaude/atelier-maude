@@ -158,21 +158,21 @@ button{cursor:pointer;font-family:inherit}
 <div class="ticker-wrap" role="marquee">
   <div class="ticker">
     <span class="ticker-item">SÉLECTION PREMIUM · –30% SUR NOS PIÈCES EMBLÉMATIQUES</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">SÉLECTION PREMIUM · –30% SUR NOS PIÈCES EMBLÉMATIQUES</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
-    <span class="ticker-sep">✦</span>
+    
     <span class="ticker-item">50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
-    <span class="ticker-sep">✦</span>
+    
   </div>
 </div>
 
@@ -194,7 +194,7 @@ button{cursor:pointer;font-family:inherit}
     <a href="manteaux.html" class="active">Manteaux</a>
     <a href="promotions.html">Promotions</a>
     <div class="nav-dropdown">
-      <a href="notre-histoire.html">La Maison <span class="nav-dropdown-arrow">▾</span></a>
+      <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">▾</span></a>
       <div class="dropdown-menu">
         <a href="notre-histoire.html">Notre Histoire</a>
         <a href="notre-cachemire.html">Notre Cachemire</a>
@@ -230,16 +230,16 @@ button{cursor:pointer;font-family:inherit}
       </div>
       <!-- Gris -->
       <div class="gallery-thumb" data-color="gris" data-index="4" style="display:none" onclick="switchImage(4)" role="button" aria-label="Gris — face">
-        <img src="hua-long-gris-face.png" alt="Huā Long gris — face" loading="lazy" decoding="async">
+        <img src="hua-long-gris-face.jpg" alt="Huā Long gris — face" loading="lazy" decoding="async">
       </div>
       <div class="gallery-thumb" data-color="gris" data-index="5" style="display:none" onclick="switchImage(5)" role="button" aria-label="Gris — dos">
-        <img src="hua-long-gris-dos.png" alt="Huā Long gris — dos" loading="lazy" decoding="async">
+        <img src="hua-long-gris-dos.jpg" alt="Huā Long gris — dos" loading="lazy" decoding="async">
       </div>
       <div class="gallery-thumb" data-color="gris" data-index="6" style="display:none" onclick="switchImage(6)" role="button" aria-label="Gris — profil droit">
-        <img src="hua-long-gris-profil-droit.png" alt="Huā Long gris — profil droit" loading="lazy" decoding="async">
+        <img src="hua-long-gris-profil-droit.jpg" alt="Huā Long gris — profil droit" loading="lazy" decoding="async">
       </div>
       <div class="gallery-thumb" data-color="gris" data-index="7" style="display:none" onclick="switchImage(7)" role="button" aria-label="Gris — profil gauche">
-        <img src="hua-long-gris-profil-gauche.png" alt="Huā Long gris — profil gauche" loading="lazy" decoding="async">
+        <img src="hua-long-gris-profil-gauche.jpg" alt="Huā Long gris — profil gauche" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="gallery-main" id="gallery-main">
@@ -249,10 +249,10 @@ button{cursor:pointer;font-family:inherit}
       <img src="hua-long-camel-dos.jpg" alt="Huā Long — camel, dos" loading="lazy" decoding="async">
       <img src="hua-long-camel-profil.jpg" alt="Huā Long — camel, profil droit" loading="lazy" decoding="async">
       <img src="hua-long-camel-1.jpeg" alt="Huā Long — camel" loading="lazy" decoding="async">
-      <img src="hua-long-gris-face.png" alt="Huā Long — gris, face" loading="lazy" decoding="async">
-      <img src="hua-long-gris-dos.png" alt="Huā Long — gris, dos" loading="lazy" decoding="async">
-      <img src="hua-long-gris-profil-droit.png" alt="Huā Long — gris, profil droit" loading="lazy" decoding="async">
-      <img src="hua-long-gris-profil-gauche.png" alt="Huā Long — gris, profil gauche" loading="lazy" decoding="async">
+      <img src="hua-long-gris-face.jpg" alt="Huā Long — gris, face" loading="lazy" decoding="async">
+      <img src="hua-long-gris-dos.jpg" alt="Huā Long — gris, dos" loading="lazy" decoding="async">
+      <img src="hua-long-gris-profil-droit.jpg" alt="Huā Long — gris, profil droit" loading="lazy" decoding="async">
+      <img src="hua-long-gris-profil-gauche.jpg" alt="Huā Long — gris, profil gauche" loading="lazy" decoding="async">
     </div>
   </div>
 
@@ -376,12 +376,15 @@ function selectColor(el, name, colorIdx) {
   document.getElementById('color-name-display').textContent = name;
   var color = colorIdx===0 ? 'camel' : 'gris';
   var startIndex = colorIdx===0 ? 0 : 4;
+  // Afficher/cacher les bons thumbs
   document.querySelectorAll('.gallery-thumb').forEach(function(t){
     t.style.display = t.dataset.color===color ? 'block' : 'none';
     t.classList.remove('active');
   });
+  // Activer le premier thumb de la couleur
   var first = document.querySelector('.gallery-thumb[data-color="'+color+'"]');
   if(first) first.classList.add('active');
+  // Afficher la bonne image principale
   document.getElementById('gallery-main').querySelectorAll('img').forEach(function(img,i){
     img.classList.toggle('active', i===startIndex);
   });
