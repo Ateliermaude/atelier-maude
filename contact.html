@@ -179,7 +179,6 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
   </div>
   <nav class="site-nav">
     <a href="manteaux.html">Manteaux</a>
-    <a href="promotions.html">Promotions</a>
     <div class="nav-dropdown">
       <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">▾</span></a>
       <div class="dropdown-menu">
@@ -239,7 +238,7 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
     <h2>Nos <em>coordonnées</em></h2>
     <div class="info-block">
       <span class="info-label">Email</span>
-      <p class="info-value"><a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a></p>
+      <p class="info-value"><a href="/cdn-cgi/l/email-protection#c1ada0b5a4ada8a4b3aca0b4a5a481a6aca0a8adefa2aeac"><span class="__cf_email__" data-cfemail="6905081d0c05000c1b04081c0d0c290e04080005470a0604">[email&#160;protected]</span></a></p>
       <p class="info-note">Réponse sous 48h, du lundi au vendredi.</p>
     </div>
     <div class="info-block">
@@ -271,7 +270,7 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
         Comment puis-je suivre ma commande ?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-body"><p>Après expédition, vous recevez un email avec un numéro de suivi. Le délai de livraison est de 8 à 15 jours ouvrés en France et Belgique. Pour toute question, écrivez-nous à <a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a>.</p></div>
+      <div class="faq-body"><p>Après expédition, vous recevez un email avec un numéro de suivi. Le délai de livraison est de 8 à 15 jours ouvrés en France et Belgique. Pour toute question, écrivez-nous à <a href="/cdn-cgi/l/email-protection#8ee2effaebe2e7ebfce3effbeaebcee9e3efe7e2a0ede1e3"><span class="__cf_email__" data-cfemail="107c7164757c7975627d7165747550777d71797c3e737f7d">[email&#160;protected]</span></a>.</p></div>
     </div>
 
     <div class="faq-item">
@@ -320,7 +319,7 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
         <h4>Boutique</h4>
         <ul>
           <li><a href="manteaux.html">Manteaux</a></li>
-          <li><a href="promotions.html">Promotions</a></li>
+          <li></li>
           <li><a href="guide-des-tailles.html">Guide des tailles</a></li>
           <li><a href="carte-cadeau.html">Carte cadeau</a></li>
         </ul>
@@ -340,7 +339,7 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
         <ul>
           <li><a href="cgv.html">CGV</a></li>
           <li><a href="confidentialite.html">Confidentialité</a></li>
-          <li><a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#b8d4d9ccddd4d1ddcad5d9cddcddf8dfd5d9d1d496dbd7d5"><span class="__cf_email__" data-cfemail="600c0114050c0905120d0115040520070d01090c4e030f0d">[email&#160;protected]</span></a></li>
           <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>
@@ -356,7 +355,7 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14"><polyline points="2,10 7,4 12,10"/></svg>
 </button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 window.addEventListener('scroll',function(){
   document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
   document.getElementById('btt').classList.toggle('show',scrollY>400);
@@ -370,17 +369,4 @@ function toggleFaq(btn){
 }
 
 function submitForm(){
-  var nom = document.getElementById('nom').value.trim();
-  var email = document.getElementById('email').value.trim();
-  var message = document.getElementById('message').value.trim();
-  if(!nom || !email || !message){
-    alert('Merci de remplir tous les champs obligatoires.');
-    return;
-  }
-  var subject = encodeURIComponent('Message via ateliermaude.github.io');
-  var body = encodeURIComponent('Nom : ' + nom + '\n\nMessage :\n' + message);
-  window.location.href = 'mailto:lateliermaude@gmail.com?subject=' + subject + '&body=' + body;
-}
-</script>
-</body>
-</html>
+  var nom = document.getElementByI
