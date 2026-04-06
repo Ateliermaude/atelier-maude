@@ -155,16 +155,20 @@ button{cursor:pointer;font-family:inherit}
 <div class="gallery-thumbs" id="gallery-thumbs">
 <div class="gallery-thumb active" data-color="noir" data-index="0" onclick="switchImage(0)"><img src="yun-long-noir-face.jpg" alt="Yun Long noir face" loading="eager"></div>
 <div class="gallery-thumb" data-color="noir" data-index="1" onclick="switchImage(1)"><img src="yun-long-noir-dos.jpg" alt="Yun Long noir dos" loading="lazy"></div>
-<div class="gallery-thumb" data-color="marron" data-index="2" style="display:none" onclick="switchImage(2)"><img src="yun-long-marron-face.jpg" alt="Yun Long marron face" loading="lazy"></div>
-<div class="gallery-thumb" data-color="marron" data-index="3" style="display:none" onclick="switchImage(3)"><img src="yun-long-marron-dos.jpg" alt="Yun Long marron dos" loading="lazy"></div>
-<div class="gallery-thumb" data-color="marron" data-index="4" style="display:none" onclick="switchImage(4)"><img src="yun-long-marron-profil-droit.jpg" alt="Yun Long marron profil droit" loading="lazy"></div>
-<div class="gallery-thumb" data-color="marron" data-index="5" style="display:none" onclick="switchImage(5)"><img src="yun-long-marron-profil-gauche.jpg" alt="Yun Long marron profil gauche" loading="lazy"></div>
+<div class="gallery-thumb" data-color="noir" data-index="2" onclick="switchImage(2)"><img src="yun-long-noir-profil-droit.jpg" alt="Yun Long noir profil droit" loading="lazy"></div>
+<div class="gallery-thumb" data-color="noir" data-index="3" onclick="switchImage(3)"><img src="yun-long-noir-profil-gauche.jpg" alt="Yun Long noir profil gauche" loading="lazy"></div>
+<div class="gallery-thumb" data-color="marron" data-index="4" style="display:none" onclick="switchImage(4)"><img src="yun-long-marron-face.jpg" alt="Yun Long marron face" loading="lazy"></div>
+<div class="gallery-thumb" data-color="marron" data-index="5" style="display:none" onclick="switchImage(5)"><img src="yun-long-marron-dos.jpg" alt="Yun Long marron dos" loading="lazy"></div>
+<div class="gallery-thumb" data-color="marron" data-index="6" style="display:none" onclick="switchImage(6)"><img src="yun-long-marron-profil-droit.jpg" alt="Yun Long marron profil droit" loading="lazy"></div>
+<div class="gallery-thumb" data-color="marron" data-index="7" style="display:none" onclick="switchImage(7)"><img src="yun-long-marron-profil-gauche.jpg" alt="Yun Long marron profil gauche" loading="lazy"></div>
 </div>
 <div class="gallery-main" id="gallery-main">
 <div class="promo-tag">Promotion</div>
 <div class="discount-badge">-23%</div>
 <img src="yun-long-noir-face.jpg" alt="Yun Long noir face" class="active" loading="eager">
 <img src="yun-long-noir-dos.jpg" alt="Yun Long noir dos" loading="lazy">
+<img src="yun-long-noir-profil-droit.jpg" alt="Yun Long noir profil droit" loading="lazy">
+<img src="yun-long-noir-profil-gauche.jpg" alt="Yun Long noir profil gauche" loading="lazy">
 <img src="yun-long-marron-face.jpg" alt="Yun Long marron face" loading="lazy">
 <img src="yun-long-marron-dos.jpg" alt="Yun Long marron dos" loading="lazy">
 <img src="yun-long-marron-profil-droit.jpg" alt="Yun Long marron profil droit" loading="lazy">
@@ -261,7 +265,7 @@ document.querySelectorAll('.color-swatch').forEach(function(s){s.classList.remov
 el.classList.add('active');
 document.getElementById('color-name-display').textContent=name;
 var color=colorIdx===0?'noir':'marron';
-var startIndex=colorIdx===0?0:2;
+var startIndex=colorIdx===0?0:4;
 document.querySelectorAll('#gallery-thumbs .gallery-thumb').forEach(function(t){
 t.style.display=t.dataset.color===color?'block':'none';
 t.classList.remove('active');
