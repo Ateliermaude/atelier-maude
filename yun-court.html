@@ -10,42 +10,31 @@
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="Atelier MAUDÉ">
 <meta property="og:title" content="Manteau Yūn Court Ceinturé — Atelier MAUDÉ">
-<meta property="og:description" content="50% laine, 50% cachemire de Mongolie-Intérieure. Fabriqué à Suzhou. 350€.">
 <meta property="og:url" content="https://ateliermaude.github.io/yun-court.html">
-<meta property="og:image" content="https://ateliermaude.github.io/yun-court-marine-face.png">
+<meta property="og:image" content="https://ateliermaude.github.io/yun-court-marine-face.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;
-  --dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;
-  --text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15);
-}
+:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
 html{scroll-behavior:smooth}
 body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{cursor:pointer;font-family:inherit}
-
-/* BANDEAU */
 .ticker-wrap{background:var(--terracotta);overflow:hidden;white-space:nowrap}
-.ticker{display:inline-flex;animation:ticker 30s linear infinite;white-space:nowrap}
+.ticker{display:inline-flex;animation:ticker 30s linear infinite}
 .ticker:hover{animation-play-state:paused}
 .ticker-item{display:inline-block;padding:10px 0;font-size:11px;letter-spacing:.13em;color:#fff}
-.ticker-sep{display:inline-block;margin:0 28px;color:rgba(255,255,255,.3)}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* HEADER */
 .site-header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow .3s}
 .site-header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,.08)}
 .header-inner{max-width:1400px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
 .header-btn{background:none;border:none;color:var(--dark-brown);padding:4px;display:flex;align-items:center;transition:color .2s}
 .header-btn:hover{color:var(--terracotta)}
 .logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.14em;color:var(--dark-brown);text-transform:uppercase}
-.logo:hover{opacity:.8}
 .header-actions{display:flex;align-items:center;gap:18px}
 .site-nav{display:flex;justify-content:center;gap:36px;padding:0 40px 14px;max-width:1400px;margin:0 auto}
 .site-nav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);font-weight:400;position:relative;padding-bottom:2px;transition:color .2s}
@@ -53,17 +42,20 @@ button{cursor:pointer;font-family:inherit}
 .site-nav a:hover{color:var(--terracotta)}
 .site-nav a:hover::after,.site-nav a.active::after{width:100%}
 .site-nav a.active{color:var(--terracotta)}
-
-/* BREADCRUMB */
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:5px}
+.nav-dropdown>a::after{display:none!important}
+.nav-dropdown-arrow{font-size:8px;opacity:.5;transition:transform .3s;display:inline-block}
+.nav-dropdown:hover .nav-dropdown-arrow{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;background:var(--warm-white);border:1px solid var(--border);min-width:180px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;transform:translateX(-50%) translateY(-6px);box-shadow:0 8px 32px rgba(58,42,30,.1);z-index:200}
+.nav-dropdown:hover .dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dropdown-menu a{display:block;padding:13px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dark-brown);border-bottom:1px solid var(--border);transition:background .2s,color .2s}
+.dropdown-menu a:last-child{border-bottom:none}
+.dropdown-menu a:hover{background:var(--cream);color:var(--terracotta)}
 .breadcrumb{max-width:1400px;margin:0 auto;padding:18px 40px;display:flex;gap:8px;align-items:center;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.breadcrumb a{transition:color .2s}
 .breadcrumb a:hover{color:var(--dark-brown)}
 .breadcrumb .sep{opacity:.4}
-
-/* PRODUCT LAYOUT */
 .product-layout{max-width:1400px;margin:0 auto;padding:0 40px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-
-/* GALERIE */
 .gallery{display:grid;grid-template-columns:80px 1fr;gap:12px;position:sticky;top:110px}
 .gallery-thumbs{display:flex;flex-direction:column;gap:8px}
 .gallery-thumb{aspect-ratio:3/4;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .2s;background:var(--cream)}
@@ -75,8 +67,6 @@ button{cursor:pointer;font-family:inherit}
 .gallery-main img.active{opacity:1}
 .promo-tag{position:absolute;top:20px;left:20px;background:var(--terracotta);color:#fff;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;z-index:2}
 .discount-badge{position:absolute;top:20px;right:20px;background:var(--dark-brown);color:var(--gold);font-size:10px;letter-spacing:.1em;padding:5px 10px;z-index:2}
-
-/* PRODUCT INFO */
 .product-info{position:sticky;top:110px}
 .product-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px}
 .product-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,2.5vw,38px);font-weight:300;line-height:1.2;color:var(--dark-brown);margin-bottom:16px}
@@ -84,14 +74,10 @@ button{cursor:pointer;font-family:inherit}
 .product-rating{display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .stars{color:var(--gold);font-size:14px;letter-spacing:2px}
 .rating-text{font-size:12px;color:var(--muted)}
-
-/* PRIX */
 .price-wrap{display:flex;align-items:center;gap:14px;margin-bottom:24px}
 .price-current{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--dark-brown)}
 .price-old{font-size:16px;color:var(--muted);text-decoration:line-through}
 .price-save{font-size:11px;color:var(--terracotta);letter-spacing:.06em;background:rgba(139,74,58,.08);padding:4px 10px}
-
-/* COULEUR */
 .option-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:12px;display:block;font-weight:400}
 .color-options{display:flex;gap:10px;margin-bottom:22px}
 .color-swatch{width:36px;height:36px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:border-color .2s,transform .2s;position:relative}
@@ -99,35 +85,27 @@ button{cursor:pointer;font-family:inherit}
 .color-swatch.active{border-color:var(--dark-brown)}
 .color-swatch::after{content:'';position:absolute;inset:3px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4)}
 .swatch-marine{background:#1e2d45}
-.swatch-noir{background:#1a1410}
-.color-name-display{font-size:12px;color:var(--muted);margin-left:4px}
-
-/* TAILLE */
 .size-options{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.size-btn{min-width:52px;padding:10px 14px;border:1px solid var(--border);background:none;font-family:'Jost',sans-serif;font-size:12px;color:var(--dark-brown);transition:all .2s}
+.size-btn{min-width:52px;padding:10px 14px;border:1px solid var(--border);background:none;font-family:'Jost',sans-serif;font-size:12px;color:var(--dark-brown);transition:all .2s;cursor:pointer}
 .size-btn:hover{border-color:var(--dark-brown)}
 .size-btn.active{background:var(--dark-brown);color:#fff;border-color:var(--dark-brown)}
-.size-btn.unavailable{opacity:.35;cursor:not-allowed;text-decoration:line-through}
 .size-guide-link{font-size:11px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;margin-bottom:24px;display:inline-block;transition:color .2s}
 .size-guide-link:hover{color:var(--dark-brown)}
-
-/* BOUTONS */
-.btn-add{width:100%;background:var(--dark-brown);color:#fff;border:none;padding:18px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s;margin-bottom:12px}
+.btn-add{width:100%;background:var(--dark-brown);color:#fff;border:none;padding:18px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s;margin-bottom:12px;cursor:pointer}
 .btn-add:hover{background:var(--terracotta)}
-.btn-wishlist{width:100%;background:transparent;border:1px solid var(--border);color:var(--dark-brown);padding:15px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px}
+.btn-wishlist{width:100%;background:transparent;border:1px solid var(--border);color:var(--dark-brown);padding:15px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;cursor:pointer}
 .btn-wishlist:hover{border-color:var(--dark-brown)}
-
-/* LIVRAISON */
 .delivery-note{display:flex;align-items:center;gap:8px;font-size:12px;color:#3B6D11;margin-bottom:20px}
 .delivery-note svg{flex-shrink:0}
-
-/* DIVIDER */
 .divider{border:none;border-top:1px solid var(--border);margin:20px 0}
-
-/* ACCORDION */
+.tabs{display:flex;border-bottom:1px solid var(--border);margin:24px 0 0}
+.tab-btn{background:none;border:none;border-bottom:2px solid transparent;padding:10px 18px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:all .2s;margin-bottom:-1px;cursor:pointer}
+.tab-btn.active{color:var(--dark-brown);border-bottom-color:var(--dark-brown)}
+.tab-content{display:none;padding:20px 0;font-size:13px;color:var(--muted);line-height:1.9}
+.tab-content.active{display:block}
 .accordion-item{border-bottom:1px solid var(--border)}
 .accordion-item:first-of-type{border-top:1px solid var(--border)}
-.accordion-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;text-align:left;font-family:'Jost',sans-serif;font-size:13px;color:var(--dark-brown);font-weight:300;transition:color .2s}
+.accordion-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;text-align:left;font-family:'Jost',sans-serif;font-size:13px;color:var(--dark-brown);font-weight:300;transition:color .2s;cursor:pointer}
 .accordion-btn:hover{color:var(--terracotta)}
 .accordion-icon{color:var(--gold);font-size:18px;flex-shrink:0;transition:transform .3s;line-height:1}
 .accordion-item.open .accordion-icon{transform:rotate(45deg)}
@@ -135,20 +113,9 @@ button{cursor:pointer;font-family:inherit}
 .accordion-body-inner{padding:0 0 16px;font-size:13px;color:var(--muted);line-height:1.9}
 .accordion-body-inner a{color:var(--dark-brown);text-decoration:underline;text-underline-offset:3px}
 .accordion-item.open .accordion-body{max-height:400px}
-
-/* ONGLETS COMPOSITION */
-.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin:24px 0 0}
-.tab-btn{background:none;border:none;border-bottom:2px solid transparent;padding:10px 18px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:all .2s;margin-bottom:-1px}
-.tab-btn.active{color:var(--dark-brown);border-bottom-color:var(--dark-brown)}
-.tab-content{display:none;padding:20px 0;font-size:13px;color:var(--muted);line-height:1.9}
-.tab-content.active{display:block}
-
-/* BACK TO TOP */
-.back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--dark-brown);color:var(--gold);border:none;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s,background .2s;z-index:90}
+.back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--dark-brown);color:var(--gold);border:none;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s;z-index:90;cursor:pointer}
 .back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
 .back-to-top:hover{background:var(--terracotta)}
-
-/* FOOTER */
 .site-footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 40px 32px}
 .footer-inner{max-width:1400px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;margin-bottom:48px}
@@ -161,80 +128,29 @@ button{cursor:pointer;font-family:inherit}
 .footer-col ul li a:hover{color:var(--dark-brown)}
 .footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:12px;color:var(--muted)}
-
-@media(max-width:1024px){
-  .product-layout{grid-template-columns:1fr;gap:40px}
-  .gallery{position:static;grid-template-columns:60px 1fr}
-  .product-info{position:static}
-  .header-inner{padding:14px 24px}
-  .site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}
-  .breadcrumb{padding:14px 24px}
-  .product-layout{padding:0 24px 60px}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
-  .gallery{grid-template-columns:56px 1fr;gap:8px}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
-}
-
-  /* ── MENU DÉROULANT ── */
-  .nav-dropdown { position: relative; }
-  .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
-  .nav-dropdown > a::after { display: none !important; }
-  .nav-dropdown-arrow { font-size: 8px; opacity: .5; transition: transform .3s; display: inline-block; }
-  .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
-  .dropdown-menu {
-    position: absolute; top: calc(100% + 14px); left: 50%;
-    background: var(--warm-white); border: 1px solid var(--border);
-    min-width: 180px; opacity: 0; pointer-events: none;
-    transition: opacity .25s, transform .25s;
-    transform: translateX(-50%) translateY(-6px);
-    box-shadow: 0 8px 32px rgba(58,42,30,.1); z-index: 200;
-  }
-  .nav-dropdown:hover .dropdown-menu {
-    opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0);
-  }
-  .dropdown-menu a {
-    display: block; padding: 13px 20px;
-    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--dark-brown); border-bottom: 1px solid var(--border);
-    transition: background .2s, color .2s;
-  }
-  .dropdown-menu a:last-child { border-bottom: none; }
-  .dropdown-menu a:hover { background: var(--cream); color: var(--terracotta); }
-  .dropdown-menu a.active { color: var(--terracotta); }
+@media(max-width:1024px){.product-layout{grid-template-columns:1fr;gap:40px}.gallery{position:static;grid-template-columns:60px 1fr}.product-info{position:static}.header-inner{padding:14px 24px}.site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}.breadcrumb{padding:14px 24px}.product-layout{padding:0 24px 60px}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.gallery{grid-template-columns:56px 1fr;gap:8px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
 </style>
 </head>
 <body>
 
-<!-- BANDEAU -->
 <div class="ticker-wrap" role="marquee">
   <div class="ticker">
     <span class="ticker-item">SÉLECTION PREMIUM · –30% SUR NOS PIÈCES EMBLÉMATIQUES</span>
-    
-    <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
-    
-    <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
-    
-    <span class="ticker-item">50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
-    
-    <span class="ticker-item">SÉLECTION PREMIUM · –30% SUR NOS PIÈCES EMBLÉMATIQUES</span>
-    
-    <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
-    
-    <span class="ticker-item">RETOURS GRATUITS SOUS 30 JOURS</span>
-    
-    <span class="ticker-item">50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
-    
+    <span class="ticker-item">&nbsp;&nbsp;·&nbsp;&nbsp;LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+    <span class="ticker-item">&nbsp;&nbsp;·&nbsp;&nbsp;RETOURS GRATUITS SOUS 30 JOURS</span>
+    <span class="ticker-item">&nbsp;&nbsp;·&nbsp;&nbsp;50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
+    <span class="ticker-item">&nbsp;&nbsp;·&nbsp;&nbsp;SÉLECTION PREMIUM · –30% SUR NOS PIÈCES EMBLÉMATIQUES</span>
+    <span class="ticker-item">&nbsp;&nbsp;·&nbsp;&nbsp;LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+    <span class="ticker-item">&nbsp;&nbsp;·&nbsp;&nbsp;RETOURS GRATUITS SOUS 30 JOURS</span>
+    <span class="ticker-item">&nbsp;&nbsp;·&nbsp;&nbsp;50% LAINE · 50% CACHEMIRE DE MONGOLIE-INTÉRIEURE</span>
   </div>
 </div>
 
-<!-- HEADER -->
 <header class="site-header" id="site-header">
   <div class="header-inner">
     <div class="header-actions">
-      <button class="header-btn" id="menu-btn" aria-label="Menu">
+      <button class="header-btn" aria-label="Menu">
         <svg width="22" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="1" x2="22" y2="1"/><line x1="0" y1="7" x2="16" y2="7"/><line x1="0" y1="13" x2="22" y2="13"/></svg>
       </button>
     </div>
@@ -260,67 +176,58 @@ button{cursor:pointer;font-family:inherit}
   </nav>
 </header>
 
-<!-- BREADCRUMB -->
 <nav class="breadcrumb" aria-label="Fil d'Ariane">
   <a href="index.html">Accueil</a><span class="sep">/</span>
   <a href="manteaux.html">Manteaux</a><span class="sep">/</span>
   <span>Yūn Court</span>
 </nav>
 
-<!-- PRODUIT -->
-<div class="product-layout" id="product-gallery">
-
-  <!-- GALERIE -->
+<div class="product-layout">
   <div class="gallery">
     <div class="gallery-thumbs" id="gallery-thumbs">
-      <div class="gallery-thumb active" data-color="marine" data-index="0" onclick="switchImage(0)" role="button" aria-label="Marine — face">
-        <img src="yun-court-marine-face.png" alt="Yūn Court marine — face" loading="eager" decoding="async">
+      <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)">
+        <img src="yun-court-marine-face.jpg" alt="Yūn Court marine — face" loading="eager">
       </div>
-      <div class="gallery-thumb" data-color="marine" data-index="1" onclick="switchImage(1)" role="button" aria-label="Marine — dos">
-        <img src="yun-court-marine-dos.png" alt="Yūn Court marine — dos" loading="lazy" decoding="async">
+      <div class="gallery-thumb" data-index="1" onclick="switchImage(1)">
+        <img src="yun-court-marine-dos.jpg" alt="Yūn Court marine — dos" loading="lazy">
       </div>
-      <div class="gallery-thumb" data-color="marine" data-index="2" onclick="switchImage(2)" role="button" aria-label="Marine — profil droit">
-        <img src="yun-court-marine-profil-droit.png" alt="Yūn Court marine — profil droit" loading="lazy" decoding="async">
+      <div class="gallery-thumb" data-index="2" onclick="switchImage(2)">
+        <img src="yun-court-marine-profil-droit.jpg" alt="Yūn Court marine — profil droit" loading="lazy">
       </div>
-      <div class="gallery-thumb" data-color="marine" data-index="3" onclick="switchImage(3)" role="button" aria-label="Marine — profil gauche">
-        <img src="yun-court-marine-profil-gauche.png" alt="Yūn Court marine — profil gauche" loading="lazy" decoding="async">
+      <div class="gallery-thumb" data-index="3" onclick="switchImage(3)">
+        <img src="yun-court-marine-profil-gauche.jpg" alt="Yūn Court marine — profil gauche" loading="lazy">
       </div>
-</div>
+    </div>
     <div class="gallery-main" id="gallery-main">
       <div class="promo-tag">Promotion</div>
       <div class="discount-badge">–23%</div>
-      <img src="yun-court-marine-face.png" alt="Manteau Yūn Court — marine, face" class="active" loading="eager">
-      <img src="yun-court-marine-dos.png" alt="Manteau Yūn Court — marine, dos" loading="lazy" decoding="async">
-      <img src="yun-court-marine-profil-droit.png" alt="Manteau Yūn Court — marine, profil droit" loading="lazy" decoding="async">
-      <img src="yun-court-marine-profil-gauche.png" alt="Manteau Yūn Court — marine, profil gauche" loading="lazy" decoding="async">
+      <img src="yun-court-marine-face.jpg" alt="Yūn Court marine — face" class="active" loading="eager">
+      <img src="yun-court-marine-dos.jpg" alt="Yūn Court marine — dos" loading="lazy">
+      <img src="yun-court-marine-profil-droit.jpg" alt="Yūn Court marine — profil droit" loading="lazy">
+      <img src="yun-court-marine-profil-gauche.jpg" alt="Yūn Court marine — profil gauche" loading="lazy">
     </div>
   </div>
 
-  <!-- INFOS -->
   <div class="product-info">
     <p class="product-eyebrow">Manteau court ceinturé · Atelier MAUDÉ</p>
     <h1 class="product-title">Manteau Yūn Court<br><em>Ceinturé en Cachemire</em></h1>
-
     <div class="product-rating">
       <span class="stars">★★★★★</span>
       <span class="rating-text">5,0 · 4 avis</span>
     </div>
-
     <div class="price-wrap">
       <span class="price-current">350,00 €</span>
       <span class="price-old">455,00 €</span>
       <span class="price-save">–23%</span>
     </div>
 
-    <!-- COULEUR -->
-    <label class="option-label" id="color-label">Couleur — <span class="color-name-display" id="color-name-display">Marine</span></label>
-    <div class="color-options" role="group">
-      <div class="color-swatch swatch-marine active" onclick="return false" title="Marine" role="button" tabindex="0"></div>
+    <label class="option-label">Couleur — <span id="color-name-display">Marine</span></label>
+    <div class="color-options">
+      <div class="color-swatch swatch-marine active" title="Marine" onclick="this.classList.add('active');document.getElementById('color-name-display').textContent='Marine'"></div>
     </div>
 
-    <!-- TAILLE -->
-    <label class="option-label" id="size-label">Taille</label>
-    <div class="size-options" role="group">
+    <label class="option-label">Taille</label>
+    <div class="size-options">
       <button class="size-btn" onclick="selectSize(this)">XS</button>
       <button class="size-btn active" onclick="selectSize(this)">S</button>
       <button class="size-btn" onclick="selectSize(this)">M</button>
@@ -329,14 +236,12 @@ button{cursor:pointer;font-family:inherit}
     </div>
     <a href="guide-des-tailles.html" class="size-guide-link">Consulter le guide des tailles →</a>
 
-    <!-- BOUTONS -->
     <button class="btn-add" onclick="addToCart(this)">Ajouter au panier</button>
     <button class="btn-wishlist">
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
       Ajouter à ma liste
     </button>
 
-    <!-- LIVRAISON -->
     <div class="delivery-note">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
       Livraison offerte — estimée dans 8 à 15 jours ouvrés
@@ -344,16 +249,15 @@ button{cursor:pointer;font-family:inherit}
 
     <hr class="divider">
 
-    <!-- ONGLETS -->
-    <div class="tabs" role="tablist">
-      <button class="tab-btn active" onclick="switchTab(this,'desc')" role="tab">Description</button>
-      <button class="tab-btn" onclick="switchTab(this,'comp')" role="tab">Composition</button>
-      <button class="tab-btn" onclick="switchTab(this,'avis')" role="tab">Avis</button>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
+      <button class="tab-btn" onclick="switchTab(this,'comp')">Composition</button>
+      <button class="tab-btn" onclick="switchTab(this,'avis')">Avis</button>
     </div>
     <div id="tab-desc" class="tab-content active">
       <p>Le Yūn Court est notre manteau mi-cuisse à ceinture amovible. Sa coupe structurée mais souple s'adapte à toutes les silhouettes. La ceinture peut se nouer devant, derrière ou être retirée pour un port plus libre.</p>
       <br>
-      <p><strong>Détails :</strong> Col à revers · Ceinture amovible · Poches latérales · Longueur mi-cuisse · Disponible en Marine et Noir</p>
+      <p><strong>Détails :</strong> Col à revers · Ceinture amovible · Poches latérales · Longueur mi-cuisse · Coloris Marine</p>
     </div>
     <div id="tab-comp" class="tab-content">
       <p><strong>Composition :</strong> 50% Laine, 50% Cachemire de Mongolie-Intérieure</p>
@@ -370,7 +274,6 @@ button{cursor:pointer;font-family:inherit}
 
     <hr class="divider">
 
-    <!-- ACCORDION -->
     <div class="accordion-item">
       <button class="accordion-btn" onclick="toggleAccordion(this)">
         Livraison &amp; Retours
@@ -378,9 +281,8 @@ button{cursor:pointer;font-family:inherit}
       </button>
       <div class="accordion-body">
         <div class="accordion-body-inner">
-          <p><strong>Livraison gratuite</strong> en France et Belgique. Délai : 8 à 15 jours ouvrés.</p>
-          <br>
-          <p><strong>Retours gratuits</strong> sous 30 jours. Article non porté, dans son emballage d'origine. Contactez-nous à <a href="/cdn-cgi/l/email-protection#e488859081888d81968985918081a48389858d88ca878b89"><span class="__cf_email__" data-cfemail="7c101d08191015190e111d0918193c1b111d1510521f1311">[email&#160;protected]</span></a>.</p>
+          <p><strong>Livraison gratuite</strong> en France et Belgique. Délai : 8 à 15 jours ouvrés.</p><br>
+          <p><strong>Retours gratuits</strong> sous 30 jours. Contactez-nous à <a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a>.</p>
         </div>
       </div>
     </div>
@@ -398,7 +300,6 @@ button{cursor:pointer;font-family:inherit}
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-grid">
@@ -406,32 +307,24 @@ button{cursor:pointer;font-family:inherit}
         <a href="index.html" class="footer-logo">Atelier MAUDÉ</a>
         <p class="footer-desc">Des manteaux en laine et cachemire d'exception.</p>
       </div>
-      <div class="footer-col">
-        <h4>Boutique</h4>
-        <ul>
-          <li><a href="manteaux.html">Manteaux</a></li>
-          <li></li>
-          <li><a href="guide-des-tailles.html">Guide des tailles</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Informations</h4>
-        <ul>
-          <li><a href="notre-histoire.html">Notre histoire</a></li>
-          <li><a href="notre-cachemire.html">Notre cachemire</a></li>
-          <li><a href="lookbook.html">Lookbook</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="cgv.html">CGV</a></li>
-          <li><a href="confidentialite.html">Confidentialité</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="/cdn-cgi/l/email-protection#b2ded3c6d7dedbd7c0dfd3c7d6d7f2d5dfd3dbde9cd1dddf"><span class="__cf_email__" data-cfemail="b8d4d9ccddd4d1ddcad5d9cddcddf8dfd5d9d1d496dbd7d5">[email&#160;protected]</span></a></li>
-          <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
-        </ul>
-      </div>
+      <div class="footer-col"><h4>Boutique</h4><ul>
+        <li><a href="manteaux.html">Manteaux</a></li>
+        <li><a href="guide-des-tailles.html">Guide des tailles</a></li>
+        <li><a href="carte-cadeau.html">Carte cadeau</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>L'atelier</h4><ul>
+        <li><a href="notre-histoire.html">Notre histoire</a></li>
+        <li><a href="notre-cachemire.html">Notre cachemire</a></li>
+        <li><a href="lookbook.html">Lookbook</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Légal</h4><ul>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="mailto:lateliermaude@gmail.com">lateliermaude@gmail.com</a></li>
+        <li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Atelier MAUDÉ. Tous droits réservés.</p>
@@ -444,28 +337,24 @@ button{cursor:pointer;font-family:inherit}
   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14"><polyline points="2,10 7,4 12,10"/></svg>
 </button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-window.addEventListener('scroll',function(){
-  document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
-  document.getElementById('btt').classList.toggle('show',scrollY>400);
-},{passive:true});
+<script>
+window.addEventListener('scroll', function() {
+  document.getElementById('site-header').classList.toggle('scrolled', scrollY > 10);
+  document.getElementById('btt').classList.toggle('show', scrollY > 400);
+}, {passive: true});
 
 function switchImage(index) {
-  document.getElementById('gallery-main').querySelectorAll('img').forEach(function(img,i){
-    img.classList.toggle('active', i===index);
+  var main = document.getElementById('gallery-main');
+  main.querySelectorAll('img').forEach(function(img, i) {
+    img.classList.toggle('active', i === index);
   });
-  document.querySelectorAll('.gallery-thumb').forEach(function(t){
-    t.classList.toggle('active', parseInt(t.dataset.index)===index);
+  document.querySelectorAll('#gallery-thumbs .gallery-thumb').forEach(function(t) {
+    t.classList.toggle('active', parseInt(t.dataset.index) === index);
   });
 }
 
-function selectColor(el, name, colorIdx) {
-  document.querySelectorAll('.color-swatch').forEach(function(s){s.classList.remove('active');});
-  el.classList.add('active');
-  document.getElementById('color-name-display').textContent = name;
-}
 function selectSize(el) {
-  document.querySelectorAll('.size-btn:not(.unavailable)').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.size-btn').forEach(function(b) { b.classList.remove('active'); });
   el.classList.add('active');
 }
 
@@ -473,10 +362,22 @@ function addToCart(btn) {
   var orig = btn.textContent;
   btn.textContent = '✓ Ajouté au panier';
   btn.style.background = 'var(--brown)';
-  setTimeout(function(){btn.textContent=orig;btn.style.background='';}, 2500);
+  setTimeout(function() { btn.textContent = orig; btn.style.background = ''; }, 2500);
 }
 
 function toggleAccordion(btn) {
   var item = btn.closest('.accordion-item');
   var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.accordion-item.open').forEach(function(i){i.classList.remove('ope
+  document.querySelectorAll('.accordion-item.open').forEach(function(i) { i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+function switchTab(btn, id) {
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.tab-content').forEach(function(c) { c.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+</script>
+</body>
+</html>
