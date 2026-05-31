@@ -74,9 +74,14 @@ button{cursor:pointer;font-family:inherit}
 .product-card:hover .product-img img{transform:scale(1.04)}
 .product-tag{position:absolute;top:14px;left:14px;background:var(--terracotta);color:#fff;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;z-index:2}
 .product-badge{position:absolute;top:14px;right:14px;background:var(--cream);color:var(--dark-brown);font-size:9px;letter-spacing:.12em;padding:5px 10px;z-index:2;font-family:'Jost',sans-serif}
-.product-cta{position:absolute;bottom:0;left:0;right:0;background:var(--dark-brown);padding:14px;text-align:center;transform:translateY(100%);transition:transform .3s ease;z-index:3}
-.product-cta a{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#fff;font-family:'Jost',sans-serif}
-.product-card:hover .product-cta{transform:translateY(0)}
+.product-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(26,16,8,.9) 0%,rgba(26,16,8,.5) 60%,transparent 100%);padding:52px 20px 22px;transform:translateY(100%);transition:transform .5s cubic-bezier(0.25,0.46,0.45,0.94);z-index:3}
+.product-card:hover .product-overlay{transform:translateY(0)}
+.overlay-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#fff;display:block;margin-bottom:8px;line-height:1.2}
+.overlay-price{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.overlay-price .price-now{font-size:15px;color:rgba(245,240,234,.95)}
+.overlay-price .price-old{font-size:12px;color:rgba(245,240,234,.45);text-decoration:line-through}
+.overlay-cta{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,234,.7);border-bottom:1px solid rgba(245,240,234,.3);padding-bottom:2px;display:inline-block;transition:color .2s,border-color .2s}
+.overlay-cta:hover{color:#fff;border-color:rgba(245,240,234,.7)}
 .product-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--dark-brown);margin-bottom:6px;display:block}
 .product-desc{font-size:12px;color:var(--muted);margin-bottom:10px;letter-spacing:.04em}
 .product-price{display:flex;align-items:center;gap:10px;margin-bottom:10px}
@@ -196,7 +201,11 @@ button{cursor:pointer;font-family:inherit}
         <div class="product-tag">Promotion</div>
         <div class="product-badge">–23%</div>
         <img src="yun-court-noir-face.jpg" alt="Manteau Yūn Court Ceinturé en laine et cachemire" loading="eager" fetchpriority="high">
-        <div class="product-cta"><a href="yun-court.html">Voir le produit</a></div>
+        <div class="product-overlay">
+          <span class="overlay-name">Manteau Yūn Court Ceinturé</span>
+          <div class="overlay-price"><span class="price-now">350,00 €</span><span class="price-old">455,00 €</span></div>
+          <a href="yun-court.html" class="overlay-cta">Voir le produit →</a>
+        </div>
       </div>
       <a href="yun-court.html" class="product-name">Manteau Yūn Court Ceinturé</a>
       <p class="product-desc">Mi-cuisse · Ceinture amovible</p>
@@ -217,7 +226,11 @@ button{cursor:pointer;font-family:inherit}
         <div class="product-tag">Promotion</div>
         <div class="product-badge">–23%</div>
         <img src="hua-long-camel-face.jpg" alt="Manteau Huā Long en laine et cachemire — camel" loading="lazy" decoding="async">
-        <div class="product-cta"><a href="hua-long.html">Voir le produit</a></div>
+        <div class="product-overlay">
+          <span class="overlay-name">Manteau Huā Long</span>
+          <div class="overlay-price"><span class="price-now">420,00 €</span><span class="price-old">545,00 €</span></div>
+          <a href="hua-long.html" class="overlay-cta">Voir le produit →</a>
+        </div>
       </div>
       <a href="hua-long.html" class="product-name">Manteau Huā Long</a>
       <p class="product-desc">Long oversize · Double boutonnage</p>
@@ -239,7 +252,11 @@ button{cursor:pointer;font-family:inherit}
         <div class="product-tag">Promotion</div>
         <div class="product-badge">–23%</div>
         <img src="yun-long-noir-face.jpg" alt="Manteau Yūn Long Ceinturé en laine et cachemire — noir" loading="lazy" decoding="async">
-        <div class="product-cta"><a href="yun-long.html">Voir le produit</a></div>
+        <div class="product-overlay">
+          <span class="overlay-name">Manteau Yūn Long Ceinturé</span>
+          <div class="overlay-price"><span class="price-now">450,00 €</span><span class="price-old">585,00 €</span></div>
+          <a href="yun-long.html" class="overlay-cta">Voir le produit →</a>
+        </div>
       </div>
       <a href="yun-long.html" class="product-name">Manteau Yūn Long Ceinturé</a>
       <p class="product-desc">Longueur maxi · Ceinture double tour</p>
