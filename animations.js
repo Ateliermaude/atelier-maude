@@ -52,7 +52,7 @@
       entries.forEach(function (e) {
         if (e.isIntersecting) { activate(e.target); obs.unobserve(e.target); }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     els.forEach(function (el) {
       if (!el.classList.contains('visible')) obs.observe(el);
@@ -60,9 +60,4 @@
   } else {
     els.forEach(activate);
   }
-
-  // Safety fallback: everything visible after 900ms
-  setTimeout(function () {
-    document.querySelectorAll(ANIM_SELECTOR).forEach(activate);
-  }, 900);
 })();

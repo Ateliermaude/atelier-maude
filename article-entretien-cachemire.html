@@ -696,10 +696,6 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     } else {
       els.forEach(activate); // Fallback si pas d'IntersectionObserver
     }
-    // Sécurité absolue : tout visible après 500ms
-    setTimeout(function() {
-      document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right').forEach(activate);
-    }, 500);
   })();
 </script>
 <script src="animations.js" defer></script>
