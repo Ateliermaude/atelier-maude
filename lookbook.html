@@ -327,13 +327,20 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       <button aria-label="Panier"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
     </div>
   </div>
-  <nav>
+  <nav class="site-nav">
     <a href="manteaux.html">Manteaux</a>
     <div class="nav-dropdown">
-      <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">▾</span></a>
+      <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="notre-histoire.html">Notre Histoire</a>
         <a href="notre-cachemire.html">Notre Cachemire</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="echarpes.html">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <div class="dropdown-menu">
+        <a href="echarpes.html">Nos &#201;charpes</a>
+        <a href="ceintures.html">Nos Ceintures</a>
       </div>
     </div>
     <a href="lookbook.html" class="active">Lookbook</a>
@@ -554,3 +561,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   }
   document.getElementById('lightbox').addEventListener('click', function(e) {
     if (e.target =
+}
+</script>
+</body>
+</html>
