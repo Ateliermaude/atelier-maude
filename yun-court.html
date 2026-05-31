@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -114,6 +114,7 @@ button{cursor:pointer;font-family:inherit}
 @media(max-width:1024px){.product-layout{grid-template-columns:1fr;gap:40px}.gallery{position:static;grid-template-columns:60px 1fr}.product-info{position:static}.header-inner{padding:14px 24px}.site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}.breadcrumb{padding:14px 24px}.product-layout{padding:0 24px 60px}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.gallery{grid-template-columns:56px 1fr;gap:8px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
 </style>
+<link rel="stylesheet" href="animations.css">
 </head>
 <body>
 <div class="ticker-wrap" role="marquee"><div class="ticker">
@@ -277,5 +278,6 @@ var isOpen=item.classList.contains('open');
 document.querySelectorAll('.accordion-item.open').forEach(function(i){i.classLi
 }
 </script>
+<script src="animations.js" defer></script>
 </body>
 </html>

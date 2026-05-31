@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -173,6 +173,7 @@ button{cursor:pointer;font-family:inherit}
   .dropdown-menu a:hover { background: var(--cream); color: var(--terracotta); }
   .dropdown-menu a.active { color: var(--terracotta); }
 </style>
+<link rel="stylesheet" href="animations.css">
 </head>
 <body>
 
@@ -334,5 +335,6 @@ window.addEventListener('scroll',function(){
 },{passive:true});
 function handleNL(e){e.preventDefault();var btn=e.target.querySelector('button');btn.textContent='Merci !';btn.style.background='var(--terracotta)';btn.style.color='#fff';e.target.querySelector('input').value='';setTimeout(function(){btn.textContent="S'abonner";btn.style.background='';btn.style.color='';},3000);}
 </script>
+<script src="animations.js" defer></script>
 </body>
 </html>
