@@ -171,7 +171,7 @@ button{cursor:pointer;font-family:inherit}
 .popup-skip{font-size:11px;color:var(--muted);margin-top:14px;cursor:pointer;display:block;text-decoration:underline;text-underline-offset:3px}
 
 /* COOKIE */
-.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--dark-brown);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:150;transform:translateY(100%);transition:transform .4s}
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--dark-brown);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;z-index:9999;transform:translateY(100%);transition:transform .4s}
 .cookie-banner.show{transform:translateY(0)}
 .cookie-text{font-size:12px;color:rgba(245,240,234,.7);line-height:1.6}
 .cookie-text a{color:var(--gold);text-decoration:underline}
@@ -232,6 +232,7 @@ button{cursor:pointer;font-family:inherit}
 .editorial-body{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:36px;max-width:400px}
 </style>
 <link rel="stylesheet" href="animations.css">
+<link rel="stylesheet" href="mobile.css">
 </head>
 <body>
 
@@ -587,9 +588,10 @@ function closePopup(){document.getElementById('popup').classList.remove('show');
 if(!localStorage.getItem('cookie_choice')){
   setTimeout(function(){document.getElementById('cookie').classList.add('show');},1000);
 }
-function acceptCookie(){localStorage.setIt
-}
+function acceptCookie(){localStorage.setItem('cookie_choice','accepted');document.getElementById('cookie').classList.remove('show');}
+function refuseCookie(){localStorage.setItem('cookie_choice','refused');document.getElementById('cookie').classList.remove('show');}
 </script>
 <script src="animations.js" defer></script>
+<script src="mobile.js" defer></script>
 </body>
 </html>

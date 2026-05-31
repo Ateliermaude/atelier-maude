@@ -1,0 +1,142 @@
+@media (max-width: 768px) {
+
+  /* ── NAVIGATION HAMBURGER ── */
+  .site-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--warm-white, #FAF8F5);
+    z-index: 9998;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding: 80px 40px 40px;
+    overflow-y: auto;
+  }
+  .site-nav.nav-open { display: flex; }
+  .site-nav a { font-size: 17px; letter-spacing: .12em; }
+  .nav-dropdown { position: static; width: 100%; text-align: center; }
+  .nav-dropdown > a { justify-content: center; }
+  .nav-dropdown-arrow { display: none; }
+  .dropdown-menu {
+    position: static !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+    min-width: unset;
+    text-align: center;
+  }
+  .dropdown-menu a {
+    border-bottom: none !important;
+    padding: 8px 0 !important;
+    font-size: 13px !important;
+    color: var(--muted, #8A7B6F) !important;
+  }
+  .nav-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: var(--dark-brown, #3A2A1E);
+    line-height: 1;
+    padding: 8px;
+  }
+
+  /* ── COOKIE BANNER ── */
+  .cookie-banner,
+  #cookie-banner { z-index: 9999 !important; }
+  .cookie-banner {
+    flex-direction: column !important;
+    padding: 20px !important;
+    gap: 14px !important;
+  }
+  .cookie-actions { width: 100%; display: flex; gap: 10px; }
+
+  /* ── GRILLES → 1 COLONNE ── */
+  .products-grid,
+  .sf-grid,
+  .comparatif-grid,
+  .footer-grid,
+  .upsell-grid { grid-template-columns: 1fr !important; }
+  .editorial-inner { grid-template-columns: 1fr !important; }
+  .reassurance-inner { grid-template-columns: 1fr !important; }
+  .reassurance-item {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border, rgba(107,79,58,0.15));
+    padding: 20px !important;
+  }
+  .reassurance-item:last-child { border-bottom: none; }
+  .comparatif-grid { gap: 1px !important; }
+
+  /* ── GALERIE PRODUIT — miniatures horizontales ── */
+  .gallery {
+    display: flex !important;
+    flex-direction: column !important;
+    position: static !important;
+    gap: 12px !important;
+  }
+  .gallery-thumbs {
+    order: 2;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    gap: 8px !important;
+    padding-bottom: 4px;
+  }
+  .gallery-main { order: 1; width: 100%; }
+  .gallery-thumb {
+    min-width: 64px !important;
+    width: 64px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ── PADDINGS RÉDUITS ── */
+  .header-inner { padding: 12px 20px !important; }
+  .site-nav-wrapper { padding: 0; }
+  .collection,
+  .savoir-faire,
+  .newsletter { padding: 48px 20px !important; }
+  .comparatif { padding: 48px 20px !important; }
+  .products-section { padding: 32px 20px 60px !important; }
+  .page-hero { padding: 40px 20px 32px !important; }
+  .filters-bar { padding: 16px 20px !important; }
+  .breadcrumb { padding: 14px 20px !important; }
+  .product-layout {
+    padding: 0 20px 60px !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .product-info { position: static !important; }
+  .site-footer { padding: 48px 20px 28px !important; }
+  .footer-grid { gap: 28px !important; }
+  .upsell { padding: 48px 20px !important; }
+  .editorial-content { padding: 40px 20px !important; }
+  .editorial-media { aspect-ratio: 4/3; }
+  .editorial-media img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── BOUTONS MIN 48px ── */
+  .btn-add,
+  .btn-wishlist,
+  .filter-btn,
+  .cookie-btn,
+  .cookie-btn-accept,
+  .cookie-btn-decline,
+  .newsletter-form button { min-height: 48px !important; }
+  .size-btn { min-height: 48px !important; padding: 12px 14px !important; }
+  .newsletter-form { flex-direction: column !important; }
+  .newsletter-form input,
+  .newsletter-form button { width: 100%; }
+
+  /* ── DIVERS ── */
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  .hero-content { left: 20px !important; bottom: 30px !important; }
+  .sf-grid { gap: 1px !important; }
+  .sf-num { font-size: 32px !important; }
+  .page-hero-inner { flex-direction: column; gap: 12px; align-items: flex-start; }
+}
