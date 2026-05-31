@@ -191,6 +191,10 @@ button{cursor:pointer;font-family:inherit}
   .site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}
   .collection,.savoir-faire,.newsletter{padding:60px 24px}
   .comparatif{padding:60px 24px}
+  .reassurance-inner{grid-template-columns:repeat(2,1fr);gap:0}
+  .editorial-inner{grid-template-columns:1fr;min-height:auto}
+  .editorial-media{aspect-ratio:16/9}
+  .editorial-content{padding:56px 40px}
 }
 @media(max-width:700px){
   .hero-content{left:24px;bottom:36px}
@@ -200,7 +204,32 @@ button{cursor:pointer;font-family:inherit}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
   .cookie-banner{flex-direction:column;padding:20px 24px}
   .newsletter-form{flex-direction:column}
+  .reassurance{padding:0}
+  .reassurance-inner{grid-template-columns:repeat(2,1fr)}
+  .reassurance-item{padding:20px 20px}
+  .editorial-content{padding:48px 24px}
 }
+
+/* RÉASSURANCE */
+.reassurance{background:var(--warm-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.reassurance-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.reassurance-item{display:flex;align-items:center;gap:16px;padding:28px 36px;border-right:1px solid var(--border)}
+.reassurance-item:last-child{border-right:none}
+.reassurance-icon{flex-shrink:0;color:var(--terracotta)}
+.reassurance-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dark-brown);font-weight:400;display:block;margin-bottom:3px}
+.reassurance-sub{font-size:12px;color:var(--muted);display:block;line-height:1.4}
+
+/* ÉDITORIALE */
+.editorial{overflow:hidden}
+.editorial-inner{max-width:100%;display:grid;grid-template-columns:1fr 1fr;min-height:580px}
+.editorial-media{position:relative;overflow:hidden}
+.editorial-media img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 8s ease}
+.editorial:hover .editorial-media img{transform:scale(1.03)}
+.editorial-content{background:var(--cream);padding:80px 72px;display:flex;flex-direction:column;justify-content:center}
+.editorial-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,2.8vw,40px);font-weight:300;font-style:italic;color:var(--dark-brown);line-height:1.35;margin:18px 0 28px}
+.editorial-quote::before{content:'«\00a0';color:var(--gold);font-style:normal}
+.editorial-quote::after{content:'\00a0»';color:var(--gold);font-style:normal}
+.editorial-body{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:36px;max-width:400px}
 </style>
 <link rel="stylesheet" href="animations.css">
 </head>
@@ -267,6 +296,40 @@ button{cursor:pointer;font-family:inherit}
     <a href="manteaux.html" class="hero-discover">Découvrir</a>
   </div>
 </section>
+
+<!-- RÉASSURANCE -->
+<div class="reassurance">
+  <div class="reassurance-inner">
+    <div class="reassurance-item">
+      <svg class="reassurance-icon" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      <div>
+        <span class="reassurance-label">Livraison gratuite</span>
+        <span class="reassurance-sub">France &amp; Belgique</span>
+      </div>
+    </div>
+    <div class="reassurance-item">
+      <svg class="reassurance-icon" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+      <div>
+        <span class="reassurance-label">Retours 30 jours</span>
+        <span class="reassurance-sub">Offerts, sans conditions</span>
+      </div>
+    </div>
+    <div class="reassurance-item">
+      <svg class="reassurance-icon" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div>
+        <span class="reassurance-label">Paiement sécurisé</span>
+        <span class="reassurance-sub">Crypté SSL 256 bits</span>
+      </div>
+    </div>
+    <div class="reassurance-item">
+      <svg class="reassurance-icon" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 2 4 5 4 9c0 5 8 13 8 13s8-8 8-13c0-4-4-7-8-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <div>
+        <span class="reassurance-label">Cachemire premium</span>
+        <span class="reassurance-sub">Mongolie-Intérieure</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- COLLECTION -->
 <section class="collection">
@@ -364,6 +427,21 @@ button{cursor:pointer;font-family:inherit}
         <p class="sf-title">Pour durer</p>
         <p class="sf-text">Chaque pièce est conçue pour traverser les années. Un investissement conscient, pas un achat impulsif.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÉDITORIALE -->
+<section class="editorial">
+  <div class="editorial-inner">
+    <div class="editorial-media">
+      <img src="notre-histoire-hero.jpg" alt="L'atelier MAUDÉ — cachemire de Mongolie-Intérieure" loading="lazy">
+    </div>
+    <div class="editorial-content">
+      <span class="section-label">Notre philosophie</span>
+      <p class="editorial-quote">Chaque manteau MAUDÉ commence par une fibre. Il finit par une histoire.</p>
+      <p class="editorial-body">Nous n'avons pas créé MAUDÉ pour vendre des manteaux. Nous l'avons créé pour que vous n'en ayez jamais besoin d'un autre. 50% laine, 50% cachemire de Mongolie-Intérieure — sélectionnés pour leur finesse, tissés à Suzhou selon 2 500 ans de tradition.</p>
+      <a href="notre-histoire.html" class="text-link">Découvrir notre histoire →</a>
     </div>
   </div>
 </section>
