@@ -1,63 +1,26 @@
 (function () {
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  var ANIM_CLASSES = ['fade-in', 'fade-in-up', 'fade-in-left', 'fade-in-right'];
-  var ANIM_SELECTOR = '.fade-in, .fade-in-up, .fade-in-left, .fade-in-right';
-
-  function hasAnim(el) {
-    return ANIM_CLASSES.some(function (c) { return el.classList.contains(c); });
-  }
-
-  // Auto-tag elements on pages without inline animation classes
-  var AUTO = [
-    '.product-card',
-    '.sf-item',
-    '.comp-col',
-    '.collection-head',
-    '.newsletter-inner',
-    '.page-hero-inner',
-    '.comparatif-title',
-    '.journal-card',
-    '.lookbook-img',
-  ];
-
-  AUTO.forEach(function (sel) {
+  // Auto-tag key elements that don't already have fade-in
+  [
+    '.product-card', '.sf-item', '.comp-col', '.collection-head',
+    '.newsletter-inner', '.page-hero-inner', '.comparatif-title',
+    '.journal-card', '.lookbook-img', '.editorial-content',
+    '.reassurance-item', '.upsell-card',
+  ].forEach(function (sel) {
     document.querySelectorAll(sel).forEach(function (el) {
-      if (hasAnim(el)) return;
-      el.classList.add('fade-in');
-      if (el.parentElement) {
-        var siblings = Array.from(el.parentElement.children).filter(function (c) {
-          return c.matches && c.matches(sel);
-        });
-        var idx = siblings.indexOf(el);
-        if (siblings.length > 1 && idx >= 1 && idx <= 3) {
-          el.classList.add('stagger-' + idx);
-        }
-      }
+      if (!el.classList.contains('fade-in')) el.classList.add('fade-in');
     });
   });
-
-  var els = document.querySelectorAll(ANIM_SELECTOR);
-  if (!els.length) return;
-
-  function activate(el) { el.classList.add('visible'); }
 
   // Show elements already in viewport on load
-  els.forEach(function (el) {
-    if (el.getBoundingClientRect().top < window.innerHeight) activate(el);
+  document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right').forEach(function (el) {
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
   });
 
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { activate(e.target); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold: 0.1});
 
-    els.forEach(function (el) {
-      if (!el.classList.contains('visible')) obs.observe(el);
-    });
-  } else {
-    els.forEach(activate);
-  }
+  document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
 })();
