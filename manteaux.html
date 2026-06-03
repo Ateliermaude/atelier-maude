@@ -66,9 +66,13 @@ button{cursor:pointer;font-family:inherit}
 
 /* GRILLE PRODUITS */
 .products-section{padding:52px 40px 80px;max-width:1200px;margin:0 auto}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.products-grid{display:grid;grid-template-columns:minmax(0,520px);gap:32px;justify-content:center}
 .product-card{cursor:pointer}
 .product-card.hidden{display:none}
+.products-section.hidden{display:none}
+.lifestyle-break{width:100%;height:500px;overflow:hidden}
+.lifestyle-break img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.lifestyle-break.hidden{display:none}
 .product-img{position:relative;overflow:hidden;background:var(--cream);aspect-ratio:3/4;margin-bottom:18px}
 .product-img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s ease;display:block}
 .product-card:hover .product-img img{transform:scale(1.04)}
@@ -115,8 +119,9 @@ button{cursor:pointer;font-family:inherit}
 .back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
 .back-to-top:hover{background:var(--terracotta)}
 
-@media(max-width:1024px){.products-grid{grid-template-columns:1fr 1fr}.header-inner{padding:14px 24px}.site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}.page-hero,.filters-bar{padding-left:24px;padding-right:24px}.products-section{padding:40px 24px 60px}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.products-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+@media(max-width:1024px){.header-inner{padding:14px 24px}.site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}.page-hero,.filters-bar{padding-left:24px;padding-right:24px}.products-section{padding:40px 24px 60px}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.lifestyle-break{height:300px}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
 </style>
 <link rel="stylesheet" href="animations.css">
 <link rel="stylesheet" href="mobile.css">
@@ -197,10 +202,9 @@ button{cursor:pointer;font-family:inherit}
   </div>
 </div>
 
-<!-- GRILLE -->
+<!-- GRILLE — structure éditoriale alternée -->
 <section class="products-section">
-  <div class="products-grid" id="products-grid">
-
+  <div class="products-grid">
     <!-- YŪN COURT -->
     <article class="product-card" data-cat="court">
       <div class="product-img">
@@ -225,7 +229,15 @@ button{cursor:pointer;font-family:inherit}
         <span class="swatch-label">Noir</span>
       </div>
     </article>
+  </div>
+</section>
 
+<div class="lifestyle-break fade-in">
+  <img src="images/lookbook/lookbook-mongolie-camel-plaine.png" alt="" loading="lazy" decoding="async">
+</div>
+
+<section class="products-section">
+  <div class="products-grid">
     <!-- HUĀ LONG -->
     <article class="product-card" data-cat="long">
       <div class="product-img">
@@ -251,7 +263,15 @@ button{cursor:pointer;font-family:inherit}
         <span class="swatch-label">Camel, Gris</span>
       </div>
     </article>
+  </div>
+</section>
 
+<div class="lifestyle-break fade-in">
+  <img src="images/lookbook/lookbook-silhouette-ruelle.png" alt="" loading="lazy" decoding="async">
+</div>
+
+<section class="products-section">
+  <div class="products-grid">
     <!-- YŪN LONG -->
     <article class="product-card" data-cat="long">
       <div class="product-img">
@@ -277,9 +297,12 @@ button{cursor:pointer;font-family:inherit}
         <span class="swatch-label">Noir, Marron</span>
       </div>
     </article>
-
   </div>
 </section>
+
+<div class="lifestyle-break fade-in">
+  <img src="images/lookbook/lookbook-paris-deux-femmes.png" alt="" loading="lazy" decoding="async">
+</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -336,7 +359,13 @@ function filter(cat, btn) {
     var cardCat = card.dataset.cat || '';
     var show = cat === 'all' || cardCat === cat;
     card.classList.toggle('hidden', !show);
+    var section = card.closest('.products-section');
+    if (section) section.classList.toggle('hidden', !show);
     if (show) count++;
+  });
+
+  document.querySelectorAll('.lifestyle-break').forEach(function(el) {
+    el.classList.toggle('hidden', cat !== 'all');
   });
 
   var countEl = document.getElementById('product-count');
