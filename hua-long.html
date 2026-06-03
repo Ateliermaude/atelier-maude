@@ -87,7 +87,16 @@ button{cursor:pointer;font-family:inherit}
 .size-btn{min-width:52px;padding:10px 14px;border:1px solid var(--border);background:none;font-family:'Jost',sans-serif;font-size:12px;color:var(--dark-brown);transition:all .2s;cursor:pointer}
 .size-btn:hover{border-color:var(--dark-brown)}
 .size-btn.active{background:var(--dark-brown);color:#fff;border-color:var(--dark-brown)}
-.size-guide-link{font-size:11px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;margin-bottom:24px;display:inline-block}
+.size-guide-wrap{margin-bottom:24px}
+.size-guide-toggle{background:none;border:none;padding:0;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.size-guide-toggle:hover{color:var(--dark-brown)}
+.size-guide-panel{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.size-guide-panel.open{max-height:500px}
+.size-table{width:100%;border-collapse:collapse;background:#FAF7F2;font-size:11px;margin-top:14px;color:#2C1A0E}
+.size-table th{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:400;padding:8px 10px;border-bottom:1px solid var(--border);text-align:left}
+.size-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:#2C1A0E;font-size:12px}
+.size-table tbody tr:last-child td{border-bottom:none}
+.size-guide-note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px;font-style:italic}
 .btn-add{width:100%;background:var(--dark-brown);color:#fff;border:none;padding:18px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s;margin-bottom:12px;cursor:pointer}
 .btn-add:hover{background:var(--terracotta)}
 .btn-wishlist{width:100%;background:transparent;border:1px solid var(--border);color:var(--dark-brown);padding:15px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;cursor:pointer}
@@ -250,7 +259,22 @@ button{cursor:pointer;font-family:inherit}
 <button class="size-btn" onclick="selectSize(this)">L</button>
 <button class="size-btn" onclick="selectSize(this)">XL</button>
 </div>
-<a href="guide-des-tailles.html" class="size-guide-link">Consulter le guide des tailles &#8594;</a>
+<div class="size-guide-wrap">
+<button class="size-guide-toggle" onclick="toggleSizeGuide(this)" aria-expanded="false">Guide des tailles &#8595;</button>
+<div class="size-guide-panel">
+<table class="size-table">
+<thead><tr><th>Taille</th><th>Tour de poitrine</th><th>Tour de taille</th><th>Tour de hanches</th><th>FR</th></tr></thead>
+<tbody>
+<tr><td>XS</td><td>80–84 cm</td><td>62–66 cm</td><td>88–92 cm</td><td>34–36</td></tr>
+<tr><td>S</td><td>84–88 cm</td><td>66–70 cm</td><td>92–96 cm</td><td>38</td></tr>
+<tr><td>M</td><td>88–92 cm</td><td>70–74 cm</td><td>96–100 cm</td><td>40</td></tr>
+<tr><td>L</td><td>92–96 cm</td><td>74–78 cm</td><td>100–104 cm</td><td>42</td></tr>
+<tr><td>XL</td><td>96–100 cm</td><td>78–82 cm</td><td>104–108 cm</td><td>44</td></tr>
+</tbody>
+</table>
+<p class="size-guide-note">Nos manteaux sont conçus avec une coupe légèrement oversize. En cas de doute, nous recommandons de choisir votre taille habituelle.</p>
+</div>
+</div>
 <button class="btn-add" onclick="addToCart(this)">Ajouter au panier</button>
 <button class="btn-wishlist">Ajouter a ma liste</button>
 <div class="delivery-note">Livraison offerte - estimee dans 8 a 15 jours ouvres</div>
@@ -365,6 +389,13 @@ main.querySelectorAll('img').forEach(function(img,i){img.classList.toggle('activ
 function selectSize(el){
 document.querySelectorAll('.size-btn').forEach(function(b){b.classList.remove('active');});
 el.classList.add('active');
+}
+
+function toggleSizeGuide(btn){
+var panel=btn.nextElementSibling;
+var isOpen=panel.classList.toggle('open');
+btn.setAttribute('aria-expanded',isOpen);
+btn.textContent=isOpen?'Guide des tailles ↑':'Guide des tailles ↓';
 }
 
 function addToCart(btn){
