@@ -109,21 +109,6 @@ button{cursor:pointer;font-family:inherit}
 .sf-title{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:10px;font-weight:400}
 .sf-text{font-size:13px;color:var(--muted);line-height:1.85}
 
-/* COMPARATIF */
-.comparatif{padding:80px 40px;background:var(--dark-brown)}
-.comparatif-inner{max-width:1000px;margin:0 auto;text-align:center}
-.comparatif-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,46px);font-weight:300;color:var(--cream);margin-bottom:48px;line-height:1.1}
-.comparatif-title em{font-style:italic;color:var(--gold)}
-.comparatif-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,169,110,.12)}
-.comp-col{padding:36px 28px;background:var(--dark-brown)}
-.comp-col.highlight{background:rgba(201,169,110,.06)}
-.comp-brand{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:block;opacity:.75}
-.comp-price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--cream);margin-bottom:20px;line-height:1}
-.comp-items{list-style:none}
-.comp-items li{font-size:12px;color:rgba(245,240,234,.55);padding:8px 0;border-bottom:1px solid rgba(201,169,110,.1);line-height:1.5}
-.comp-items li:last-child{border-bottom:none}
-.comp-items li.yes{color:rgba(245,240,234,.8)}
-
 /* NEWSLETTER */
 .newsletter{padding:80px 40px;text-align:center;background:var(--warm-white)}
 .newsletter-inner{max-width:560px;margin:0 auto}
@@ -183,12 +168,10 @@ button{cursor:pointer;font-family:inherit}
 @media(max-width:1024px){
   .products-grid{grid-template-columns:1fr 1fr}
   .sf-grid{grid-template-columns:1fr 1fr}
-  .comparatif-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .header-inner{padding:14px 24px}
   .site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}
   .collection,.savoir-faire,.newsletter{padding:60px 24px}
-  .comparatif{padding:60px 24px}
   .reassurance-inner{grid-template-columns:repeat(2,1fr);gap:0}
   .editorial-inner{grid-template-columns:1fr;min-height:auto}
   .editorial-media{aspect-ratio:16/9}
@@ -447,45 +430,6 @@ button{cursor:pointer;font-family:inherit}
       <p class="editorial-quote">Chaque manteau MAUDÉ commence par une fibre. Il finit par une histoire.</p>
       <p class="editorial-body">Nous n'avons pas créé MAUDÉ pour vendre des manteaux. Nous l'avons créé pour que vous n'en ayez jamais besoin d'un autre. 50% laine, 50% cachemire de Mongolie-Intérieure — sélectionnés pour leur finesse, tissés à Suzhou selon 2 500 ans de tradition.</p>
       <a href="notre-histoire.html" class="text-link">Découvrir notre histoire →</a>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARATIF -->
-<section class="comparatif">
-  <div class="comparatif-inner">
-    <h2 class="comparatif-title">Pourquoi MAUDÉ plutôt qu'<em>ailleurs</em> ?</h2>
-    <div class="comparatif-grid">
-      <div class="comp-col">
-        <span class="comp-brand">Grandes maisons</span>
-        <p class="comp-price">800–1 500€</p>
-        <ul class="comp-items">
-          <li class="yes">Qualité cachemire ✓</li>
-          <li>Marges boutiques ×3</li>
-          <li>Publicité coûteuse</li>
-          <li>Vous payez l'image</li>
-        </ul>
-      </div>
-      <div class="comp-col highlight">
-        <span class="comp-brand">Atelier MAUDÉ</span>
-        <p class="comp-price" style="color:var(--gold)">350–450€</p>
-        <ul class="comp-items">
-          <li class="yes">Même qualité matière ✓</li>
-          <li class="yes">Vente directe ✓</li>
-          <li class="yes">Transparence totale ✓</li>
-          <li class="yes">Livraison gratuite ✓</li>
-        </ul>
-      </div>
-      <div class="comp-col">
-        <span class="comp-brand">Fast fashion</span>
-        <p class="comp-price">30–80€</p>
-        <ul class="comp-items">
-          <li>Synthétique / polyester</li>
-          <li>Durée de vie : 1 saison</li>
-          <li>Impact environnemental</li>
-          <li>Aucun savoir-faire</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
