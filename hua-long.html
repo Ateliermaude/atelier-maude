@@ -138,15 +138,6 @@ button{cursor:pointer;font-family:inherit}
 .upsell-price .price-old{font-size:14px}
 .upsell-price .price-save{font-size:10px;padding:3px 8px}
 @media(max-width:600px){.upsell{padding:48px 24px}.upsell-grid{grid-template-columns:1fr;gap:28px}}
-.closeup-section{background:#FAF7F2;padding:80px 40px;border-top:1px solid var(--border)}
-.closeup-inner{max-width:1400px;margin:0 auto}
-.closeup-title{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--dark-brown);text-align:center;margin-bottom:52px;font-weight:400}
-.closeup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.closeup-item{aspect-ratio:1/1;overflow:hidden;background:var(--cream)}
-.closeup-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.closeup-item:hover img{transform:scale(1.03)}
-@media(max-width:768px){.closeup-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.closeup-section{padding:60px 24px}.closeup-title{margin-bottom:36px}}
 </style>
 <link rel="stylesheet" href="animations.css">
 <link rel="stylesheet" href="mobile.css">
@@ -211,6 +202,12 @@ button{cursor:pointer;font-family:inherit}
 <div class="gallery-thumb" data-color="gris" data-index="5" style="display:none" onclick="switchImage(5)"><img src="hua-long-gris-2.jpg" alt="Hua Long gris dos" loading="lazy"></div>
 <div class="gallery-thumb" data-color="gris" data-index="6" style="display:none" onclick="switchImage(6)"><img src="hua-long-gris-3.jpg" alt="Hua Long gris profil droit" loading="lazy"></div>
 <div class="gallery-thumb" data-color="gris" data-index="7" style="display:none" onclick="switchImage(7)"><img src="hua-long-gris-4.jpg" alt="Hua Long gris profil gauche" loading="lazy"></div>
+<div class="gallery-thumb" data-color="camel" data-index="8" onclick="switchImage(8)"><img src="closeup-hua-long-camel-epaule.png" alt="D&eacute;tail &eacute;paule camel" loading="lazy"></div>
+<div class="gallery-thumb" data-color="camel" data-index="9" onclick="switchImage(9)"><img src="closeup-hua-long-camel-profil-mannequin.png" alt="Profil mannequin camel" loading="lazy"></div>
+<div class="gallery-thumb" data-color="camel" data-index="10" onclick="switchImage(10)"><img src="closeup-hua-long-camel-col-v.png" alt="Col V camel" loading="lazy"></div>
+<div class="gallery-thumb" data-color="gris" data-index="11" style="display:none" onclick="switchImage(11)"><img src="closeup-hua-long-gris-col-bouton.png" alt="Col bouton gris" loading="lazy"></div>
+<div class="gallery-thumb" data-color="gris" data-index="12" style="display:none" onclick="switchImage(12)"><img src="closeup-hua-long-gris-revers.png" alt="Revers gris" loading="lazy"></div>
+<div class="gallery-thumb" data-color="gris" data-index="13" style="display:none" onclick="switchImage(13)"><img src="closeup-hua-long-gris-manchette.png" alt="Manchette gris" loading="lazy"></div>
 </div>
 <div class="gallery-main" id="gallery-main">
 <div class="promo-tag">Promotion</div>
@@ -223,6 +220,12 @@ button{cursor:pointer;font-family:inherit}
 <img src="hua-long-gris-2.jpg" alt="Hua Long gris dos" loading="lazy">
 <img src="hua-long-gris-3.jpg" alt="Hua Long gris profil droit" loading="lazy">
 <img src="hua-long-gris-4.jpg" alt="Hua Long gris profil gauche" loading="lazy">
+<img src="closeup-hua-long-camel-epaule.png" alt="D&eacute;tail &eacute;paule camel" loading="lazy">
+<img src="closeup-hua-long-camel-profil-mannequin.png" alt="Profil mannequin camel" loading="lazy">
+<img src="closeup-hua-long-camel-col-v.png" alt="Col V camel" loading="lazy">
+<img src="closeup-hua-long-gris-col-bouton.png" alt="Col bouton gris" loading="lazy">
+<img src="closeup-hua-long-gris-revers.png" alt="Revers gris" loading="lazy">
+<img src="closeup-hua-long-gris-manchette.png" alt="Manchette gris" loading="lazy">
 </div>
 </div>
 <div class="product-info">
@@ -286,21 +289,6 @@ button{cursor:pointer;font-family:inherit}
 </div>
 </div>
 </div>
-<!-- DÉTAILS & MATIÈRE -->
-<section class="closeup-section">
-  <div class="closeup-inner">
-    <h2 class="closeup-title">D&eacute;tails &amp; Mati&egrave;re</h2>
-    <div class="closeup-grid">
-      <div class="closeup-item fade-in"><img src="closeup-hua-long-camel-epaule.png" alt="D&eacute;tail &eacute;paule Hu&#257; Long camel" loading="lazy" decoding="async"></div>
-      <div class="closeup-item fade-in" style="transition-delay:.1s"><img src="closeup-hua-long-camel-profil-mannequin.png" alt="Profil mannequin Hu&#257; Long camel" loading="lazy" decoding="async"></div>
-      <div class="closeup-item fade-in" style="transition-delay:.2s"><img src="closeup-hua-long-camel-col-v.png" alt="Col V Hu&#257; Long camel" loading="lazy" decoding="async"></div>
-      <div class="closeup-item fade-in" style="transition-delay:.1s"><img src="closeup-hua-long-gris-col-bouton.png" alt="Col bouton Hu&#257; Long gris" loading="lazy" decoding="async"></div>
-      <div class="closeup-item fade-in" style="transition-delay:.2s"><img src="closeup-hua-long-gris-revers.png" alt="Revers Hu&#257; Long gris" loading="lazy" decoding="async"></div>
-      <div class="closeup-item fade-in" style="transition-delay:.3s"><img src="closeup-hua-long-gris-manchette.png" alt="Manchette Hu&#257; Long gris" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-</section>
-
 <!-- VOUS AIMEREZ AUSSI -->
 <section class="upsell">
   <div class="upsell-inner">
