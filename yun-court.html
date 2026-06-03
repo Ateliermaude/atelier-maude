@@ -137,6 +137,15 @@ button{cursor:pointer;font-family:inherit}
 .upsell-price .price-old{font-size:14px}
 .upsell-price .price-save{font-size:10px;padding:3px 8px}
 @media(max-width:600px){.upsell{padding:48px 24px}.upsell-grid{grid-template-columns:1fr;gap:28px}}
+.closeup-section{background:#FAF7F2;padding:80px 40px;border-top:1px solid var(--border)}
+.closeup-inner{max-width:1400px;margin:0 auto}
+.closeup-title{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--dark-brown);text-align:center;margin-bottom:52px;font-weight:400}
+.closeup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.closeup-item{aspect-ratio:1/1;overflow:hidden;background:var(--cream)}
+.closeup-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.closeup-item:hover img{transform:scale(1.03)}
+@media(max-width:768px){.closeup-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.closeup-section{padding:60px 24px}.closeup-title{margin-bottom:36px}}
 </style>
 <link rel="stylesheet" href="animations.css">
 <link rel="stylesheet" href="mobile.css">
@@ -267,6 +276,18 @@ button{cursor:pointer;font-family:inherit}
 </div>
 </div>
 </div>
+<!-- DÉTAILS & MATIÈRE -->
+<section class="closeup-section">
+  <div class="closeup-inner">
+    <h2 class="closeup-title">D&eacute;tails &amp; Mati&egrave;re</h2>
+    <div class="closeup-grid">
+      <div class="closeup-item fade-in"><img src="closeup-yun-court-ceinture-noeud.png" alt="D&eacute;tail ceinture n&#339;ud Y&#363;n Court" loading="lazy" decoding="async"></div>
+      <div class="closeup-item fade-in" style="transition-delay:.1s"><img src="closeup-yun-court-poche-main.png" alt="D&eacute;tail poche main Y&#363;n Court" loading="lazy" decoding="async"></div>
+      <div class="closeup-item fade-in" style="transition-delay:.2s"><img src="closeup-yun-court-col-boucle.png" alt="D&eacute;tail col boucle Y&#363;n Court" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
+
 <!-- VOUS AIMEREZ AUSSI -->
 <section class="upsell">
   <div class="upsell-inner">
