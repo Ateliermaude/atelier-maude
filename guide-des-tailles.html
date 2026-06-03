@@ -609,3 +609,9 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   },{passive:true});
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
   document.querySelectorAll('.fade-in').forEach(el=>obs
+.observe(el));
+</script>
+<script src="animations.js" defer></script>
+<script src="mobile.js" defer></script>
+</body>
+</html>

@@ -611,3 +611,10 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       `Bonjour,\n\nJe souhaite commander une carte cadeau Atelier MAUDÉ d'une valeur de ${selectedAmount}€.\n\nDe la part de : ${sender || '—'}\nPour : ${recipient || '—'}\nMessage : ${message || '—'}\n\nMon e-mail : ${email}`
     );
     window.location.href = `mailto:lateliermaude@gmail
+.com?subject=${subject}&body=${body}`;
+  }
+</script>
+<script src="animations.js" defer></script>
+<script src="mobile.js" defer></script>
+</body>
+</html>
