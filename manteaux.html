@@ -335,7 +335,12 @@ function filter(cat, btn) {
   cards.forEach(function(card) {
     var cardCat = card.dataset.cat || '';
     var show = cat === 'all' || cardCat === cat;
- 
+    card.classList.toggle('hidden', !show);
+    if (show) count++;
+  });
+
+  var countEl = document.getElementById('product-count');
+  if (countEl) countEl.textContent = count + ' manteau' + (count > 1 ? 'x' : '');
 }
 </script>
 <script src="animations.js" defer></script>
