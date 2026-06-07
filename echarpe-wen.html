@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Écharpe Wēn — Atelier MAUDÉ</title>
+<meta name="description" content="Écharpe Wēn en 100% cachemire de Mongolie-Intérieure. 7 coloris. 100 euros.">
+<meta property="og:image" content="https://ateliermaude.github.io/echarpe-camel.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit}
+.ticker-wrap{background:var(--terracotta);overflow:hidden;white-space:nowrap}
+.ticker{display:inline-flex;animation:ticker 30s linear infinite}
+.ticker-item{display:inline-block;padding:10px 0;font-size:11px;letter-spacing:.13em;color:#fff}
+.site-header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,.08)}
+.header-inner{max-width:1400px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
+.header-btn{background:none;border:none;color:var(--dark-brown);padding:4px;display:flex;align-items:center}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.14em;color:var(--dark-brown);text-transform:uppercase}
+.header-actions{display:flex;align-items:center;gap:18px}
+.site-nav{display:flex;justify-content:center;gap:36px;padding:0 40px 14px;max-width:1400px;margin:0 auto}
+.site-nav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);font-weight:400;position:relative;padding-bottom:2px;transition:color .2s}
+.site-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--terracotta);transition:width .3s}
+.site-nav a:hover{color:var(--terracotta)}
+.site-nav a:hover::after,.site-nav a.active::after{width:100%}
+.site-nav a.active{color:var(--terracotta)}
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:5px}
+.nav-dropdown>a::after{display:none!important}
+.nav-dropdown-arrow{font-size:8px;opacity:.5;transition:transform .3s;display:inline-block}
+.nav-dropdown:hover .nav-dropdown-arrow{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;background:var(--warm-white);border:1px solid var(--border);min-width:180px;opacity:0;pointer-events:none;transition:opacity .2s .3s,transform .2s .3s;transform:translateX(-50%) translateY(-6px);box-shadow:0 8px 32px rgba(58,42,30,.1);z-index:200}
+.dropdown-menu::before{content:'';position:absolute;top:-16px;left:0;right:0;height:16px}
+.nav-dropdown:hover .dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);transition:opacity .2s,transform .2s}
+.dropdown-menu a{display:block;padding:13px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dark-brown);border-bottom:1px solid var(--border);transition:background .2s,color .2s}
+.dropdown-menu a:last-child{border-bottom:none}
+.dropdown-menu a:hover{background:var(--cream);color:var(--terracotta)}
+.breadcrumb{max-width:1400px;margin:0 auto;padding:18px 40px;display:flex;gap:8px;align-items:center;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.breadcrumb .sep{opacity:.4}
+.product-layout{max-width:1400px;margin:0 auto;padding:0 40px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.gallery{display:grid;grid-template-columns:80px 1fr;gap:12px;position:sticky;top:110px}
+.gallery-thumbs{display:flex;flex-direction:column;gap:8px}
+.gallery-thumb{aspect-ratio:3/4;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .2s;background:var(--cream)}
+.gallery-thumb.active{border-color:var(--dark-brown)}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.gallery-main{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--cream);cursor:zoom-in}
+.gallery-main img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity .5s ease;display:block}
+.gallery-main img.active{opacity:1}
+.gallery-main:hover img.active{transform:scale(1.04);transition:transform 0.6s ease}
+.product-info{position:sticky;top:110px}
+.product-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px}
+.product-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,2.5vw,38px);font-weight:300;line-height:1.2;color:var(--dark-brown);margin-bottom:16px}
+.product-title em{font-style:italic}
+.price-wrap{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.price-current{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--dark-brown)}
+.option-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:12px;display:block;font-weight:400}
+.color-options{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.color-swatch{width:36px;height:36px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:border-color .2s,transform .2s;position:relative}
+.color-swatch:hover{transform:scale(1.1)}
+.color-swatch.active{border-color:var(--dark-brown)}
+.color-swatch::after{content:'';position:absolute;inset:3px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4)}
+.swatch-camel{background:#C19A6B}
+.swatch-noir{background:#1a1410}
+.swatch-gris{background:#7A7A7A}
+.swatch-bleu-marine{background:#1e2d45}
+.swatch-bleu-clair{background:#6CA0C8}
+.swatch-bleu-vert{background:#4A8070}
+.swatch-rose-pourpre{background:#8B3558}
+.btn-add{width:100%;background:var(--dark-brown);color:#fff;border:none;padding:18px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s;margin-bottom:12px;cursor:pointer}
+.btn-add:hover{background:var(--terracotta)}
+.btn-wishlist{width:100%;background:transparent;border:1px solid var(--border);color:var(--dark-brown);padding:15px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;cursor:pointer}
+.delivery-note{display:flex;align-items:center;gap:8px;font-size:12px;color:#3B6D11;margin-bottom:20px}
+.divider{border:none;border-top:1px solid var(--border);margin:20px 0}
+.tabs{display:flex;border-bottom:1px solid var(--border);margin:24px 0 0}
+.tab-btn{background:none;border:none;border-bottom:2px solid transparent;padding:10px 18px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:all .2s;margin-bottom:-1px;cursor:pointer}
+.tab-btn.active{color:var(--dark-brown);border-bottom-color:var(--dark-brown)}
+.tab-content{display:none;padding:20px 0;font-size:13px;color:var(--muted);line-height:1.9}
+.tab-content.active{display:block}
+.specs-list{list-style:none;margin-top:8px}
+.specs-list li{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);display:flex;gap:12px}
+.specs-list li strong{color:var(--dark-brown);min-width:110px;font-weight:400}
+.accordion-item{border-bottom:1px solid var(--border)}
+.accordion-item:first-of-type{border-top:1px solid var(--border)}
+.accordion-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;text-align:left;font-family:'Jost',sans-serif;font-size:13px;color:var(--dark-brown);font-weight:300;cursor:pointer}
+.accordion-icon{color:var(--gold);font-size:18px;flex-shrink:0;transition:transform .3s;line-height:1}
+.accordion-item.open .accordion-icon{transform:rotate(45deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.accordion-body-inner{padding:0 0 16px;font-size:13px;color:var(--muted);line-height:1.9}
+.accordion-item.open .accordion-body{max-height:400px}
+.back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--dark-brown);color:var(--gold);border:none;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s;z-index:90;cursor:pointer}
+.back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.site-footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 40px 32px}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;margin-bottom:48px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.14em;color:var(--dark-brown);text-transform:uppercase;display:block;margin-bottom:14px}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.85;max-width:240px}
+.footer-col h4{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:20px;font-weight:400}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:var(--muted);transition:color .2s}
+.footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:12px;color:var(--muted)}
+.upsell{padding:64px 40px;background:var(--cream);border-top:1px solid var(--border)}
+.upsell-inner{max-width:1400px;margin:0 auto}
+.upsell-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);font-weight:300;color:var(--dark-brown);margin-bottom:36px;text-align:center;letter-spacing:.02em}
+.upsell-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:800px;margin:0 auto}
+.upsell-card{display:block;color:inherit}
+.upsell-img{aspect-ratio:3/4;overflow:hidden;background:var(--warm-white);margin-bottom:16px}
+.upsell-img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .65s cubic-bezier(0.25,0.46,0.45,0.94);display:block}
+.upsell-card:hover .upsell-img img{transform:scale(1.04)}
+.upsell-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;color:var(--dark-brown);display:block;margin-bottom:6px}
+.upsell-price{margin-bottom:12px}
+.upsell-price .price-current{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--dark-brown)}
+.upsell-cta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);border-bottom:1px solid var(--border);padding-bottom:2px;transition:color .2s,border-color .2s;display:inline-block}
+.upsell-card:hover .upsell-cta{color:var(--terracotta);border-color:var(--terracotta)}
+@media(max-width:1024px){.product-layout{grid-template-columns:1fr;gap:40px}.gallery{position:static;grid-template-columns:60px 1fr}.product-info{position:static}.header-inner{padding:14px 24px}.site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}.breadcrumb{padding:14px 24px}.product-layout{padding:0 24px 60px}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.gallery{grid-template-columns:56px 1fr;gap:8px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:10px;text-align:center}.upsell{padding:48px 24px}.upsell-grid{grid-template-columns:1fr;gap:28px}.color-options{gap:8px}}
+</style>
+<link rel="stylesheet" href="animations.css">
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+<div class="ticker-wrap" role="marquee"><div class="ticker">
+<span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;RETOURS GRATUITS SOUS 30 JOURS</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;100% CACHEMIRE DE MONGOLIE-INT&Eacute;RIEURE</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;7 COLORIS &nbsp;·&nbsp; TAILLE UNIQUE</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;RETOURS GRATUITS SOUS 30 JOURS</span>
+</div></div>
+
+<header class="site-header" id="site-header">
+<div class="header-inner">
+<div class="header-actions"><button class="header-btn" aria-label="Menu"><svg width="22" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="1" x2="22" y2="1"/><line x1="0" y1="7" x2="16" y2="7"/><line x1="0" y1="13" x2="22" y2="13"/></svg></button></div>
+<a href="index.html" class="logo">Atelier MAUD&Eacute;</a>
+<div class="header-actions"><button class="header-btn" aria-label="Panier"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button></div>
+</div>
+<nav class="site-nav">
+  <div class="nav-dropdown">
+    <a href="manteaux.html">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <div class="dropdown-menu">
+      <a href="manteaux-court.html">Manteau Court</a>
+      <a href="manteaux-long.html">Manteau Long</a>
+    </div>
+  </div>
+  <div class="nav-dropdown">
+    <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <div class="dropdown-menu">
+      <a href="notre-histoire.html">Notre Histoire</a>
+      <a href="notre-cachemire.html">Notre Cachemire</a>
+    </div>
+  </div>
+  <div class="nav-dropdown">
+    <a href="accessoires.html" class="active">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <div class="dropdown-menu">
+      <a href="echarpes.html">Nos &Eacute;charpes</a>
+      <a href="ceintures.html">Nos Ceintures</a>
+    </div>
+  </div>
+  <a href="lookbook.html">Lookbook</a>
+  <a href="journal.html">Journal</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<nav class="breadcrumb">
+<a href="index.html">Accueil</a><span class="sep">/</span>
+<a href="echarpes.html">Nos &Eacute;charpes</a><span class="sep">/</span>
+<span>&Eacute;charpe W&#x113;n</span>
+</nav>
+
+<div class="product-layout">
+<div class="gallery">
+  <div class="gallery-thumbs" id="gallery-thumbs">
+    <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)"><img src="echarpe-camel.png" alt="&Eacute;charpe W&#x113;n camel" loading="eager"></div>
+    <div class="gallery-thumb" data-index="1" onclick="switchImage(1)"><img src="echarpe-noir.png" alt="&Eacute;charpe W&#x113;n noir" loading="lazy"></div>
+    <div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><img src="echarpe-gris.png" alt="&Eacute;charpe W&#x113;n gris" loading="lazy"></div>
+    <div class="gallery-thumb" data-index="3" onclick="switchImage(3)"><img src="echarpe-bleu-marine.png" alt="&Eacute;charpe W&#x113;n bleu marine" loading="lazy"></div>
+    <div class="gallery-thumb" data-index="4" onclick="switchImage(4)"><img src="echarpe-bleu-clair.png" alt="&Eacute;charpe W&#x113;n bleu clair" loading="lazy"></div>
+    <div class="gallery-thumb" data-index="5" onclick="switchImage(5)"><img src="echarpe-bleu-vert.png" alt="&Eacute;charpe W&#x113;n bleu vert" loading="lazy"></div>
+    <div class="gallery-thumb" data-index="6" onclick="switchImage(6)"><img src="echarpe-rose-pourpre.png" alt="&Eacute;charpe W&#x113;n rose pourpre" loading="lazy"></div>
+  </div>
+  <div class="gallery-main" id="gallery-main">
+    <img src="echarpe-camel.png" alt="&Eacute;charpe W&#x113;n camel" class="active" loading="eager">
+    <img src="echarpe-noir.png" alt="&Eacute;charpe W&#x113;n noir" loading="lazy">
+    <img src="echarpe-gris.png" alt="&Eacute;charpe W&#x113;n gris" loading="lazy">
+    <img src="echarpe-bleu-marine.png" alt="&Eacute;charpe W&#x113;n bleu marine" loading="lazy">
+    <img src="echarpe-bleu-clair.png" alt="&Eacute;charpe W&#x113;n bleu clair" loading="lazy">
+    <img src="echarpe-bleu-vert.png" alt="&Eacute;charpe W&#x113;n bleu vert" loading="lazy">
+    <img src="echarpe-rose-pourpre.png" alt="&Eacute;charpe W&#x113;n rose pourpre" loading="lazy">
+  </div>
+</div>
+
+<div class="product-info">
+  <p class="product-eyebrow">&Eacute;charpe &middot; Atelier MAUD&Eacute;</p>
+  <h1 class="product-title">&Eacute;charpe W&#x113;n<br><em>100% Cachemire</em></h1>
+  <div class="price-wrap">
+    <span class="price-current">100,00 &euro;</span>
+  </div>
+  <label class="option-label">Coloris &mdash; <span id="color-name-display">Camel</span></label>
+  <div class="color-options">
+    <div class="color-swatch swatch-camel active" data-index="0" onclick="selectColor(this,'Camel',0)" title="Camel"></div>
+    <div class="color-swatch swatch-noir" data-index="1" onclick="selectColor(this,'Noir',1)" title="Noir"></div>
+    <div class="color-swatch swatch-gris" data-index="2" onclick="selectColor(this,'Gris',2)" title="Gris"></div>
+    <div class="color-swatch swatch-bleu-marine" data-index="3" onclick="selectColor(this,'Bleu marine',3)" title="Bleu marine"></div>
+    <div class="color-swatch swatch-bleu-clair" data-index="4" onclick="selectColor(this,'Bleu clair',4)" title="Bleu clair"></div>
+    <div class="color-swatch swatch-bleu-vert" data-index="5" onclick="selectColor(this,'Bleu&thinsp;/&thinsp;Vert',5)" title="Bleu/Vert"></div>
+    <div class="color-swatch swatch-rose-pourpre" data-index="6" onclick="selectColor(this,'Rose pourpre',6)" title="Rose pourpre"></div>
+  </div>
+  <button class="btn-add" onclick="addToCart(this)">Ajouter au panier</button>
+  <button class="btn-wishlist">Ajouter &agrave; ma liste</button>
+  <div class="delivery-note">Livraison offerte &mdash; estim&eacute;e dans 8 &agrave; 15 jours ouvr&eacute;s</div>
+  <hr class="divider">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
+    <button class="tab-btn" onclick="switchTab(this,'comp')">Caract&eacute;ristiques</button>
+  </div>
+  <div id="tab-desc" class="tab-content active">
+    <p>Du cachemire pur de Mongolie-Int&eacute;rieure — une mati&egrave;re que nous tissons &agrave; Suzhou depuis le premier jour. L'&Eacute;charpe W&#x113;n est longue, fine, enveloppante.</p>
+    <br>
+    <p>Elle se noue, se drappe, se glisse sous un manteau ou s'enroule sur les &eacute;paules. Sept coloris pour s'adapter &agrave; toutes les saisons, toutes les silhouettes.</p>
+    <br>
+    <p>Taille unique.</p>
+  </div>
+  <div id="tab-comp" class="tab-content">
+    <ul class="specs-list">
+      <li><strong>Mati&egrave;re</strong> 100% cachemire de Mongolie-Int&eacute;rieure</li>
+      <li><strong>Grade</strong> Grade A &mdash; 15,5 microns</li>
+      <li><strong>Dimensions</strong> 30 &times; 164 cm + franges 8 cm</li>
+      <li><strong>Finitions</strong> Franges cousues main</li>
+      <li><strong>Fabrication</strong> Tiss&eacute;e &agrave; Suzhou, Chine</li>
+      <li><strong>Entretien</strong> Lavage &agrave; la main, eau froide</li>
+    </ul>
+  </div>
+  <hr class="divider">
+  <div class="accordion-item">
+    <button class="accordion-btn" onclick="toggleAccordion(this)">Livraison &amp; Retours<span class="accordion-icon">+</span></button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p><strong>Livraison gratuite</strong> en France et Belgique. D&eacute;lai : 8 &agrave; 15 jours ouvr&eacute;s.</p><br>
+      <p><strong>Retours gratuits</strong> sous 30 jours. contact@ateliermaude.com</p>
+    </div></div>
+  </div>
+  <div class="accordion-item">
+    <button class="accordion-btn" onclick="toggleAccordion(this)">Entretien<span class="accordion-icon">+</span></button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p>Lavage &agrave; la main recommand&eacute; &mdash; eau froide, lessive sp&eacute;ciale laine. Nettoyage &agrave; sec possible. Ne pas tordre. S&eacute;cher &agrave; plat, &agrave; l'abri de la lumi&egrave;re.</p>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<section class="upsell">
+  <div class="upsell-inner">
+    <h2 class="upsell-title">Compl&eacute;tez le look</h2>
+    <div class="upsell-grid">
+      <a href="yun-long.html" class="upsell-card">
+        <div class="upsell-img">
+          <img src="yun-long-noir-face-new.png" alt="Manteau Y&#363;n Long" loading="lazy">
+        </div>
+        <span class="upsell-name">Manteau Y&#363;n Long</span>
+        <div class="upsell-price">
+          <span class="price-current">450 &euro;</span>
+        </div>
+        <span class="upsell-cta">Voir le manteau &rarr;</span>
+      </a>
+      <a href="hua-long.html" class="upsell-card">
+        <div class="upsell-img">
+          <img src="hua-long-camel-face-new.png" alt="Manteau Hu&#257; Long" loading="lazy">
+        </div>
+        <span class="upsell-name">Manteau Hu&#257; Long</span>
+        <div class="upsell-price">
+          <span class="price-current">420 &euro;</span>
+        </div>
+        <span class="upsell-cta">Voir le manteau &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-grid">
+<div><a href="index.html" class="footer-logo">Atelier MAUD&Eacute;</a><p class="footer-desc">Des pi&egrave;ces en laine et cachemire d'exception, con&ccedil;ues pour durer.</p></div>
+<div class="footer-col"><h4>Boutique</h4><ul><li><a href="manteaux.html">Manteaux</a></li><li><a href="accessoires.html">Accessoires</a></li><li><a href="guide-des-tailles.html">Guide des tailles</a></li></ul></div>
+<div class="footer-col"><h4>L'atelier</h4><ul><li><a href="notre-histoire.html">Notre histoire</a></li><li><a href="notre-cachemire.html">Notre cachemire</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="journal.html">Journal</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div class="footer-col"><h4>L&eacute;gal</h4><ul><li><a href="cgv.html">CGV</a></li><li><a href="confidentialite.html">Confidentialit&eacute;</a></li><li><a href="https://instagram.com/ateliermaude" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2025 Atelier MAUD&Eacute;. Tous droits r&eacute;serv&eacute;s.</p><p>FR &middot; BE</p></div>
+</div>
+</footer>
+
+<button class="back-to-top" id="btt" aria-label="Retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+<script>
+window.addEventListener('scroll',function(){
+  document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
+  document.getElementById('btt').classList.toggle('show',scrollY>400);
+},{passive:true});
+
+function switchImage(idx){
+  var main=document.getElementById('gallery-main');
+  main.querySelectorAll('img').forEach(function(img,i){img.classList.toggle('active',i===idx);});
+  document.querySelectorAll('#gallery-thumbs .gallery-thumb').forEach(function(t){
+    t.classList.toggle('active',parseInt(t.dataset.index)===idx);
+  });
+  document.querySelectorAll('.color-swatch').forEach(function(s){
+    s.classList.toggle('active',parseInt(s.dataset.index)===idx);
+  });
+}
+
+function selectColor(el,name,idx){
+  document.getElementById('color-name-display').textContent=name;
+  switchImage(idx);
+}
+
+function addToCart(btn){
+  var orig=btn.textContent;
+  btn.textContent='Ajouté au panier';
+  btn.style.background='var(--brown)';
+  setTimeout(function(){btn.textContent=orig;btn.style.background='';},2500);
+}
+
+function toggleAccordion(btn){
+  var item=btn.closest('.accordion-item');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.accordion-item.open').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
+}
+
+function switchTab(btn,id){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.tab-content').forEach(function(c){c.classList.remove('active');});
+  btn.classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+}
+</script>
+<script src="animations.js" defer></script>
+<script src="mobile.js" defer></script>
+</body>
+</html>

@@ -70,6 +70,23 @@ button{cursor:pointer;font-family:inherit}
 .feature-text{font-size:13px;color:var(--muted);line-height:1.9}
 .feature-detail{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);display:block;margin-top:12px}
 
+/* PRODUITS */
+.collection-section{padding:64px 40px;background:var(--warm-white)}
+.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;max-width:900px;margin:0 auto}
+.products-grid.single{grid-template-columns:1fr;max-width:440px}
+.product-card{cursor:pointer}
+.product-card:hover .product-img img{transform:scale(1.05)}
+.product-img{position:relative;overflow:hidden;background:var(--cream);aspect-ratio:3/4;margin-bottom:20px}
+.product-img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s ease;display:block}
+.product-cta{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(42,26,18,.55));opacity:0;transition:opacity .3s;display:flex;justify-content:center;z-index:2}
+.product-card:hover .product-cta{opacity:1}
+.product-cta a{background:var(--warm-white);color:var(--dark-brown);padding:12px 28px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;transition:all .2s}
+.product-cta a:hover{background:var(--dark-brown);color:#fff}
+.product-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--dark-brown);margin-bottom:6px;line-height:1.3;display:block;transition:color .2s}
+.product-card:hover .product-name{color:var(--terracotta)}
+.product-desc{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.6}
+.price-now{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--dark-brown)}
+
 /* INSPIRATION */
 .inspiration{background:var(--terracotta);padding:96px 40px;text-align:center}
 .inspiration-inner{max-width:780px;margin:0 auto}
@@ -163,6 +180,21 @@ button{cursor:pointer;font-family:inherit}
   <h1 class="page-title">Nos <em>écharpes</em></h1>
   <p class="page-subtitle">Du cachemire pur de Mongolie-Intérieure tissé à Suzhou — une douceur incomparable, une chaleur durable, une élégance qui traverse les saisons.</p>
 </div>
+
+<!-- PRODUITS -->
+<section class="collection-section">
+  <div class="products-grid single">
+    <article class="product-card">
+      <div class="product-img">
+        <img src="echarpe-camel.png" alt="&Eacute;charpe W&#x113;n — 100% cachemire camel" loading="eager">
+        <div class="product-cta"><a href="echarpe-wen.html">Voir l'&eacute;charpe</a></div>
+      </div>
+      <a href="echarpe-wen.html" class="product-name">&Eacute;charpe W&#x113;n</a>
+      <p class="product-desc">100% cachemire &middot; 7 coloris &middot; Taille unique</p>
+      <span class="price-now">100,00 &euro;</span>
+    </article>
+  </div>
+</section>
 
 <!-- CARACTÉRISTIQUES -->
 <section class="features">
