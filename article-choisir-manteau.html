@@ -339,14 +339,16 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     transform: translateX(-50%);
     background: var(--warm-white); border: 1px solid var(--border);
     min-width: 180px; opacity: 0; pointer-events: none;
-    transition: opacity .25s, transform .25s;
+    transition: opacity .2s .3s, transform .2s .3s;
     transform: translateX(-50%) translateY(-6px);
     box-shadow: 0 8px 32px rgba(58,42,30,.1);
     z-index: 200;
   }
+  .dropdown-menu::before{content:'';position:absolute;top:-16px;left:0;right:0;height:16px}
   .nav-dropdown:hover .dropdown-menu {
     opacity: 1; pointer-events: auto;
     transform: translateX(-50%) translateY(0);
+    transition: opacity .2s, transform .2s;
   }
   .dropdown-menu a {
     display: block; padding: 13px 20px;
