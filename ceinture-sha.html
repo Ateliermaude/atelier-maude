@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ceinture Shā — Atelier MAUDE</title>
+<meta name="description" content="Ceinture Shā en cuir suédé camel. 75 euros.">
+<meta property="og:image" content="https://ateliermaude.github.io/sha-packshot-1.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;--dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;--text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15)}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit}
+.ticker-wrap{background:var(--terracotta);overflow:hidden;white-space:nowrap}
+.ticker{display:inline-flex;animation:ticker 30s linear infinite}
+.ticker-item{display:inline-block;padding:10px 0;font-size:11px;letter-spacing:.13em;color:#fff}
+.site-header{position:sticky;top:0;z-index:100;background:var(--warm-white);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,.08)}
+.header-inner{max-width:1400px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
+.header-btn{background:none;border:none;color:var(--dark-brown);padding:4px;display:flex;align-items:center}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.14em;color:var(--dark-brown);text-transform:uppercase}
+.header-actions{display:flex;align-items:center;gap:18px}
+.site-nav{display:flex;justify-content:center;gap:36px;padding:0 40px 14px;max-width:1400px;margin:0 auto}
+.site-nav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);font-weight:400;position:relative;padding-bottom:2px;transition:color .2s}
+.site-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--terracotta);transition:width .3s}
+.site-nav a:hover{color:var(--terracotta)}
+.site-nav a:hover::after,.site-nav a.active::after{width:100%}
+.site-nav a.active{color:var(--terracotta)}
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:5px}
+.nav-dropdown>a::after{display:none!important}
+.nav-dropdown-arrow{font-size:8px;opacity:.5;transition:transform .3s;display:inline-block}
+.nav-dropdown:hover .nav-dropdown-arrow{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:calc(100% + 14px);left:50%;background:var(--warm-white);border:1px solid var(--border);min-width:180px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;transform:translateX(-50%) translateY(-6px);box-shadow:0 8px 32px rgba(58,42,30,.1);z-index:200}
+.nav-dropdown:hover .dropdown-menu{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dropdown-menu a{display:block;padding:13px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dark-brown);border-bottom:1px solid var(--border);transition:background .2s,color .2s}
+.dropdown-menu a:last-child{border-bottom:none}
+.dropdown-menu a:hover{background:var(--cream);color:var(--terracotta)}
+.breadcrumb{max-width:1400px;margin:0 auto;padding:18px 40px;display:flex;gap:8px;align-items:center;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.breadcrumb .sep{opacity:.4}
+.product-layout{max-width:1400px;margin:0 auto;padding:0 40px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.gallery{display:grid;grid-template-columns:80px 1fr;gap:12px;position:sticky;top:110px}
+.gallery-thumbs{display:flex;flex-direction:column;gap:8px}
+.gallery-thumb{aspect-ratio:3/4;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .2s;background:var(--cream)}
+.gallery-thumb.active{border-color:var(--dark-brown)}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.gallery-main{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--cream);cursor:zoom-in}
+.gallery-main img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity .5s ease;display:block}
+.gallery-main img.active{opacity:1}
+.gallery-main:hover img.active{transform:scale(1.04);transition:transform 0.6s ease}
+.product-info{position:sticky;top:110px}
+.product-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px}
+.product-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,2.5vw,38px);font-weight:300;line-height:1.2;color:var(--dark-brown);margin-bottom:16px}
+.product-title em{font-style:italic}
+.price-wrap{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.price-current{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--dark-brown)}
+.btn-add{width:100%;background:var(--dark-brown);color:#fff;border:none;padding:18px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s;margin-bottom:12px;cursor:pointer}
+.btn-add:hover{background:var(--terracotta)}
+.btn-wishlist{width:100%;background:transparent;border:1px solid var(--border);color:var(--dark-brown);padding:15px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;cursor:pointer}
+.delivery-note{display:flex;align-items:center;gap:8px;font-size:12px;color:#3B6D11;margin-bottom:20px}
+.divider{border:none;border-top:1px solid var(--border);margin:20px 0}
+.tabs{display:flex;border-bottom:1px solid var(--border);margin:24px 0 0}
+.tab-btn{background:none;border:none;border-bottom:2px solid transparent;padding:10px 18px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:all .2s;margin-bottom:-1px;cursor:pointer}
+.tab-btn.active{color:var(--dark-brown);border-bottom-color:var(--dark-brown)}
+.tab-content{display:none;padding:20px 0;font-size:13px;color:var(--muted);line-height:1.9}
+.tab-content.active{display:block}
+.accordion-item{border-bottom:1px solid var(--border)}
+.accordion-item:first-of-type{border-top:1px solid var(--border)}
+.accordion-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;text-align:left;font-family:'Jost',sans-serif;font-size:13px;color:var(--dark-brown);font-weight:300;cursor:pointer}
+.accordion-icon{color:var(--gold);font-size:18px;flex-shrink:0;transition:transform .3s;line-height:1}
+.accordion-item.open .accordion-icon{transform:rotate(45deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.accordion-body-inner{padding:0 0 16px;font-size:13px;color:var(--muted);line-height:1.9}
+.accordion-item.open .accordion-body{max-height:400px}
+.back-to-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--dark-brown);color:var(--gold);border:none;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s;z-index:90;cursor:pointer}
+.back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.site-footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 40px 32px}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;margin-bottom:48px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.14em;color:var(--dark-brown);text-transform:uppercase;display:block;margin-bottom:14px}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.85;max-width:240px}
+.footer-col h4{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dark-brown);margin-bottom:20px;font-weight:400}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:var(--muted);transition:color .2s}
+.footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:12px;color:var(--muted)}
+.upsell{padding:64px 40px;background:var(--cream);border-top:1px solid var(--border)}
+.upsell-inner{max-width:1400px;margin:0 auto}
+.upsell-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);font-weight:300;color:var(--dark-brown);margin-bottom:36px;text-align:center;letter-spacing:.02em}
+.upsell-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:800px;margin:0 auto}
+.upsell-card{display:block;color:inherit;text-decoration:none}
+.upsell-img{aspect-ratio:3/4;overflow:hidden;background:var(--warm-white);margin-bottom:16px}
+.upsell-img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .65s cubic-bezier(0.25,0.46,0.45,0.94);display:block}
+.upsell-card:hover .upsell-img img{transform:scale(1.04)}
+.upsell-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;color:var(--dark-brown);display:block;margin-bottom:6px}
+.upsell-price{margin-bottom:12px}
+.upsell-price .price-current{font-size:22px}
+.upsell-cta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);border-bottom:1px solid var(--border);padding-bottom:2px;transition:color .2s,border-color .2s;display:inline-block}
+.upsell-card:hover .upsell-cta{color:var(--terracotta);border-color:var(--terracotta)}
+.specs-list{list-style:none;margin-top:8px}
+.specs-list li{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted);display:flex;gap:12px}
+.specs-list li strong{color:var(--dark-brown);min-width:100px;font-weight:400}
+@media(max-width:1024px){.product-layout{grid-template-columns:1fr;gap:40px}.gallery{position:static;grid-template-columns:60px 1fr}.product-info{position:static}.header-inner{padding:14px 24px}.site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}.breadcrumb{padding:14px 24px}.product-layout{padding:0 24px 60px}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.gallery{grid-template-columns:56px 1fr;gap:8px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:10px;text-align:center}.upsell-grid{grid-template-columns:1fr;gap:28px}.upsell{padding:48px 24px}}
+</style>
+<link rel="stylesheet" href="animations.css">
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+<div class="ticker-wrap" role="marquee"><div class="ticker">
+<span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;RETOURS GRATUITS SOUS 30 JOURS</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;CUIR V&Eacute;RITABLE SU&Eacute;D&Eacute;</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;ACCESSOIRES ATELIER MAUD&Eacute;</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
+<span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;RETOURS GRATUITS SOUS 30 JOURS</span>
+</div></div>
+<header class="site-header" id="site-header">
+<div class="header-inner">
+<div class="header-actions"><button class="header-btn" aria-label="Menu"><svg width="22" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="1" x2="22" y2="1"/><line x1="0" y1="7" x2="16" y2="7"/><line x1="0" y1="13" x2="22" y2="13"/></svg></button></div>
+<a href="index.html" class="logo">Atelier MAUDE</a>
+<div class="header-actions"><button class="header-btn" aria-label="Panier"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button></div>
+</div>
+<nav class="site-nav">
+  <div class="nav-dropdown">
+    <a href="manteaux.html">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <div class="dropdown-menu">
+      <a href="manteaux-court.html">Manteau Court</a>
+      <a href="manteaux-long.html">Manteau Long</a>
+    </div>
+  </div>
+  <div class="nav-dropdown">
+    <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <div class="dropdown-menu">
+      <a href="notre-histoire.html">Notre Histoire</a>
+      <a href="notre-cachemire.html">Notre Cachemire</a>
+    </div>
+  </div>
+  <div class="nav-dropdown">
+    <a href="echarpes.html" class="active">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <div class="dropdown-menu">
+      <a href="echarpes.html">Nos &Eacute;charpes</a>
+      <a href="ceintures.html">Nos Ceintures</a>
+    </div>
+  </div>
+  <a href="lookbook.html">Lookbook</a>
+  <a href="journal.html">Journal</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+<nav class="breadcrumb">
+<a href="index.html">Accueil</a><span class="sep">/</span>
+<a href="ceintures.html">Ceintures</a><span class="sep">/</span>
+<span>Ceinture Sh&#257;</span>
+</nav>
+<div class="product-layout">
+<div class="gallery">
+  <div class="gallery-thumbs" id="gallery-thumbs">
+    <!-- RENOMMER VOS FICHIERS AVIOO AINSI : -->
+    <!-- sha-packshot-1.png = ceinture enroulée sur cachemire (hero) -->
+    <!-- sha-packshot-2.png = ceinture à plat sur cachemire vue de dessus -->
+    <!-- sha-packshot-3.png = close-up boucle -->
+    <!-- sha-packshot-4.png = packshot fond neutre -->
+    <!-- sha-portee.png = shot porté à la taille (Gemini) -->
+    <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257; camel packshot" loading="eager"></div>
+    <div class="gallery-thumb" data-index="1" onclick="switchImage(1)"><img src="sha-packshot-2.png" alt="Ceinture Sh&#257; vue dessus" loading="lazy"></div>
+    <div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><img src="sha-packshot-3.png" alt="Ceinture Sh&#257; boucle close-up" loading="lazy"></div>
+    <div class="gallery-thumb" data-index="3" onclick="switchImage(3)"><img src="sha-packshot-4.png" alt="Ceinture Sh&#257; fond neutre" loading="lazy"></div>
+    <div class="gallery-thumb" data-index="4" onclick="switchImage(4)"><img src="sha-portee.png" alt="Ceinture Sh&#257; port&eacute;e" loading="lazy"></div>
+  </div>
+  <div class="gallery-main" id="gallery-main">
+    <img src="sha-packshot-1.png" alt="Ceinture Sh&#257; camel" class="active" loading="eager">
+    <img src="sha-packshot-2.png" alt="Ceinture Sh&#257; vue dessus" loading="lazy">
+    <img src="sha-packshot-3.png" alt="Ceinture Sh&#257; boucle" loading="lazy">
+    <img src="sha-packshot-4.png" alt="Ceinture Sh&#257; fond neutre" loading="lazy">
+    <img src="sha-portee.png" alt="Ceinture Sh&#257; port&eacute;e" loading="lazy">
+  </div>
+</div>
+<div class="product-info">
+  <p class="product-eyebrow">Ceinture · Atelier MAUDE</p>
+  <h1 class="product-title">Ceinture Sh&#257;<br><em>Cuir su&eacute;d&eacute; camel</em></h1>
+  <div class="price-wrap">
+    <span class="price-current">75,00 &euro;</span>
+  </div>
+  <button class="btn-add" onclick="addToCart(this)">Ajouter au panier</button>
+  <button class="btn-wishlist">Ajouter &agrave; ma liste</button>
+  <div class="delivery-note">Livraison offerte &mdash; estim&eacute;e dans 8 &agrave; 15 jours ouvr&eacute;s</div>
+  <hr class="divider">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
+    <button class="tab-btn" onclick="switchTab(this,'comp')">Caract&eacute;ristiques</button>
+  </div>
+  <div id="tab-desc" class="tab-content active">
+    <p>Cuir su&eacute;d&eacute; camel. Boucle rectangulaire noire. Une largeur g&eacute;n&eacute;reuse de 3,3&nbsp;cm qui structure la silhouette sans l'alourdir.</p>
+    <br>
+    <p>Taille unique, ajustable par trous.</p>
+  </div>
+  <div id="tab-comp" class="tab-content">
+    <ul class="specs-list">
+      <li><strong>Mati&egrave;re</strong> Cuir v&eacute;ritable su&eacute;d&eacute;</li>
+      <li><strong>Couleur</strong> Camel</li>
+      <li><strong>Largeur</strong> 3,3 cm</li>
+      <li><strong>Boucle</strong> M&eacute;tal noir</li>
+      <li><strong>Fermeture</strong> Taille unique, ajustable par trous</li>
+    </ul>
+  </div>
+  <hr class="divider">
+  <div class="accordion-item">
+    <button class="accordion-btn" onclick="toggleAccordion(this)">Livraison &amp; Retours<span class="accordion-icon">+</span></button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p><strong>Livraison gratuite</strong> en France et Belgique. D&eacute;lai : 8 &agrave; 15 jours ouvr&eacute;s.</p><br>
+      <p><strong>Retours gratuits</strong> sous 30 jours. contact@ateliermaude.com</p>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<section class="upsell">
+  <div class="upsell-inner">
+    <h2 class="upsell-title">Compl&eacute;tez le look</h2>
+    <div class="upsell-grid">
+      <a href="ceinture-ze.html" class="upsell-card">
+        <div class="upsell-img">
+          <img src="ze-packshot-1.png" alt="Ceinture Z&eacute;" loading="lazy">
+        </div>
+        <span class="upsell-name">Ceinture Z&eacute;</span>
+        <div class="upsell-price">
+          <span class="price-current">65 &euro;</span>
+        </div>
+        <span class="upsell-cta">Voir la ceinture &rarr;</span>
+      </a>
+      <a href="hua-long.html" class="upsell-card">
+        <div class="upsell-img">
+          <img src="hua-long-camel-face-new.png" alt="Manteau Hu&#257; Long" loading="lazy">
+        </div>
+        <span class="upsell-name">Manteau Hu&#257; Long</span>
+        <div class="upsell-price">
+          <span class="price-current">420 &euro;</span>
+        </div>
+        <span class="upsell-cta">Voir le manteau &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-grid">
+<div><a href="index.html" class="footer-logo">Atelier MAUDE</a><p class="footer-desc">Des manteaux en laine et cachemire d'exception.</p></div>
+<div class="footer-col"><h4>Boutique</h4><ul><li><a href="manteaux.html">Manteaux</a></li><li><a href="echarpes.html">Accessoires</a></li></ul></div>
+<div class="footer-col"><h4>L'atelier</h4><ul><li><a href="notre-histoire.html">Notre histoire</a></li><li><a href="notre-cachemire.html">Notre cachemire</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="journal.html">Journal</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div class="footer-col"><h4>Legal</h4><ul><li><a href="cgv.html">CGV</a></li><li><a href="confidentialite.html">Confidentialit&eacute;</a></li><li><a href="contact.html">contact@ateliermaude.com</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2025 Atelier MAUDE. Tous droits r&eacute;serv&eacute;s.</p><p>FR &middot; BE</p></div>
+</div>
+</footer>
+<button class="back-to-top" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+<script>
+window.addEventListener('scroll',function(){
+document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
+document.getElementById('btt').classList.toggle('show',scrollY>400);
+},{passive:true});
+function switchImage(index){
+var main=document.getElementById('gallery-main');
+main.querySelectorAll('img').forEach(function(img,i){img.classList.toggle('active',i===index);});
+document.querySelectorAll('#gallery-thumbs .gallery-thumb').forEach(function(t){t.classList.toggle('active',parseInt(t.dataset.index)===index);});
+}
+function addToCart(btn){
+var orig=btn.textContent;
+btn.textContent='Ajout&eacute; au panier';
+btn.style.background='var(--brown)';
+setTimeout(function(){btn.textContent=orig;btn.style.background='';},2500);
+}
+function toggleAccordion(btn){
+var item=btn.closest('.accordion-item');
+var isOpen=item.classList.contains('open');
+document.querySelectorAll('.accordion-item.open').forEach(function(i){i.classList.remove('open');});
+if(!isOpen)item.classList.add('open');
+}
+function switchTab(btn,id){
+document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+document.querySelectorAll('.tab-content').forEach(function(c){c.classList.remove('active');});
+btn.classList.add('active');
+document.getElementById('tab-'+id).classList.add('active');
+}
+</script>
+<script src="animations.js" defer></script>
+<script src="mobile.js" defer></script>
+</body>
+</html>
