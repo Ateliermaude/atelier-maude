@@ -19,9 +19,45 @@ html { scroll-behavior: smooth; }
   100% { transform: translateX(-50%); }
 }
 
+/* ── ANIMATED NAV UNDERLINE ── */
+.site-nav a::after {
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+.site-nav a:hover::after,
+.site-nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.footer-col a {
+  position: relative;
+}
+.footer-col a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--terracotta, #8B4A3A);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+.footer-col a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .fade-in, .fade-in-up, .fade-in-left, .fade-in-right {
     opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .site-nav a::after,
+  .footer-col a::after {
+    transition: none;
   }
 }
