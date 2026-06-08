@@ -1,5 +1,8 @@
 html { scroll-behavior: smooth; }
 
+/* Prevent inline picture element from disrupting block image layouts */
+picture { display: block; }
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);

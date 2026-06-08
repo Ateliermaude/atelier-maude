@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ceinture Zé — Atelier MAUDE</title>
 <meta name="description" content="Ceinture Zé en cuir lisse chocolat. 65 euros.">
-<meta property="og:image" content="https://ateliermaude.github.io/ze-packshot-1.png">
+<meta property="og:image" content="https://ateliermaude.github.io/ze-packshot-1.webp">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,16 +171,16 @@ button{cursor:pointer;font-family:inherit}
     <!-- ze-packshot-3.png = close-up boucle argentée -->
     <!-- ze-packshot-4.png = packshot fond neutre -->
     <!-- ze-portee.png = shot porté à la taille (Gemini) -->
-    <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute; chocolat packshot" loading="eager"></div>
-    <div class="gallery-thumb" data-index="1" onclick="switchImage(1)"><img src="ze-packshot-2.png" alt="Ceinture Z&eacute; vue dessus" loading="lazy"></div>
-    <div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><img src="ze-packshot-3.png" alt="Ceinture Z&eacute; boucle close-up" loading="lazy"></div>
-    <div class="gallery-thumb" data-index="3" onclick="switchImage(3)"><img src="ze-portee.png" alt="Ceinture Z&eacute; port&eacute;e" loading="lazy"></div>
+    <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)"><picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute; chocolat packshot" loading="eager"></picture></div>
+    <div class="gallery-thumb" data-index="1" onclick="switchImage(1)"><picture><source srcset="ze-packshot-2.webp" type="image/webp"><img src="ze-packshot-2.png" alt="Ceinture Z&eacute; vue dessus" loading="lazy"></picture></div>
+    <div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><picture><source srcset="ze-packshot-3.webp" type="image/webp"><img src="ze-packshot-3.png" alt="Ceinture Z&eacute; boucle close-up" loading="lazy"></picture></div>
+    <div class="gallery-thumb" data-index="3" onclick="switchImage(3)"><picture><source srcset="ze-portee.webp" type="image/webp"><img src="ze-portee.png" alt="Ceinture Z&eacute; port&eacute;e" loading="lazy"></picture></div>
   </div>
   <div class="gallery-main" id="gallery-main">
-    <img src="ze-packshot-1.png" alt="Ceinture Z&eacute; chocolat" class="active" loading="eager">
-    <img src="ze-packshot-2.png" alt="Ceinture Z&eacute; vue dessus" loading="lazy">
-    <img src="ze-packshot-3.png" alt="Ceinture Z&eacute; boucle" loading="lazy">
-    <img src="ze-portee.png" alt="Ceinture Z&eacute; port&eacute;e" loading="lazy">
+    <picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute; chocolat" class="active" loading="eager"></picture>
+    <picture><source srcset="ze-packshot-2.webp" type="image/webp"><img src="ze-packshot-2.png" alt="Ceinture Z&eacute; vue dessus" loading="lazy"></picture>
+    <picture><source srcset="ze-packshot-3.webp" type="image/webp"><img src="ze-packshot-3.png" alt="Ceinture Z&eacute; boucle" loading="lazy"></picture>
+    <picture><source srcset="ze-portee.webp" type="image/webp"><img src="ze-portee.png" alt="Ceinture Z&eacute; port&eacute;e" loading="lazy"></picture>
   </div>
 </div>
 <div class="product-info">
@@ -228,7 +228,7 @@ button{cursor:pointer;font-family:inherit}
     <div class="upsell-grid">
       <a href="ceinture-sha.html" class="upsell-card">
         <div class="upsell-img">
-          <img src="sha-packshot-1.png" alt="Ceinture Sh&#257;" loading="lazy">
+          <picture><source srcset="sha-packshot-1.webp" type="image/webp"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257;" loading="lazy"></picture>
         </div>
         <span class="upsell-name">Ceinture Sh&#257;</span>
         <div class="upsell-price">
@@ -238,7 +238,7 @@ button{cursor:pointer;font-family:inherit}
       </a>
       <a href="yun-long.html" class="upsell-card">
         <div class="upsell-img">
-          <img src="yun-long-noir-face-new.png" alt="Manteau Y&#363;n Long" loading="lazy">
+          <picture><source srcset="yun-long-noir-face-new.webp" type="image/webp"><img src="yun-long-noir-face-new.png" alt="Manteau Y&#363;n Long" loading="lazy"></picture>
         </div>
         <span class="upsell-name">Manteau Y&#363;n Long</span>
         <div class="upsell-price">
