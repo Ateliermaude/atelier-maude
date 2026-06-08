@@ -222,30 +222,42 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
   <div class="contact-form-section">
     <h2>Envoyez-nous un <em>message</em></h2>
     <p>Nous répondons à tous les messages sous 48h, du lundi au vendredi. Pour une réponse plus rapide, écrivez-nous directement par email.</p>
-    <div class="form-group">
-      <label class="form-label" for="nom">Nom complet</label>
-      <input class="form-input" type="text" id="nom" name="nom" placeholder="Votre nom" autocomplete="name">
+    <form id="contact-form" action="https://formspree.io/f/PLACEHOLDER" method="POST" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="nom">Nom complet</label>
+        <input class="form-input" type="text" id="nom" name="nom" placeholder="Votre nom" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Adresse email</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="votre@email.com" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="sujet">Sujet</label>
+        <select class="form-input" id="sujet" name="sujet">
+          <option value="">Choisir un sujet</option>
+          <option>Question sur un manteau</option>
+          <option>Ma commande</option>
+          <option>Retour / Échange</option>
+          <option>Taille et guide des tailles</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-input" id="message" name="message" placeholder="Votre message..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Envoyer le message</button>
+    </form>
+    <div id="form-success" style="display:none;background:var(--cream);border:1px solid var(--border);padding:40px 32px;text-align:center">
+      <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);display:block;margin-bottom:20px">Message envoyé</span>
+      <div style="display:flex;align-items:center;gap:14px;max-width:100px;margin:0 auto 28px">
+        <div style="flex:1;height:1px;background:var(--terracotta);opacity:.3"></div>
+        <div style="width:4px;height:4px;border-radius:50%;background:var(--terracotta);opacity:.45;flex-shrink:0"></div>
+        <div style="flex:1;height:1px;background:var(--terracotta);opacity:.3"></div>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,32px);font-weight:300;color:var(--dark-brown);line-height:1.25;margin-bottom:16px">Votre message a bien<br><em style="font-style:italic;color:var(--brown)">été reçu.</em></p>
+      <p style="font-size:13px;color:var(--muted);line-height:1.85">Nous vous répondrons dans les 48h,<br>du lundi au vendredi.</p>
     </div>
-    <div class="form-group">
-      <label class="form-label" for="email">Adresse email</label>
-      <input class="form-input" type="email" id="email" name="email" placeholder="votre@email.com" autocomplete="email">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="sujet">Sujet</label>
-      <select class="form-input" id="sujet" name="sujet">
-        <option value="">Choisir un sujet</option>
-        <option>Question sur un manteau</option>
-        <option>Ma commande</option>
-        <option>Retour / Échange</option>
-        <option>Taille et guide des tailles</option>
-        <option>Autre</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="message">Message</label>
-      <textarea class="form-input" id="message" name="message" placeholder="Votre message..."></textarea>
-    </div>
-    <button type="button" class="form-submit" onclick="submitForm()">Envoyer le message</button>
   </div>
 
   <!-- INFOS -->
@@ -370,22 +382,46 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14"><polyline points="2,10 7,4 12,10"/></svg>
 </button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-window.addEventListener('scroll',function(){
-  document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
-  document.getElementById('btt').classList.toggle('show',scrollY>400);
-},{passive:true});
+<script>
+window.addEventListener('scroll', function() {
+  document.getElementById('site-header').classList.toggle('scrolled', scrollY > 10);
+  document.getElementById('btt').classList.toggle('show', scrollY > 400);
+}, {passive: true});
 
-function toggleFaq(btn){
+function toggleFaq(btn) {
   var item = btn.closest('.faq-item');
   var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
-  if(!isOpen) item.classList.add('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
 }
 
-function submitForm(){
-  var nom = document.getElementByI
-}
+(function() {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var orig = btn.textContent;
+    btn.textContent = 'Envoi en cours…';
+    btn.disabled = true;
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r) {
+      if (r.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.textContent = orig;
+        btn.disabled = false;
+      }
+    }).catch(function() {
+      btn.textContent = orig;
+      btn.disabled = false;
+    });
+  });
+})();
 </script>
 <script src="animations.js" defer></script>
 <script src="mobile.js" defer></script>
