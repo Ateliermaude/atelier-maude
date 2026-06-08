@@ -19,6 +19,31 @@ html { scroll-behavior: smooth; }
   100% { transform: translateX(-50%); }
 }
 
+/* ── IMAGE SHIMMER ── */
+.img-loading { position: relative; }
+.img-loading::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    #FAF7F2 0%,
+    #EDE4D8 40%,
+    #FAF7F2 70%,
+    #FAF7F2 100%
+  );
+  background-size: 300% 100%;
+  animation: img-shimmer 1.6s ease-in-out infinite;
+  transition: opacity 0.5s ease-out;
+}
+.img-loading.img-loaded::before { opacity: 0; }
+@keyframes img-shimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
 /* ── ANIMATED NAV UNDERLINE ── */
 .site-nav a::after {
   width: 100%;
@@ -59,5 +84,9 @@ html { scroll-behavior: smooth; }
   .site-nav a::after,
   .footer-col a::after {
     transition: none;
+  }
+  .img-loading::before {
+    animation: none;
+    background: #FAF7F2;
   }
 }
