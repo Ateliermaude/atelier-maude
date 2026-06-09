@@ -1,3 +1,31 @@
+/* ── SÉLECTEUR DE LANGUE / LANGUAGE SWITCH ── */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.lang-switch > .lang-current {
+  color: var(--dark-brown, #3A2A1E);
+}
+.lang-switch > .lang-sep {
+  color: var(--border, rgba(107,79,58,0.15));
+  font-size: 10px;
+}
+.lang-switch > a {
+  color: var(--muted, #8A7B6F);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.lang-switch > a:hover {
+  color: var(--terracotta, #8B4A3A);
+}
+
 .nav-close-btn { display: none; }
 
 @media (max-width: 768px) {
