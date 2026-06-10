@@ -290,6 +290,233 @@ button{cursor:pointer;font-family:inherit}
   </div>
 </section>
 
+<!-- MATERIAL SIGNATURE -->
+<section class="matiere" id="la-matiere" aria-label="The material — cashmere 15 microns">
+  <div class="matiere__bg" aria-hidden="true">
+    <img src="../cachemire-texture-zoom.png" alt="" loading="lazy" width="1410" height="752">
+  </div>
+  <div class="matiere__veil" aria-hidden="true"></div>
+
+  <div class="matiere__content">
+    <p class="matiere__eyebrow">The Material</p>
+
+    <p class="matiere__figure">
+      <span class="matiere__number" data-count-to="15" aria-label="15">0</span><span class="matiere__unit">microns</span>
+    </p>
+
+    <span class="matiere__rule" aria-hidden="true"></span>
+
+    <p class="matiere__claim">Finer than a human hair</p>
+
+    <p class="matiere__detail">Grade A Cashmere&nbsp;·&nbsp;Inner Mongolia&nbsp;·&nbsp;Spun in Suzhou</p>
+  </div>
+</section>
+
+<style>
+  /* ——— THE MATERIAL ——— */
+  .matiere {
+    position: relative;
+    height: 78vh;
+    min-height: 540px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .matiere__bg {
+    position: absolute;
+    inset: -12% 0;
+    z-index: 0;
+  }
+  .matiere__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: transform;
+  }
+
+  .matiere__veil {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(58, 42, 30, 0.34) 0%,
+      rgba(58, 42, 30, 0.52) 55%,
+      rgba(58, 42, 30, 0.40) 100%
+    );
+  }
+
+  .matiere__content {
+    position: relative;
+    z-index: 2;
+    color: #FAF7F2;
+    padding: 0 24px;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 1.1s ease-out, transform 1.1s ease-out;
+  }
+  .matiere.is-visible .matiere__content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .matiere__eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: #C9A96E;
+    margin: 0 0 28px;
+  }
+
+  .matiere__figure {
+    margin: 0;
+    line-height: 0.9;
+  }
+  .matiere__number {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(96px, 16vw, 200px);
+    letter-spacing: -0.01em;
+    font-variant-numeric: lining-nums;
+  }
+  .matiere__unit {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: clamp(14px, 1.6vw, 19px);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-left: 18px;
+    vertical-align: 18%;
+  }
+
+  .matiere__rule {
+    display: block;
+    width: 56px;
+    height: 1px;
+    background: #8B4A3A;
+    margin: 34px auto 30px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.9s ease-out 0.55s;
+  }
+  .matiere.is-visible .matiere__rule {
+    transform: scaleX(1);
+  }
+
+  .matiere__claim {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: clamp(12px, 1.4vw, 15px);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+  }
+
+  .matiere__detail {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(17px, 2vw, 22px);
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .matiere {
+      height: 64vh;
+      min-height: 440px;
+    }
+    .matiere__unit {
+      display: block;
+      margin: 14px 0 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .matiere__content,
+    .matiere__rule {
+      transition: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var section = document.getElementById('la-matiere');
+    if (!section || !('IntersectionObserver' in window)) {
+      if (section) finishInstantly();
+      return;
+    }
+
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var numberEl = section.querySelector('.matiere__number');
+    var target = parseInt(numberEl.getAttribute('data-count-to'), 10);
+    var hasRun = false;
+
+    function finishInstantly() {
+      var el = section.querySelector('.matiere__number');
+      if (el) el.textContent = el.getAttribute('data-count-to');
+      section.classList.add('is-visible');
+    }
+
+    function runCounter() {
+      var duration = 1400;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        numberEl.textContent = Math.round(eased * target);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !hasRun) {
+          hasRun = true;
+          section.classList.add('is-visible');
+          if (reduceMotion) {
+            numberEl.textContent = target;
+          } else {
+            runCounter();
+          }
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    io.observe(section);
+
+    if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      var bgImg = section.querySelector('.matiere__bg img');
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          var rect = section.getBoundingClientRect();
+          if (rect.bottom > 0 && rect.top < window.innerHeight) {
+            var progress = (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight;
+            bgImg.style.transform = 'translateY(' + (progress * -28) + 'px)';
+          }
+          ticking = false;
+        });
+      }, { passive: true });
+    }
+  })();
+</script>
+
+
 <div class="reassurance">
   <div class="reassurance-inner">
     <div class="reassurance-item">
