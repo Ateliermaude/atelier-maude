@@ -28,6 +28,30 @@
   transform: rotate(180deg);
 }
 
+/* ── LOGO TAGLINE ── */
+.logo-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+.logo-tagline {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted, #74665B);
+  margin-top: 3px;
+  white-space: nowrap;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .logo-tagline { display: none; }
+}
+
 /* ── SÉLECTEUR DE LANGUE / LANGUAGE SWITCH ── */
 .lang-switch {
   display: inline-flex;
