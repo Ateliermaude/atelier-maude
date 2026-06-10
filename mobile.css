@@ -48,6 +48,9 @@
   white-space: nowrap;
   line-height: 1;
 }
+/* ── TICKER : uniformise font-size (certaines pages l'omettent dans le style inline) ── */
+.ticker-item { font-size: 11px; letter-spacing: 0.13em; color: #fff; }
+
 /* ── BARRE TAGLINE SOUS LE HEADER (mobile uniquement) ── */
 .mobile-brand-tagline { display: none; }
 
