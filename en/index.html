@@ -22,13 +22,14 @@
 <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --cream:#F5F0EA;--warm-white:#FAF8F5;--brown:#6B4F3A;
   --dark-brown:#3A2A1E;--terracotta:#8B4A3A;--gold:#C9A96E;
-  --text:#2C2218;--muted:#8A7B6F;--border:rgba(107,79,58,0.15);
+  --text:#2C2218;--muted:#74665B;--border:rgba(107,79,58,0.15);
 }
 html{scroll-behavior:smooth}
 body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--text);font-weight:300;overflow-x:hidden}
@@ -194,7 +195,30 @@ button{cursor:pointer;font-family:inherit}
 </style>
 <link rel="stylesheet" href="../animations.css">
 <link rel="stylesheet" href="../mobile.css">
-<script src="../cursor.js" defer></script><script src="../page-transitions.js" defer></script></head>
+<script src="../cursor.js" defer></script><script src="../page-transitions.js" defer></script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Atelier MAUDÉ",
+  "url": "https://ateliermaude.github.io/atelier-maude/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://ateliermaude.github.io/atelier-maude/hero.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  "sameAs": ["https://instagram.com/ateliermaude"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Atelier MAUDÉ",
+  "url": "https://ateliermaude.github.io/atelier-maude/"
+}
+</script>
+</head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
