@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accessoires — Atelier MAUDÉ</title>
 <meta name="description" content="Écharpes en cachemire et ceintures en cuir Atelier MAUDÉ. Finitions artisanales, matières d'exception. Livraison gratuite en France et Belgique.">
-<meta property="og:image" content="https://ateliermaude.github.io/hero.webp">
+<meta property="og:image" content="https://ateliermaude.github.io/atelier-maude/hero.webp">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="website">
@@ -109,6 +109,7 @@ button{cursor:pointer;font-family:inherit}
 <link rel="stylesheet" href="mobile.css">
 <script src="cursor.js" defer></script><script src="page-transitions.js" defer></script></head>
 <body>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
 <div class="ticker-wrap" role="marquee"><div class="ticker">
 <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
@@ -136,21 +137,21 @@ button{cursor:pointer;font-family:inherit}
   </div>
   <nav class="site-nav">
     <div class="nav-dropdown">
-      <a href="manteaux.html">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="manteaux.html" aria-haspopup="true" aria-expanded="false">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="manteaux-court.html">Manteau Court</a>
         <a href="manteaux-long.html">Manteau Long</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="notre-histoire.html" aria-haspopup="true" aria-expanded="false">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="notre-histoire.html">Notre Histoire</a>
         <a href="notre-cachemire.html">Notre Cachemire</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="accessoires.html" class="active">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="accessoires.html" class="active" aria-haspopup="true" aria-expanded="false">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="echarpes.html">Nos &Eacute;charpes</a>
         <a href="ceintures.html">Nos Ceintures</a>
@@ -161,6 +162,7 @@ button{cursor:pointer;font-family:inherit}
     <a href="contact.html">Contact</a>
   </nav>
 </header>
+<span id="main-content" tabindex="-1" aria-hidden="true"></span>
 
 <!-- HERO -->
 <div class="page-hero">
@@ -177,7 +179,7 @@ button{cursor:pointer;font-family:inherit}
     <div class="products-grid single">
       <article class="product-card">
         <div class="product-img">
-          <picture><source srcset="echarpe-camel.webp" type="image/webp"><img src="echarpe-camel.png" alt="&Eacute;charpe W&#x113;n — 100% cachemire camel" loading="eager"></picture>
+          <picture><source srcset="echarpe-camel.webp" type="image/webp"><img src="echarpe-camel.png" alt="&Eacute;charpe W&#x113;n — 100% cachemire camel" loading="eager" width="896" height="1200"></picture>
           <div class="product-cta"><a href="echarpe-wen.html">Voir l'&eacute;charpe</a></div>
         </div>
         <a href="echarpe-wen.html" class="product-name">&Eacute;charpe W&#x113;n</a>
@@ -196,7 +198,7 @@ button{cursor:pointer;font-family:inherit}
     <div class="products-grid">
       <article class="product-card">
         <div class="product-img">
-          <picture><source srcset="sha-packshot-1.webp" type="image/webp"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257; — cuir su&eacute;d&eacute; camel" loading="lazy"></picture>
+          <picture><source srcset="sha-packshot-1.webp" type="image/webp"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257; — cuir su&eacute;d&eacute; camel" loading="lazy" width="537" height="720"></picture>
           <div class="product-cta"><a href="ceinture-sha.html">Voir la ceinture</a></div>
         </div>
         <a href="ceinture-sha.html" class="product-name">Ceinture Sh&#257;</a>
@@ -205,7 +207,7 @@ button{cursor:pointer;font-family:inherit}
       </article>
       <article class="product-card">
         <div class="product-img">
-          <picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute; — cuir lisse chocolat" loading="lazy"></picture>
+          <picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute; — cuir lisse chocolat" loading="lazy" width="720" height="392"></picture>
           <div class="product-cta"><a href="ceinture-ze.html">Voir la ceinture</a></div>
         </div>
         <a href="ceinture-ze.html" class="product-name">Ceinture Z&eacute;</a>

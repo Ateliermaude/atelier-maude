@@ -1,3 +1,33 @@
+/* ── SKIP LINK ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 10px 18px;
+  background: var(--dark-brown, #3A2A1E);
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: top 0.15s;
+}
+.skip-link:focus { top: 0; }
+
+/* ── KEYBOARD NAV DROPDOWNS ── */
+.nav-dropdown--open > .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.nav-dropdown--open > a > .nav-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
 /* ── SÉLECTEUR DE LANGUE / LANGUAGE SWITCH ── */
 .lang-switch {
   display: inline-flex;

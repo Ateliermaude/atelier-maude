@@ -32,8 +32,38 @@
     a.addEventListener('click', closeMenu);
   });
 
-  // Close on Escape key
+  // Close on Escape key — menu AND any visible popup
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMenu();
+    if (e.key === 'Escape') {
+      closeMenu();
+      var popup = document.querySelector('.popup-overlay.show');
+      if (popup) popup.classList.remove('show');
+    }
+  });
+})();
+
+// Keyboard-accessible nav dropdowns
+(function () {
+  document.querySelectorAll('.nav-dropdown').forEach(function (dropdown) {
+    var trigger = dropdown.querySelector(':scope > a');
+    var menu = dropdown.querySelector('.dropdown-menu');
+    if (!trigger || !menu) return;
+
+    function openDropdown() {
+      dropdown.classList.add('nav-dropdown--open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+    function closeDropdown() {
+      dropdown.classList.remove('nav-dropdown--open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    dropdown.addEventListener('focusin', openDropdown);
+    dropdown.addEventListener('focusout', function (e) {
+      if (!dropdown.contains(e.relatedTarget)) closeDropdown();
+    });
+    dropdown.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { closeDropdown(); trigger.focus(); }
+    });
   });
 })();

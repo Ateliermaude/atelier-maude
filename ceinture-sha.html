@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ceinture Shā Cuir Suédé Camel — Atelier MAUDÉ</title>
 <meta name="description" content="Ceinture en cuir véritable suédé camel, largeur 3,3 cm. Boucle rectangulaire noire. Taille unique ajustable par trous. 75 €. Livraison gratuite.">
-<meta property="og:image" content="https://ateliermaude.github.io/sha-packshot-1.webp">
+<meta property="og:image" content="https://ateliermaude.github.io/atelier-maude/sha-packshot-1.webp">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="product">
@@ -142,6 +142,7 @@ button{cursor:pointer;font-family:inherit}
 <link rel="stylesheet" href="mobile.css">
 <script src="cursor.js" defer></script><script src="page-transitions.js" defer></script></head>
 <body>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 <div class="ticker-wrap" role="marquee"><div class="ticker">
 <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
 <span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;RETOURS GRATUITS SOUS 30 JOURS</span>
@@ -158,21 +159,21 @@ button{cursor:pointer;font-family:inherit}
 </div>
 <nav class="site-nav">
   <div class="nav-dropdown">
-    <a href="manteaux.html">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <a href="manteaux.html" aria-haspopup="true" aria-expanded="false">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
     <div class="dropdown-menu">
       <a href="manteaux-court.html">Manteau Court</a>
       <a href="manteaux-long.html">Manteau Long</a>
     </div>
   </div>
   <div class="nav-dropdown">
-    <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <a href="notre-histoire.html" aria-haspopup="true" aria-expanded="false">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
     <div class="dropdown-menu">
       <a href="notre-histoire.html">Notre Histoire</a>
       <a href="notre-cachemire.html">Notre Cachemire</a>
     </div>
   </div>
   <div class="nav-dropdown">
-    <a href="accessoires.html" class="active">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <a href="accessoires.html" class="active" aria-haspopup="true" aria-expanded="false">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
     <div class="dropdown-menu">
       <a href="echarpes.html">Nos &Eacute;charpes</a>
       <a href="ceintures.html">Nos Ceintures</a>
@@ -183,6 +184,7 @@ button{cursor:pointer;font-family:inherit}
   <a href="contact.html">Contact</a>
 </nav>
 </header>
+<span id="main-content" tabindex="-1" aria-hidden="true"></span>
 <nav class="breadcrumb">
 <a href="index.html">Accueil</a><span class="sep">/</span>
 <a href="ceintures.html">Ceintures</a><span class="sep">/</span>
@@ -197,14 +199,14 @@ button{cursor:pointer;font-family:inherit}
     <!-- sha-packshot-3.png = close-up boucle -->
     <!-- sha-packshot-4.png = packshot fond neutre -->
     <!-- sha-portee.png = shot porté à la taille (Gemini) -->
-    <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)"><picture><source srcset="sha-packshot-1.webp" type="image/webp"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257; camel packshot" loading="eager"></picture></div>
-    <div class="gallery-thumb" data-index="1" onclick="switchImage(1)"><picture><source srcset="sha-packshot-2.webp" type="image/webp"><img src="sha-packshot-2.png" alt="Ceinture Sh&#257; vue dessus" loading="lazy"></picture></div>
-    <div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><picture><source srcset="sha-portee.webp" type="image/webp"><img src="sha-portee.png" alt="Ceinture Sh&#257; port&eacute;e" loading="lazy"></picture></div>
+    <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)"><picture><source srcset="sha-packshot-1.webp" type="image/webp"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257; camel packshot" loading="eager" width="537" height="720"></picture></div>
+    <div class="gallery-thumb" data-index="1" onclick="switchImage(1)"><picture><source srcset="sha-packshot-2.webp" type="image/webp"><img src="sha-packshot-2.png" alt="Ceinture Sh&#257; vue dessus" loading="lazy" width="537" height="720"></picture></div>
+    <div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><picture><source srcset="sha-portee.webp" type="image/webp"><img src="sha-portee.png" alt="Ceinture Sh&#257; port&eacute;e" loading="lazy" width="537" height="720"></picture></div>
   </div>
   <div class="gallery-main" id="gallery-main">
-    <picture><source srcset="sha-packshot-1.webp" type="image/webp"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257; camel" class="active" loading="eager"></picture>
-    <picture><source srcset="sha-packshot-2.webp" type="image/webp"><img src="sha-packshot-2.png" alt="Ceinture Sh&#257; vue dessus" loading="lazy"></picture>
-    <picture><source srcset="sha-portee.webp" type="image/webp"><img src="sha-portee.png" alt="Ceinture Sh&#257; port&eacute;e" loading="lazy"></picture>
+    <picture><source srcset="sha-packshot-1.webp" type="image/webp"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257; camel" class="active" loading="eager" width="537" height="720"></picture>
+    <picture><source srcset="sha-packshot-2.webp" type="image/webp"><img src="sha-packshot-2.png" alt="Ceinture Sh&#257; vue dessus" loading="lazy" width="537" height="720"></picture>
+    <picture><source srcset="sha-portee.webp" type="image/webp"><img src="sha-portee.png" alt="Ceinture Sh&#257; port&eacute;e" loading="lazy" width="537" height="720"></picture>
   </div>
 </div>
 <div class="product-info">
@@ -252,7 +254,7 @@ button{cursor:pointer;font-family:inherit}
     <div class="upsell-grid">
       <a href="ceinture-ze.html" class="upsell-card">
         <div class="upsell-img">
-          <picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute;" loading="lazy"></picture>
+          <picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute;" loading="lazy" width="720" height="392"></picture>
         </div>
         <span class="upsell-name">Ceinture Z&eacute;</span>
         <div class="upsell-price">
@@ -262,7 +264,7 @@ button{cursor:pointer;font-family:inherit}
       </a>
       <a href="hua-long.html" class="upsell-card">
         <div class="upsell-img">
-          <picture><source srcset="hua-long-camel-face-new.webp" type="image/webp"><img src="hua-long-camel-face-new.png" alt="Manteau Hu&#257; Long" loading="lazy"></picture>
+          <picture><source srcset="hua-long-camel-face-new.webp" type="image/webp"><img src="hua-long-camel-face-new.png" alt="Manteau Hu&#257; Long" loading="lazy" width="720" height="720"></picture>
         </div>
         <span class="upsell-name">Manteau Hu&#257; Long</span>
         <div class="upsell-price">

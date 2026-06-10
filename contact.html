@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Atelier MAUDÉ">
 <meta property="og:title" content="Contact — Atelier MAUDÉ">
 <meta property="og:url" content="https://ateliermaude.github.io/atelier-maude/contact.html">
-<meta property="og:image" content="https://ateliermaude.github.io/hero.webp">
+<meta property="og:image" content="https://ateliermaude.github.io/atelier-maude/hero.webp">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
@@ -156,6 +156,7 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
 <link rel="stylesheet" href="mobile.css">
 <script src="cursor.js" defer></script><script src="page-transitions.js" defer></script></head>
 <body>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
 <!-- BANDEAU -->
 <div class="ticker-wrap" role="marquee"><div class="ticker">
@@ -187,21 +188,21 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
   </div>
   <nav class="site-nav">
     <div class="nav-dropdown">
-      <a href="manteaux.html">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="manteaux.html" aria-haspopup="true" aria-expanded="false">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="manteaux-court.html">Manteau Court</a>
         <a href="manteaux-long.html">Manteau Long</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="notre-histoire.html" aria-haspopup="true" aria-expanded="false">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="notre-histoire.html">Notre Histoire</a>
         <a href="notre-cachemire.html">Notre Cachemire</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="accessoires.html">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="accessoires.html" aria-haspopup="true" aria-expanded="false">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="echarpes.html">Nos &#201;charpes</a>
         <a href="ceintures.html">Nos Ceintures</a>
@@ -212,6 +213,7 @@ textarea.form-input{resize:vertical;min-height:130px;line-height:1.7}
     <a href="contact.html" class="active">Contact</a>
   </nav>
 </header>
+<span id="main-content" tabindex="-1" aria-hidden="true"></span>
 
 <!-- HERO -->
 <section class="page-hero">

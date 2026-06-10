@@ -15,7 +15,7 @@
 <meta property="og:title" content="Notre Cachemire — Atelier MAUDÉ">
 <meta property="og:description" content="Le cachemire de Mongolie-Intérieure, fabriqué à Suzhou. Tout ce que vous devez savoir.">
 <meta property="og:url" content="https://ateliermaude.github.io/atelier-maude/notre-cachemire.html">
-<meta property="og:image" content="https://ateliermaude.github.io/hua-long-camel-face.webp">
+<meta property="og:image" content="https://ateliermaude.github.io/atelier-maude/hua-long-camel-face.webp">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
@@ -252,6 +252,7 @@ button{cursor:pointer;font-family:inherit}
 <link rel="stylesheet" href="mobile.css">
 <script src="cursor.js" defer></script><script src="page-transitions.js" defer></script></head>
 <body>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
 <!-- BANDEAU -->
 <div class="ticker-wrap" role="marquee"><div class="ticker">
@@ -283,21 +284,21 @@ button{cursor:pointer;font-family:inherit}
   </div>
   <nav class="site-nav">
     <div class="nav-dropdown">
-      <a href="manteaux.html">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="manteaux.html" aria-haspopup="true" aria-expanded="false">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="manteaux-court.html">Manteau Court</a>
         <a href="manteaux-long.html">Manteau Long</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="notre-histoire.html" aria-haspopup="true" aria-expanded="false">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="notre-histoire.html">Notre Histoire</a>
         <a href="notre-cachemire.html" class="active">Notre Cachemire</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="accessoires.html">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="accessoires.html" aria-haspopup="true" aria-expanded="false">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="echarpes.html">Nos &#201;charpes</a>
         <a href="ceintures.html">Nos Ceintures</a>
@@ -308,12 +309,13 @@ button{cursor:pointer;font-family:inherit}
     <a href="contact.html">Contact</a>
   </nav>
 </header>
+<span id="main-content" tabindex="-1" aria-hidden="true"></span>
 
 <!-- HERO -->
 <section class="page-hero">
   <div class="hero-bg">
     <!-- Remplacer par une photo de paysage Mongolie ou texture cachemire -->
-    <picture><source srcset="cachemire-mongolie-chevres.webp" type="image/webp"><img src="cachemire-mongolie-chevres.png" alt="Éleveurs de chèvres en Mongolie-Intérieure — Atelier MAUDÉ" fetchpriority="high"></picture>
+    <picture><source srcset="cachemire-mongolie-chevres.webp" type="image/webp"><img src="cachemire-mongolie-chevres.png" alt="Éleveurs de chèvres en Mongolie-Intérieure — Atelier MAUDÉ" fetchpriority="high" width="1408" height="768"></picture>
   </div>
   <div class="hero-content">
     <span class="hero-eyebrow">Atelier MAUDÉ — La matière</span>
@@ -355,7 +357,7 @@ button{cursor:pointer;font-family:inherit}
 <div class="split">
   <div class="split-image">
     <!-- Idéal : photo de chèvres en Mongolie ou paysage de steppe -->
-    <picture><source srcset="cachemire-mongolie-chevres.webp" type="image/webp"><img src="cachemire-mongolie-chevres.png" alt="Éleveurs et troupeau de chèvres à cachemire en Mongolie-Intérieure au coucher du soleil" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"></picture>
+    <picture><source srcset="cachemire-mongolie-chevres.webp" type="image/webp"><img src="cachemire-mongolie-chevres.png" alt="Éleveurs et troupeau de chèvres à cachemire en Mongolie-Intérieure au coucher du soleil" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" width="1408" height="768"></picture>
   </div>
   <div class="split-content">
     <span class="section-label">L'origine</span>
@@ -372,7 +374,7 @@ button{cursor:pointer;font-family:inherit}
 <div class="split reverse dark">
   <div class="split-image">
     <!-- Idéal : photo d'atelier ou de canaux de Suzhou -->
-    <picture><source srcset="cachemire-atelier-suzhou.webp" type="image/webp"><img src="cachemire-atelier-suzhou.png" alt="Artisan tisseur dans un atelier traditionnel de Suzhou, Chine" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"></picture>
+    <picture><source srcset="cachemire-atelier-suzhou.webp" type="image/webp"><img src="cachemire-atelier-suzhou.png" alt="Artisan tisseur dans un atelier traditionnel de Suzhou, Chine" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block" width="1408" height="768"></picture>
   </div>
   <div class="split-content">
     <span class="section-label">La fabrication</span>
@@ -447,7 +449,7 @@ button{cursor:pointer;font-family:inherit}
   </div>
   <div class="split-image">
     <!-- Idéal : zoom texture tissu cachemire ou mannequin portant le manteau -->
-    <picture><source srcset="cachemire-texture-zoom.webp" type="image/webp"><img src="cachemire-texture-zoom.png" alt="Zoom macro sur la texture du cachemire — douceur et finesse des fibres" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"></picture>
+    <picture><source srcset="cachemire-texture-zoom.webp" type="image/webp"><img src="cachemire-texture-zoom.png" alt="Zoom macro sur la texture du cachemire — douceur et finesse des fibres" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block" width="1408" height="768"></picture>
   </div>
 </div>
 

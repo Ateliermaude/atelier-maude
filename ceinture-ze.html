@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ceinture Zé Cuir Lisse Chocolat — Atelier MAUDÉ</title>
 <meta name="description" content="Ceinture en cuir véritable lisse chocolat, largeur 2,3 cm. Boucle rectangulaire argentée. Taille unique ajustable par trous. 65 €. Livraison gratuite.">
-<meta property="og:image" content="https://ateliermaude.github.io/ze-packshot-1.webp">
+<meta property="og:image" content="https://ateliermaude.github.io/atelier-maude/ze-packshot-1.webp">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="product">
@@ -142,6 +142,7 @@ button{cursor:pointer;font-family:inherit}
 <link rel="stylesheet" href="mobile.css">
 <script src="cursor.js" defer></script><script src="page-transitions.js" defer></script></head>
 <body>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 <div class="ticker-wrap" role="marquee"><div class="ticker">
 <span class="ticker-item">LIVRAISON GRATUITE EN FRANCE &amp; BELGIQUE</span>
 <span class="ticker-item">&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;RETOURS GRATUITS SOUS 30 JOURS</span>
@@ -158,21 +159,21 @@ button{cursor:pointer;font-family:inherit}
 </div>
 <nav class="site-nav">
   <div class="nav-dropdown">
-    <a href="manteaux.html">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <a href="manteaux.html" aria-haspopup="true" aria-expanded="false">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
     <div class="dropdown-menu">
       <a href="manteaux-court.html">Manteau Court</a>
       <a href="manteaux-long.html">Manteau Long</a>
     </div>
   </div>
   <div class="nav-dropdown">
-    <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <a href="notre-histoire.html" aria-haspopup="true" aria-expanded="false">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
     <div class="dropdown-menu">
       <a href="notre-histoire.html">Notre Histoire</a>
       <a href="notre-cachemire.html">Notre Cachemire</a>
     </div>
   </div>
   <div class="nav-dropdown">
-    <a href="accessoires.html" class="active">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
+    <a href="accessoires.html" class="active" aria-haspopup="true" aria-expanded="false">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
     <div class="dropdown-menu">
       <a href="echarpes.html">Nos &Eacute;charpes</a>
       <a href="ceintures.html">Nos Ceintures</a>
@@ -183,6 +184,7 @@ button{cursor:pointer;font-family:inherit}
   <a href="contact.html">Contact</a>
 </nav>
 </header>
+<span id="main-content" tabindex="-1" aria-hidden="true"></span>
 <nav class="breadcrumb">
 <a href="index.html">Accueil</a><span class="sep">/</span>
 <a href="ceintures.html">Ceintures</a><span class="sep">/</span>
@@ -197,16 +199,16 @@ button{cursor:pointer;font-family:inherit}
     <!-- ze-packshot-3.png = close-up boucle argentée -->
     <!-- ze-packshot-4.png = packshot fond neutre -->
     <!-- ze-portee.png = shot porté à la taille (Gemini) -->
-    <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)"><picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute; chocolat packshot" loading="eager"></picture></div>
-    <div class="gallery-thumb" data-index="1" onclick="switchImage(1)"><picture><source srcset="ze-packshot-2.webp" type="image/webp"><img src="ze-packshot-2.png" alt="Ceinture Z&eacute; vue dessus" loading="lazy"></picture></div>
-    <div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><picture><source srcset="ze-packshot-3.webp" type="image/webp"><img src="ze-packshot-3.png" alt="Ceinture Z&eacute; boucle close-up" loading="lazy"></picture></div>
-    <div class="gallery-thumb" data-index="3" onclick="switchImage(3)"><picture><source srcset="ze-portee.webp" type="image/webp"><img src="ze-portee.png" alt="Ceinture Z&eacute; port&eacute;e" loading="lazy"></picture></div>
+    <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)"><picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute; chocolat packshot" loading="eager" width="720" height="392"></picture></div>
+    <div class="gallery-thumb" data-index="1" onclick="switchImage(1)"><picture><source srcset="ze-packshot-2.webp" type="image/webp"><img src="ze-packshot-2.png" alt="Ceinture Z&eacute; vue dessus" loading="lazy" width="720" height="392"></picture></div>
+    <div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><picture><source srcset="ze-packshot-3.webp" type="image/webp"><img src="ze-packshot-3.png" alt="Ceinture Z&eacute; boucle close-up" loading="lazy" width="537" height="720"></picture></div>
+    <div class="gallery-thumb" data-index="3" onclick="switchImage(3)"><picture><source srcset="ze-portee.webp" type="image/webp"><img src="ze-portee.png" alt="Ceinture Z&eacute; port&eacute;e" loading="lazy" width="537" height="720"></picture></div>
   </div>
   <div class="gallery-main" id="gallery-main">
-    <picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute; chocolat" class="active" loading="eager"></picture>
-    <picture><source srcset="ze-packshot-2.webp" type="image/webp"><img src="ze-packshot-2.png" alt="Ceinture Z&eacute; vue dessus" loading="lazy"></picture>
-    <picture><source srcset="ze-packshot-3.webp" type="image/webp"><img src="ze-packshot-3.png" alt="Ceinture Z&eacute; boucle" loading="lazy"></picture>
-    <picture><source srcset="ze-portee.webp" type="image/webp"><img src="ze-portee.png" alt="Ceinture Z&eacute; port&eacute;e" loading="lazy"></picture>
+    <picture><source srcset="ze-packshot-1.webp" type="image/webp"><img src="ze-packshot-1.png" alt="Ceinture Z&eacute; chocolat" class="active" loading="eager" width="720" height="392"></picture>
+    <picture><source srcset="ze-packshot-2.webp" type="image/webp"><img src="ze-packshot-2.png" alt="Ceinture Z&eacute; vue dessus" loading="lazy" width="720" height="392"></picture>
+    <picture><source srcset="ze-packshot-3.webp" type="image/webp"><img src="ze-packshot-3.png" alt="Ceinture Z&eacute; boucle" loading="lazy" width="537" height="720"></picture>
+    <picture><source srcset="ze-portee.webp" type="image/webp"><img src="ze-portee.png" alt="Ceinture Z&eacute; port&eacute;e" loading="lazy" width="537" height="720"></picture>
   </div>
 </div>
 <div class="product-info">
@@ -254,7 +256,7 @@ button{cursor:pointer;font-family:inherit}
     <div class="upsell-grid">
       <a href="ceinture-sha.html" class="upsell-card">
         <div class="upsell-img">
-          <picture><source srcset="sha-packshot-1.webp" type="image/webp"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257;" loading="lazy"></picture>
+          <picture><source srcset="sha-packshot-1.webp" type="image/webp"><img src="sha-packshot-1.png" alt="Ceinture Sh&#257;" loading="lazy" width="537" height="720"></picture>
         </div>
         <span class="upsell-name">Ceinture Sh&#257;</span>
         <div class="upsell-price">
@@ -264,7 +266,7 @@ button{cursor:pointer;font-family:inherit}
       </a>
       <a href="yun-long.html" class="upsell-card">
         <div class="upsell-img">
-          <picture><source srcset="yun-long-noir-face-new.webp" type="image/webp"><img src="yun-long-noir-face-new.png" alt="Manteau Y&#363;n Long" loading="lazy"></picture>
+          <picture><source srcset="yun-long-noir-face-new.webp" type="image/webp"><img src="yun-long-noir-face-new.png" alt="Manteau Y&#363;n Long" loading="lazy" width="525" height="720"></picture>
         </div>
         <span class="upsell-name">Manteau Y&#363;n Long</span>
         <div class="upsell-price">

@@ -16,9 +16,10 @@
 <meta property="og:title" content="Atelier MAUDÉ — Manteaux en Laine & Cachemire">
 <meta property="og:description" content="Des manteaux en laine et cachemire de Mongolie-Intérieure, fabriqués à Suzhou. Livraison gratuite FR & BE.">
 <meta property="og:url" content="https://ateliermaude.github.io/">
-<meta property="og:image" content="https://ateliermaude.github.io/hua-long-camel-face-new.webp">
+<meta property="og:image" content="https://ateliermaude.github.io/atelier-maude/hua-long-camel-face-new.webp">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ateliermaude.github.io/atelier-maude/hua-long-camel-face-new.webp">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -222,6 +223,7 @@ button{cursor:pointer;font-family:inherit}
 <link rel="stylesheet" href="mobile.css">
 <script src="cursor.js" defer></script><script src="page-transitions.js" defer></script></head>
 <body>
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
 <!-- BANDEAU -->
 <div class="ticker-wrap" role="marquee"><div class="ticker">
@@ -253,21 +255,21 @@ button{cursor:pointer;font-family:inherit}
   </div>
   <nav class="site-nav">
     <div class="nav-dropdown">
-      <a href="manteaux.html">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="manteaux.html" aria-haspopup="true" aria-expanded="false">Manteaux <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="manteaux-court.html">Manteau Court</a>
         <a href="manteaux-long.html">Manteau Long</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="notre-histoire.html">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="notre-histoire.html" aria-haspopup="true" aria-expanded="false">L'atelier <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="notre-histoire.html">Notre Histoire</a>
         <a href="notre-cachemire.html">Notre Cachemire</a>
       </div>
     </div>
     <div class="nav-dropdown">
-      <a href="accessoires.html">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
+      <a href="accessoires.html" aria-haspopup="true" aria-expanded="false">Accessoires <span class="nav-dropdown-arrow">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="echarpes.html">Nos &#201;charpes</a>
         <a href="ceintures.html">Nos Ceintures</a>
@@ -278,6 +280,7 @@ button{cursor:pointer;font-family:inherit}
     <a href="contact.html">Contact</a>
   </nav>
 </header>
+<span id="main-content" tabindex="-1" aria-hidden="true"></span>
 
 <!-- HERO VIDÉO -->
 <section class="hero">
@@ -339,7 +342,7 @@ button{cursor:pointer;font-family:inherit}
     <!-- YŪN COURT -->
     <div class="product-card">
       <div class="product-card-img">
-        <a href="yun-court.html"><picture><source srcset="yun-court-noir-face-new.webp" type="image/webp"><img src="yun-court-noir-face-new.png" alt="Manteau Yūn Court Ceinturé" loading="lazy"></picture></a>
+        <a href="yun-court.html"><picture><source srcset="yun-court-noir-face-new.webp" type="image/webp"><img src="yun-court-noir-face-new.png" alt="Manteau Yūn Court Ceinturé" loading="lazy" width="720" height="720"></picture></a>
       </div>
       <div class="product-card-info">
         <p class="product-name">Yūn Court Ceinturé</p>
@@ -355,7 +358,7 @@ button{cursor:pointer;font-family:inherit}
     <!-- HUĀ LONG -->
     <div class="product-card">
       <div class="product-card-img">
-        <a href="hua-long.html"><picture><source srcset="hua-long-camel-face-new.webp" type="image/webp"><img src="hua-long-camel-face-new.png" alt="Manteau Huā Long" loading="lazy"></picture></a>
+        <a href="hua-long.html"><picture><source srcset="hua-long-camel-face-new.webp" type="image/webp"><img src="hua-long-camel-face-new.png" alt="Manteau Huā Long" loading="lazy" width="720" height="720"></picture></a>
       </div>
       <div class="product-card-info">
         <p class="product-name">Huā Long</p>
@@ -371,7 +374,7 @@ button{cursor:pointer;font-family:inherit}
     <!-- YŪN LONG -->
     <div class="product-card">
       <div class="product-card-img">
-        <a href="yun-long.html"><picture><source srcset="yun-long-noir-face-new.webp" type="image/webp"><img src="yun-long-noir-face-new.png" alt="Manteau Yūn Long Ceinturé" loading="lazy"></picture></a>
+        <a href="yun-long.html"><picture><source srcset="yun-long-noir-face-new.webp" type="image/webp"><img src="yun-long-noir-face-new.png" alt="Manteau Yūn Long Ceinturé" loading="lazy" width="525" height="720"></picture></a>
       </div>
       <div class="product-card-info">
         <p class="product-name">Yūn Long Ceinturé</p>
@@ -495,9 +498,9 @@ button{cursor:pointer;font-family:inherit}
 
 <!-- POPUP NEWSLETTER -->
 <div class="popup-overlay" id="popup">
-  <div class="popup">
+  <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
     <button class="popup-close" onclick="closePopup()">×</button>
-    <h2>Le Cercle <em>MAUDÉ</em></h2>
+    <h2 id="popup-title">Le Cercle <em>MAUDÉ</em></h2>
     <p>Rejoignez notre cercle et bénéficiez d'un accès privilégié aux nouvelles pièces et offres exclusives.</p>
     <input type="email" placeholder="Votre adresse email">
     <button type="button">Rejoindre le cercle</button>
@@ -525,6 +528,7 @@ if(!sessionStorage.getItem('popup_shown')){
   setTimeout(function(){
     document.getElementById('popup').classList.add('show');
     sessionStorage.setItem('popup_shown','1');
+    setTimeout(function(){var el=document.querySelector('#popup input[type="email"]');if(el)el.focus();},420);
   },4000);
 }
 function closePopup(){document.getElementById('popup').classList.remove('show');}
