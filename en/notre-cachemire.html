@@ -174,6 +174,23 @@ button,a{touch-action:manipulation}
 .dropdown-menu a.active{color:var(--terracotta)}
 @media(max-width:1024px){.split{grid-template-columns:1fr}.split-content{padding:52px 40px}.split-image{min-height:380px}.chiffres-inner{grid-template-columns:1fr 1fr}.origine-grid{grid-template-columns:1fr}.matiere-grid{grid-template-columns:1fr}.entretien-steps{grid-template-columns:1fr 1fr;gap:24px}.footer-grid{grid-template-columns:1fr 1fr}.header-inner{padding:14px 24px}.site-nav{gap:22px;padding:0 24px 12px;overflow-x:auto;white-space:nowrap}}
 @media(max-width:700px){.hero-content{padding:52px 24px}.intro-section{padding:60px 24px}.section{padding:60px 24px}.matiere-section,.entretien-section,.cta-section,.citation-block{padding:60px 24px}.faq-section{padding:0 24px 60px}.chiffres-inner{grid-template-columns:1fr 1fr}.entretien-steps{grid-template-columns:1fr 1fr}.split-content{padding:40px 24px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:10px;text-align:center}.btn-outline{margin:12px 0 0;display:block}}
+
+/* ——— ANIMATIONS AM ——— */
+.am-count{font-variant-numeric:lining-nums tabular-nums}
+.am-process{position:relative}
+.am-process__line{position:absolute;top:0;bottom:0;left:24px;width:1px;background:#8B4A3A;transform:scaleY(var(--am-line,0));transform-origin:top;pointer-events:none}
+@media(max-width:768px){.am-process__line{left:16px}}
+.am-step{opacity:0;transform:translateY(18px);transition:opacity .8s ease-out,transform .8s ease-out}
+.am-step.is-visible{opacity:1;transform:translateY(0)}
+.am-acc__panel{overflow:hidden;height:0;transition:height .35s ease-out}
+.am-acc.is-open .am-acc__panel{height:auto}
+.am-acc__icon{display:inline-block;transition:transform .35s ease-out}
+.am-acc.is-open .am-acc__icon{transform:rotate(45deg)}
+.am-quote{opacity:0;transform:translateY(16px);transition:opacity 1.2s ease-out,transform 1.2s ease-out}
+.am-quote.is-visible{opacity:1;transform:translateY(0)}
+.am-quote__cite{opacity:0;transition:opacity .9s ease-out .7s}
+.am-quote.is-visible .am-quote__cite{opacity:1}
+@media(prefers-reduced-motion:reduce){.am-process__line{transform:scaleY(1)}.am-step{opacity:1;transform:none;transition:none}.am-acc__panel,.am-acc__icon{transition:none}.am-quote,.am-quote__cite{opacity:1;transform:none;transition:none}}
 </style>
 <link rel="stylesheet" href="../animations.css">
 <link rel="stylesheet" href="../mobile.css">
@@ -257,19 +274,19 @@ button,a{touch-action:manipulation}
 <div class="chiffres-band">
   <div class="chiffres-inner">
     <div class="chiffre-item">
-      <span class="chiffre-num">50<small style="font-size:22px">%</small></span>
+      <span class="chiffre-num"><span class="am-count" data-count-to="50">0</span><small style="font-size:22px">%</small></span>
       <span class="chiffre-label">Cachemire<em>Inner Mongolia</em></span>
     </div>
     <div class="chiffre-item">
-      <span class="chiffre-num">50<small style="font-size:22px">%</small></span>
+      <span class="chiffre-num"><span class="am-count" data-count-to="50">0</span><small style="font-size:22px">%</small></span>
       <span class="chiffre-label">Laine<em>selected</em></span>
     </div>
     <div class="chiffre-item">
-      <span class="chiffre-num">2500</span>
+      <span class="chiffre-num"><span class="am-count" data-count-to="2500">0</span></span>
       <span class="chiffre-label">Years of textile craft<em>in Suzhou</em></span>
     </div>
     <div class="chiffre-item">
-      <span class="chiffre-num">3</span>
+      <span class="chiffre-num"><span class="am-count" data-count-to="3">0</span></span>
       <span class="chiffre-label">Iconic<em>coats</em></span>
     </div>
   </div>
@@ -309,18 +326,19 @@ button,a{touch-action:manipulation}
   <div class="section-inner">
     <span class="section-label">From fibre to coat</span>
     <h2 class="section-title">A journey in <em>three steps.</em></h2>
-    <div class="origine-grid">
-      <div class="origine-card">
+    <div class="origine-grid am-process">
+<span class="am-process__line" aria-hidden="true"></span>
+      <div class="origine-card am-step">
         <span class="origine-num">01</span>
         <p class="origine-title">The harvest</p>
         <p class="origine-text">In spring, herders gently comb the goats' undercoat by hand. The down is then sorted, cleaned and combed to separate the longest and finest fibres — only these will enter the composition of our coats.</p>
       </div>
-      <div class="origine-card">
+      <div class="origine-card am-step">
         <span class="origine-num">02</span>
         <p class="origine-title">Spinning &amp; weaving</p>
         <p class="origine-text">The fibres are spun, dyed in meticulously controlled baths, then woven with the selected laine to create our 50/50 blend. This process demands clockmaker's precision: thread tension, fabric density and final weight are checked at every stage.</p>
       </div>
-      <div class="origine-card">
+      <div class="origine-card am-step">
         <span class="origine-num">03</span>
         <p class="origine-title">The making</p>
         <p class="origine-text">The fabric is then cut and sewn by our artisans in Suzhou. Each piece is individually inspected before dispatch. Seams, buttonholes, drape, finishings — nothing is left to chance. A MAUDÉ coat leaves the atelier only when it is perfect.</p>
@@ -404,60 +422,60 @@ button,a{touch-action:manipulation}
   </div>
 </section>
 
-<div class="citation-block">
+<div class="citation-block am-quote">
   <blockquote>"We don't believe in pieces worn for two seasons. We believe in coats you never want to take off."</blockquote>
-  <cite>Aude &amp; Mathilde, founders of Atelier MAUDÉ</cite>
+  <cite class="am-quote__cite">Aude &amp; Mathilde, founders of Atelier MAUDÉ</cite>
 </div>
 
 <section class="faq-section">
   <h2 class="faq-title">Questions about<br>the <em>material.</em></h2>
 
-  <div class="faq-item">
-    <button class="faq-btn" onclick="toggleFaq(this)">
+  <div class="faq-item am-acc">
+    <button class="faq-btn am-acc__btn">
       What is the difference between laine and cachemire?
-      <span class="faq-icon">+</span>
+      <span class="faq-icon am-acc__icon">+</span>
     </button>
-    <div class="faq-answer">
+    <div class="faq-answer am-acc__panel">
       <p><strong>Laine</strong> comes from sheep — it is robust, insulating and slightly textured to the touch. <strong>Cachemire</strong> comes from the down of Capra Hircus goats from Mongolia — it is rare, extremely fine (8 to 15 microns vs 20–40 for laine), and incomparably soft. Our 50/50 blend draws the best from both fibres.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-btn" onclick="toggleFaq(this)">
+  <div class="faq-item am-acc">
+    <button class="faq-btn am-acc__btn">
       Can the coat be machine washed?
-      <span class="faq-icon">+</span>
+      <span class="faq-icon am-acc__icon">+</span>
     </button>
-    <div class="faq-answer">
+    <div class="faq-answer am-acc__panel">
       <p>With care, yes. <strong>Delicate cycle at 30°C maximum</strong>, in a mesh laundry bag. Use a wool-cachemire detergent (enzyme-free). Never wring or tumble dry. Dry flat on a towel. We recommend dry cleaning for full washes.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-btn" onclick="toggleFaq(this)">
+  <div class="faq-item am-acc">
+    <button class="faq-btn am-acc__btn">
       My coat is pilling — is that normal?
-      <span class="faq-icon">+</span>
+      <span class="faq-icon am-acc__icon">+</span>
     </button>
-    <div class="faq-answer">
+    <div class="faq-answer am-acc__panel">
       <p>Yes, this is entirely normal in the first few weeks. Pilling is caused by residual short fibres that collect on the surface. After 3 to 5 wears, the phenomenon disappears naturally. You can speed up the process with a <strong>cachemire stone</strong> (available at most pharmacies). This is not a defect — it is the nature of cachemire.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-btn" onclick="toggleFaq(this)">
+  <div class="faq-item am-acc">
+    <button class="faq-btn am-acc__btn">
       Are your coats ethical?
-      <span class="faq-icon">+</span>
+      <span class="faq-icon am-acc__icon">+</span>
     </button>
-    <div class="faq-answer">
+    <div class="faq-answer am-acc__panel">
       <p>We work with partner ateliers in Suzhou with whom we have a direct, long-term relationship. We regularly visit our producers. Cachemire is harvested by combing (not shearing), which respects animal welfare. We believe that <strong>transparency is the best form of ethics</strong> — which is why we tell you exactly where each material comes from.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-btn" onclick="toggleFaq(this)">
+  <div class="faq-item am-acc">
+    <button class="faq-btn am-acc__btn">
       Why are your coats less expensive than the major houses?
-      <span class="faq-icon">+</span>
+      <span class="faq-icon am-acc__icon">+</span>
     </button>
-    <div class="faq-answer">
+    <div class="faq-answer am-acc__panel">
       <p>Because we sell direct, without intermediaries. No Paris boutiques, no distributors, no inflated margins. You pay for the material, the craftsmanship and our work — that is all. A brand like Bompard or Max Mara charges the same coat at £700 to £1,500. <strong>The difference is their cost structure, not the quality of your coat.</strong></p>
     </div>
   </div>
@@ -522,13 +540,98 @@ window.addEventListener('scroll',function(){
   document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
   document.getElementById('btt').classList.toggle('show',scrollY>400);
 },{passive:true});
-
-function toggleFaq(btn) {
-  var item = btn.parentElement;
-  var wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
+);
   if (!wasOpen) item.classList.add('open');
 }
+</script>
+
+<script>
+(function(){
+  'use strict';
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function runCount(el){
+    var target=parseFloat(el.getAttribute('data-count-to'));
+    if(reduce||!isFinite(target)){el.textContent=el.getAttribute('data-count-to');return;}
+    var duration=target>100?1600:1200;
+    var start=null;
+    function step(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/duration,1);
+      var eased=1-Math.pow(1-p,3);
+      el.textContent=Math.round(eased*target);
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  window.am_togglePanel=function(panel,open){
+    if(reduce){panel.style.height=open?'auto':'0';return;}
+    if(open){
+      panel.style.height=panel.scrollHeight+'px';
+      panel.addEventListener('transitionend',function h(e){
+        if(e.propertyName!=='height')return;
+        panel.style.height='auto';
+        panel.removeEventListener('transitionend',h);
+      });
+    }else{
+      panel.style.height=panel.scrollHeight+'px';
+      requestAnimationFrame(function(){requestAnimationFrame(function(){panel.style.height='0';});});
+    }
+  };
+
+  document.querySelectorAll('.am-acc').forEach(function(acc){
+    var btn=acc.querySelector('.am-acc__btn');
+    var panel=acc.querySelector('.am-acc__panel');
+    if(!btn||!panel)return;
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',function(){
+      var open=!acc.classList.contains('is-open');
+      document.querySelectorAll('.am-acc.is-open').forEach(function(other){
+        if(other===acc)return;
+        other.classList.remove('is-open');
+        var ob=other.querySelector('.am-acc__btn');
+        if(ob)ob.setAttribute('aria-expanded','false');
+        window.am_togglePanel(other.querySelector('.am-acc__panel'),false);
+      });
+      acc.classList.toggle('is-open',open);
+      btn.setAttribute('aria-expanded',String(open));
+      window.am_togglePanel(panel,open);
+    });
+  });
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting)return;
+        var el=entry.target;
+        if(el.classList.contains('am-count'))runCount(el);
+        else el.classList.add('is-visible');
+        io.unobserve(el);
+      });
+    },{threshold:0.3});
+    document.querySelectorAll('.am-count,.am-step,.am-quote').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.am-count').forEach(function(el){el.textContent=el.getAttribute('data-count-to');});
+    document.querySelectorAll('.am-step,.am-quote').forEach(function(el){el.classList.add('is-visible');});
+  }
+
+  var process=document.querySelector('.am-process');
+  if(process&&!reduce){
+    var ticking=false;
+    function updateLine(){
+      var rect=process.getBoundingClientRect();
+      var progress=(window.innerHeight*0.7-rect.top)/rect.height;
+      progress=Math.max(0,Math.min(1,progress));
+      process.style.setProperty('--am-line',progress.toFixed(3));
+      ticking=false;
+    }
+    window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(updateLine);}},{passive:true});
+    updateLine();
+  }else if(process){
+    process.style.setProperty('--am-line','1');
+  }
+})();
 </script>
 <script src="../animations.js" defer></script>
 <script src="../mobile.js" defer></script>
