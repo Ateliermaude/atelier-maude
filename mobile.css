@@ -48,8 +48,24 @@
   white-space: nowrap;
   line-height: 1;
 }
+/* ── BARRE TAGLINE SOUS LE HEADER (mobile uniquement) ── */
+.mobile-brand-tagline { display: none; }
+
 @media (max-width: 768px) {
-  .logo-tagline { font-size: 9px; }
+  .logo-tagline { display: none; }
+  .mobile-brand-tagline {
+    display: block;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted, #74665B);
+    padding: 5px 20px 6px;
+    border-bottom: 1px solid var(--border, rgba(107,79,58,0.15));
+    background: var(--warm-white, #FAF8F5);
+  }
 }
 
 /* ── SÉLECTEUR DE LANGUE / LANGUAGE SWITCH ── */
@@ -220,7 +236,8 @@
   }
 
   /* ── PADDINGS RÉDUITS ── */
-  .header-inner { padding: 12px 20px !important; }
+  .header-inner { padding: 8px 20px !important; }
+  .logo { font-size: 17px !important; }
   .site-nav-wrapper { padding: 0; }
   .collection,
   .savoir-faire,
