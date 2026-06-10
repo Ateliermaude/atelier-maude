@@ -84,6 +84,12 @@
 
 .nav-close-btn { display: none; }
 
+/* ── HAMBURGER : masqué sur desktop, visible uniquement en mobile ── */
+@media (min-width: 769px) {
+  .header-btn[aria-label="Menu"],
+  .header-btn[aria-label="Open menu"] { display: none; }
+}
+
 /* ── DÉSACTIVER LES EFFETS HOVER SUR APPAREILS TACTILES ── */
 /* mobile.css est chargé après le <style> inline → même spécificité, source plus tardive = victoire */
 @media (hover: none) {
