@@ -76,11 +76,43 @@
   text-decoration: none;
   transition: color 0.2s;
 }
-.lang-switch > a:hover {
-  color: var(--terracotta, #8B4A3A);
+@media (hover: hover) {
+  .lang-switch > a:hover {
+    color: var(--terracotta, #8B4A3A);
+  }
 }
 
 .nav-close-btn { display: none; }
+
+/* ── DÉSACTIVER LES EFFETS HOVER SUR APPAREILS TACTILES ── */
+/* mobile.css est chargé après le <style> inline → même spécificité, source plus tardive = victoire */
+@media (hover: none) {
+  /* Dropdown : masqué jusqu'à ce que JS ajoute .nav-dropdown--open
+     On utilise :not() pour que l'état ouvert (.nav-dropdown--open > .dropdown-menu)
+     ne soit jamais annulé par cette règle (sélecteurs mutuellement exclusifs). */
+  .nav-dropdown:not(.nav-dropdown--open) > .dropdown-menu {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-6px);
+  }
+  /* Transforms image produit */
+  .product-card:hover .product-img img,
+  .product-card:hover .product-card-img img { transform: none; }
+  .product-card:hover .product-name { transform: none; }
+  .product-card:hover .product-overlay { transform: translateY(100%); }
+  /* Galerie produit */
+  .gallery-main img:hover,
+  .gallery-main img.active:hover,
+  .gallery-main:hover img.active { transform: none; }
+  /* Swatches */
+  .color-swatch:hover { transform: none; }
+  .swatch:hover { transform: none; }
+  /* Upsell */
+  .upsell-card:hover .upsell-img img { transform: none; }
+  /* Editorial / split */
+  .editorial:hover .editorial-media img { transform: none; }
+  .split-image:hover img { transform: none; }
+}
 
 @media (max-width: 768px) {
 

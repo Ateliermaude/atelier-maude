@@ -43,7 +43,10 @@
 })();
 
 // Keyboard-accessible nav dropdowns
+// Note: focusin is skipped on touch devices — the touch IIFE handles those.
 (function () {
+  var isTouch = window.matchMedia('(hover: none)');
+
   document.querySelectorAll('.nav-dropdown').forEach(function (dropdown) {
     var trigger = dropdown.querySelector(':scope > a');
     var menu = dropdown.querySelector('.dropdown-menu');
@@ -58,12 +61,59 @@
       trigger.setAttribute('aria-expanded', 'false');
     }
 
-    dropdown.addEventListener('focusin', openDropdown);
+    dropdown.addEventListener('focusin', function () {
+      if (!isTouch.matches) openDropdown();
+    });
     dropdown.addEventListener('focusout', function (e) {
       if (!dropdown.contains(e.relatedTarget)) closeDropdown();
     });
     dropdown.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') { closeDropdown(); trigger.focus(); }
     });
+  });
+})();
+
+// Touch dropdown toggle (tablettes tactiles ≥ 769px)
+// Sur ces appareils le CSS :hover ne se déclenche pas fiablement ;
+// on bascule .nav-dropdown--open au tap, et on laisse le second tap naviguer.
+(function () {
+  var isTouch = window.matchMedia('(hover: none)');
+
+  function closeAll(except) {
+    document.querySelectorAll('.nav-dropdown--open').forEach(function (d) {
+      if (d === except) return;
+      d.classList.remove('nav-dropdown--open');
+      var t = d.querySelector(':scope > a');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.querySelectorAll('.nav-dropdown').forEach(function (dropdown) {
+    var trigger = dropdown.querySelector(':scope > a');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', function (e) {
+      // Only intercept on touch devices wider than the mobile nav breakpoint
+      if (!isTouch.matches || window.innerWidth <= 768) return;
+
+      if (dropdown.classList.contains('nav-dropdown--open')) {
+        // Already open — close and let navigation happen
+        dropdown.classList.remove('nav-dropdown--open');
+        trigger.setAttribute('aria-expanded', 'false');
+        // Do NOT preventDefault: allow the link to navigate
+      } else {
+        // Not open — open the dropdown first
+        e.preventDefault();
+        closeAll(dropdown);
+        dropdown.classList.add('nav-dropdown--open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Close all dropdowns when tapping outside
+  document.addEventListener('click', function (e) {
+    if (!isTouch.matches) return;
+    if (!e.target.closest('.nav-dropdown')) closeAll(null);
   });
 })();
