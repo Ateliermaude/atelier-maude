@@ -1,7 +1,8 @@
 html { scroll-behavior: smooth; }
 
-/* Prevent inline picture element from disrupting block image layouts */
-picture { display: block; }
+/* Block picture so percentage dimensions on child img resolve against the
+   correct containing block; height:100% ensures it fills aspect-ratio parents. */
+picture { display: block; width: 100%; height: 100%; }
 
 .fade-in {
   opacity: 0;
