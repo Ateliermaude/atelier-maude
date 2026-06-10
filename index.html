@@ -76,12 +76,16 @@ button{cursor:pointer;font-family:inherit}
 /* HERO VIDÉO */
 .hero{position:relative;height:100vh;min-height:500px;overflow:hidden;background:#1a1008}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,16,8,.08) 0%,rgba(26,16,8,.0) 40%,rgba(26,16,8,.5) 100%);z-index:1}
-.hero-content{position:absolute;bottom:52px;left:52px;z-index:2}
-.hero-label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(245,240,234,.9);font-family:'Jost',sans-serif;display:block;margin-bottom:8px}
-.hero-season{font-size:12px;color:rgba(245,240,234,.6);font-family:'Jost',sans-serif;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:20px}
-.hero-discover{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,234,.85);font-family:'Jost',sans-serif;text-decoration:none;border-bottom:1px solid rgba(245,240,234,.4);padding-bottom:3px;transition:color .2s,border-color .2s;display:inline-block}
-.hero-discover:hover{color:var(--gold);border-color:var(--gold)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,16,8,.08) 0%,rgba(26,16,8,.05) 40%,rgba(26,16,8,.38) 70%,rgba(26,16,8,.62) 100%);z-index:1}
+.hero-content{position:absolute;bottom:52px;left:52px;z-index:2;max-width:860px}
+@keyframes heroFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,247,242,.85);display:block;margin-bottom:18px;animation:heroFadeUp .9s ease-out .2s both}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(32px,5vw,56px);line-height:1.2;color:#FAF7F2;margin:0 0 28px;animation:heroFadeUp .9s ease-out .45s both}
+.hero-cta{position:relative;display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,242,.85);text-decoration:none;padding-bottom:4px;animation:heroFadeUp .9s ease-out .75s both}
+.hero-cta::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:rgba(250,247,242,.45);transition:background .25s ease}
+.hero-cta:hover{color:#C9A96E}
+.hero-cta:hover::after{background:#C9A96E}
+@media(prefers-reduced-motion:reduce){.hero-eyebrow,.hero-headline,.hero-cta{animation:none}}
 
 /* COLLECTION */
 .collection{padding:80px 40px}
@@ -186,7 +190,7 @@ button{cursor:pointer;font-family:inherit}
   .editorial-content{padding:56px 40px}
 }
 @media(max-width:700px){
-  .hero-content{left:24px;bottom:36px}
+  .hero-content{left:24px;bottom:36px;max-width:calc(100vw - 48px)}
   .products-grid{grid-template-columns:1fr}
   .sf-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
@@ -314,9 +318,9 @@ button{cursor:pointer;font-family:inherit}
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="hero-label">Nouveautés</span>
-    <span class="hero-season">Collection Automne-Hiver 2026</span>
-    <a href="manteaux.html" class="hero-discover">Découvrir</a>
+    <span class="hero-eyebrow">AUTOMNE-HIVER 2026</span>
+    <h1 class="hero-headline">Conçu pour que vous n'en ayez<br>jamais besoin d'un autre.</h1>
+    <a href="manteaux.html" class="hero-cta">Découvrir la collection</a>
   </div>
 </section>
 
