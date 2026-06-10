@@ -69,10 +69,10 @@ button{cursor:pointer;font-family:inherit}
 .hero{position:relative;height:100vh;min-height:500px;overflow:hidden;background:#1a1008}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,16,8,.08) 0%,rgba(26,16,8,.05) 40%,rgba(26,16,8,.38) 70%,rgba(26,16,8,.62) 100%);z-index:1}
-.hero-content{position:absolute;bottom:52px;left:52px;z-index:2;max-width:860px}
+.hero-content{position:absolute;bottom:52px;left:52px;z-index:2;max-width:min(90vw,1200px)}
 @keyframes heroFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .hero-eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,247,242,.85);display:block;margin-bottom:18px;animation:heroFadeUp .9s ease-out .2s both}
-.hero-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(32px,5vw,56px);line-height:1.2;color:#FAF7F2;margin:0 0 28px;animation:heroFadeUp .9s ease-out .45s both}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(22px,6vw,72px);line-height:1.15;color:#FAF7F2;margin:0 0 28px;animation:heroFadeUp .9s ease-out .45s both}
 .hero-cta{position:relative;display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,242,.85);text-decoration:none;padding-bottom:4px;animation:heroFadeUp .9s ease-out .75s both}
 .hero-cta::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:rgba(250,247,242,.45);transition:background .25s ease}
 .hero-cta:hover{color:#C9A96E}
@@ -167,7 +167,7 @@ button{cursor:pointer;font-family:inherit}
   .editorial-content{padding:56px 40px}
 }
 @media(max-width:700px){
-  .hero-content{left:24px;bottom:36px;max-width:calc(100vw - 48px)}
+  .hero-content{left:24px;bottom:36px}
   .products-grid{grid-template-columns:1fr}
   .sf-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
@@ -289,7 +289,7 @@ button{cursor:pointer;font-family:inherit}
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-eyebrow">AUTUMN-WINTER 2026</span>
-    <h1 class="hero-headline">Made so you'll never<br>need another.</h1>
+    <h1 class="hero-headline">Coats you keep.</h1>
     <a href="manteaux.html" class="hero-cta">Discover the collection</a>
   </div>
 </section>
