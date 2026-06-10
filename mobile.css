@@ -231,7 +231,7 @@
     gap: 8px !important;
     padding-bottom: 4px;
   }
-  .gallery-main { order: 1; width: 100%; }
+  .gallery-main { order: 1; width: 100%; max-height: 60vh; }
   .gallery-thumb {
     min-width: 64px !important;
     width: 64px !important;
@@ -282,4 +282,8 @@
   .sf-grid { gap: 1px !important; }
   .sf-num { font-size: 32px !important; }
   .page-hero-inner { flex-direction: column; gap: 12px; align-items: flex-start; }
+
+  /* ── VIEWPORT PINCH-TO-ZOOM : éviter les débordements horizontaux ── */
+  .site-header { overflow: visible; }
+  .dropdown-menu { max-width: calc(100vw - 40px); }
 }
