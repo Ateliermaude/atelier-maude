@@ -902,6 +902,41 @@
   .dropdown-menu a:last-child { border-bottom: none; }
   .dropdown-menu a:hover { background: var(--cream); color: var(--terracotta); }
   .dropdown-menu a.active { color: var(--terracotta); }
+
+  /* ── EDITORIAL SPLIT ── */
+  .editorial-split {
+    display: flex;
+    align-items: center;
+    gap: 6%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+  .editorial-split__img {
+    flex: 0 0 42%;
+    overflow: hidden;
+    order: 2;
+  }
+  .editorial-split__img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .editorial-split__text {
+    flex: 1;
+    order: 1;
+  }
+  .editorial-split--img-left .editorial-split__img { order: 1; }
+  .editorial-split--img-left .editorial-split__text { order: 2; }
+  @media (max-width: 768px) {
+    .editorial-split {
+      flex-direction: column;
+      gap: 32px;
+      padding: 60px 24px;
+    }
+    .editorial-split__img { flex: none; width: 100%; order: 1 !important; }
+    .editorial-split__text { order: 2 !important; }
+  }
 </style>
 <link rel="stylesheet" href="animations.css">
 <link rel="stylesheet" href="mobile.css">
@@ -1006,32 +1041,33 @@
   </div>
 </div>
 
-<div class="section-wrap">
-  <span class="eyebrow fade-in">Entre sœurs</span>
-  <h2 class="section-title fade-in">Entre sœurs, on<br>se dit <em>tout.</em></h2>
-  <div class="body-text fade-in">
-    <p>Aude et Mathilde ont longtemps cherché ce manteau : celui qui a du caractère, qui tient chaud et qui dure dans le temps. MAUDÉ, c'est leurs deux prénoms mêlés, leurs deux visions qui ne font qu'une. Juste deux sœurs qui ont tout misé sur la matière, l'honnêteté et l'élégance simple.</p>
+<!-- ENTRE SŒURS + portrait — texte gauche, image droite -->
+<div class="editorial-split">
+  <div class="editorial-split__img fade-in">
+    <picture><source srcset="portrait-col-cheminee.webp" type="image/webp"><img src="portrait-col-cheminee.png" width="1968" height="2464" alt="Portrait éditorial — manteau col cheminée Atelier MAUDÉ, détail matière" loading="lazy" decoding="async"></picture>
+  </div>
+  <div class="editorial-split__text">
+    <span class="eyebrow fade-in">Entre sœurs</span>
+    <h2 class="section-title fade-in">Entre sœurs, on<br>se dit <em>tout.</em></h2>
+    <div class="body-text fade-in">
+      <p>Aude et Mathilde ont longtemps cherché ce manteau : celui qui a du caractère, qui tient chaud et qui dure dans le temps. MAUDÉ, c'est leurs deux prénoms mêlés, leurs deux visions qui ne font qu'une. Juste deux sœurs qui ont tout misé sur la matière, l'honnêteté et l'élégance simple.</p>
+    </div>
   </div>
 </div>
 
-<div class="full-image fade-in">
-  <picture><source srcset="portrait-col-cheminee.webp" type="image/webp"><img src="portrait-col-cheminee.png" width="1968" height="2464" alt="Portrait éditorial — manteau col cheminée Atelier MAUDÉ, détail matière" loading="lazy" decoding="async"></picture>
-</div>
-
-<div class="section-wrap">
-  <span class="eyebrow fade-in">L'origine</span>
-  <h2 class="section-title fade-in">Tout a commencé<br>par <em>un voyage</em>.</h2>
-  <div class="body-text fade-in">
-    <p>Atelier MAUDÉ est né d'une évidence partagée entre deux sœurs : pourquoi les plus belles matières devraient-elles rester hors de portée ? Aude et Mathilde ont fondé leur atelier avec une ambition simple, créer des pièces d'exception, honnêtement.</p>
-    <p>À Suzhou, nous avons trouvé ce que nous avions toujours cherché. Des artisans qui travaillent la laine et le cachemire avec une précision rare. Des fibres d'une douceur qu'on n'avait jamais touchée avant. À notre retour, nous avons décidé d'ouvrir l'atelier pour partager nos créations.</p>
+<!-- L'ORIGINE + hua-long — image gauche, texte droite -->
+<div class="editorial-split editorial-split--img-left">
+  <div class="editorial-split__img fade-in">
+    <picture><source srcset="hua-long-camel-1.webp" type="image/webp"><img src="hua-long-camel-1.jpeg" width="800" height="1066" alt="Manteau Huā Long camel — Atelier MAUDÉ, laine et cachemire" loading="lazy" decoding="async"></picture>
   </div>
-</div>
-
-<!-- IMAGE PLEINE LARGEUR -->
-<div class="full-image fade-in">
-  <picture><source srcset="hua-long-camel-1.webp" type="image/webp"><img src="hua-long-camel-1.jpeg" width="800" height="1066"
-       alt="Cachemire Atelier MAUDÉ — détail matière"
-       loading="lazy" decoding="async"></picture>
+  <div class="editorial-split__text">
+    <span class="eyebrow fade-in">L'origine</span>
+    <h2 class="section-title fade-in">Tout a commencé<br>par <em>un voyage</em>.</h2>
+    <div class="body-text fade-in">
+      <p>Atelier MAUDÉ est né d'une évidence partagée entre deux sœurs : pourquoi les plus belles matières devraient-elles rester hors de portée ? Aude et Mathilde ont fondé leur atelier avec une ambition simple, créer des pièces d'exception, honnêtement.</p>
+      <p>À Suzhou, nous avons trouvé ce que nous avions toujours cherché. Des artisans qui travaillent la laine et le cachemire avec une précision rare. Des fibres d'une douceur qu'on n'avait jamais touchée avant. À notre retour, nous avons décidé d'ouvrir l'atelier pour partager nos créations.</p>
+    </div>
+  </div>
 </div>
 
 <!-- SUZHOU -->

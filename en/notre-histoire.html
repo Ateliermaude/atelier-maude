@@ -198,6 +198,41 @@ button, a { touch-action: manipulation; }
   .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* ── EDITORIAL SPLIT ── */
+.editorial-split {
+  display: flex;
+  align-items: center;
+  gap: 6%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+.editorial-split__img {
+  flex: 0 0 42%;
+  overflow: hidden;
+  order: 2;
+}
+.editorial-split__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.editorial-split__text {
+  flex: 1;
+  order: 1;
+}
+.editorial-split--img-left .editorial-split__img { order: 1; }
+.editorial-split--img-left .editorial-split__text { order: 2; }
+@media (max-width: 768px) {
+  .editorial-split {
+    flex-direction: column;
+    gap: 32px;
+    padding: 60px 24px;
+  }
+  .editorial-split__img { flex: none; width: 100%; order: 1 !important; }
+  .editorial-split__text { order: 2 !important; }
+}
 </style>
 <link rel="stylesheet" href="../animations.css">
 <link rel="stylesheet" href="../mobile.css">
@@ -290,29 +325,33 @@ button, a { touch-action: manipulation; }
   </div>
 </div>
 
-<div class="section-wrap">
-  <span class="eyebrow fade-in">Between sisters</span>
-  <h2 class="section-title fade-in">Between sisters, we<br>tell each other <em>everything.</em></h2>
-  <div class="body-text fade-in">
-    <p>Aude and Mathilde had long been searching for that coat: the one with character, that keeps you warm and lasts over time. MAUDÉ is their two names combined, their two visions becoming one. Just two sisters who bet everything on the material, honesty and simple elegance.</p>
+<!-- BETWEEN SISTERS + portrait — text left, image right -->
+<div class="editorial-split">
+  <div class="editorial-split__img fade-in">
+    <picture><source srcset="../portrait-col-cheminee.webp" type="image/webp"><img src="../portrait-col-cheminee.png" width="1968" height="2464" alt="Editorial portrait — turtleneck coat Atelier MAUDÉ, material detail" loading="lazy" decoding="async"></picture>
+  </div>
+  <div class="editorial-split__text">
+    <span class="eyebrow fade-in">Between sisters</span>
+    <h2 class="section-title fade-in">Between sisters, we<br>tell each other <em>everything.</em></h2>
+    <div class="body-text fade-in">
+      <p>Aude and Mathilde had long been searching for that coat: the one with character, that keeps you warm and lasts over time. MAUDÉ is their two names combined, their two visions becoming one. Just two sisters who bet everything on the material, honesty and simple elegance.</p>
+    </div>
   </div>
 </div>
 
-<div class="full-image fade-in">
-  <picture><source srcset="../portrait-col-cheminee.webp" type="image/webp"><img src="../portrait-col-cheminee.png" width="1968" height="2464" alt="Editorial portrait — turtleneck coat Atelier MAUDÉ, material detail" loading="lazy" decoding="async"></picture>
-</div>
-
-<div class="section-wrap">
-  <span class="eyebrow fade-in">The origin</span>
-  <h2 class="section-title fade-in">It all began<br>with <em>a journey</em>.</h2>
-  <div class="body-text fade-in">
-    <p>Atelier MAUDÉ was born from a conviction shared between two sisters: why should the finest materials remain out of reach? Aude and Mathilde founded their atelier with a simple ambition — to create exceptional pieces, honestly.</p>
-    <p>In Suzhou, we found what we had always been looking for. Artisans who work laine and cachemire with rare precision. Fibres of a softness we had never touched before. On our return, we decided to open the atelier and share our creations.</p>
+<!-- THE ORIGIN + hua-long — image left, text right -->
+<div class="editorial-split editorial-split--img-left">
+  <div class="editorial-split__img fade-in">
+    <picture><source srcset="../hua-long-camel-1.webp" type="image/webp"><img src="../hua-long-camel-1.jpeg" width="800" height="1066" alt="Huā Long camel coat — Atelier MAUDÉ, wool and cashmere" loading="lazy" decoding="async"></picture>
   </div>
-</div>
-
-<div class="full-image fade-in">
-  <picture><source srcset="../hua-long-camel-1.webp" type="image/webp"><img src="../hua-long-camel-1.jpeg" width="800" height="1066" alt="Atelier MAUDÉ cachemire — material detail" loading="lazy" decoding="async"></picture>
+  <div class="editorial-split__text">
+    <span class="eyebrow fade-in">The origin</span>
+    <h2 class="section-title fade-in">It all began<br>with <em>a journey</em>.</h2>
+    <div class="body-text fade-in">
+      <p>Atelier MAUDÉ was born from a conviction shared between two sisters: why should the finest materials remain out of reach? Aude and Mathilde founded their atelier with a simple ambition — to create exceptional pieces, honestly.</p>
+      <p>In Suzhou, we found what we had always been looking for. Artisans who work laine and cachemire with rare precision. Fibres of a softness we had never touched before. On our return, we decided to open the atelier and share our creations.</p>
+    </div>
+  </div>
 </div>
 
 <div class="section-wrap">
