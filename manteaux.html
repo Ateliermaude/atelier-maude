@@ -218,7 +218,7 @@ button{cursor:pointer;font-family:inherit}
   </div>
 </div>
 
-<!-- GRILLE — structure éditoriale alternée -->
+<!-- GRILLE -->
 <section class="products-section">
   <div class="products-grid">
     <!-- YŪN COURT -->
@@ -242,15 +242,6 @@ button{cursor:pointer;font-family:inherit}
         <span class="swatch-label">Noir</span>
       </div>
     </article>
-  </div>
-</section>
-
-<div class="lifestyle-break fade-in">
-  <picture><source srcset="images/lookbook/lookbook-mongolie-camel-plaine.webp" type="image/webp"><img src="images/lookbook/lookbook-mongolie-camel-plaine.png" alt="" loading="lazy" decoding="async"></picture>
-</div>
-
-<section class="products-section">
-  <div class="products-grid">
     <!-- HUĀ LONG -->
     <article class="product-card" data-cat="long">
       <div class="product-img">
@@ -273,15 +264,6 @@ button{cursor:pointer;font-family:inherit}
         <span class="swatch-label">Camel, Gris</span>
       </div>
     </article>
-  </div>
-</section>
-
-<div class="lifestyle-break fade-in">
-  <picture><source srcset="images/lookbook/lookbook-mongolie-camel-herbes.webp" type="image/webp"><img src="images/lookbook/lookbook-mongolie-camel-herbes.png" alt="" loading="lazy" decoding="async"></picture>
-</div>
-
-<section class="products-section">
-  <div class="products-grid">
     <!-- YŪN LONG -->
     <article class="product-card" data-cat="long">
       <div class="product-img">
@@ -365,8 +347,6 @@ function filter(cat, btn) {
     var cardCat = card.dataset.cat || '';
     var show = cat === 'all' || cardCat === cat;
     card.classList.toggle('hidden', !show);
-    var section = card.closest('.products-section');
-    if (section) section.classList.toggle('hidden', !show);
     if (show) count++;
   });
 
