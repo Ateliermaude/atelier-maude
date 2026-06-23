@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://ateliermaude.github.io/atelier-maude/sitemap.xml
+Sitemap: https://ateliermaude.com/sitemap.xml
