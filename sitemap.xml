@@ -168,24 +168,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ── Promotions ── -->
-  <url>
-    <loc>https://ateliermaude.com/promotions.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/promotions.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/promotions.html"/>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ateliermaude.com/en/promotions.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/promotions.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/promotions.html"/>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- ── Journal ── -->
   <url>
     <loc>https://ateliermaude.com/journal.html</loc>

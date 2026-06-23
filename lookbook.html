@@ -236,6 +236,8 @@ header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
   line-height:1;
   transition:color 0.2s,transform 0.2s;
   z-index:10;
+  min-width:44px;min-height:44px;
+  display:flex;align-items:center;justify-content:center;
 }
 .lightbox-close:hover{color:#fff;transform:scale(1.1)}
 .lightbox-nav{
@@ -315,7 +317,9 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
   .cta-buttons{flex-direction:column;align-items:center}
-  .lightbox-prev,.lightbox-next{display:none}
+  .lightbox-prev{left:4px}
+  .lightbox-next{right:4px}
+  .lightbox-prev,.lightbox-next{min-width:44px;min-height:44px;width:44px;height:44px;font-size:22px}
   .lookbook-section{padding:56px 20px 72px}
 }
 </style>
@@ -704,6 +708,23 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowLeft')  lbNav(-1);
   if (e.key === 'ArrowRight') lbNav(1);
 });
+
+/* Touch swipe navigation */
+(function() {
+  var lb = document.getElementById('lightbox');
+  var startX = 0, startY = 0;
+  lb.addEventListener('touchstart', function(e) {
+    startX = e.changedTouches[0].clientX;
+    startY = e.changedTouches[0].clientY;
+  }, { passive: true });
+  lb.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - startX;
+    var dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 48) {
+      lbNav(dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+})();
 </script>
 <script src="mobile.js" defer></script>
 </body>

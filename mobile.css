@@ -141,6 +141,16 @@
 
 @media (max-width: 768px) {
 
+  /* ── HAMBURGER : zone tactile ≥44px ── */
+  .header-btn[aria-label="Menu"] {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
   /* ── NAVIGATION HAMBURGER ── */
   .site-nav {
     display: none;
