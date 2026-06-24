@@ -1,3 +1,6 @@
+/* ── OVERFLOW-X SAFETY NET ── */
+html { overflow-x: hidden; }
+
 /* ── SKIP LINK ── */
 .skip-link {
   position: absolute;
@@ -233,6 +236,8 @@
     flex-direction: column !important;
     position: static !important;
     gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
   }
   .gallery-thumbs {
     order: 2;
@@ -240,6 +245,9 @@
     overflow-x: auto !important;
     gap: 8px !important;
     padding-bottom: 4px;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
   .gallery-main { order: 1; width: 100%; max-height: 60vh; }
   .gallery-thumb {
