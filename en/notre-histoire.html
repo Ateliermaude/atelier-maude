@@ -166,6 +166,86 @@ footer { background: var(--cream); border-top: 1px solid var(--border); padding:
 .valeur-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold); letter-spacing: 0.14em; display: block; margin-bottom: 18px; }
 .valeur-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--dark-brown); margin-bottom: 14px; line-height: 1.2; }
 .valeur-text { font-size: 13px; color: var(--muted); line-height: 1.9; }
+
+/* ── FOUNDERS ── */
+.fondatrices-section {
+  background: #FAF7F2;
+  padding: 100px 40px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.fondatrices-monogram {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--dark-brown);
+  letter-spacing: 0.22em;
+  display: block;
+  margin-bottom: 30px;
+}
+.fondatrices-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.5vw, 54px);
+  font-weight: 300;
+  color: var(--dark-brown);
+  margin-bottom: 22px;
+  line-height: 1.1;
+}
+.fondatrices-intro {
+  font-size: 16px;
+  font-style: italic;
+  color: #8B7B6B;
+  margin-bottom: 34px;
+}
+.fondatrices-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 54px;
+}
+.fondatrices-story {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto 80px;
+}
+.fondatrices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: left;
+}
+.fondatrice-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 4vw, 54px);
+  font-weight: 300;
+  color: var(--dark-brown);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.fondatrice-role {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: block;
+}
+.fondatrice-bio {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--muted);
+}
+@media (max-width: 768px) {
+  .fondatrices-section { padding: 72px 24px; }
+  .fondatrices-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+}
+
 .nav-dropdown { position: relative; }
 .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
 .nav-dropdown > a::after { display: none; }
@@ -382,6 +462,28 @@ button, a { touch-action: manipulation; }
   </blockquote>
   <cite>Aude &amp; Mathilde, founders</cite>
 </div>
+
+<!-- THE FOUNDERS -->
+<section class="fondatrices-section">
+  <!-- replace with AM monogram logo -->
+  <span class="fondatrices-monogram fade-in">AM</span>
+  <h2 class="fondatrices-title fade-in">The founders</h2>
+  <p class="fondatrices-intro fade-in">Two sisters, one shared desire: to build something of their own.</p>
+  <div class="fondatrices-divider fade-in"></div>
+  <p class="fondatrices-story fade-in">Atelier MAUDÉ was not born of a grand plan, but of a simple desire: to work together, and build something that feels like us. The name — MAUDÉ — was born from the meeting of our two first names, just as the house was born from the meeting of our two visions. One designs, the other tells the story. From this bond came a cashmere house conceived in Paris, crafted in Suzhou, and offered without intermediary — so that the material and the craft return to those who wear them.</p>
+  <div class="fondatrices-grid">
+    <div class="fondatrice-item fade-in">
+      <p class="fondatrice-name">Aude</p>
+      <span class="fondatrice-role">Creative Direction &amp; Operations</span>
+      <p class="fondatrice-bio">Aude watches over everything that gives Atelier MAUDÉ its soul: the choice of materials, the design of each piece, the exigence of detail. She is the one who transforms a fibre into a silhouette, and an idea into a coat one keeps for years.</p>
+    </div>
+    <div class="fondatrice-item fade-in stagger-1">
+      <p class="fondatrice-name">Mathilde</p>
+      <span class="fondatrice-role">Commercial Direction &amp; Image</span>
+      <p class="fondatrice-bio">Mathilde carries the voice of the house. She shapes the world of Atelier MAUDÉ, its story and its presence, and ensures that every customer feels accompanied with care — from the first glance to the opening of the parcel.</p>
+    </div>
+  </div>
+</section>
 
 <section class="valeurs-section">
   <div class="valeurs-inner">

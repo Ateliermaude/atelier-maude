@@ -370,6 +370,81 @@ gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user
 
   
 
+  /* ── FONDATRICES ── */
+  .fondatrices-section {
+    background: #FAF7F2;
+    padding: 100px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .fondatrices-monogram {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--dark-brown);
+    letter-spacing: 0.22em;
+    display: block;
+    margin-bottom: 30px;
+  }
+  .fondatrices-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 3.5vw, 54px);
+    font-weight: 300;
+    color: var(--dark-brown);
+    margin-bottom: 22px;
+    line-height: 1.1;
+  }
+  .fondatrices-intro {
+    font-size: 16px;
+    font-style: italic;
+    color: #8B7B6B;
+    margin-bottom: 34px;
+  }
+  .fondatrices-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 54px;
+  }
+  .fondatrices-story {
+    font-size: 15px;
+    line-height: 2;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto 80px;
+  }
+  .fondatrices-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .fondatrice-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 4vw, 54px);
+    font-weight: 300;
+    color: var(--dark-brown);
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+  .fondatrice-role {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .fondatrice-bio {
+    font-size: 14px;
+    line-height: 1.95;
+    color: var(--muted);
+  }
+
   /* ── CTA ── */
   .page-cta {
     text-align: center; padding: 80px 40px;
@@ -427,6 +502,10 @@ gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     .page-cta { padding: 60px 24px; }
+  }
+  @media (max-width: 768px) {
+    .fondatrices-section { padding: 72px 24px; }
+    .fondatrices-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
   }
 
   /* ── MOBILE MENU ── */
@@ -1100,6 +1179,28 @@ gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user
   </blockquote>
   <cite>Aude &amp; Mathilde, fondatrices</cite>
 </div>
+
+<!-- LES FONDATRICES -->
+<section class="fondatrices-section">
+  <!-- remplacer par le logo AM -->
+  <span class="fondatrices-monogram fade-in">AM</span>
+  <h2 class="fondatrices-title fade-in">Les fondatrices</h2>
+  <p class="fondatrices-intro fade-in">Deux sœurs, une même envie&nbsp;: créer quelque chose à elles.</p>
+  <div class="fondatrices-divider fade-in"></div>
+  <p class="fondatrices-story fade-in">Atelier MAUDÉ n'est pas né d'un grand plan, mais d'un désir simple&nbsp;: travailler ensemble, et bâtir quelque chose qui nous ressemble. Le nom — MAUDÉ — naît de la rencontre de nos deux prénoms, comme la marque naît de la rencontre de nos deux regards. L'une dessine, l'autre raconte. De cette complicité est née une maison de cachemire pensée à Paris, façonnée à Suzhou, et offerte sans intermédiaire — pour que la matière et le savoir-faire reviennent à celles qui les portent.</p>
+  <div class="fondatrices-grid">
+    <div class="fondatrice-item fade-in">
+      <p class="fondatrice-name">Aude</p>
+      <span class="fondatrice-role">Direction Créative &amp; Opérations</span>
+      <p class="fondatrice-bio">Aude veille sur tout ce qui fait l'âme d'Atelier MAUDÉ&nbsp;: le choix des matières, le dessin des pièces, l'exigence du détail. C'est elle qui transforme une fibre en une silhouette, et une idée en un manteau que l'on garde des années.</p>
+    </div>
+    <div class="fondatrice-item fade-in stagger-1">
+      <p class="fondatrice-name">Mathilde</p>
+      <span class="fondatrice-role">Direction Commerciale &amp; Image</span>
+      <p class="fondatrice-bio">Mathilde porte la voix de la maison. Elle façonne l'univers d'Atelier MAUDÉ, son récit et sa présence, et veille à ce que chaque cliente se sente accompagnée avec soin, du premier regard jusqu'à l'ouverture du colis.</p>
+    </div>
+  </div>
+</section>
 
 <!-- NOS VALEURS -->
 <section class="valeurs-section">
