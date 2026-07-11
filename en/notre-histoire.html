@@ -562,8 +562,9 @@ button, a { touch-action: manipulation; }
     <form class="popup-form" onsubmit="handlePopupSubmit(event)" novalidate>
       <label for="popup-email" class="sr-only">Your email address</label>
       <input type="email" id="popup-email" name="email" placeholder="Your email address" autocomplete="email" required>
-      <button type="submit">Subscribe</button>
+      <button type="submit" id="popup-submit">Subscribe</button>
     </form>
+    <p id="popup-msg" style="font-size:12px;margin-top:8px;min-height:18px;line-height:1.5;color:var(--muted)"></p>
     <button class="popup-decline" onclick="closePopup()">No, thank you</button>
   </div>
 </div>
@@ -599,13 +600,31 @@ button, a { touch-action: manipulation; }
   }
   function handlePopupSubmit(e) {
     e.preventDefault();
-    const input = e.target.querySelector('input[type="email"]');
-    if (!input.value) return;
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = 'Welcome ✓';
-    btn.style.background = '#6B4F3A';
-    sessionStorage.setItem(POPUP_KEY, '1');
-    setTimeout(closePopup, 1800);
+    var input = document.getElementById('popup-email');
+    var btn = document.getElementById('popup-submit');
+    var msg = document.getElementById('popup-msg');
+    var email = input.value.trim();
+    if (!email) return;
+    btn.disabled = true; btn.textContent = '…'; msg.textContent = '';
+    fetch('/api/subscribe', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+      .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});})
+      .then(function(res){
+        if (res.ok || res.data.ok) {
+          msg.textContent = res.data.already ? 'You are already subscribed — thank you!' : 'Thank you! Please check your inbox to confirm your subscription.';
+          msg.style.color = 'var(--brown)';
+          sessionStorage.setItem(POPUP_KEY, '1');
+          setTimeout(closePopup, 2800);
+        } else {
+          msg.textContent = 'An error occurred. Please try again.';
+          msg.style.color = 'var(--terracotta)';
+        }
+        btn.disabled = false; btn.textContent = 'Subscribe';
+      })
+      .catch(function(){
+        msg.textContent = 'An error occurred. Please try again.';
+        msg.style.color = 'var(--terracotta)';
+        btn.disabled = false; btn.textContent = 'Subscribe';
+      });
   }
   setTimeout(openPopup, 6000);
   document.getElementById('cercle-popup').addEventListener('click', function(e) {
