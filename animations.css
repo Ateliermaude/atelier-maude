@@ -1,4 +1,4 @@
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 /* Block picture so percentage dimensions on child img resolve against the
    correct containing block; height:100% ensures it fills aspect-ratio parents. */
