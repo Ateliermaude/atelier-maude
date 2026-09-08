@@ -31,7 +31,7 @@
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
-(function(){if(localStorage.getItem('cookie_choice')==='accepted')gtag('consent','update',{analytics_storage:'granted'});})();
+(function(){if(localStorage.getItem('cookie_choice')==='accepted')gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});})();
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMVJYN1W1M"></script>
 <script>gtag('js',new Date());gtag('config','G-QMVJYN1W1M');</script>
@@ -493,8 +493,8 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
 window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',scrollY>10),{passive:true});
 (function(){
   const KEY='cookie_choice';
-  function acceptCookie(){localStorage.setItem(KEY,'accepted');if(typeof gtag!=='undefined')gtag('consent','update',{analytics_storage:'granted'});document.getElementById('cookie-banner').classList.remove('show');}
-  function declineCookie(){localStorage.setItem(KEY,'refused');document.getElementById('cookie-banner').classList.remove('show');}
+  function acceptCookie(){localStorage.setItem(KEY,'accepted');if(typeof gtag!=='undefined')gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});document.getElementById('cookie-banner').classList.remove('show');}
+  function declineCookie(){localStorage.setItem(KEY,'refused');if(typeof gtag!=='undefined')gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});document.getElementById('cookie-banner').classList.remove('show');}
   window.acceptCookie=acceptCookie;window.declineCookie=declineCookie;
   if(!localStorage.getItem(KEY)){setTimeout(()=>document.getElementById('cookie-banner').classList.add('show'),1200);}
 })();
