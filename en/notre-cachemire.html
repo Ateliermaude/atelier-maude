@@ -327,19 +327,19 @@ button,a{touch-action:manipulation}
 <div class="chiffres-band">
   <div class="chiffres-inner">
     <div class="chiffre-item">
-      <span class="chiffre-num"><span class="am-count" data-count-to="50">0</span><small style="font-size:22px">%</small></span>
+      <span class="chiffre-num"><span class="am-count" data-count-to="50">50</span><small style="font-size:22px">%</small></span>
       <span class="chiffre-label">Cachemire<em>Inner Mongolia</em></span>
     </div>
     <div class="chiffre-item">
-      <span class="chiffre-num"><span class="am-count" data-count-to="50">0</span><small style="font-size:22px">%</small></span>
+      <span class="chiffre-num"><span class="am-count" data-count-to="50">50</span><small style="font-size:22px">%</small></span>
       <span class="chiffre-label">Laine<em>selected</em></span>
     </div>
     <div class="chiffre-item">
-      <span class="chiffre-num"><span class="am-count" data-count-to="2500">0</span></span>
+      <span class="chiffre-num"><span class="am-count" data-count-to="2500">2500</span></span>
       <span class="chiffre-label">Years of textile craft<em>in Suzhou</em></span>
     </div>
     <div class="chiffre-item">
-      <span class="chiffre-num"><span class="am-count" data-count-to="3">0</span></span>
+      <span class="chiffre-num"><span class="am-count" data-count-to="3">3</span></span>
       <span class="chiffre-label">Iconic<em>coats</em></span>
     </div>
   </div>
@@ -615,6 +615,7 @@ window.addEventListener('scroll',function(){
       el.textContent=Math.round(eased*target);
       if(p<1)requestAnimationFrame(step);
     }
+    el.textContent='0';
     requestAnimationFrame(step);
   }
 
