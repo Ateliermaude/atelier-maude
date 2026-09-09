@@ -532,7 +532,7 @@ footer a:hover{color:var(--dark-brown)}
         <div class="step-num">01</div>
         <div class="step-content">
           <p class="step-title">E-mail de confirmation</p>
-          <p class="step-text">Vous recevrez sous peu un récapitulatif de votre commande à l'adresse indiquée lors du paiement.</p>
+          <p class="step-text">Vous recevrez sous peu un récapitulatif de votre commande à <span id="order-email-2">l'adresse indiquée lors du paiement</span>.</p>
         </div>
       </div>
       <div class="step">
@@ -652,12 +652,24 @@ footer a:hover{color:var(--dark-brown)}
     });
   }, 300);
 </script><script>
-  // Récupérer l'email depuis l'URL si Stripe le passe (?email=...)
-  const params = new URLSearchParams(window.location.search);
-  const email = params.get('email');
-  if (email) {
-    document.getElementById('order-email').textContent = decodeURIComponent(email);
-  }
+  // Récupérer l'email du client auprès de Stripe via le session_id de l'URL
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var sessionId = params.get('session_id');
+    if (!sessionId) return;
+    fetch('/api/get-order-details?session_id=' + encodeURIComponent(sessionId))
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (!data || !data.email) return;
+        var el1 = document.getElementById('order-email');
+        var el2 = document.getElementById('order-email-2');
+        if (el1) el1.textContent = data.email;
+        if (el2) el2.textContent = data.email;
+      })
+      .catch(function(err) {
+        console.error('Impossible de récupérer les détails de la commande:', err);
+      });
+  })();
 
   // Partage WhatsApp
   function shareWhatsApp() {
