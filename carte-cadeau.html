@@ -442,14 +442,14 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
       <span class="amount-value">350 €</span>
       <span class="amount-desc">Manteau Yūn Court Ceinturé<br>mi-cuisse, noir ou marine</span>
     </div>
-    <div class="amount-card featured" onclick="selectAmount(this, 420)" data-amount="420">
-      <span class="amount-badge">Le plus offert</span>
-      <span class="amount-value">420 €</span>
-      <span class="amount-desc">Manteau Huā Long<br>long, coloris camel</span>
-    </div>
     <div class="amount-card" onclick="selectAmount(this, 450)" data-amount="450">
       <span class="amount-value">450 €</span>
       <span class="amount-desc">Manteau Yūn Long Ceinturé<br>long ceinturé, coloris noir</span>
+    </div>
+    <div class="amount-card featured" onclick="selectAmount(this, 480)" data-amount="480">
+      <span class="amount-badge">Le plus offert</span>
+      <span class="amount-value">480 €</span>
+      <span class="amount-desc">Manteau Huā Long<br>long, coloris camel</span>
     </div>
   </div>
 
@@ -615,8 +615,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
     const body = encodeURIComponent(
       `Bonjour,\n\nJe souhaite commander une carte cadeau Atelier MAUDÉ d'une valeur de ${selectedAmount}€.\n\nDe la part de : ${sender || '—'}\nPour : ${recipient || '—'}\nMessage : ${message || '—'}\n\nMon e-mail : ${email}`
     );
-    window.location.href = `mailto:lateliermaude@gmail
-.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:lateliermaude@gmail.com?subject=${subject}&body=${body}`;
   }
 </script>
 <script src="animations.js" defer></script>
