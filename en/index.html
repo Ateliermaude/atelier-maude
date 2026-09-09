@@ -313,7 +313,7 @@ button{cursor:pointer;font-family:inherit}
     <p class="matiere__eyebrow">The Material</p>
 
     <p class="matiere__figure">
-      <span class="matiere__number" data-count-to="15" aria-label="15">0</span><span class="matiere__unit">microns</span>
+      <span class="matiere__number" data-count-to="15" aria-label="15">15</span><span class="matiere__unit">microns</span>
     </p>
 
     <span class="matiere__rule" aria-hidden="true"></span>
@@ -356,9 +356,9 @@ button{cursor:pointer;font-family:inherit}
     z-index: 1;
     background: linear-gradient(
       180deg,
-      rgba(58, 42, 30, 0.34) 0%,
-      rgba(58, 42, 30, 0.52) 55%,
-      rgba(58, 42, 30, 0.40) 100%
+      rgba(58, 42, 30, 0.20) 0%,
+      rgba(58, 42, 30, 0.32) 55%,
+      rgba(58, 42, 30, 0.24) 100%
     );
   }
 
@@ -500,6 +500,7 @@ button{cursor:pointer;font-family:inherit}
           if (reduceMotion) {
             numberEl.textContent = target;
           } else {
+            numberEl.textContent = '0';
             runCounter();
           }
           io.disconnect();
