@@ -692,6 +692,20 @@ footer a:hover{color:var(--dark-brown)}
           if (amountEl) amountEl.textContent = formatted;
           if (amountRow) amountRow.style.display = '';
         }
+
+        // GA4 purchase — une seule fois par session_id (dédoublonnage F5 / retour sur la page)
+        if (typeof data.amountTotal === 'number' && data.currency && data.productName) {
+          var purchaseFlag = 'ga4_purchase_' + sessionId;
+          if (!sessionStorage.getItem(purchaseFlag) && typeof gtag !== 'undefined') {
+            gtag('event', 'purchase', {
+              transaction_id: sessionId,
+              value: data.amountTotal / 100,
+              currency: data.currency.toUpperCase(),
+              items: [{ item_name: data.productName, quantity: 1 }]
+            });
+            sessionStorage.setItem(purchaseFlag, '1');
+          }
+        }
       })
       .catch(function(err) {
         console.error('Impossible de récupérer les détails de la commande:', err);

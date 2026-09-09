@@ -306,6 +306,9 @@ button{cursor:pointer;font-family:inherit}
 </footer>
 <button class="back-to-top" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 <script>
+var GA4_ITEM={item_id:'ceinture-ze',item_name:'Ceinture Zé Cuir Lisse Chocolat',price:65};
+if(typeof gtag!=='undefined')gtag('event','view_item',{currency:'EUR',value:GA4_ITEM.price,items:[{item_id:GA4_ITEM.item_id,item_name:GA4_ITEM.item_name,price:GA4_ITEM.price,quantity:1}]});
+
 window.addEventListener('scroll',function(){
 document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
 document.getElementById('btt').classList.toggle('show',scrollY>400);
@@ -320,6 +323,11 @@ var orig=btn.textContent;
 var msg=document.getElementById('checkout-msg');
 btn.disabled=true;btn.textContent='…';
 if(msg){msg.textContent='';}
+if(typeof gtag!=='undefined'){
+var gaItem={item_id:GA4_ITEM.item_id,item_name:GA4_ITEM.item_name,price:GA4_ITEM.price,quantity:1};
+gtag('event','add_to_cart',{currency:'EUR',value:GA4_ITEM.price,items:[gaItem]});
+gtag('event','begin_checkout',{currency:'EUR',value:GA4_ITEM.price,items:[gaItem]});
+}
 fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product:product,cancelUrl:window.location.href})})
   .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});})
   .then(function(res){
