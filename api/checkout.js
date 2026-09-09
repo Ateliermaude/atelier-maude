@@ -63,6 +63,13 @@ export default async function handler(req, res) {
     return res.status(200).json({ url: session.url });
   } catch (err) {
     console.error('Stripe checkout session error:', err);
-    return res.status(500).json({ error: 'stripe_error' });
+    // TEMPORARY DIAGNOSTIC — remove once the root cause is found, revert
+    // to the generic { error: 'stripe_error' } response.
+    return res.status(500).json({
+      error: 'stripe_error',
+      message: err.message,
+      type: err.type,
+      code: err.code,
+    });
   }
 }
