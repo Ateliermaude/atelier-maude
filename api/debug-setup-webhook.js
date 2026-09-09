@@ -20,17 +20,9 @@ export default async function handler(req, res) {
 
   try {
     const existing = await stripe.webhookEndpoints.list({ limit: 100 });
-    const already = existing.data.find((e) => e.url === WEBHOOK_URL);
-
-    if (already) {
-      return res.status(200).json({
-        created: false,
-        message: 'A webhook endpoint for this URL already exists on this account.',
-        id: already.id,
-        url: already.url,
-        status: already.status,
-        enabledEvents: already.enabled_events,
-      });
+    const stale = existing.data.filter((e) => e.url === WEBHOOK_URL);
+    for (const e of stale) {
+      await stripe.webhookEndpoints.del(e.id);
     }
 
     const endpoint = await stripe.webhookEndpoints.create({
@@ -39,7 +31,8 @@ export default async function handler(req, res) {
     });
 
     return res.status(200).json({
-      created: true,
+      recreated: true,
+      deletedStaleIds: stale.map((e) => e.id),
       id: endpoint.id,
       url: endpoint.url,
       status: endpoint.status,
