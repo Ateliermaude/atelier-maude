@@ -227,8 +227,10 @@ header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
   max-width:min(720px,92vw);
   max-height:92vh;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
+  gap:12px;
 }
 .lightbox-inner img{
   max-width:100%;
@@ -236,6 +238,17 @@ header.scrolled{box-shadow:0 2px 20px rgba(58,42,30,0.08)}
   object-fit:contain;
   display:block;
 }
+.lightbox-product-link{
+  font-family:'Jost',sans-serif;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(245,240,234,0.85);
+  text-decoration:none;
+  text-align:center;
+  transition:color 0.2s;
+}
+.lightbox-product-link:hover{color:#fff}
 .lightbox-close{
   position:fixed;top:20px;right:24px;
   background:none;border:none;
@@ -551,6 +564,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:60px 4
   <button class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Photo précédente">&#8249;</button>
   <div class="lightbox-inner">
     <img id="lightbox-img" src="" alt="" loading="lazy" decoding="async">
+    <a id="lightbox-product-link" class="lightbox-product-link" href="" style="display:none">Découvrir : <span></span> →</a>
   </div>
   <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Photo suivante">&#8250;</button>
 </div>
@@ -654,19 +668,22 @@ window.addEventListener('scroll', function() {
 
 /* ── LIGHTBOX ── */
 var lbPhotos = [
-  { src: 'images/lookbook/lookbook-mongolie-camel-plaine.png',   alt: 'Manteau Huā Long camel, plaine mongole' },
+  { src: 'images/lookbook/lookbook-mongolie-camel-plaine.png',   alt: 'Manteau Huā Long camel, plaine mongole', product: { url: 'hua-long.html', name: 'Huā Long' } },
   { src: 'images/lookbook/lookbook-miroir-manteau-noir.png',     alt: 'Manteau noir Yūn, miroir doré, appartement parisien' },
   { src: 'images/lookbook/lookbook-detail-poche-brun.png',       alt: 'Détail poche manteau cachemire brun Atelier MAUDÉ' },
-  { src: 'images/lookbook/lookbook-mongolie-camel-herbes.png',   alt: 'Manteau Huā Long camel, herbes sauvages Mongolie' },
+  { src: 'images/lookbook/lookbook-mongolie-camel-herbes.png',   alt: 'Manteau Huā Long camel, herbes sauvages Mongolie', product: { url: 'hua-long.html', name: 'Huā Long' } },
   { src: 'images/lookbook/lookbook-paris-deux-femmes.png',       alt: 'Deux femmes manteaux cachemire, lumière dorée Paris' },
   { src: 'images/lookbook/lookbook-flatlay-marble.png',          alt: 'Flat lay accessoires cachemire sur marbre blanc' },
-  { src: 'images/lookbook/lookbook-mongolie-echarpe-camel.png',  alt: 'Écharpe cachemire camel, steppes de Mongolie' },
-  { src: 'images/lookbook/lookbook-silhouette-ruelle.png',       alt: 'Silhouette manteau long noir, ruelle Montmartre' },
-  { src: 'images/lookbook/lookbook-mains-echarpe-beige.png',     alt: 'Mains tenant écharpe cachemire beige Atelier MAUDÉ' },
+  { src: 'images/lookbook/lookbook-mongolie-echarpe-camel.png',  alt: 'Écharpe cachemire camel, steppes de Mongolie', product: { url: 'echarpe-wen.html', name: 'Écharpe Wēn' } },
+  { src: 'images/lookbook/lookbook-silhouette-ruelle.png',       alt: 'Silhouette manteau long noir, ruelle Montmartre', product: { url: 'yun-long.html', name: 'Yūn Long Ceinturé' } },
+  { src: 'images/lookbook/lookbook-mains-echarpe-beige.png',     alt: 'Mains tenant écharpe cachemire beige Atelier MAUDÉ', product: { url: 'echarpe-wen.html', name: 'Écharpe Wēn' } },
   { src: 'images/lookbook/lookbook-portant-parisien.png',        alt: 'Portant parisien manteaux cachemire Atelier MAUDÉ' },
-  { src: 'images/lookbook/lookbook-detail-boucle-noire.png',     alt: 'Détail boucle ceinture cuir noir Atelier MAUDÉ' },
+  { src: 'images/lookbook/lookbook-detail-boucle-noire.png',     alt: 'Détail boucle ceinture cuir noir Atelier MAUDÉ', product: { url: 'ceinture-sha.html', name: 'Ceinture Shā' } },
   { src: 'images/lookbook/lookbook-appartement-matin.png',       alt: 'Appartement parisien matin, jeté cachemire beige' },
-  { src: 'duo-mood-lookbook.png',                                 alt: 'Manteaux Atelier MAUDÉ — duo en laine et cachemire' }
+  { src: 'duo-mood-lookbook.png',                                 alt: 'Manteaux Atelier MAUDÉ — duo en laine et cachemire' },
+  { src: 'paris-vendome-camel.png',                               alt: 'Manteau Huā Long camel, Place Vendôme Paris — Atelier MAUDÉ', product: { url: 'hua-long.html', name: 'Huā Long' } },
+  { src: 'mains-the-cachemire.png',                               alt: 'Mains tenant une tasse de thé, manteau cachemire Atelier MAUDÉ' },
+  { src: 'paris-vendome-dos.png',                                 alt: 'Manteau long, vue dos, Place Vendôme Paris — Atelier MAUDÉ' }
 ];
 var lbIndex = 0;
 
@@ -689,6 +706,14 @@ function lbUpdate() {
   var img = document.getElementById('lightbox-img');
   img.src = p.src;
   img.alt = p.alt;
+  var linkEl = document.getElementById('lightbox-product-link');
+  if (p.product) {
+    linkEl.href = p.product.url;
+    linkEl.querySelector('span').textContent = p.product.name;
+    linkEl.style.display = '';
+  } else {
+    linkEl.style.display = 'none';
+  }
 }
 
 /* Attach click to masonry items */
