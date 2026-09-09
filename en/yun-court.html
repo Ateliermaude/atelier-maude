@@ -129,6 +129,7 @@ button{cursor:pointer;font-family:inherit}
 .size-guide-note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px;font-style:italic}
 .btn-add{width:100%;background:var(--dark-brown);color:#fff;border:none;padding:18px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s;margin-bottom:12px;cursor:pointer}
 .btn-add:hover{background:var(--terracotta)}
+.btn-add:disabled{opacity:.6;cursor:not-allowed;background:var(--dark-brown)}
 .btn-wishlist{width:100%;background:transparent;border:1px solid var(--border);color:var(--dark-brown);padding:15px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;cursor:pointer}
 .delivery-note{display:flex;align-items:center;gap:8px;font-size:12px;color:#3B6D11;margin-bottom:20px}
 .divider{border:none;border-top:1px solid var(--border);margin:20px 0}
@@ -238,17 +239,15 @@ button{cursor:pointer;font-family:inherit}
 <div class="gallery-thumbs" id="gallery-thumbs">
 <div class="gallery-thumb active" data-index="0" onclick="switchImage(0)"><picture><source srcset="../yun-court-noir-face-new.webp" type="image/webp"><img src="../yun-court-noir-face-new.png" alt="Yun Court black front" loading="eager" width="720" height="720"></picture></div>
 <div class="gallery-thumb" data-index="1" onclick="switchImage(1)"><picture><source srcset="../yun-court-noir-dos-new.webp" type="image/webp"><img src="../yun-court-noir-dos-new.png" alt="Yun Court black back" loading="lazy" width="720" height="720"></picture></div>
-<div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><picture><source srcset="../yun-court-noir-profil-new.webp" type="image/webp"><img src="../yun-court-noir-profil-new.png" alt="Yun Court black side right" loading="lazy" width="720" height="720"></picture></div>
-<div class="gallery-thumb" data-index="3" onclick="switchImage(3)"><picture><source srcset="../yun-court-noir-profil-new.webp" type="image/webp"><img src="../yun-court-noir-profil-new.png" alt="Yun Court black side left" loading="lazy" width="720" height="720"></picture></div>
-<div class="gallery-thumb" data-index="4" onclick="switchImage(4)"><picture><source srcset="../closeup-yun-court-ceinture-noeud.webp" type="image/webp"><img src="../closeup-yun-court-ceinture-noeud.png" alt="Belt detail" loading="lazy" width="1792" height="2400"></picture></div>
-<div class="gallery-thumb" data-index="5" onclick="switchImage(5)"><picture><source srcset="../closeup-yun-court-poche-main.webp" type="image/webp"><img src="../closeup-yun-court-poche-main.png" alt="Pocket detail" loading="lazy" width="1792" height="2400"></picture></div>
-<div class="gallery-thumb" data-index="6" onclick="switchImage(6)"><picture><source srcset="../closeup-yun-court-col-boucle.webp" type="image/webp"><img src="../closeup-yun-court-col-boucle.png" alt="Collar detail" loading="lazy" width="1792" height="2400"></picture></div>
+<div class="gallery-thumb" data-index="2" onclick="switchImage(2)"><picture><source srcset="../yun-court-noir-profil-new.webp" type="image/webp"><img src="../yun-court-noir-profil-new.png" alt="Yun Court black side" loading="lazy" width="720" height="720"></picture></div>
+<div class="gallery-thumb" data-index="3" onclick="switchImage(3)"><picture><source srcset="../closeup-yun-court-ceinture-noeud.webp" type="image/webp"><img src="../closeup-yun-court-ceinture-noeud.png" alt="Belt detail" loading="lazy" width="1792" height="2400"></picture></div>
+<div class="gallery-thumb" data-index="4" onclick="switchImage(4)"><picture><source srcset="../closeup-yun-court-poche-main.webp" type="image/webp"><img src="../closeup-yun-court-poche-main.png" alt="Pocket detail" loading="lazy" width="1792" height="2400"></picture></div>
+<div class="gallery-thumb" data-index="5" onclick="switchImage(5)"><picture><source srcset="../closeup-yun-court-col-boucle.webp" type="image/webp"><img src="../closeup-yun-court-col-boucle.png" alt="Collar detail" loading="lazy" width="1792" height="2400"></picture></div>
 </div>
 <div class="gallery-main" id="gallery-main">
 <picture><source srcset="../yun-court-noir-face-new.webp" type="image/webp"><img src="../yun-court-noir-face-new.png" alt="Yun Court black front" class="active" loading="eager" width="720" height="720"></picture>
 <picture><source srcset="../yun-court-noir-dos-new.webp" type="image/webp"><img src="../yun-court-noir-dos-new.png" alt="Yun Court black back" loading="lazy" width="720" height="720"></picture>
-<picture><source srcset="../yun-court-noir-profil-new.webp" type="image/webp"><img src="../yun-court-noir-profil-new.png" alt="Yun Court black side right" loading="lazy" width="720" height="720"></picture>
-<picture><source srcset="../yun-court-noir-profil-new.webp" type="image/webp"><img src="../yun-court-noir-profil-new.png" alt="Yun Court black side left" loading="lazy" width="720" height="720"></picture>
+<picture><source srcset="../yun-court-noir-profil-new.webp" type="image/webp"><img src="../yun-court-noir-profil-new.png" alt="Yun Court black side" loading="lazy" width="720" height="720"></picture>
 <picture><source srcset="../closeup-yun-court-ceinture-noeud.webp" type="image/webp"><img src="../closeup-yun-court-ceinture-noeud.png" alt="Belt detail" loading="lazy" width="1792" height="2400"></picture>
 <picture><source srcset="../closeup-yun-court-poche-main.webp" type="image/webp"><img src="../closeup-yun-court-poche-main.png" alt="Pocket detail" loading="lazy" width="1792" height="2400"></picture>
 <picture><source srcset="../closeup-yun-court-col-boucle.webp" type="image/webp"><img src="../closeup-yun-court-col-boucle.png" alt="Collar detail" loading="lazy" width="1792" height="2400"></picture>
@@ -288,8 +287,9 @@ button{cursor:pointer;font-family:inherit}
 <p class="size-guide-note">Our coats are designed with a slightly relaxed fit. If in doubt, we recommend choosing your usual size.</p>
 </div>
 </div>
-<button class="btn-add" onclick="addToCart(this)">Add to cart</button>
+<button class="btn-add" onclick="addToCart(this,'yun-court')">Add to cart</button>
 <button class="btn-wishlist">Add to wishlist</button>
+<p id="checkout-msg" style="font-size:12px;margin-bottom:16px;min-height:18px;line-height:1.5;color:var(--muted)"></p>
 <div class="delivery-note">Free delivery — 15 to 21 business days</div>
 <hr class="divider">
 <div class="tabs">
@@ -380,11 +380,21 @@ btn.setAttribute('aria-expanded',isOpen);
 btn.textContent=isOpen?'Size guide ↑':'Size guide ↓';
 }
 
-function addToCart(btn){
+function addToCart(btn,product){
 var orig=btn.textContent;
-btn.textContent='Added to cart';
-btn.style.background='var(--brown)';
-setTimeout(function(){btn.textContent=orig;btn.style.background='';},2500);
+var msg=document.getElementById('checkout-msg');
+btn.disabled=true;btn.textContent='…';
+if(msg){msg.textContent='';}
+fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product:product,cancelUrl:window.location.href})})
+  .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});})
+  .then(function(res){
+    if(res.ok&&res.data.url){window.location.href=res.data.url;return;}
+    throw new Error(res.data.error||'checkout_error');
+  })
+  .catch(function(){
+    btn.disabled=false;btn.textContent=orig;
+    if(msg){msg.textContent='Something went wrong. Please try again in a moment.';msg.style.color='var(--terracotta)';}
+  });
 }
 
 function toggleAccordion(btn){

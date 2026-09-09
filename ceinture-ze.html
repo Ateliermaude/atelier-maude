@@ -102,6 +102,7 @@ button{cursor:pointer;font-family:inherit}
 .price-current{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--dark-brown)}
 .btn-add{width:100%;background:var(--dark-brown);color:#fff;border:none;padding:18px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s;margin-bottom:12px;cursor:pointer}
 .btn-add:hover{background:var(--terracotta)}
+.btn-add:disabled{opacity:.6;cursor:not-allowed;background:var(--dark-brown)}
 .btn-wishlist{width:100%;background:transparent;border:1px solid var(--border);color:var(--dark-brown);padding:15px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;cursor:pointer}
 .delivery-note{display:flex;align-items:center;gap:8px;font-size:12px;color:#3B6D11;margin-bottom:20px}
 .divider{border:none;border-top:1px solid var(--border);margin:20px 0}
@@ -230,8 +231,9 @@ button{cursor:pointer;font-family:inherit}
   <div class="price-wrap">
     <span class="price-current">65,00 &euro;</span>
   </div>
-  <button class="btn-add" onclick="addToCart(this)">Ajouter au panier</button>
+  <button class="btn-add" onclick="addToCart(this,'ceinture-ze')">Ajouter au panier</button>
   <button class="btn-wishlist">Ajouter &agrave; ma liste</button>
+  <p id="checkout-msg" style="font-size:12px;margin-bottom:16px;min-height:18px;line-height:1.5;color:var(--muted)"></p>
   <div class="delivery-note">Livraison offerte &mdash; estim&eacute;e dans 8 &agrave; 15 jours ouvr&eacute;s</div>
   <hr class="divider">
   <div class="tabs">
@@ -313,11 +315,21 @@ var main=document.getElementById('gallery-main');
 main.querySelectorAll('img').forEach(function(img,i){img.classList.toggle('active',i===index);});
 document.querySelectorAll('#gallery-thumbs .gallery-thumb').forEach(function(t){t.classList.toggle('active',parseInt(t.dataset.index)===index);});
 }
-function addToCart(btn){
+function addToCart(btn,product){
 var orig=btn.textContent;
-btn.textContent='Ajouté au panier';
-btn.style.background='var(--brown)';
-setTimeout(function(){btn.textContent=orig;btn.style.background='';},2500);
+var msg=document.getElementById('checkout-msg');
+btn.disabled=true;btn.textContent='…';
+if(msg){msg.textContent='';}
+fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product:product,cancelUrl:window.location.href})})
+  .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});})
+  .then(function(res){
+    if(res.ok&&res.data.url){window.location.href=res.data.url;return;}
+    throw new Error(res.data.error||'checkout_error');
+  })
+  .catch(function(){
+    btn.disabled=false;btn.textContent=orig;
+    if(msg){msg.textContent='Une erreur est survenue. Merci de réessayer dans quelques instants.';msg.style.color='var(--terracotta)';}
+  });
 }
 function toggleAccordion(btn){
 var item=btn.closest('.accordion-item');

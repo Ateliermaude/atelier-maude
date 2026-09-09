@@ -115,6 +115,7 @@ button{cursor:pointer;font-family:inherit}
 .swatch-rose-pourpre{background:#8B3558}
 .btn-add{width:100%;background:var(--dark-brown);color:#fff;border:none;padding:18px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .3s;margin-bottom:12px;cursor:pointer}
 .btn-add:hover{background:var(--terracotta)}
+.btn-add:disabled{opacity:.6;cursor:not-allowed;background:var(--dark-brown)}
 .btn-wishlist{width:100%;background:transparent;border:1px solid var(--border);color:var(--dark-brown);padding:15px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;cursor:pointer}
 .delivery-note{display:flex;align-items:center;gap:8px;font-size:12px;color:#3B6D11;margin-bottom:20px}
 .divider{border:none;border-top:1px solid var(--border);margin:20px 0}
@@ -258,8 +259,9 @@ button{cursor:pointer;font-family:inherit}
     <div class="color-swatch swatch-bleu-vert" data-index="5" onclick="selectColor(this,'Bleu&thinsp;/&thinsp;Vert',5)" title="Bleu/Vert"></div>
     <div class="color-swatch swatch-rose-pourpre" data-index="6" onclick="selectColor(this,'Rose pourpre',6)" title="Rose pourpre"></div>
   </div>
-  <button class="btn-add" onclick="addToCart(this)">Ajouter au panier</button>
+  <button class="btn-add" onclick="addToCart(this,'echarpe-wen')">Ajouter au panier</button>
   <button class="btn-wishlist">Ajouter &agrave; ma liste</button>
+  <p id="checkout-msg" style="font-size:12px;margin-bottom:16px;min-height:18px;line-height:1.5;color:var(--muted)"></p>
   <div class="delivery-note">Livraison offerte &mdash; estim&eacute;e dans 8 &agrave; 15 jours ouvr&eacute;s</div>
   <hr class="divider">
   <div class="tabs">
@@ -364,11 +366,21 @@ function selectColor(el,name,idx){
   switchImage(idx);
 }
 
-function addToCart(btn){
+function addToCart(btn,product){
   var orig=btn.textContent;
-  btn.textContent='Ajouté au panier';
-  btn.style.background='var(--brown)';
-  setTimeout(function(){btn.textContent=orig;btn.style.background='';},2500);
+  var msg=document.getElementById('checkout-msg');
+  btn.disabled=true;btn.textContent='…';
+  if(msg){msg.textContent='';}
+  fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product:product,cancelUrl:window.location.href})})
+    .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});})
+    .then(function(res){
+      if(res.ok&&res.data.url){window.location.href=res.data.url;return;}
+      throw new Error(res.data.error||'checkout_error');
+    })
+    .catch(function(){
+      btn.disabled=false;btn.textContent=orig;
+      if(msg){msg.textContent='Une erreur est survenue. Merci de réessayer dans quelques instants.';msg.style.color='var(--terracotta)';}
+    });
 }
 
 function toggleAccordion(btn){
