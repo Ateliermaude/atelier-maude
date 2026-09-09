@@ -139,6 +139,7 @@ button{cursor:pointer;font-family:inherit}
 .btn-add:disabled{opacity:.6;cursor:not-allowed;background:var(--dark-brown)}
 .btn-wishlist{width:100%;background:transparent;border:1px solid var(--border);color:var(--dark-brown);padding:15px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;cursor:pointer}
 .delivery-note{display:flex;align-items:center;gap:8px;font-size:12px;color:#3B6D11;margin-bottom:20px}
+.delivery-note-sub{font-size:11px;color:var(--muted);margin-top:-14px;margin-bottom:20px;line-height:1.5}
 .divider{border:none;border-top:1px solid var(--border);margin:20px 0}
 .tabs{display:flex;border-bottom:1px solid var(--border);margin:24px 0 0}
 .tab-btn{background:none;border:none;border-bottom:2px solid transparent;padding:10px 18px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:all .2s;margin-bottom:-1px;cursor:pointer}
@@ -299,6 +300,7 @@ button{cursor:pointer;font-family:inherit}
 <button class="btn-wishlist">Ajouter a ma liste</button>
 <p id="checkout-msg" style="font-size:12px;margin-bottom:16px;min-height:18px;line-height:1.5;color:var(--muted)"></p>
 <div class="delivery-note">Livraison offerte — 15 à 21 jours ouvrés</div>
+<p class="delivery-note-sub">Chaque pièce est confectionnée à la commande : c'est pourquoi il faut compter 15 à 21 jours.</p>
 <hr class="divider">
 <div class="tabs">
 <button class="tab-btn active" onclick="switchTab(this,'desc')">Description</button>
