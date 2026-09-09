@@ -20,12 +20,18 @@ export default async function handler(req, res) {
   const stripe = new Stripe(secretKey);
 
   try {
-    const session = await stripe.checkout.sessions.retrieve(sessionId);
+    const session = await stripe.checkout.sessions.retrieve(sessionId, {
+      expand: ['line_items.data.price.product'],
+    });
+
+    const lineItem = session.line_items?.data?.[0];
+    const product = lineItem?.price?.product;
 
     return res.status(200).json({
       email: session.customer_details?.email ?? session.customer_email ?? null,
       amountTotal: session.amount_total,
       currency: session.currency,
+      productName: typeof product === 'object' && product !== null ? product.name : null,
     });
   } catch (err) {
     console.error('Error retrieving checkout session:', err);

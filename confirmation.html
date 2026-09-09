@@ -508,6 +508,14 @@ footer a:hover{color:var(--dark-brown)}
 
     <!-- Récap -->
     <div class="confirm-recap">
+      <div class="recap-row" id="order-product-row" style="display:none">
+        <span class="recap-label">Article commandé</span>
+        <span class="recap-value" id="order-product">—</span>
+      </div>
+      <div class="recap-row" id="order-amount-row" style="display:none">
+        <span class="recap-label">Montant payé</span>
+        <span class="recap-value" id="order-amount">—</span>
+      </div>
       <div class="recap-row">
         <span class="recap-label">Confirmation envoyée à</span>
         <span class="recap-value email" id="order-email">votre adresse e-mail</span>
@@ -652,7 +660,7 @@ footer a:hover{color:var(--dark-brown)}
     });
   }, 300);
 </script><script>
-  // Récupérer l'email du client auprès de Stripe via le session_id de l'URL
+  // Récupérer l'email, le produit et le montant auprès de Stripe via le session_id de l'URL
   (function() {
     var params = new URLSearchParams(window.location.search);
     var sessionId = params.get('session_id');
@@ -660,11 +668,30 @@ footer a:hover{color:var(--dark-brown)}
     fetch('/api/get-order-details?session_id=' + encodeURIComponent(sessionId))
       .then(function(r) { return r.json(); })
       .then(function(data) {
-        if (!data || !data.email) return;
-        var el1 = document.getElementById('order-email');
-        var el2 = document.getElementById('order-email-2');
-        if (el1) el1.textContent = data.email;
-        if (el2) el2.textContent = data.email;
+        if (!data) return;
+
+        if (data.email) {
+          var el1 = document.getElementById('order-email');
+          var el2 = document.getElementById('order-email-2');
+          if (el1) el1.textContent = data.email;
+          if (el2) el2.textContent = data.email;
+        }
+
+        if (data.productName) {
+          var productRow = document.getElementById('order-product-row');
+          var productEl = document.getElementById('order-product');
+          if (productEl) productEl.textContent = data.productName;
+          if (productRow) productRow.style.display = '';
+        }
+
+        if (typeof data.amountTotal === 'number' && data.currency) {
+          var amountRow = document.getElementById('order-amount-row');
+          var amountEl = document.getElementById('order-amount');
+          var formatted = (data.amountTotal / 100).toFixed(2).replace('.', ',') + ' ' +
+            (data.currency.toUpperCase() === 'EUR' ? '€' : data.currency.toUpperCase());
+          if (amountEl) amountEl.textContent = formatted;
+          if (amountRow) amountRow.style.display = '';
+        }
       })
       .catch(function(err) {
         console.error('Impossible de récupérer les détails de la commande:', err);
