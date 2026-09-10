@@ -223,10 +223,10 @@ button{cursor:pointer;font-family:inherit}
         <picture><source srcset="../yun-court-noir-face-new.webp" type="image/webp"><img src="../yun-court-noir-face-new.png" alt="Yūn Court belted wool cachemire coat women" loading="eager" fetchpriority="high" width="720" height="720"></picture>
         <div class="product-overlay">
           <span class="overlay-name">Yūn Court Ceinturé</span>
-          <a href="yun-court.html" class="overlay-cta">View product →</a>
+          <a href="yun-court.html" class="overlay-cta" onclick="trackSelectItem(1)">View product →</a>
         </div>
       </div>
-      <a href="yun-court.html" class="product-name">Yūn Court Ceinturé</a>
+      <a href="yun-court.html" class="product-name" onclick="trackSelectItem(1)">Yūn Court Ceinturé</a>
       <p class="product-desc">Mid-thigh · Removable belt</p>
       <div class="product-price">
         <span class="price-now">€350</span>
@@ -242,10 +242,10 @@ button{cursor:pointer;font-family:inherit}
         <picture><source srcset="../hua-long-camel-face-new.webp" type="image/webp"><img src="../hua-long-camel-face-new.png" alt="Huā Long oversize wool cachemire coat women — camel" loading="lazy" decoding="async" width="720" height="720"></picture>
         <div class="product-overlay">
           <span class="overlay-name">Huā Long</span>
-          <a href="hua-long.html" class="overlay-cta">View product →</a>
+          <a href="hua-long.html" class="overlay-cta" onclick="trackSelectItem(0)">View product →</a>
         </div>
       </div>
-      <a href="hua-long.html" class="product-name">Huā Long</a>
+      <a href="hua-long.html" class="product-name" onclick="trackSelectItem(0)">Huā Long</a>
       <p class="product-desc">Long oversize · Double-breasted</p>
       <div class="product-price">
         <span class="price-now">€480</span>
@@ -262,10 +262,10 @@ button{cursor:pointer;font-family:inherit}
         <picture><source srcset="../yun-long-noir-face-new.webp" type="image/webp"><img src="../yun-long-noir-face-new.png" alt="Yūn Long belted wool cachemire coat women — black" loading="lazy" decoding="async" width="525" height="720"></picture>
         <div class="product-overlay">
           <span class="overlay-name">Yūn Long Ceinturé</span>
-          <a href="yun-long.html" class="overlay-cta">View product →</a>
+          <a href="yun-long.html" class="overlay-cta" onclick="trackSelectItem(2)">View product →</a>
         </div>
       </div>
-      <a href="yun-long.html" class="product-name">Yūn Long Ceinturé</a>
+      <a href="yun-long.html" class="product-name" onclick="trackSelectItem(2)">Yūn Long Ceinturé</a>
       <p class="product-desc">Maxi length · Double-wrap belt</p>
       <div class="product-price">
         <span class="price-now">€450</span>
@@ -342,6 +342,29 @@ function filter(cat, btn) {
   });
   var countEl = document.getElementById('product-count');
   if (countEl) countEl.textContent = count + ' coat' + (count > 1 ? 's' : '');
+}
+
+// GA4 — Coats collection
+var COLLECTION_ITEMS = [
+  {item_id:'hua-long', item_name:'Huā Long', item_category:'Coat', price:480},
+  {item_id:'yun-court', item_name:'Yūn Court Ceinturé', item_category:'Coat', price:350},
+  {item_id:'yun-long', item_name:'Yūn Long Ceinturé', item_category:'Coat', price:450}
+];
+if (typeof gtag !== 'undefined') {
+  gtag('event', 'view_item_list', {
+    item_list_id: 'manteaux_collection',
+    item_list_name: 'Collection – Coats',
+    items: COLLECTION_ITEMS.map(function(it, i) { return Object.assign({}, it, {index: i, currency: 'EUR', item_list_id: 'manteaux_collection', item_list_name: 'Collection – Coats'}); })
+  });
+}
+function trackSelectItem(idx) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'select_item', {
+      item_list_id: 'manteaux_collection',
+      item_list_name: 'Collection – Coats',
+      items: [Object.assign({}, COLLECTION_ITEMS[idx], {index: idx, currency: 'EUR'})]
+    });
+  }
 }
 </script>
 <script src="../animations.js" defer></script>

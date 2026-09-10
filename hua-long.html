@@ -399,8 +399,8 @@ button{cursor:pointer;font-family:inherit}
 </footer>
 <button class="back-to-top" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 <script>
-var GA4_ITEM={item_id:'hua-long',item_name:'Manteau Huā Long',price:480};
-if(typeof gtag!=='undefined')gtag('event','view_item',{currency:'EUR',value:GA4_ITEM.price,items:[{item_id:GA4_ITEM.item_id,item_name:GA4_ITEM.item_name,price:GA4_ITEM.price,quantity:1}]});
+var GA4_ITEM={item_id:'hua-long',item_name:'Manteau Huā Long',price:480,item_category:'Coat'};
+if(typeof gtag!=='undefined')gtag('event','view_item',{currency:'EUR',value:GA4_ITEM.price,items:[{item_id:GA4_ITEM.item_id,item_name:GA4_ITEM.item_name,item_category:GA4_ITEM.item_category,price:GA4_ITEM.price,quantity:1}]});
 
 window.addEventListener('scroll',function(){
 document.getElementById('site-header').classList.toggle('scrolled',scrollY>10);
@@ -453,7 +453,7 @@ var orig=btn.textContent;
 btn.disabled=true;btn.textContent='…';
 if(msg){msg.textContent='';}
 if(typeof gtag!=='undefined'){
-var gaItem={item_id:GA4_ITEM.item_id,item_name:GA4_ITEM.item_name,price:GA4_ITEM.price,quantity:1};
+var gaItem={item_id:GA4_ITEM.item_id,item_name:GA4_ITEM.item_name,item_category:GA4_ITEM.item_category,price:GA4_ITEM.price,quantity:1};
 gtag('event','add_to_cart',{currency:'EUR',value:GA4_ITEM.price,items:[gaItem]});
 gtag('event','begin_checkout',{currency:'EUR',value:GA4_ITEM.price,items:[gaItem]});
 }

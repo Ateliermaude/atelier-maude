@@ -36,6 +36,7 @@ export default async function handler(req, res) {
       amountTotal: session.amount_total,
       currency: session.currency,
       productName: typeof product === 'object' && product !== null ? product.name : null,
+      product: session.metadata?.product ?? null,
       size: session.metadata?.size ?? null,
       shipping: shippingDetails ? {
         name: shippingDetails.name ?? null,

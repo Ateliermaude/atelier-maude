@@ -731,14 +731,20 @@ footer a:hover{color:var(--dark-brown)}
         }
 
         // GA4 purchase — une seule fois par session_id (dédoublonnage F5 / retour sur la page)
-        if (typeof data.amountTotal === 'number' && data.currency && data.productName) {
+        if (typeof data.amountTotal === 'number' && data.currency && data.productName && data.product) {
           var purchaseFlag = 'ga4_purchase_' + sessionId;
           if (!sessionStorage.getItem(purchaseFlag) && typeof gtag !== 'undefined') {
+            var COATS = ['hua-long', 'yun-court', 'yun-long'];
             gtag('event', 'purchase', {
               transaction_id: sessionId,
               value: data.amountTotal / 100,
               currency: data.currency.toUpperCase(),
-              items: [{ item_name: data.productName, quantity: 1 }]
+              items: [{
+                item_id: data.product,
+                item_name: data.productName,
+                item_category: COATS.indexOf(data.product) !== -1 ? 'Coat' : 'Accessory',
+                quantity: 1
+              }]
             });
             sessionStorage.setItem(purchaseFlag, '1');
           }

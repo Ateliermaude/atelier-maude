@@ -236,10 +236,10 @@ button{cursor:pointer;font-family:inherit}
         <picture><source srcset="yun-court-noir-face-new.webp" type="image/webp"><img src="yun-court-noir-face-new.png" alt="Manteau Yūn Court Ceinturé en laine et cachemire" loading="eager" fetchpriority="high" width="720" height="720"></picture>
         <div class="product-overlay">
           <span class="overlay-name">Manteau Yūn Court Ceinturé</span>
-          <a href="yun-court.html" class="overlay-cta">Voir le produit →</a>
+          <a href="yun-court.html" class="overlay-cta" onclick="trackSelectItem(1)">Voir le produit →</a>
         </div>
       </div>
-      <a href="yun-court.html" class="product-name">Manteau Yūn Court Ceinturé</a>
+      <a href="yun-court.html" class="product-name" onclick="trackSelectItem(1)">Manteau Yūn Court Ceinturé</a>
       <p class="product-desc">Mi-cuisse · Ceinture amovible</p>
       <div class="product-price">
         <span class="price-now">350,00 €</span>
@@ -256,10 +256,10 @@ button{cursor:pointer;font-family:inherit}
         <picture><source srcset="hua-long-camel-face-new.webp" type="image/webp"><img src="hua-long-camel-face-new.png" alt="Manteau Huā Long en laine et cachemire — camel" loading="lazy" decoding="async" width="720" height="720"></picture>
         <div class="product-overlay">
           <span class="overlay-name">Manteau Huā Long</span>
-          <a href="hua-long.html" class="overlay-cta">Voir le produit →</a>
+          <a href="hua-long.html" class="overlay-cta" onclick="trackSelectItem(0)">Voir le produit →</a>
         </div>
       </div>
-      <a href="hua-long.html" class="product-name">Manteau Huā Long</a>
+      <a href="hua-long.html" class="product-name" onclick="trackSelectItem(0)">Manteau Huā Long</a>
       <p class="product-desc">Long oversize · Double boutonnage</p>
       <div class="product-price">
         <span class="price-now">480,00 €</span>
@@ -277,10 +277,10 @@ button{cursor:pointer;font-family:inherit}
         <picture><source srcset="yun-long-noir-face-new.webp" type="image/webp"><img src="yun-long-noir-face-new.png" alt="Manteau Yūn Long Ceinturé en laine et cachemire — noir" loading="lazy" decoding="async" width="525" height="720"></picture>
         <div class="product-overlay">
           <span class="overlay-name">Manteau Yūn Long Ceinturé</span>
-          <a href="yun-long.html" class="overlay-cta">Voir le produit →</a>
+          <a href="yun-long.html" class="overlay-cta" onclick="trackSelectItem(2)">Voir le produit →</a>
         </div>
       </div>
-      <a href="yun-long.html" class="product-name">Manteau Yūn Long Ceinturé</a>
+      <a href="yun-long.html" class="product-name" onclick="trackSelectItem(2)">Manteau Yūn Long Ceinturé</a>
       <p class="product-desc">Longueur maxi · Ceinture double tour</p>
       <div class="product-price">
         <span class="price-now">450,00 €</span>
@@ -361,6 +361,29 @@ function filter(cat, btn) {
 
   var countEl = document.getElementById('product-count');
   if (countEl) countEl.textContent = count + ' manteau' + (count > 1 ? 'x' : '');
+}
+
+// GA4 — Collection Manteaux
+var COLLECTION_ITEMS = [
+  {item_id:'hua-long', item_name:'Manteau Huā Long', item_category:'Coat', price:480},
+  {item_id:'yun-court', item_name:'Manteau Yūn Court Ceinturé', item_category:'Coat', price:350},
+  {item_id:'yun-long', item_name:'Manteau Yūn Long Ceinturé', item_category:'Coat', price:450}
+];
+if (typeof gtag !== 'undefined') {
+  gtag('event', 'view_item_list', {
+    item_list_id: 'manteaux_collection',
+    item_list_name: 'Collection – Manteaux',
+    items: COLLECTION_ITEMS.map(function(it, i) { return Object.assign({}, it, {index: i, currency: 'EUR', item_list_id: 'manteaux_collection', item_list_name: 'Collection – Manteaux'}); })
+  });
+}
+function trackSelectItem(idx) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'select_item', {
+      item_list_id: 'manteaux_collection',
+      item_list_name: 'Collection – Manteaux',
+      items: [Object.assign({}, COLLECTION_ITEMS[idx], {index: idx, currency: 'EUR'})]
+    });
+  }
 }
 </script>
 <script src="animations.js" defer></script>
