@@ -92,16 +92,18 @@ button{cursor:pointer;font-family:inherit}
 .hero-content{position:absolute;bottom:52px;left:52px;z-index:2;max-width:min(90vw,1200px)}
 @keyframes heroFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .hero-eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,247,242,.85);display:block;margin-bottom:18px;animation:heroFadeUp .9s ease-out .2s both}
-.hero-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(24px,3.5vw,40px);line-height:1.2;color:#FAF7F2;margin:0 0 28px;animation:heroFadeUp .9s ease-out .45s both}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(24px,3.5vw,40px);line-height:1.2;color:#FAF7F2;margin:0 0 16px;animation:heroFadeUp .9s ease-out .45s both}
+.hero-subline{font-family:'Jost',sans-serif;font-weight:300;font-size:13px;letter-spacing:.03em;color:rgba(250,247,242,.72);margin:0 0 28px;animation:heroFadeUp .9s ease-out .58s both}
 .hero-cta{position:relative;display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,242,.85);text-decoration:none;padding-bottom:4px;animation:heroFadeUp .9s ease-out .75s both}
 .hero-cta::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:rgba(250,247,242,.45);transition:background .25s ease}
 .hero-cta:hover{color:#C9A96E}
 .hero-cta:hover::after{background:#C9A96E}
-@media(prefers-reduced-motion:reduce){.hero-eyebrow,.hero-headline,.hero-cta{animation:none}}
+@media(prefers-reduced-motion:reduce){.hero-eyebrow,.hero-headline,.hero-subline,.hero-cta{animation:none}}
 
 /* COLLECTION */
-.collection{padding:80px 40px}
-.collection-head{max-width:1400px;margin:0 auto 48px;display:flex;justify-content:space-between;align-items:flex-end}
+.collection{padding:100px 40px}
+.collection-head{max-width:1400px;margin:0 auto 48px;display:flex;flex-wrap:wrap;gap:16px 24px;justify-content:space-between;align-items:flex-end}
+.collection-subtitle{font-family:'Jost',sans-serif;font-size:14px;font-weight:300;color:var(--muted);margin-top:10px}
 .section-label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);display:block;margin-bottom:10px}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,50px);font-weight:300;line-height:1.1;color:var(--dark-brown)}
 .section-title em{font-style:italic;color:var(--brown)}
@@ -116,6 +118,13 @@ button{cursor:pointer;font-family:inherit}
 .product-card-info{padding:18px 0 0}
 .product-tag{position:absolute;top:14px;left:14px;background:var(--terracotta);color:#fff;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;z-index:2}
 .product-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--dark-brown);margin-bottom:6px}
+.product-desc{font-family:'Jost',sans-serif;font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 12px;max-width:34ch}
+.product-discover{display:inline-block;margin-top:12px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dark-brown);border-bottom:1px solid var(--border);padding-bottom:3px;transition:opacity .35s ease,transform .35s ease,color .2s,border-color .2s}
+.product-discover:hover{color:var(--terracotta);border-color:var(--terracotta)}
+@media(hover:hover) and (pointer:fine){
+  .product-discover{opacity:0;transform:translateY(4px)}
+  .product-card:hover .product-discover{opacity:1;transform:translateY(0)}
+}
 .product-price{display:flex;align-items:center;gap:10px}
 .price-now{font-size:15px;color:var(--dark-brown)}
 .price-was{font-size:13px;color:var(--muted);text-decoration:line-through}
@@ -126,7 +135,7 @@ button{cursor:pointer;font-family:inherit}
 .color-dot.active{border-color:var(--dark-brown)}
 
 /* SAVOIR-FAIRE */
-.savoir-faire{background:var(--cream);padding:80px 40px}
+.savoir-faire{background:var(--cream);padding:100px 40px}
 .sf-inner{max-width:1400px;margin:0 auto}
 .sf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:48px}
 .sf-item{background:var(--cream);padding:36px 28px}
@@ -135,7 +144,7 @@ button{cursor:pointer;font-family:inherit}
 .sf-text{font-size:13px;color:var(--muted);line-height:1.85}
 
 /* NEWSLETTER */
-.newsletter{padding:80px 40px;text-align:center;background:var(--warm-white)}
+.newsletter{padding:100px 40px;text-align:center;background:var(--warm-white)}
 .newsletter-inner{max-width:560px;margin:0 auto}
 .newsletter h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,40px);font-weight:300;color:var(--dark-brown);margin-bottom:12px}
 .newsletter h2 em{font-style:italic;color:var(--brown)}
@@ -172,6 +181,7 @@ button{cursor:pointer;font-family:inherit}
 .popup-close{position:absolute;top:16px;right:20px;font-size:20px;color:#2C1A0E;background:none;border:none;cursor:pointer;line-height:1}
 .popup h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--dark-brown);margin-bottom:10px}
 .popup h2 em{font-style:italic;color:var(--brown)}
+.popup .popup-headline{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;font-style:italic;color:var(--brown);margin:0 0 12px}
 .popup p{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:24px}
 .popup input{width:100%;padding:13px 16px;border:1px solid var(--border);background:var(--cream);font-family:'Jost',sans-serif;font-size:13px;color:var(--text);margin-bottom:12px;outline:none}
 .popup button:not(.popup-close){width:100%;background:var(--dark-brown);color:#fff;border:none;padding:15px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .3s}
@@ -235,7 +245,8 @@ button{cursor:pointer;font-family:inherit}
 .editorial-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,2.8vw,40px);font-weight:300;font-style:italic;color:var(--dark-brown);line-height:1.35;margin:18px 0 28px}
 .editorial-quote::before{content:'«\00a0';color:var(--gold);font-style:normal}
 .editorial-quote::after{content:'\00a0»';color:var(--gold);font-style:normal}
-.editorial-body{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:36px;max-width:400px}
+.editorial-body{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:16px;max-width:400px}
+.editorial-body:last-of-type{margin-bottom:36px}
 </style>
 <link rel="stylesheet" href="animations.css">
 <link rel="stylesheet" href="mobile.css">
@@ -333,7 +344,78 @@ button{cursor:pointer;font-family:inherit}
   <div class="hero-content">
     <span class="hero-eyebrow">AUTOMNE-HIVER 2026</span>
     <h1 class="hero-headline">Filé à Suzhou, coupé d'une main parisienne.</h1>
+    <p class="hero-subline">Manteaux en laine &amp; cachemire de Mongolie-Intérieure.</p>
     <a href="manteaux.html" class="hero-cta">Découvrir la collection</a>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="collection">
+  <div class="collection-head">
+    <div>
+      <h2 class="section-title">La <em>collection</em></h2>
+      <p class="collection-subtitle">Trois silhouettes. Une même exigence.</p>
+    </div>
+    <a href="manteaux.html" class="text-link">Voir tous les manteaux →</a>
+  </div>
+  <div class="products-grid">
+    <!-- HUĀ LONG -->
+    <div class="product-card">
+      <div class="product-card-img">
+        <span class="product-tag">La Signature</span>
+        <a href="hua-long.html" onclick="trackSelectItem(0)"><picture><source srcset="hua-long-camel-face-new.webp" type="image/webp"><img src="hua-long-camel-face-new.png" alt="Manteau Huā Long" loading="lazy" width="720" height="720"></picture></a>
+      </div>
+      <div class="product-card-info">
+        <p class="product-name">Huā Long</p>
+        <p class="product-desc">Une silhouette ample et enveloppante, dessinée pour créer une présence.</p>
+        <div class="product-price">
+          <span class="price-now">480 €</span>
+        </div>
+        <div class="product-colors">
+          <div class="color-dot active" style="background:#C19A6B" title="Camel"></div>
+          <div class="color-dot" style="background:#4A4A4A" title="Gris"></div>
+        </div>
+        <a href="hua-long.html" class="product-discover" onclick="trackSelectItem(0)" aria-label="Découvrir Huā Long">Découvrir</a>
+      </div>
+    </div>
+    <!-- YŪN LONG -->
+    <div class="product-card">
+      <div class="product-card-img">
+        <span class="product-tag">La Ligne</span>
+        <a href="yun-long.html" onclick="trackSelectItem(2)"><picture><source srcset="yun-long-noir-face-new.webp" type="image/webp"><img src="yun-long-noir-face-new.png" alt="Manteau Yūn Long Ceinturé" loading="lazy" width="525" height="720"></picture></a>
+      </div>
+      <div class="product-card-info">
+        <p class="product-name">Yūn Long Ceinturé</p>
+        <p class="product-desc">Une silhouette longue et ceinturée, pensée pour souligner le mouvement.</p>
+        <div class="product-price">
+          <span class="price-now">450 €</span>
+        </div>
+        <div class="product-colors">
+          <div class="color-dot active" style="background:#1a1410" title="Noir"></div>
+          <div class="color-dot" style="background:#3D1A14" title="Marron"></div>
+        </div>
+        <a href="yun-long.html" class="product-discover" onclick="trackSelectItem(2)" aria-label="Découvrir Yūn Long Ceinturé">Découvrir</a>
+      </div>
+    </div>
+    <!-- YŪN COURT -->
+    <div class="product-card">
+      <div class="product-card-img">
+        <span class="product-tag">L'Essentielle</span>
+        <a href="yun-court.html" onclick="trackSelectItem(1)"><picture><source srcset="yun-court-noir-face-new.webp" type="image/webp"><img src="yun-court-noir-face-new.png" alt="Manteau Yūn Court Ceinturé" loading="lazy" width="720" height="720"></picture></a>
+      </div>
+      <div class="product-card-info">
+        <p class="product-name">Yūn Court Ceinturé</p>
+        <p class="product-desc">Une version plus courte, structurée par sa ceinture.</p>
+        <div class="product-price">
+          <span class="price-now">350 €</span>
+        </div>
+        <div class="product-colors">
+          <div class="color-dot active" style="background:#1e2d45" title="Marine"></div>
+          <div class="color-dot" style="background:#1a1410" title="Noir"></div>
+        </div>
+        <a href="yun-court.html" class="product-discover" onclick="trackSelectItem(1)" aria-label="Découvrir Yūn Court Ceinturé">Découvrir</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -585,86 +667,24 @@ button{cursor:pointer;font-family:inherit}
       <svg class="reassurance-icon" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       <div>
         <span class="reassurance-label">Paiement sécurisé</span>
-        <span class="reassurance-sub">Crypté SSL 256 bits</span>
+        <span class="reassurance-sub">Paiement crypté</span>
       </div>
     </div>
     <div class="reassurance-item">
       <svg class="reassurance-icon" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 2 4 5 4 9c0 5 8 13 8 13s8-8 8-13c0-4-4-7-8-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       <div>
-        <span class="reassurance-label">Cachemire premium</span>
-        <span class="reassurance-sub">Mongolie-Intérieure</span>
+        <span class="reassurance-label">Cachemire de Mongolie-Intérieure</span>
+        <span class="reassurance-sub">Sélectionné pour sa finesse</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- COLLECTION -->
-<section class="collection">
-  <div class="collection-head">
-    <div>
-      <span class="section-label">La Collection</span>
-      <h2 class="section-title">Nos <em>manteaux</em></h2>
-    </div>
-    <a href="manteaux.html" class="text-link">Voir tous les manteaux →</a>
-  </div>
-  <div class="products-grid">
-    <!-- HUĀ LONG -->
-    <div class="product-card">
-      <div class="product-card-img">
-        <span class="product-tag">Notre pièce signature.</span>
-        <a href="hua-long.html" onclick="trackSelectItem(0)"><picture><source srcset="hua-long-camel-face-new.webp" type="image/webp"><img src="hua-long-camel-face-new.png" alt="Manteau Huā Long" loading="lazy" width="720" height="720"></picture></a>
-      </div>
-      <div class="product-card-info">
-        <p class="product-name">Huā Long</p>
-        <div class="product-price">
-          <span class="price-now">480 €</span>
-        </div>
-        <div class="product-colors">
-          <div class="color-dot active" style="background:#C19A6B" title="Camel"></div>
-          <div class="color-dot" style="background:#4A4A4A" title="Gris"></div>
-        </div>
-      </div>
-    </div>
-    <!-- YŪN COURT -->
-    <div class="product-card">
-      <div class="product-card-img">
-        <a href="yun-court.html" onclick="trackSelectItem(1)"><picture><source srcset="yun-court-noir-face-new.webp" type="image/webp"><img src="yun-court-noir-face-new.png" alt="Manteau Yūn Court Ceinturé" loading="lazy" width="720" height="720"></picture></a>
-      </div>
-      <div class="product-card-info">
-        <p class="product-name">Yūn Court Ceinturé</p>
-        <div class="product-price">
-          <span class="price-now">350 €</span>
-        </div>
-        <div class="product-colors">
-          <div class="color-dot active" style="background:#1e2d45" title="Marine"></div>
-          <div class="color-dot" style="background:#1a1410" title="Noir"></div>
-        </div>
-      </div>
-    </div>
-    <!-- YŪN LONG -->
-    <div class="product-card">
-      <div class="product-card-img">
-        <a href="yun-long.html" onclick="trackSelectItem(2)"><picture><source srcset="yun-long-noir-face-new.webp" type="image/webp"><img src="yun-long-noir-face-new.png" alt="Manteau Yūn Long Ceinturé" loading="lazy" width="525" height="720"></picture></a>
-      </div>
-      <div class="product-card-info">
-        <p class="product-name">Yūn Long Ceinturé</p>
-        <div class="product-price">
-          <span class="price-now">450 €</span>
-        </div>
-        <div class="product-colors">
-          <div class="color-dot active" style="background:#1a1410" title="Noir"></div>
-          <div class="color-dot" style="background:#3D1A14" title="Marron"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- SAVOIR-FAIRE -->
 <section class="savoir-faire">
   <div class="sf-inner">
     <span class="section-label">Nos engagements</span>
-    <h2 class="section-title">Nos manteaux sont <em>différents.</em></h2>
+    <h2 class="section-title">Ce qui fait <em>MAUDÉ.</em></h2>
     <div class="sf-grid">
       <div class="sf-item">
         <div class="sf-num">01</div>
@@ -674,17 +694,17 @@ button{cursor:pointer;font-family:inherit}
       <div class="sf-item">
         <div class="sf-num">02</div>
         <p class="sf-title">Le savoir-faire</p>
-        <p class="sf-text">Fabriqués à Suzhou, Chine, avec 2 500 ans de tradition textile. Plus de 40 étapes de confection par manteau.</p>
+        <p class="sf-text">Façonnés à Suzhou, au cœur d'un territoire textile reconnu depuis des siècles. Plus de 40 étapes donnent forme à chaque manteau.</p>
       </div>
       <div class="sf-item">
         <div class="sf-num">03</div>
-        <p class="sf-title">Le prix juste</p>
-        <p class="sf-text">Vente en direct, sans intermédiaire. Vous payez la matière et le savoir-faire — pas les marges de distribution.</p>
+        <p class="sf-title">La Maison, sans intermédiaire</p>
+        <p class="sf-text">La vente directe nous permet de consacrer davantage de valeur à la matière, au savoir-faire et à la pièce elle-même.</p>
       </div>
       <div class="sf-item">
         <div class="sf-num">04</div>
         <p class="sf-title">Pour durer</p>
-        <p class="sf-text">Chaque pièce est conçue pour traverser les années. Un investissement conscient, pas un achat impulsif.</p>
+        <p class="sf-text">Des silhouettes pensées pour traverser les saisons et accompagner les années.</p>
       </div>
     </div>
   </div>
@@ -699,7 +719,8 @@ button{cursor:pointer;font-family:inherit}
     <div class="editorial-content">
       <span class="section-label">Notre philosophie</span>
       <p class="editorial-quote">Chaque manteau MAUDÉ commence par une fibre. Il finit par une histoire.</p>
-      <p class="editorial-body">Nous n'avons pas créé MAUDÉ pour vendre des manteaux. Nous l'avons créé pour que vous n'en ayez jamais besoin d'un autre. 50% laine, 50% cachemire de Mongolie-Intérieure — sélectionnés pour leur finesse, tissés à Suzhou selon 2 500 ans de tradition.</p>
+      <p class="editorial-body">Nous avons créé MAUDÉ autour d'une conviction simple : une belle pièce ne devrait pas être remplacée chaque saison.</p>
+      <p class="editorial-body">Des matières nobles, façonnées à Suzhou, pensées à Paris et dessinées pour durer.</p>
       <a href="notre-histoire.html" class="text-link">Découvrir notre histoire →</a>
     </div>
   </div>
@@ -709,12 +730,14 @@ button{cursor:pointer;font-family:inherit}
 <section class="newsletter">
   <div class="newsletter-inner">
     <span class="section-label">Le Cercle MAUDÉ</span>
-    <h2>Restez <em>informée.</em></h2>
-    <p>Accès en avant-première aux nouvelles pièces, conseils d'entretien et offres exclusives.</p>
-    <div class="newsletter-form">
-      <input type="email" placeholder="Votre adresse email" aria-label="Email">
-      <button type="button">S'inscrire</button>
-    </div>
+    <h2>Entrez dans l'univers <em>MAUDÉ.</em></h2>
+    <p>Nouvelles collections, histoires de matière, savoir-faire et invitations privées.</p>
+    <form id="newsletter-form" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)" novalidate>
+      <label for="newsletter-email" style="display:none">Votre adresse email</label>
+      <input type="email" id="newsletter-email" name="email" placeholder="Votre adresse email" autocomplete="email" required>
+      <button type="submit" id="newsletter-submit">Rejoindre le Cercle</button>
+    </form>
+    <p id="newsletter-msg" style="font-size:12px;margin-top:14px;min-height:18px;line-height:1.5;color:var(--muted)"></p>
   </div>
 </section>
 
@@ -771,14 +794,15 @@ button{cursor:pointer;font-family:inherit}
   <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
     <button class="popup-close" onclick="closePopup()">×</button>
     <h2 id="popup-title">Le Cercle <em>MAUDÉ</em></h2>
-    <p>Rejoignez notre cercle et bénéficiez d'un accès privilégié aux nouvelles pièces et offres exclusives.</p>
+    <p class="popup-headline">Entrez dans l'univers MAUDÉ.</p>
+    <p>Nouvelles collections, histoires de matière et invitations privées.</p>
     <form id="popup-form" onsubmit="handlePopupSubmit(event)" novalidate>
       <label for="popup-email" style="display:none">Votre adresse email</label>
       <input type="email" id="popup-email" name="email" placeholder="Votre adresse email" autocomplete="email" required>
-      <button type="submit" id="popup-submit">Rejoindre le cercle</button>
+      <button type="submit" id="popup-submit">Rejoindre le Cercle</button>
     </form>
     <p id="popup-msg" style="font-size:12px;margin-top:10px;min-height:18px;line-height:1.5;color:var(--muted)"></p>
-    <span class="popup-skip" onclick="closePopup()">Non merci, continuer sans s'inscrire</span>
+    <span class="popup-skip" onclick="closePopup()">Continuer ma visite</span>
   </div>
 </div>
 
@@ -810,14 +834,30 @@ window.addEventListener('scroll',function(){
   }
 })();
 
-// Popup newsletter
+// Popup newsletter — Le Cercle MAUDÉ
+// Comportement volontairement discret : pas d'apparition immédiate, mémorisation
+// persistante (localStorage, pas sessionStorage) pour ne jamais réafficher une
+// fois vue, déclenchement sur intention de sortie côté desktop uniquement
+// (le tactile n'a pas d'équivalent fiable à mouseleave).
 var POPUP_KEY='popup_shown';
-if(!sessionStorage.getItem(POPUP_KEY)){
-  setTimeout(function(){
-    document.getElementById('popup').classList.add('show');
-    sessionStorage.setItem(POPUP_KEY,'1');
-    setTimeout(function(){var el=document.getElementById('popup-email');if(el)el.focus();},420);
-  },4000);
+function showPopup(){
+  if(localStorage.getItem(POPUP_KEY))return;
+  localStorage.setItem(POPUP_KEY,'1');
+  document.getElementById('popup').classList.add('show');
+  setTimeout(function(){var el=document.getElementById('popup-email');if(el)el.focus();},420);
+}
+if(!localStorage.getItem(POPUP_KEY)){
+  var isTouchOrNarrow=window.matchMedia('(hover:none), (max-width:768px)').matches;
+  if(isTouchOrNarrow){
+    setTimeout(showPopup,25000);
+  }else{
+    var exitIntentArmed=false;
+    setTimeout(function(){exitIntentArmed=true;},8000);
+    document.addEventListener('mouseleave',function(e){
+      if(exitIntentArmed&&e.clientY<=0)showPopup();
+    });
+    setTimeout(showPopup,30000);
+  }
 }
 function closePopup(){document.getElementById('popup').classList.remove('show');}
 function handlePopupSubmit(e){
@@ -834,18 +874,46 @@ function handlePopupSubmit(e){
       if(res.ok||res.data.ok){
         msg.textContent=res.data.already?'Vous êtes déjà inscrite — merci !':'Merci pour votre inscription ! Vérifiez votre boîte mail pour confirmer.';
         msg.style.color='var(--brown)';
-        sessionStorage.setItem(POPUP_KEY,'1');
         setTimeout(closePopup,2800);
       }else{
         msg.textContent='Une erreur est survenue. Veuillez réessayer.';
         msg.style.color='var(--terracotta)';
       }
-      btn.disabled=false;btn.textContent='Rejoindre le cercle';
+      btn.disabled=false;btn.textContent='Rejoindre le Cercle';
     })
     .catch(function(){
       msg.textContent='Une erreur est survenue. Veuillez réessayer.';
       msg.style.color='var(--terracotta)';
-      btn.disabled=false;btn.textContent='Rejoindre le cercle';
+      btn.disabled=false;btn.textContent='Rejoindre le Cercle';
+    });
+}
+
+// Newsletter — bloc principal "Le Cercle MAUDÉ" (même API que le popup)
+function handleNewsletterSubmit(e){
+  e.preventDefault();
+  var input=document.getElementById('newsletter-email');
+  var btn=document.getElementById('newsletter-submit');
+  var msg=document.getElementById('newsletter-msg');
+  var email=input.value.trim();
+  if(!email)return;
+  btn.disabled=true;btn.textContent='…';msg.textContent='';
+  fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+    .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});})
+    .then(function(res){
+      if(res.ok||res.data.ok){
+        msg.textContent=res.data.already?'Vous êtes déjà inscrite — merci !':'Merci pour votre inscription ! Vérifiez votre boîte mail pour confirmer.';
+        msg.style.color='var(--brown)';
+        input.value='';
+      }else{
+        msg.textContent='Une erreur est survenue. Veuillez réessayer.';
+        msg.style.color='var(--terracotta)';
+      }
+      btn.disabled=false;btn.textContent='Rejoindre le Cercle';
+    })
+    .catch(function(){
+      msg.textContent='Une erreur est survenue. Veuillez réessayer.';
+      msg.style.color='var(--terracotta)';
+      btn.disabled=false;btn.textContent='Rejoindre le Cercle';
     });
 }
 
