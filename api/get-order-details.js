@@ -20,18 +20,31 @@ export default async function handler(req, res) {
   const stripe = new Stripe(secretKey);
 
   try {
+    // `collected_information` (which holds shipping_details) is a plain top-level field on
+    // the Checkout Session in this API version (stripe ^22.6.1), not an expandable relation,
+    // so it comes back below without adding it to `expand`.
     const session = await stripe.checkout.sessions.retrieve(sessionId, {
       expand: ['line_items.data.price.product'],
     });
 
     const lineItem = session.line_items?.data?.[0];
     const product = lineItem?.price?.product;
+    const shippingDetails = session.collected_information?.shipping_details;
 
     return res.status(200).json({
       email: session.customer_details?.email ?? session.customer_email ?? null,
       amountTotal: session.amount_total,
       currency: session.currency,
       productName: typeof product === 'object' && product !== null ? product.name : null,
+      size: session.metadata?.size ?? null,
+      shipping: shippingDetails ? {
+        name: shippingDetails.name ?? null,
+        line1: shippingDetails.address?.line1 ?? null,
+        line2: shippingDetails.address?.line2 ?? null,
+        postalCode: shippingDetails.address?.postal_code ?? null,
+        city: shippingDetails.address?.city ?? null,
+        country: shippingDetails.address?.country ?? null,
+      } : null,
     });
   } catch (err) {
     console.error('Error retrieving checkout session:', err);

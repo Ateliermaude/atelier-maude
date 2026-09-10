@@ -9,6 +9,12 @@ const PRICE_IDS = {
   'ceinture-ze': 'price_1UDjieQ3GhF5uGnWFuSSQSKt',
 };
 
+const VALID_SIZES = {
+  'hua-long': ['XS', 'S', 'M', 'L', 'XL'],
+  'yun-court': ['XS', 'S', 'M', 'L', 'XL'],
+  'yun-long': ['XS', 'S', 'M', 'L', 'XL'],
+};
+
 const ALLOWED_HOSTS = new Set(['ateliermaude.com', 'www.ateliermaude.com']);
 const DEFAULT_CANCEL_URL = 'https://ateliermaude.com/manteaux.html';
 const SUCCESS_URL = 'https://ateliermaude.com/confirmation.html?session_id={CHECKOUT_SESSION_ID}';
@@ -18,7 +24,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'method_not_allowed' });
   }
 
-  const { product, cancelUrl } = req.body ?? {};
+  const { product, size, cancelUrl } = req.body ?? {};
 
   if (!product || typeof product !== 'string') {
     return res.status(400).json({ error: 'missing_product' });
@@ -27,6 +33,13 @@ export default async function handler(req, res) {
   const priceId = PRICE_IDS[product];
   if (!priceId) {
     return res.status(400).json({ error: 'unknown_product' });
+  }
+
+  const requiresSize = Object.prototype.hasOwnProperty.call(VALID_SIZES, product);
+  if (requiresSize) {
+    if (!size || typeof size !== 'string' || !VALID_SIZES[product].includes(size)) {
+      return res.status(400).json({ error: 'invalid_size' });
+    }
   }
 
   const secretKey = process.env.STRIPE_SECRET_KEY;
@@ -48,6 +61,8 @@ export default async function handler(req, res) {
     }
   }
 
+  const lang = typeof cancelUrl === 'string' && cancelUrl.includes('/en/') ? 'en' : 'fr';
+
   const stripe = new Stripe(secretKey);
 
   try {
@@ -57,19 +72,13 @@ export default async function handler(req, res) {
       payment_method_types: ['card'],
       success_url: SUCCESS_URL,
       cancel_url: safeCancelUrl,
-      metadata: { product },
+      shipping_address_collection: { allowed_countries: ['FR', 'BE'] },
+      metadata: { product, ...(requiresSize ? { size } : {}), lang },
     });
 
     return res.status(200).json({ url: session.url });
   } catch (err) {
     console.error('Stripe checkout session error:', err);
-    // TEMPORARY DIAGNOSTIC — remove once the root cause is found, revert
-    // to the generic { error: 'stripe_error' } response.
-    return res.status(500).json({
-      error: 'stripe_error',
-      message: err.message,
-      type: err.type,
-      code: err.code,
-    });
+    return res.status(500).json({ error: 'stripe_error' });
   }
 }

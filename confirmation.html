@@ -515,9 +515,17 @@ footer a:hover{color:var(--dark-brown)}
         <span class="recap-label">Article commandé</span>
         <span class="recap-value" id="order-product">—</span>
       </div>
+      <div class="recap-row" id="order-size-row" style="display:none">
+        <span class="recap-label">Taille</span>
+        <span class="recap-value" id="order-size">—</span>
+      </div>
       <div class="recap-row" id="order-amount-row" style="display:none">
         <span class="recap-label">Montant payé</span>
         <span class="recap-value" id="order-amount">—</span>
+      </div>
+      <div class="recap-row" id="order-shipping-row" style="display:none">
+        <span class="recap-label">Adresse de livraison</span>
+        <span class="recap-value" id="order-shipping">—</span>
       </div>
       <div class="recap-row">
         <span class="recap-label">Confirmation envoyée à</span>
@@ -689,6 +697,13 @@ footer a:hover{color:var(--dark-brown)}
           if (productRow) productRow.style.display = '';
         }
 
+        if (data.size) {
+          var sizeRow = document.getElementById('order-size-row');
+          var sizeEl = document.getElementById('order-size');
+          if (sizeEl) sizeEl.textContent = data.size;
+          if (sizeRow) sizeRow.style.display = '';
+        }
+
         if (typeof data.amountTotal === 'number' && data.currency) {
           var amountRow = document.getElementById('order-amount-row');
           var amountEl = document.getElementById('order-amount');
@@ -696,6 +711,23 @@ footer a:hover{color:var(--dark-brown)}
             (data.currency.toUpperCase() === 'EUR' ? '€' : data.currency.toUpperCase());
           if (amountEl) amountEl.textContent = formatted;
           if (amountRow) amountRow.style.display = '';
+        }
+
+        if (data.shipping) {
+          var shippingParts = [];
+          if (data.shipping.name) shippingParts.push(data.shipping.name);
+          if (data.shipping.line1) shippingParts.push(data.shipping.line1);
+          if (data.shipping.line2) shippingParts.push(data.shipping.line2);
+          var shippingCityLine = [data.shipping.postalCode, data.shipping.city].filter(Boolean).join(' ');
+          if (shippingCityLine) shippingParts.push(shippingCityLine);
+          if (data.shipping.country) shippingParts.push(data.shipping.country);
+
+          if (shippingParts.length) {
+            var shippingRow = document.getElementById('order-shipping-row');
+            var shippingEl = document.getElementById('order-shipping');
+            if (shippingEl) shippingEl.textContent = shippingParts.join(', ');
+            if (shippingRow) shippingRow.style.display = '';
+          }
         }
 
         // GA4 purchase — une seule fois par session_id (dédoublonnage F5 / retour sur la page)

@@ -282,7 +282,7 @@ button{cursor:pointer;font-family:inherit}
 <label class="option-label">Size</label>
 <div class="size-options">
 <button class="size-btn" onclick="selectSize(this)">XS</button>
-<button class="size-btn active" onclick="selectSize(this)">S</button>
+<button class="size-btn" onclick="selectSize(this)">S</button>
 <button class="size-btn" onclick="selectSize(this)">M</button>
 <button class="size-btn" onclick="selectSize(this)">L</button>
 <button class="size-btn" onclick="selectSize(this)">XL</button>
@@ -414,11 +414,17 @@ btn.textContent=isOpen?'Size guide ↑':'Size guide ↓';
 }
 
 function addToCart(btn,product){
-var orig=btn.textContent;
 var msg=document.getElementById('checkout-msg');
+var activeBtn=document.querySelector('.size-btn.active');
+if(!activeBtn){
+if(msg){msg.textContent='Please select a size.';msg.style.color='var(--terracotta)';}
+return;
+}
+var size=activeBtn.textContent.trim();
+var orig=btn.textContent;
 btn.disabled=true;btn.textContent='…';
 if(msg){msg.textContent='';}
-fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product:product,cancelUrl:window.location.href})})
+fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product:product,size:size,cancelUrl:window.location.href})})
   .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});})
   .then(function(res){
     if(res.ok&&res.data.url){window.location.href=res.data.url;return;}
