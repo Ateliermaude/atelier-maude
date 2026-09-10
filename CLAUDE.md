@@ -88,3 +88,7 @@ Trois skills sont disponibles pour guider les décisions de design et de fronten
 ## Product gallery pattern
 
 Product pages use a thumbnail + main image gallery: clicking a `.gallery-thumb` swaps `.active` on both the thumb and the corresponding `.gallery-main img`. The main image fades via `opacity` transition.
+
+## Brand narrative territory
+
+`docs/brand/territoire-narratif.md` formalizes MAUDÉ's proprietary narrative architecture (Paris/Le Regard, Suzhou/Le Geste, Mongolie-Intérieure/La Matière). Consult it before writing or reviewing any brand copy involving these three territories.
