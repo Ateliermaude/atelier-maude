@@ -23,9 +23,11 @@
 {
   "@context": "https://schema.org/",
   "@type": "Product",
-  "name": "Manteau Yūn Court Ceinturé",
-  "description": "Manteau mi-cuisse à ceinture amovible en laine et cachemire de Mongolie-Intérieure",
+  "name": "Belted Cashmere Coat Women · Yūn Court",
+  "description": "Belted cashmere coat, mid-thigh length, in wool and Inner Mongolia cashmere.",
   "image": "https://ateliermaude.com/yun-court-noir-face-new.webp",
+  "material": "50% Wool, 50% Inner Mongolia Cashmere",
+  "sku": "yun-court",
   "brand": {
     "@type": "Brand",
     "name": "Atelier MAUDÉ"
@@ -35,7 +37,26 @@
     "price": "350.00",
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
-    "url": "https://ateliermaude.com/en/yun-court.html"
+    "url": "https://ateliermaude.com/en/yun-court.html",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {"@type": "MonetaryAmount", "value": "0.00", "currency": "EUR"},
+      "shippingDestination": [
+        {"@type": "DefinedRegion", "addressCountry": "FR"},
+        {"@type": "DefinedRegion", "addressCountry": "BE"}
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {"@type": "QuantitativeValue", "minValue": 15, "maxValue": 21, "unitCode": "DAY"}
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": ["FR", "BE"],
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnFees": "https://schema.org/ReturnShippingFees"
+    }
   }
 }
 </script>

@@ -27,6 +27,7 @@
   "description": "Grand manteau oversize en laine et cachemire de Mongolie-Intérieure",
   "image": "https://ateliermaude.com/hua-long-camel-face-new.webp",
   "material": "50% Laine, 50% Cachemire de Mongolie-Intérieure",
+  "sku": "hua-long",
   "brand": {
     "@type": "Brand",
     "name": "Atelier MAUDÉ"
@@ -36,7 +37,26 @@
     "price": "480.00",
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
-    "url": "https://ateliermaude.com/hua-long.html"
+    "url": "https://ateliermaude.com/hua-long.html",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {"@type": "MonetaryAmount", "value": "0.00", "currency": "EUR"},
+      "shippingDestination": [
+        {"@type": "DefinedRegion", "addressCountry": "FR"},
+        {"@type": "DefinedRegion", "addressCountry": "BE"}
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {"@type": "QuantitativeValue", "minValue": 15, "maxValue": 21, "unitCode": "DAY"}
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": ["FR", "BE"],
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnFees": "https://schema.org/ReturnShippingFees"
+    }
   }
 }
 </script>
