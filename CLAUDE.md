@@ -96,5 +96,6 @@ Product pages use a thumbnail + main image gallery: clicking a `.gallery-thumb` 
 - `territoire-narratif.md` — MAUDÉ's proprietary narrative architecture (Paris/Le Regard, Suzhou/Le Geste, Mongolie-Intérieure/La Matière).
 - `hua-long-signature.md` — Huā Long's strategic territory as the Maison's signature piece.
 - `yun-long-ligne.md` — Yūn Long's strategic territory as the Maison's "line" piece.
+- `yun-court-essentielle.md` — Yūn Court's strategic territory as the Maison's "essential/freedom" piece.
 
 Consult the relevant file before writing or reviewing brand copy, creative direction, or positioning for the products/territories it covers.
