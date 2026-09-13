@@ -281,6 +281,70 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://ateliermaude.com/article-cachemire-ou-laine.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/article-cachemire-ou-laine.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/article-cachemire-ou-laine.html"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/en/article-cachemire-ou-laine.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/article-cachemire-ou-laine.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/article-cachemire-ou-laine.html"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/article-fewer-better-coats.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/article-fewer-better-coats.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/article-fewer-better-coats.html"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/en/article-fewer-better-coats.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/article-fewer-better-coats.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/article-fewer-better-coats.html"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/article-piece-you-reach-for-first.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/article-piece-you-reach-for-first.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/article-piece-you-reach-for-first.html"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/en/article-piece-you-reach-for-first.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/article-piece-you-reach-for-first.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/article-piece-you-reach-for-first.html"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/article-vestiaire-capsule-hiver.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/article-vestiaire-capsule-hiver.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/article-vestiaire-capsule-hiver.html"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/en/article-vestiaire-capsule-hiver.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/article-vestiaire-capsule-hiver.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/article-vestiaire-capsule-hiver.html"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ── Lookbook ── -->
   <url>
@@ -330,6 +394,22 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/notre-cachemire.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/notre-cachemire.html"/>
     <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/the-house.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/the-house.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/the-house.html"/>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/en/the-house.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/the-house.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/the-house.html"/>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
