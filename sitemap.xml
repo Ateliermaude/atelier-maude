@@ -430,6 +430,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ateliermaude.com/les-silhouettes.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/les-silhouettes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/les-silhouettes.html"/>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ateliermaude.com/en/les-silhouettes.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/les-silhouettes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/les-silhouettes.html"/>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ateliermaude.com/carte-cadeau.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ateliermaude.com/carte-cadeau.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ateliermaude.com/en/carte-cadeau.html"/>
