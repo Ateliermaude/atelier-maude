@@ -70,6 +70,7 @@ button{cursor:pointer;font-family:inherit}
 .page-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);display:block;margin-bottom:12px}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,56px);font-weight:300;color:var(--dark-brown);line-height:1.05}
 .page-title em{font-style:italic;color:var(--brown)}
+.page-subtitle{font-size:14px;color:var(--muted);line-height:1.9;max-width:460px;margin-top:14px}
 .page-count{font-size:12px;color:var(--muted);letter-spacing:.08em}
 
 /* FILTRES */
@@ -214,6 +215,7 @@ button{cursor:pointer;font-family:inherit}
     <div>
       <span class="page-eyebrow">Atelier MAUDÉ</span>
       <h1 class="page-title">Nos manteaux cachemire femme</h1>
+      <p class="page-subtitle">Trois silhouettes. Une même matière. Huā Long, Yūn Long et Yūn Court explorent trois façons de porter la même matière : le volume, la ligne et la proportion.</p>
     </div>
     <span class="page-count" id="product-count">3 manteaux</span>
   </div>
@@ -232,31 +234,11 @@ button{cursor:pointer;font-family:inherit}
 <!-- GRILLE -->
 <section class="products-section">
   <div class="products-grid">
-    <!-- YŪN COURT -->
-    <article class="product-card" data-cat="court">
-      <div class="product-img">
-
-        <picture><source srcset="yun-court-noir-face-new.webp" type="image/webp"><img src="yun-court-noir-face-new.png" alt="Manteau Yūn Court Ceinturé en laine et cachemire" loading="eager" fetchpriority="high" width="720" height="720"></picture>
-        <div class="product-overlay">
-          <span class="overlay-name">Manteau Yūn Court Ceinturé</span>
-          <a href="yun-court.html" class="overlay-cta" onclick="trackSelectItem(1)">Voir le produit →</a>
-        </div>
-      </div>
-      <a href="yun-court.html" class="product-name" onclick="trackSelectItem(1)">Manteau Yūn Court Ceinturé</a>
-      <p class="product-desc">Mi-cuisse · Ceinture amovible</p>
-      <div class="product-price">
-        <span class="price-now">350,00 €</span>
-      </div>
-      <div class="swatches">
-        <span class="swatch swatch-noir active" title="Noir"></span>
-        <span class="swatch-label">Noir</span>
-      </div>
-    </article>
     <!-- HUĀ LONG -->
     <article class="product-card" data-cat="long">
       <div class="product-img">
 
-        <picture><source srcset="hua-long-camel-face-new.webp" type="image/webp"><img src="hua-long-camel-face-new.png" alt="Manteau Huā Long en laine et cachemire — camel" loading="lazy" decoding="async" width="720" height="720"></picture>
+        <picture><source srcset="hua-long-camel-face-new.webp" type="image/webp"><img src="hua-long-camel-face-new.png" alt="Manteau Huā Long en laine et cachemire — camel" loading="eager" fetchpriority="high" width="720" height="720"></picture>
         <div class="product-overlay">
           <span class="overlay-name">Manteau Huā Long</span>
           <a href="hua-long.html" class="overlay-cta" onclick="trackSelectItem(0)">Voir le produit →</a>
@@ -292,6 +274,26 @@ button{cursor:pointer;font-family:inherit}
         <span class="swatch swatch-noir active" title="Noir"></span>
         <span class="swatch swatch-marron" title="Marron"></span>
         <span class="swatch-label">Noir, Marron</span>
+      </div>
+    </article>
+    <!-- YŪN COURT -->
+    <article class="product-card" data-cat="court">
+      <div class="product-img">
+
+        <picture><source srcset="yun-court-noir-face-new.webp" type="image/webp"><img src="yun-court-noir-face-new.png" alt="Manteau Yūn Court Ceinturé en laine et cachemire" loading="lazy" decoding="async" width="720" height="720"></picture>
+        <div class="product-overlay">
+          <span class="overlay-name">Manteau Yūn Court Ceinturé</span>
+          <a href="yun-court.html" class="overlay-cta" onclick="trackSelectItem(1)">Voir le produit →</a>
+        </div>
+      </div>
+      <a href="yun-court.html" class="product-name" onclick="trackSelectItem(1)">Manteau Yūn Court Ceinturé</a>
+      <p class="product-desc">Mi-cuisse · Ceinture amovible</p>
+      <div class="product-price">
+        <span class="price-now">350,00 €</span>
+      </div>
+      <div class="swatches">
+        <span class="swatch swatch-noir active" title="Noir"></span>
+        <span class="swatch-label">Noir</span>
       </div>
     </article>
   </div>
