@@ -23,6 +23,8 @@
   "description": "Écharpe 100% cachemire Grade A de Mongolie-Intérieure. Longue, fine, enveloppante. 30 × 164 cm, franges cousues main. 7 coloris. Tissée à Suzhou.",
   "image": "https://ateliermaude.com/echarpe-camel.webp",
   "material": "100% cachemire de Mongolie-Intérieure",
+  "color": ["Camel", "Noir", "Gris", "Bleu marine", "Bleu clair", "Bleu/Vert", "Rose pourpre"],
+  "sku": "echarpe-wen",
   "brand": {
     "@type": "Brand",
     "name": "Atelier MAUDÉ"
@@ -32,7 +34,44 @@
     "price": "100.00",
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
-    "url": "https://ateliermaude.com/echarpe-wen.html"
+    "url": "https://ateliermaude.com/echarpe-wen.html",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0.00",
+        "currency": "EUR"
+      },
+      "shippingDestination": [
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "FR"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "BE"
+        }
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 15,
+          "maxValue": 21,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": [
+        "FR",
+        "BE"
+      ],
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnFees": "https://schema.org/ReturnShippingFees"
+    }
   }
 }
 </script>

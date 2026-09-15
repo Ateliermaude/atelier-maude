@@ -23,6 +23,8 @@
   "description": "Ceinture en cuir véritable suédé camel, largeur 3,3 cm. Boucle rectangulaire noire. Taille unique ajustable par trous.",
   "image": "https://ateliermaude.com/sha-packshot-1.webp",
   "material": "Cuir véritable suédé",
+  "color": "Camel",
+  "sku": "ceinture-sha",
   "brand": {
     "@type": "Brand",
     "name": "Atelier MAUDÉ"
@@ -32,7 +34,44 @@
     "price": "75.00",
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
-    "url": "https://ateliermaude.com/ceinture-sha.html"
+    "url": "https://ateliermaude.com/ceinture-sha.html",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0.00",
+        "currency": "EUR"
+      },
+      "shippingDestination": [
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "FR"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "BE"
+        }
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 15,
+          "maxValue": 21,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": [
+        "FR",
+        "BE"
+      ],
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnFees": "https://schema.org/ReturnShippingFees"
+    }
   }
 }
 </script>
